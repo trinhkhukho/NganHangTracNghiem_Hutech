@@ -1,0 +1,21 @@
+  .cke_focus {
+        outline: none;
+        background-image: linear-gradient(#365899, #365899), linear-gradient(#D2D2D2, #D2D2D2);
+        background-size: 100% 2px, 100% 1px;
+        box-shadow: none;
+        transition-duration: 0.3s;
+    }
+  .cke_editable {
+      min-height: 40px;
+      border: 0;
+      background-image: linear-gradient(#4080ff, #4080ff), linear-gradient(#4080ff, #4080ff);
+      background-size: 100% 2px, 100% 1px;
+      background-repeat: no-repeat;
+      background-position: center bottom, center calc(100% - 1px);
+      background-color: transparent;
+      transition: background 0s ease-out;
+      float: none;
+      box-shadow: none;
+      border-radius: 0;
+      font-weight: 400;
+  }

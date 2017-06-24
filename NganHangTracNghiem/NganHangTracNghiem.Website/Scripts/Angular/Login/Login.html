@@ -1,0 +1,175 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="709759134396-mei4oim0vvro0hh2mmgjcrsnr4rk4ofe.apps.googleusercontent.com">
+    
+    <title>NHTN | Login </title>
+
+    <script src="../../JS/angular.js"></script>
+
+    <script src="Login.js"></script>
+    <link href="../../../Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../../Content/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="../../../Content/Login/animate.css" rel="stylesheet" />
+    <link href="../../../Content/Login/style.css" rel="stylesheet" />
+
+
+    <style type="text/css">
+        @media (max-width: 400px) {
+            .logo-name {
+                width: 50%;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+
+<body class="gray-bg" ng-app="login">
+
+    <div class="middle-box text-center loginscreen  animated fadeInDown" ng-controller="getlogin">
+        <div>
+
+            <div class="m-b">
+
+                <h1 class="logo-name">
+        
+                    <img src="../../../Content/css/Images/1logo.png" style="width: 100%" />
+                </h1>
+                <br />
+                <div style="text-align: center">
+                    <b style="font-size: 25px">
+                        Đăng nhập
+                    </b>
+                </div>
+            </div>
+
+            <div class="form-group ">
+
+                <input type="text" class="form-control" id="txtUserName" placeholder="Tên đăng nhập" class="col-md-12" style="text-align: center" ng-model="user.UserName"/>
+
+            </div>
+            <div class="form-group">
+
+                <input type="password" class="form-control" id="txtPassword" placeholder="Mật khẩu"  class="col-md-12" style="text-align: center"  ng-model="user.PassWord"/>
+
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Đăng nhập" class="btn btn-success block full-width m-b" ng-click="submit()" />
+            </div>
+            <div class="form-group">
+
+
+            </div>
+            <div class="login-by-sns">
+                <p class="text-center">Hoặc đăng nhập bằng</p>
+                <ul class="list-unstyled text-center">
+                    <li>
+                        <a href="#" scope="public_profile,email" onclick="checkLoginState();">
+                            <img style="padding: 2px;"  src="../../../Content/css/Images/fb.png" alt="Đăng nhập bằng Facebook">
+                        </a>
+                    </li>
+                    <li>
+                        <div class="g-signin2" data-onsuccess="onSignIn" alt="Đăng nhập bằng Google">
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="form-group">
+                <input type="submit" id="btnDangKi" value="Đăng kí" class="btn btn-outline btn-primary dim full-width m-b" />
+            </div>
+            <div class="form-group">
+                <a href="#" onclick="signOut();">Sign out</a>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <style type="text/css">
+        .login-by-sns {
+            margin: 0;
+        }
+
+            .login-by-sns img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .login-by-sns ul {
+                overflow: hidden;
+                width: 120px;
+                margin: auto;
+            }
+
+                .login-by-sns ul li {
+                    float: left;
+                    padding: 0 5px;
+                }
+
+        .abcRioButton {
+            width: auto !important;
+            height: auto !important;
+            box-shadow: none !important;
+        }
+
+            .abcRioButton .abcRioButtonContents {
+                display: none !important;
+            }
+
+            .abcRioButton .abcRioButtonIcon {
+                padding: 0 !important;
+            }
+
+                .abcRioButton .abcRioButtonIcon .abcRioButtonIconImage18 {
+                    width: 50px !important;
+                    height: 50px !important;
+                    padding: 2px;
+                }
+
+                    .abcRioButton .abcRioButtonIcon .abcRioButtonIconImage18 .abcRioButtonSvg {
+                        width: 46px !important;
+                        height: 46px !important;
+                    }
+
+        .abcRioButtonLightBlue {
+            background-color: #f3f3f4;
+        }
+    </style>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script type="text/javascript">
+
+        function onSignIn(googleUser) {
+            debugger;
+            var profile = googleUser.getBasicProfile();
+            var ID = profile.getId();
+            var Name = profile.getName();
+            var Image = profile.getImageUrl();
+            var Email = profile.getEmail();
+
+        }
+
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+            });
+        }
+
+        //$('#btnDangKi').click(function () {
+        //    debugger;
+
+        //    window.open('http://localhost:59417/DangKi.html');
+        //    window.focus();
+        //});
+
+    </script>
+</body>
+</html>

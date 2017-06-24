@@ -1,0 +1,274 @@
+﻿<link href="../../../Content/ckeditor.css" rel="stylesheet" />
+<div class="main-panel" ng-controller="GroupQuestionController">
+<nav class="navbar navbar-transparent navbar-absolute">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="">Thông tin đề thi</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                        <span class="notification">5</span>
+                        <i class="fa fa-comment-o" aria-hidden="true">5</i>
+
+                    </a>
+
+                </li>
+
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group  is-empty">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <span class="material-input"></span>
+                </div>
+                <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <div class="ripple-container"></div>
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" data-background-color="blue">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <h4 class="title">Câu hỏi chọn đáp án </h4>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-2" style="text-align: left">
+                                    <label>Nội dung câu hỏi:</label>
+                                </div>
+                                
+                            </div>
+                            <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <textarea name="CauHoi"></textarea>
+                                        </div>
+
+                                    </div>
+                                </div>
+                 
+
+                            <!--<div class="row">
+
+                                <div class="col-md-2" style="text-align: right">
+                                    <label>Đáp án A:</label>
+                                </div>
+                                <div class="col-md-8" style='overflow:auto;height:100px;'>
+                                    <div class="form-group">
+                                        <textarea name="CauA"></textarea>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="checkbox" style="margin:0; padding:0;">
+                                        <label style="margin:0; padding:0;">
+                                            <input type="checkbox" id="CauAhv">
+                                            Cho phép hoán vị
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-material" style="margin:0; padding:0;">
+                                        <label style="margin:0; padding:0;">
+                                            <input type="checkbox" id="CauAda">
+                                            Đáp án
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2" style="text-align: right">
+                                    <label>Đáp án B:</label>
+                                </div>
+                                <div class="col-md-8" style='overflow:auto;height:100px;'>
+                                    <div class="form-group">
+                                        <textarea name="CauB"></textarea>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="checkbox-material" style="margin:0; padding:0;">
+                                        <label style="margin:0; padding:0;">
+                                            <input type="checkbox" id="CauBhv">
+                                            Cho phép hoán vị
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-material" style="margin:0; padding:0;">
+                                        <label style="margin:0; padding:0;">
+                                            <input type="checkbox" id="CauBda">
+                                            Đáp án
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2" style="text-align: right">
+                                    <label>Đáp án C:</label>
+                                </div>
+                                <div class="col-md-8" style='overflow:auto;height:100px;'>
+                                    <div class="form-group">
+                                        <textarea name="CauC"></textarea>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="checkbox-material" style="margin:0; padding:0;">
+                                        <label style="margin:0; padding:0;">
+                                            <input type="checkbox" id="CauChv">
+                                            Cho phép hoán vị
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-material" style="margin:0; padding:0;">
+                                        <label style="margin:0; padding:0;">
+                                            <input type="checkbox" id="CauCda">
+                                            Đáp án
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2" style="text-align: right">
+                                    <label>Đáp án D:</label>
+                                </div>
+                                <div class="col-md-8" style='overflow:auto;height:100px;'>
+                                    <div class="form-group">
+                                        <textarea name="CauD"></textarea>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="checkbox-material" style="margin:0; padding:0;">
+                                        <label style="margin:0; padding:0;">
+                                            <input type="checkbox" id="CauDhv">
+                                            Cho phép hoán vị
+                                        </label>
+                                    </div>
+                                    <div class="checkbox-material" style="margin:0; padding:0;">
+                                        <label style="margin:0; padding:0;">
+                                            <input type="checkbox" id="CauDda" ng-model="CauHoi.daD" ng-value="true">
+                                            Đáp án
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>-->
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group" style="margin-top: 1px;">
+                                        <input type="text" class="form-control" ng-model="CauHoi.Diem" placeholder="Điểm" required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group" style="margin-top: 1px;">
+                                        <input type="number" class="form-control" ng-model="CauHoi.DoKho" placeholder="Độ khó" style="border-bottom: 1px;" max="1" min="0">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group" style="margin-top: 1px;">
+                                        <input type="number" class="form-control" ng-model="CauHoi.DoPhanCach" placeholder="Độ phân cách" style="border-bottom: 1px;" max="1" min="0">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="clearfix" style="border:blue solid 2px "></div>
+                            <div class="row">
+
+                                <button type="button" ng-click="addQuestion()" class="btn btn-primary pull-right">Thêm câu hỏi</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+<script src="../../../Content/ckeditor/ckeditor.js"></script>
+<script src="../../../Content/ckfinder/ckfinder.js"></script>
+<script src="../../../Content/ckeditor/adapters/jquery.js"></script>
+<script>
+    $(document).ready(function () {
+        //CKEDITOR.disableAutoInline = true;
+        CKEDITOR.replace('CauHoi',
+            {
+                height: 300,
+
+            });
+    
+        //CKEDITOR.inline('CauA');
+        //CKEDITOR.inline('CauB');
+        //CKEDITOR.inline('CauC');
+        //CKEDITOR.inline('CauD');
+        CKFinder.setupCKEditor(null, '/Content/ckfinder/');
+        //$('#DapAnA1 div').attr({
+        //    'id': 'DapAnA',
+        //    'class': 'form-control'
+        //});
+        //$('#CauAda').prop('checked', true);
+        //$('#CauAda').click(function () {
+ 
+        //    if ($('#CauAda').is(':checked')) {
+        //        $('#CauB').prop('checked', false);
+        //        $('#CauC').prop('checked', false);
+        //        $('#CauD').prop('checked', false);
+        //    } else {
+        //        $('#CauAda').prop('checked', true);
+        //    }
+        //});
+        //$('#CauBda').click(function () {
+        //    if ($('#CauBda').is(':checked')) {
+        //        $('#CauAda').prop('checked', false);
+        //        $('#CauCda').prop('checked', false);
+        //        $('#CauDda').prop('checked', false);
+        //    } else {
+        //        $('#CauAda').prop('checked', true);
+        //    }
+        //});
+        //$('#CauCda').click(function () {
+        //    if ($('#CauCda').is(':checked')) {
+        //        $('#CauAda').prop('checked', false);
+        //        $('#CauBda').prop('checked', false);
+        //        $('#CauDda').prop('checked', false);
+        //    } else {
+        //        $('#CauAda').prop('checked', true);
+        //    }
+        //});
+        //$('#CauDda').click(function () {
+        //    if ($('#CauDda').is(':checked')) {
+        //        $('#CauAda').prop('checked', false);
+        //        $('#CauBda').prop('checked', false);
+        //        $('#CauCda').prop('checked', false);
+        //    } else {
+        //        $('#CauAda').prop('checked', true);
+        //    }
+        //});
+    });
+
+
+</script>

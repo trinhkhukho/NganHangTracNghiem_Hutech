@@ -1,0 +1,1091 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Word</name>
+    </assembly>
+    <members>
+        <member name="M:Independentsoft.Office.ApplicationProperty.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>A <see cref="T:System.String"/> that represents this instance.</returns>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.BackwardDiagonal">
+            <summary>
+            A pattern of lines on a diagonal from upper right to lower left. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Cross">
+            <summary>
+            Specifies horizontal and vertical lines that cross. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.DarkDownwardDiagonal">
+            <summary>
+            Specifies diagonal lines that slant to the right from top points to bottom points, are spaced 50 percent closer together than, and are twice the width of ForwardDiagonal. This hatch pattern is not antialiased.  
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.DarkHorizontal">
+            <summary>
+            Specifies horizontal lines that are spaced 50 percent closer together than Horizontal and are twice the width of Horizontal.  
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.DarkUpwardDiagonal">
+            <summary>
+            Specifies diagonal lines that slant to the left from top points to bottom points, are spaced 50 percent closer together than BackwardDiagonal, and are twice its width, but the lines are not antialiased.  
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.DarkVertical">
+            <summary>
+            Specifies vertical lines that are spaced 50 percent closer together than Vertical and are twice its width.  
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.DownwardDiagonal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.DashedDownwardDiagonal">
+            <summary>
+            Specifies dashed diagonal lines, that slant to the right from top points to bottom points.   
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.DashedHorizontal">
+            <summary>
+            Specifies dashed horizontal lines.   
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.DashedUpwardDiagonal">
+            <summary>
+            Specifies dashed diagonal lines, that slant to the left from top points to bottom points.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.DashedVertical">
+            <summary>
+            Specifies dashed vertical lines.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.DiagonalBrick">
+            <summary>
+            Specifies a hatch that has the appearance of layered bricks that slant to the left from top points to bottom points.  
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.DiagonalCross">
+            <summary>
+            A pattern of crisscross diagonal lines. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Divot">
+            <summary>
+            Specifies a hatch that has the appearance of divots.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.DottedDiamond">
+            <summary>
+            Specifies forward diagonal and backward diagonal lines, each of which is composed of dots, that cross.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.DottedGrid">
+            <summary>
+            Specifies horizontal and vertical lines, each of which is composed of dots, that cross.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.ForwardDiagonal">
+            <summary>
+            A pattern of lines on a diagonal from upper left to lower right.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Horizontal">
+            <summary>
+            A pattern of horizontal lines.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.HorizontalBrick">
+            <summary>
+            Specifies a hatch that has the appearance of horizontally layered bricks.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.LargeCheckerBoard">
+            <summary>
+            Specifies a hatch that has the appearance of a checkerboard with squares that are twice the size of SmallCheckerBoard.  
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.LargeConfetti">
+            <summary>
+            Specifies a hatch that has the appearance of confetti, and is composed of larger pieces than SmallConfetti.  
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.LargeGrid">
+            <summary>
+            Specifies the hatch style Cross.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.LightDownwardDiagonal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.LightHorizontal">
+            <summary>
+            Specifies horizontal lines that are spaced 50 percent closer together than Horizontal.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.LightUpwardDiagonal">
+            <summary>
+            Specifies diagonal lines that slant to the left from top points to bottom points and are spaced 50 percent closer together than BackwardDiagonal, but they are not antialiased.  
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.LightVertical">
+            <summary>
+            Specifies vertical lines that are spaced 50 percent closer together than Vertical. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Max">
+            <summary>
+            Specifies hatch style SolidDiamond. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Min">
+            <summary>
+             Specifies hatch style Horizontal.  
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.NarrowHorizontal">
+            <summary>
+            Specifies horizontal lines that are spaced 75 percent closer together than hatch style Horizontal (or 25 percent closer together than LightHorizontal).    
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.NarrowVertical">
+            <summary>
+            Specifies vertical lines that are spaced 75 percent closer together than hatch style Vertical (or 25 percent closer together than LightVertical).  
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.OutlinedDiamond">
+            <summary>
+            Specifies forward diagonal and backward diagonal lines that cross but are not antialiased.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Percent05">
+            <summary>
+            Specifies a 5-percent hatch. The ratio of foreground color to background color is 5:100. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Percent10">
+            <summary>
+            Specifies a 10-percent hatch. The ratio of foreground color to background color is 10:100. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Percent20">
+            <summary>
+            Specifies a 20-percent hatch. The ratio of foreground color to background color is 20:100. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Percent25">
+            <summary>
+            Specifies a 25-percent hatch. The ratio of foreground color to background color is 25:100. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Percent30">
+            <summary>
+            Specifies a 30-percent hatch. The ratio of foreground color to background color is 30:100. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Percent40">
+            <summary>
+            Specifies a 40-percent hatch. The ratio of foreground color to background color is 40:100. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Percent50">
+            <summary>
+            Specifies a 50-percent hatch. The ratio of foreground color to background color is 50:100. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Percent60">
+            <summary>
+            Specifies a 60-percent hatch. The ratio of foreground color to background color is 60:100. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Percent70">
+            <summary>
+            Specifies a 70-percent hatch. The ratio of foreground color to background color is 70:100. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Percent75">
+            <summary>
+            Specifies a 75-percent hatch. The ratio of foreground color to background color is 75:100. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Percent80">
+            <summary>
+            Specifies a 80-percent hatch. The ratio of foreground color to background color is 80:100. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Percent90">
+            <summary>
+            Specifies a 90-percent hatch. The ratio of foreground color to background color is 90:100. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Plaid">
+            <summary>
+            Specifies a hatch that has the appearance of a plaid material.  
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Shingle">
+            <summary>
+            Specifies a hatch that has the appearance of diagonally layered shingles that slant to the right from top points to bottom points.  
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.SmallCheckerBoard">
+            <summary>
+            Specifies a hatch that has the appearance of a checkerboard. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.SmallConfetti">
+            <summary>
+            Specifies a hatch that has the appearance of confetti. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.SmallGrid">
+            <summary>
+            Specifies horizontal and vertical lines that cross and are spaced 50 percent closer together than hatch style Cross.  
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.SolidDiamond">
+            <summary>
+            Specifies a hatch that has the appearance of a checkerboard placed diagonally.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Sphere">
+            <summary>
+            Specifies a hatch that has the appearance of spheres laid adjacent to one another.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Trellis">
+            <summary>
+            Specifies a hatch that has the appearance of a trellis.
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.UpwardDiagonal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Vertical">
+            <summary>
+            A pattern of vertical lines. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Wave">
+            <summary>
+            Specifies horizontal lines that are composed of tildes.  
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.Weave">
+            <summary>
+            Specifies a hatch that has the appearance of a woven material.  
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.WideDownwardDiagonal">
+            <summary>
+            Specifies diagonal lines that slant to the right from top points to bottom points, have the same spacing as hatch style ForwardDiagonal, and are triple its width, but are not antialiased.  
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.WideUpwardDiagonal">
+            <summary>
+            Specifies diagonal lines that slant to the left from top points to bottom points, have the same spacing as hatch style BackwardDiagonal, and are triple its width, but are not antialiased.  
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.ZigZag">
+            <summary>
+             Specifies horizontal lines that are composed of zigzags. 
+            </summary>
+        </member>
+        <member name="F:Independentsoft.Office.Drawing.PatternFillType.None">
+            <summary>
+            Specifies diagonal lines that slant to the right from top points to bottom points, have the same spacing as hatch style ForwardDiagonal, and are triple its width, but are not antialiased.  
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.Drawing.TextParagraph.Content">
+            <summary>
+            Gets content.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Office.FileFormatException">
+            <summary>
+            The exception that is thrown when an input file or a data stream that is supposed to conform to a certain file format specification is malformed.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Office.FileFormatException.#ctor">
+            <summary>
+            Creates a new instance of the FileFormatException class. 
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Office.FileFormatException.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the FileFormatException class with a specified error message.  
+            </summary>
+            <param name="message">The message that describes the error</param>
+        </member>
+        <member name="M:Independentsoft.Office.FileFormatException.#ctor(System.String,System.Exception)">
+            <summary>
+            Creates a new instance of the FileFormatException class with the specified error message and inner exception. 
+            </summary>
+            <param name="message">The message that describes the error</param>
+            <param name="innerException">The exception that is the cause of the current exception. If the innerException parameter is not a null reference (Nothing in Visual Basic), the current exception is raised in a catch block that handles the inner exception.</param>
+        </member>
+        <member name="T:Independentsoft.Office.OfficeDocument">
+            <summary>
+            Represents an Office document. 
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.Theme">
+            <summary>
+            Gets or sets documents themes. 
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.ContentTypeTable">
+            <summary>
+            Gets content types table.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.InputFileTable">
+            <summary>
+            Gets table with all input files. It allows you to get files from the document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.CustomFileTable">
+            <summary>
+            Gets table with documents custom files. It allows you to add files to the document and save them together with document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.Category">
+            <summary>
+            Gets or sets the category of the document. Example values for this property might include: Resume, Letter, Technical Presentation, and so on.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.ContentStatus">
+            <summary>
+            Gets or sets status of the content.  Example values for this property might include: "Draft", "Reviewed", "Final", and so on.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.ContentType">
+            <summary>
+            Gets or sets type of content represented, generally defined by a specific use and intended audience. This property is distinct from MIME content types as defined in RFC 2616. 
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.Created">
+            <summary>
+            Gets or sets date and time of creation of the document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.Creator">
+            <summary>
+            Gets or sets entity primarily responsible for making the content of the document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.Description">
+            <summary>
+            Gets or sets explanation of the content of the document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.Identifier">
+            <summary>
+            Gets or sets unambiguous reference to the document within a given context.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.Keywords">
+            <summary>
+            Gets or sets delimited set of keywords to support searching and indexing. This is typically a list of terms that are not available elsewhere in the properties.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.Language">
+            <summary>
+            Gets or sets the language of the intellectual content of the document. RFC 3066 provides guidance on encoding to represent languages.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.LastModifiedBy">
+            <summary>
+            Gets or sets user who performed the last modification. Example values for this property might include: A name, email address, employee ID, and so on.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.LastPrinted">
+            <summary>
+            Gets or sets date and time of the last printing.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.Modified">
+            <summary>
+            Gets or sets date and time on which the document was changed.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.Revision">
+            <summary>
+            Gets or sets the revision number.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.Subject">
+            <summary>
+            Gets or sets the topic of the content of the document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.Title">
+            <summary>
+            Gets or sets the name given to the document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.Version">
+            <summary>
+            Gets or sets the version number.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.ApplicationName">
+            <summary>
+            Gets or sets the name of the application that created the document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.ApplicationVersion">
+            <summary>
+            Gets or sets the version of the application that created the document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.CharacterCount">
+            <summary>
+            Gets or sets the total number of characters in the document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.LastCharacterCount">
+            <summary>
+            Gets or sets the last count of the number of characters (including spaces) in the document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.Company">
+            <summary>
+            Gets or sets the name of a company associated with the document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.DigitalSignature">
+            <summary>
+            Gets or sets the signature of a digitally signed document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.DocumentSecurity">
+            <summary>
+            Gets or sets the security level of the document as a numeric value.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.HeadingPairs">
+            <summary>
+            Gets or sets heading pairs. Heading pairs indicates the grouping of document parts and the number of parts in each group. These parts are not document parts but conceptual representations of document sections.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.HiddenSlideCount">
+            <summary>
+            Gets or sets the number of hidden slides in a presentation document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.HyperlinkList">
+            <summary>
+            Gets or sets the set of hyperlinks that were in the document when last saved.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.RelativeHyperlinkBase">
+            <summary>
+            Gets or sets the base string used for evaluating relative hyperlinks in this document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.HyperlinksChanged">
+            <summary>
+            This element specifies that one or more hyperlinks in this part were updated exclusively in this part 
+            by a producer. The next producer to open this document shall update the hyperlink relationships with 
+            the new hyperlinks specified in this part.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.LineCount">
+            <summary>
+            Gets or sets the total number of lines in the document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.LinksUpToDate">
+            <summary>
+            Indicates whether hyperlinks in the document are up-to-date. Set this element to TRUE to indicate 
+            that hyperlinks are updated. Set this element to FALSE to indicate that hyperlinks are outdated.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.Manager">
+            <summary>
+            Gets or sets the name of a supervisor associated with the document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.MultimediaClipCount">
+            <summary>
+            Gets or sets the total number of sound or video clips that are present in the document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.NoteCount">
+            <summary>
+            Gets or sets the number of slides in a presentation containing notes.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.PageCount">
+            <summary>
+            Gets or sets the total number of pages of the document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.ParagraphCount">
+            <summary>
+            Gets or sets the total number of paragraphs found in the document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.PresentationFormat">
+            <summary>
+            Gets or set the intended format for a presentation document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.EnableScaling">
+            <summary>
+            Indicates the display mode of the document thumbnail. Set this element to TRUE to enable scaling 
+            of the document thumbnail to the display. Set this element to FALSE to enable cropping of the document 
+            thumbnail to show only sections that will fit the display.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.IsSharedDocument">
+            <summary>
+            Indicates if this document is currently shared between multiple producers. If this element is set to 
+            TRUE, producers should take care when updating the document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.TemplateName">
+            <summary>
+            Gets or sets name of an external document template containing format and style information used to create the document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.PartTitles">
+            <summary>
+            Gets or sets the title of each document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.TotalTime">
+            <summary>
+            Gets or sets total time the document has been edited. The default time unit is minutes.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.OfficeDocument.WordCount">
+            <summary>
+            Gets or sets the total number of words of the document.
+            </summary>
+        </member>
+        <member name="T:Independentsoft.IO.Packaging.DeflaterOutputStream">
+            <summary>
+            Class Inflater.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.IO.Packaging.DeflaterOutputStream.Seek(System.Int64,System.IO.SeekOrigin)">
+            <summary>
+            When overridden in a derived class, sets the position within the current stream.
+            </summary>
+            <param name="offset">A byte offset relative to the <paramref name="origin" /> parameter.</param>
+            <param name="origin">A value of type <see cref="T:System.IO.SeekOrigin" /> indicating the reference point used to obtain the new position.</param>
+            <returns>The new position within the current stream.</returns>
+        </member>
+        <member name="M:Independentsoft.IO.Packaging.DeflaterOutputStream.SetLength(System.Int64)">
+            <summary>
+            Sets the length.
+            </summary>
+            <param name="val">The value.</param>
+        </member>
+        <member name="M:Independentsoft.IO.Packaging.DeflaterOutputStream.ReadByte">
+            <summary>
+            Reads a byte from the stream and advances the position within the stream by one byte, or returns -1 if at the end of the stream.
+            </summary>
+            <returns>The unsigned byte cast to an Int32, or -1 if at the end of the stream.</returns>
+        </member>
+        <member name="M:Independentsoft.IO.Packaging.DeflaterOutputStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Reads the specified b.
+            </summary>
+            <param name="b">The b.</param>
+            <param name="off">The off.</param>
+            <param name="len">The length.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="P:Independentsoft.IO.Packaging.DeflaterOutputStream.CanRead">
+            <summary>
+            When overridden in a derived class, gets a value indicating whether the current stream supports reading.
+            </summary>
+            <value><c>true</c> if this instance can read; otherwise, <c>false</c>.</value>
+            <returns>true if the stream supports reading; otherwise, false.</returns>
+        </member>
+        <member name="P:Independentsoft.IO.Packaging.DeflaterOutputStream.CanSeek">
+            <summary>
+            When overridden in a derived class, gets a value indicating whether the current stream supports seeking.
+            </summary>
+            <value><c>true</c> if this instance can seek; otherwise, <c>false</c>.</value>
+            <returns>true if the stream supports seeking; otherwise, false.</returns>
+        </member>
+        <member name="P:Independentsoft.IO.Packaging.DeflaterOutputStream.CanWrite">
+            <summary>
+            When overridden in a derived class, gets a value indicating whether the current stream supports writing.
+            </summary>
+            <value><c>true</c> if this instance can write; otherwise, <c>false</c>.</value>
+            <returns>true if the stream supports writing; otherwise, false.</returns>
+        </member>
+        <member name="P:Independentsoft.IO.Packaging.DeflaterOutputStream.Length">
+            <summary>
+            When overridden in a derived class, gets the length in bytes of the stream.
+            </summary>
+            <value>The length.</value>
+            <returns>A long value representing the length of the stream in bytes.</returns>
+        </member>
+        <member name="P:Independentsoft.IO.Packaging.DeflaterOutputStream.Position">
+            <summary>
+            When overridden in a derived class, gets or sets the position within the current stream.
+            </summary>
+            <value>The position.</value>
+            <returns>The current position within the stream.</returns>
+        </member>
+        <member name="M:Independentsoft.IO.Packaging.PackageException.#ctor">
+            <summary>
+            Initializes a new instance of the PackageException class. 
+            </summary>
+        </member>
+        <member name="M:Independentsoft.IO.Packaging.PackageException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the PackageException class with the specified error message. 
+            </summary>
+            <param name="message">The message that describes the error</param>
+        </member>
+        <member name="M:Independentsoft.IO.Packaging.PackageException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the PackageException class with the specified error message and inner exception. 
+            </summary>
+            <param name="message">The message that describes the error</param>
+            <param name="innerException">The exception that is the cause of the current exception. If the innerException parameter is not a null reference (Nothing in Visual Basic), the current exception is raised in a catch block that handles the inner exception.</param>
+        </member>
+        <member name="M:Independentsoft.Office.Word.Border.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Office.Word.Border"/> class.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Office.Word.Border.Parse(Independentsoft.Office.InternalXmlReader)">
+            <summary>
+            Parses the specified reader.
+            </summary>
+            <param name="reader">The reader.</param>
+        </member>
+        <member name="M:Independentsoft.Office.Word.Border.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"></see> that represents the current <see cref="T:System.Object"></see>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"></see> that represents the current <see cref="T:System.Object"></see>.
+            </returns>
+        </member>
+        <member name="P:Independentsoft.Office.Word.Border.Shadow">
+            <summary>
+            Gets or sets the shadow.
+            </summary>
+            <value>The shadow.</value>
+        </member>
+        <member name="P:Independentsoft.Office.Word.Border.ThemeShade">
+            <summary>
+            Gets or sets the theme shade.
+            </summary>
+            <value>The theme shade.</value>
+        </member>
+        <member name="P:Independentsoft.Office.Word.Border.ThemeTint">
+            <summary>
+            Gets or sets the theme tint.
+            </summary>
+            <value>The theme tint.</value>
+        </member>
+        <member name="T:Independentsoft.Office.Word.GlossaryDocument">
+            <summary>
+            Represents a glossary document. 
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Office.Word.GlossaryDocument.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Office.Word.GlossaryDocument"/> class. 
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Office.Word.GlossaryDocument.Clone">
+            <summary>
+            Creates a new object that is a deep copy of the current <see cref="T:Independentsoft.Office.Word.GlossaryDocument"/> object. 
+            </summary>
+            <returns>A new instance of <see cref="T:Independentsoft.Office.Word.GlossaryDocument"/>.</returns>
+        </member>
+        <member name="M:Independentsoft.Office.Word.GlossaryDocument.ToString">
+            <summary>
+            Returns a string that represents the current <see cref="T:Independentsoft.Office.Word.GlossaryDocument"/>. 
+            </summary>
+            <returns>A string that represents the current <see cref="T:Independentsoft.Office.Word.GlossaryDocument"/>.</returns>
+        </member>
+        <member name="P:Independentsoft.Office.Word.GlossaryDocument.Background">
+            <summary>
+            Gets or sets the document background.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.Word.GlossaryDocument.StyleDefinitions">
+            <summary>
+            Gets or sets the document styles.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.Word.GlossaryDocument.NumberingDefinitions">
+            <summary>
+            Gets or sets the document numberings.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Independentsoft.Office.Word.GlossaryDocument.Fonts" -->
+        <member name="P:Independentsoft.Office.Word.GlossaryDocument.Settings">
+            <summary>
+            Gets the document settings.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.Word.GlossaryDocument.WebSettings">
+            <summary>
+            Gets the document web settings.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Independentsoft.Office.Word.GlossaryDocument.Comments" -->
+        <!-- Badly formed XML comment ignored for member "P:Independentsoft.Office.Word.GlossaryDocument.Footnotes" -->
+        <!-- Badly formed XML comment ignored for member "P:Independentsoft.Office.Word.GlossaryDocument.Endnotes" -->
+        <member name="T:Independentsoft.Office.Word.Paragraph">
+            <summary>
+            Represents a paragraph of content in a document.
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Office.Word.Paragraph.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Office.Word.Paragraph"/> class. 
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Office.Word.Paragraph.Add(Independentsoft.Office.Word.Run)">
+            <summary>
+            Adds the <see cref="T:Independentsoft.Office.Word.Run"/> to the paragraph content.
+            </summary>
+            <param name="run">The <see cref="T:Independentsoft.Office.Word.Run"/> to add.</param>
+            <returns>The <see cref="P:Independentsoft.Office.Word.Paragraph.Content"/> index at which the value has been added.</returns>
+        </member>
+        <member name="M:Independentsoft.Office.Word.Paragraph.Add(Independentsoft.Office.Word.Hyperlink)">
+            <summary>
+            Adds the <see cref="T:Independentsoft.Office.Word.Hyperlink"/> to the paragraph content.
+            </summary>
+            <param name="hyperlink">The <see cref="T:Independentsoft.Office.Word.Hyperlink"/> to add.</param>
+            <returns>The <see cref="P:Independentsoft.Office.Word.Paragraph.Content"/> index at which the value has been added.</returns>
+        </member>
+        <member name="M:Independentsoft.Office.Word.Paragraph.Add(Independentsoft.Office.Word.Fields.SimpleField)">
+            <summary>
+            Adds the <see cref="T:Independentsoft.Office.Word.Fields.SimpleField"/> to the paragraph content.
+            </summary>
+            <param name="simpleField">The <see cref="T:Independentsoft.Office.Word.Fields.SimpleField"/> to add.</param>
+            <returns>The <see cref="P:Independentsoft.Office.Word.Paragraph.Content"/> index at which the value has been added.</returns>
+        </member>
+        <member name="M:Independentsoft.Office.Word.Paragraph.Add(Independentsoft.Office.Word.CustomMarkup.SmartTag)">
+            <summary>
+            Adds the <see cref="T:Independentsoft.Office.Word.CustomMarkup.SmartTag"/> to the paragraph content.
+            </summary>
+            <param name="smartTag">The <see cref="T:Independentsoft.Office.Word.CustomMarkup.SmartTag"/> to add.</param>
+            <returns>The <see cref="P:Independentsoft.Office.Word.Paragraph.Content"/> index at which the value has been added.</returns>
+        </member>
+        <member name="M:Independentsoft.Office.Word.Paragraph.Add(Independentsoft.Office.Word.CustomMarkup.CustomXmlRun)">
+            <summary>
+            Adds the <see cref="T:Independentsoft.Office.Word.CustomMarkup.CustomXmlRun"/> to the paragraph content.
+            </summary>
+            <param name="customXmlRun">The <see cref="T:Independentsoft.Office.Word.CustomMarkup.CustomXmlRun"/> to add.</param>
+            <returns>The <see cref="P:Independentsoft.Office.Word.Paragraph.Content"/> index at which the value has been added.</returns>
+        </member>
+        <member name="M:Independentsoft.Office.Word.Paragraph.Add(Independentsoft.Office.Word.CustomMarkup.StructuredDocumentTagRun)">
+            <summary>
+            Adds the <see cref="T:Independentsoft.Office.Word.CustomMarkup.StructuredDocumentTagRun"/> to the paragraph content.
+            </summary>
+            <param name="structuredDocumentTagRun">The <see cref="T:Independentsoft.Office.Word.CustomMarkup.StructuredDocumentTagRun"/> to add.</param>
+            <returns>The <see cref="P:Independentsoft.Office.Word.Paragraph.Content"/> index at which the value has been added.</returns>
+        </member>
+        <member name="M:Independentsoft.Office.Word.Paragraph.Add(Independentsoft.Office.Word.IParagraphContent)">
+            <summary>
+            Adds the <see cref="T:Independentsoft.Office.Word.IParagraphContent"/> to the paragraph content.
+            </summary>
+            <param name="contentElement">The <see cref="T:Independentsoft.Office.Word.IParagraphContent"/> to add.</param>
+            <returns>The <see cref="P:Independentsoft.Office.Word.Paragraph.Content"/> index at which the value has been added.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Independentsoft.Office.Word.Paragraph.GetContentElements" -->
+        <member name="M:Independentsoft.Office.Word.Paragraph.Clone">
+            <summary>
+            Creates a new <see cref="T:Independentsoft.Office.Word.Paragraph"/> that is a deep copy of the <see cref="T:Independentsoft.Office.Word.Paragraph"/>. 
+            </summary>
+            <returns>A new <see cref="T:Independentsoft.Office.Word.Paragraph"/> that is a deep copy of the <see cref="T:Independentsoft.Office.Word.Paragraph"/>.</returns>
+        </member>
+        <member name="M:Independentsoft.Office.Word.Paragraph.ToString">
+            <summary>
+            Returns a string that represents the current <see cref="T:Independentsoft.Office.Word.Paragraph"/>. 
+            </summary>
+            <returns>A string that represents the current <see cref="T:Independentsoft.Office.Word.Paragraph"/>.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Independentsoft.Office.Word.Paragraph.Content" -->
+        <member name="P:Independentsoft.Office.Word.Paragraph.DeletionRevisionID">
+            <summary>
+            Specifies a unique identifier used to track the editing session when the paragraph was deleted from the main document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.Word.Paragraph.RevisionID">
+            <summary>
+            Specifies a unique identifier used to track the editing session when the paragraph's properties were last modified in this document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.Word.Paragraph.PropertiesRevisionID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.Word.Paragraph.GlyphFormattingRevisionID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.Word.Paragraph.RunRevisionID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Independentsoft.Office.Word.WordDocument">
+            <summary>
+            Represents a word processing document. 
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Office.Word.WordDocument"/> class. 
+            </summary>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Office.Word.WordDocument"/> class from a file. 
+            </summary>
+            <param name="file">The document file path.</param>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Independentsoft.Office.Word.WordDocument"/> class from a stream. 
+            </summary>
+            <param name="stream">The document stream.</param>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.Open(System.String)">
+            <summary>
+            Opens the document from a file.
+            </summary>
+            <param name="file">The document file path.</param>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.Open(System.IO.Stream)">
+            <summary>
+            Opens the document from a stream.
+            </summary>
+            <param name="stream">The document stream.</param>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.Save(System.String)">
+            <summary>
+            Saves the document to the specified file. 
+            </summary>
+            <param name="file">A string that contains the path of the file to which to save this document.</param>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.Save(System.String,System.Boolean)">
+            <summary>
+            Saves the document to the specified file. 
+            </summary>
+            <param name="file">A string that contains the path of the file to which to save this document.</param>
+            <param name="overwrite">If set to <c>true</c> overwrites existing file.</param>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.Save(System.IO.Stream)">
+            <summary>
+            Saves the document to the specified stream. 
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> where the document will be saved.</param>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.GetStream">
+            <summary>
+            Returns the document as a stream to read from.
+            </summary>
+            <returns>A <see cref="T:System.IO.Stream"/> to read from.</returns>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.GetBytes">
+            <summary>
+            Converts the document to an array of bytes. 
+            </summary>
+            <returns>An array of bytes.</returns>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.GetFields">
+            <summary>
+            Returns all fields from the document.
+            </summary>
+            <returns>A list of <see cref="T:Independentsoft.Office.Word.Fields.Field"/> objects.</returns>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.GetSections">
+            <summary>
+            Returns all sections from the document.
+            </summary>
+            <returns>A list of <see cref="T:Independentsoft.Office.Word.Sections.Section"/> objects.</returns>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.GetTables">
+            <summary>
+            Returns all tables from the document.
+            </summary>
+            <returns>A list of <see cref="T:Independentsoft.Office.Word.Tables.Table"/> objects.</returns>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.GetParagraphs">
+            <summary>
+            Returns all paragraphs from the document.
+            </summary>
+            <returns>A list of <see cref="T:Independentsoft.Office.Word.Paragraph"/> objects.</returns>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.GetRuns">
+            <summary>
+            Returns all runs from the document.
+            </summary>
+            <returns>A list of <see cref="T:Independentsoft.Office.Word.Run"/> objects.</returns>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.GetTexts">
+            <summary>
+            Returns all texts from the document.
+            </summary>
+            <returns>A list of <see cref="T:Independentsoft.Office.Word.Text"/> objects.</returns>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.GetPictures">
+            <summary>
+            Returns all pictures from the document.
+            </summary>
+            <returns>A list of <see cref="T:Independentsoft.Office.IPicture"/> objects.</returns>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.Replace(System.String,System.String)">
+            <summary>
+            Replaces all occurrences of a specified oldText with newText.
+            </summary>
+            <param name="oldText">The string to replace.</param>
+            <param name="newText">The string that replaces oldText.</param>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.Replace(System.String,System.String,Independentsoft.Office.Word.ReplaceIn)">
+            <summary>
+            Replaces all occurrences of a specified oldText with newText.
+            </summary>
+            <param name="oldText">The string to replace.</param>
+            <param name="newText">The string that replaces oldText.</param>
+            <param name="replaceIn">Replace scope.</param>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.Replace(System.Collections.Generic.IList{System.String},System.Collections.Generic.IList{System.String})">
+            <summary>
+            Replaces all occurrences of a specified oldText with newText. 
+            </summary>
+            <param name="oldText">An array of strings to replace.</param>
+            <param name="newText">An array of strings that replaces oldText.</param>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.Replace(System.Collections.Generic.IList{System.String},System.Collections.Generic.IList{System.String},Independentsoft.Office.Word.ReplaceIn)">
+            <summary>
+            Replaces all occurrences of a specified oldText with newText. 
+            </summary>
+            <param name="oldText">An array of strings to replace.</param>
+            <param name="newText">An array of strings that replaces oldText.</param>
+            <param name="replaceIn">Replace scope.</param>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.Replace(System.String,Independentsoft.Office.Word.Run)">
+            <summary>
+            Replaces all occurrences of the specified text with run object. 
+            </summary>
+            <param name="text">A strings to replace.</param>
+            <param name="run">A Run object that replaces text.</param>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.Replace(System.String,Independentsoft.Office.Word.Run,Independentsoft.Office.Word.ReplaceIn)">
+            <summary>
+            Replaces all occurrences of the specified text with run object. 
+            </summary>
+            <param name="text">A strings to replace.</param>
+            <param name="run">A Run object that replaces text.</param>
+            <param name="replaceIn">Replace scope.</param>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.Replace(System.String,System.Collections.Generic.IList{Independentsoft.Office.Word.Run})">
+            <summary>
+            Replaces all occurrences of the specified text with a collection of run objects. 
+            </summary>
+            <param name="text">A strings to replace.</param>
+            <param name="runs">A collection of Run objects that replaces text.</param>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.Replace(System.String,System.Collections.Generic.IList{Independentsoft.Office.Word.Run},Independentsoft.Office.Word.ReplaceIn)">
+            <summary>
+            Replaces all occurrences of the specified text with a collection of run objects. 
+            </summary>
+            <param name="text">A strings to replace.</param>
+            <param name="runs">A collection of Run objects that replaces text.</param>
+            <param name="replaceIn">Replace scope.</param>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.GetContentElements">
+            <summary>
+            Returns all content elements.
+            </summary>
+            <returns>A collection of content elements.</returns>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.Clone">
+            <summary>
+            Creates a new object that is a deep copy of the current <see cref="T:Independentsoft.Office.Word.WordDocument"/> object. 
+            </summary>
+            <returns>A new instance of <see cref="T:Independentsoft.Office.Word.WordDocument"/>.</returns>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.ToString">
+            <summary>
+            Returns a string that represents the current <see cref="T:Independentsoft.Office.Word.WordDocument"/>. 
+            </summary>
+            <returns>A string that represents the current <see cref="T:Independentsoft.Office.Word.WordDocument"/>.</returns>
+        </member>
+        <member name="M:Independentsoft.Office.Word.WordDocument.ToText">
+            <summary>
+            Returns the document body text as plain text.
+            </summary>
+            <returns>The document body text or empty string if the document body does not contain text.</returns>
+        </member>
+        <member name="P:Independentsoft.Office.Word.WordDocument.IsTemplate">
+            <summary>
+            Gets or sets a value that indicates whether the document is a template document.  
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.Word.WordDocument.IsMacroEnabled">
+            <summary>
+            Gets or sets a value that indicates whether the document has macros.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.Word.WordDocument.Body">
+            <summary>
+            Gets the document body.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.Word.WordDocument.Background">
+            <summary>
+            Gets or sets the document background.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.Word.WordDocument.GlossaryDocument">
+            <summary>
+            Gets or sets the glossary document.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.Word.WordDocument.StyleDefinitions">
+            <summary>
+            Gets or sets the document styles.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.Word.WordDocument.NumberingDefinitions">
+            <summary>
+            Gets or sets the document numberings.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Independentsoft.Office.Word.WordDocument.Fonts" -->
+        <member name="P:Independentsoft.Office.Word.WordDocument.Settings">
+            <summary>
+            Gets the document settings.
+            </summary>
+        </member>
+        <member name="P:Independentsoft.Office.Word.WordDocument.WebSettings">
+            <summary>
+            Gets the document web settings.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Independentsoft.Office.Word.WordDocument.Comments" -->
+        <!-- Badly formed XML comment ignored for member "P:Independentsoft.Office.Word.WordDocument.Footnotes" -->
+        <!-- Badly formed XML comment ignored for member "P:Independentsoft.Office.Word.WordDocument.Endnotes" -->
+    </members>
+</doc>

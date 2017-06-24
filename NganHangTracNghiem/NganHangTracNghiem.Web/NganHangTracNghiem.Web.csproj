@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D7FBA252-BC22-4D4C-A4EA-7AA6F0C1584D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NganHangTracNghiem.Web</RootNamespace>
+    <AssemblyName>NganHangTracNghiem.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\Images\sidebar-1.jpg" />
+    <Content Include="Content\css\jquery-3.2.1.min.js" />
+    <Content Include="Content\css\material-dashboard.css" />
+    <Content Include="Content\css\material-dashboard.js" />
+    <Content Include="Content\css\material.min.js" />
+    <Content Include="Content\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Content\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Content\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Content\Site.css" />
+    <Content Include="CSS\bootstrap.js" />
+    <Content Include="CSS\css\style.css" />
+    <Content Include="CSS\InputFile\css\component.css" />
+    <Content Include="CSS\InputFile\css\demo.css" />
+    <Content Include="CSS\InputFile\css\normalize.css" />
+    <Content Include="CSS\InputFile\js\custom-file-input.js" />
+    <Content Include="CSS\InputText\css\demo.css" />
+    <Content Include="CSS\InputText\css\normalize.css" />
+    <Content Include="CSS\InputText\css\set1.css" />
+    <Content Include="CSS\InputText\css\set2.css" />
+    <Content Include="CSS\InputText\js\classie.js" />
+    <Content Include="CSS\ocLazyLoad.js" />
+    <Content Include="CSS\sumernote\lang\summernote-ar-AR.js" />
+    <Content Include="CSS\sumernote\lang\summernote-bg-BG.js" />
+    <Content Include="CSS\sumernote\lang\summernote-ca-ES.js" />
+    <Content Include="CSS\sumernote\lang\summernote-cs-CZ.js" />
+    <Content Include="CSS\sumernote\lang\summernote-da-DK.js" />
+    <Content Include="CSS\sumernote\lang\summernote-de-DE.js" />
+    <Content Include="CSS\sumernote\lang\summernote-el-GR.js" />
+    <Content Include="CSS\sumernote\lang\summernote-es-ES.js" />
+    <Content Include="CSS\sumernote\lang\summernote-es-EU.js" />
+    <Content Include="CSS\sumernote\lang\summernote-fa-IR.js" />
+    <Content Include="CSS\sumernote\lang\summernote-fi-FI.js" />
+    <Content Include="CSS\sumernote\lang\summernote-fr-FR.js" />
+    <Content Include="CSS\sumernote\lang\summernote-gl-ES.js" />
+    <Content Include="CSS\sumernote\lang\summernote-he-IL.js" />
+    <Content Include="CSS\sumernote\lang\summernote-hr-HR.js" />
+    <Content Include="CSS\sumernote\lang\summernote-hu-HU.js" />
+    <Content Include="CSS\sumernote\lang\summernote-id-ID.js" />
+    <Content Include="CSS\sumernote\lang\summernote-it-IT.js" />
+    <Content Include="CSS\sumernote\lang\summernote-ja-JP.js" />
+    <Content Include="CSS\sumernote\lang\summernote-ko-KR.js" />
+    <Content Include="CSS\sumernote\lang\summernote-lt-LT.js" />
+    <Content Include="CSS\sumernote\lang\summernote-lt-LV.js" />
+    <Content Include="CSS\sumernote\lang\summernote-mn-MN.js" />
+    <Content Include="CSS\sumernote\lang\summernote-nb-NO.js" />
+    <Content Include="CSS\sumernote\lang\summernote-nl-NL.js" />
+    <Content Include="CSS\sumernote\lang\summernote-pl-PL.js" />
+    <Content Include="CSS\sumernote\lang\summernote-pt-BR.js" />
+    <Content Include="CSS\sumernote\lang\summernote-pt-PT.js" />
+    <Content Include="CSS\sumernote\lang\summernote-ro-RO.js" />
+    <Content Include="CSS\sumernote\lang\summernote-ru-RU.js" />
+    <Content Include="CSS\sumernote\lang\summernote-sk-SK.js" />
+    <Content Include="CSS\sumernote\lang\summernote-sl-SI.js" />
+    <Content Include="CSS\sumernote\lang\summernote-sr-RS-Latin.js" />
+    <Content Include="CSS\sumernote\lang\summernote-sr-RS.js" />
+    <Content Include="CSS\sumernote\lang\summernote-sv-SE.js" />
+    <Content Include="CSS\sumernote\lang\summernote-ta-IN.js" />
+    <Content Include="CSS\sumernote\lang\summernote-th-TH.js" />
+    <Content Include="CSS\sumernote\lang\summernote-tr-TR.js" />
+    <Content Include="CSS\sumernote\lang\summernote-uk-UA.js" />
+    <Content Include="CSS\sumernote\lang\summernote-vi-VN.js" />
+    <Content Include="CSS\sumernote\lang\summernote-zh-CN.js" />
+    <Content Include="CSS\sumernote\lang\summernote-zh-TW.js" />
+    <Content Include="CSS\sumernote\plugin\databasic\summernote-ext-databasic.css" />
+    <Content Include="CSS\sumernote\plugin\databasic\summernote-ext-databasic.js" />
+    <Content Include="CSS\sumernote\plugin\hello\summernote-ext-hello.js" />
+    <Content Include="CSS\sumernote\plugin\specialchars\summernote-ext-specialchars.js" />
+    <Content Include="CSS\sumernote\summernote.css" />
+    <Content Include="CSS\summernote.min.js" />
+    <Content Include="CSS\sumernote\summernote.min.js" />
+    <Content Include="CSS\tinymce\form.css" />
+    <Content Include="CSS\tinymce\jquery.tinymce.min.js" />
+    <Content Include="CSS\tinymce\license.txt" />
+    <Content Include="CSS\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\codesample\css\prism.css" />
+    <Content Include="CSS\tinymce\plugins\codesample\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\colorpicker\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="CSS\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="CSS\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="CSS\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="CSS\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="CSS\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="CSS\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="CSS\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="CSS\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="CSS\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="CSS\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="CSS\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="CSS\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="CSS\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="CSS\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="CSS\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="CSS\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\help\img\logo.png" />
+    <Content Include="CSS\tinymce\plugins\help\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\imagetools\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\textpattern\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\toc\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="CSS\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="CSS\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="CSS\tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="CSS\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="CSS\tinymce\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="CSS\tinymce\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="CSS\tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="CSS\tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="CSS\tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="CSS\tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="CSS\tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="CSS\tinymce\themes\inlite\theme.min.js" />
+    <Content Include="CSS\tinymce\themes\modern\theme.min.js" />
+    <Content Include="CSS\tinymce\tinymce.min.js" />
+    <Content Include="CSS\TracNghiem.css" />
+    <Content Include="CSS\ui-bootstrap-tpls-2.5.0.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="JSCripts\angular-animate.js" />
+    <Content Include="JSCripts\angular-sanitize.js" />
+    <Content Include="JSCripts\js\angular-animate.js" />
+    <Content Include="JSCripts\js\angular-sanitize.js" />
+    <Content Include="JSCripts\js\angular.js" />
+    <Content Include="JSCripts\js\angular.min.js" />
+    <Content Include="JSCripts\ThemCauHoi.js" />
+    <Content Include="JSCripts\index.js" />
+    <Content Include="JSCripts\TaoDe.js" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Content\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Content\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Content\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Content\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Content\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Content\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Content\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Content\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Content\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Content\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Content\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Content\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Content\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Content\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Content\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Content\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Content\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Content\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Content\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Content\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Content\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Content\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Content\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Content\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Content\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Content\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Content\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Content\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="CSS\tinymce\langs\readme.md" />
+    <Content Include="CSS\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
+    <Content Include="CSS\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <Content Include="CSS\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <Content Include="CSS\tinymce\skins\lightgray\fonts\tinymce.eot" />
+    <Content Include="CSS\tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <Content Include="CSS\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="View\classie.js" />
+    <Content Include="View\ClinicInfo.xml" />
+    <Content Include="View\custom-file-input.js" />
+    <Content Include="View\QuestionGroupChil.html" />
+    <Content Include="View\QuestionGroup.html" />
+    <Content Include="View\ThemCauHoi.html" />
+    <Content Include="View\index.html" />
+    <Content Include="View\Question.html" />
+    <Content Include="View\Result.html" />
+    <Content Include="XML\ClinicInfo.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="CSS\scss\style.scss" />
+    <Content Include="CSS\sumernote\font\summernote.eot" />
+    <Content Include="CSS\sumernote\font\summernote.ttf" />
+    <Content Include="CSS\sumernote\font\summernote.woff" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="JSCripts\angular.js" />
+    <Content Include="JSCripts\angular.min.js" />
+    <Content Include="JSCripts\ReadFile.js" />
+    <Content Include="View\ReadFile.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\QuestionsController.cs" />
+    <Compile Include="Controllers\ReadFileController.cs" />
+    <Compile Include="Controllers\ReadFileZipController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="File\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NganHangTracNghiem.Data\NganHangTracNghiem.Data.csproj">
+      <Project>{7302619E-7073-4B8B-883A-6A9EE14EC78A}</Project>
+      <Name>NganHangTracNghiem.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NganHangTracNghiem.DLL\NganHangTracNghiem.DLL.csproj">
+      <Project>{599e3833-da6b-4839-998e-e0a7d10d1377}</Project>
+      <Name>NganHangTracNghiem.DLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53353</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53353/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

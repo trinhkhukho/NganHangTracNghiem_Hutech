@@ -1,0 +1,92 @@
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.DLL.dll.config
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.DLL.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.DLL.pdb
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\DocumentFormat.OpenXml.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Independentsoft.Office.Word.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Json.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Newtonsoft.Json.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.Data.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Extensions.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Formatting.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Primitives.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.Data.pdb
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\DocumentFormat.OpenXml.xml
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Independentsoft.Office.Word.xml
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Json.pdb
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Newtonsoft.Json.xml
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Extensions.xml
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Formatting.xml
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Primitives.xml
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.csproj.App.config
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.csprojResolveAssemblyReference.cache
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.pdb
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.DLL.dll.config
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.DLL.dll
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.DLL.pdb
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Independentsoft.Office.Word.dll
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Json.dll
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.Data.dll
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.Data.pdb
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Independentsoft.Office.Word.xml
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Json.pdb
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.csproj.App.config
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.csprojResolveAssemblyReference.cache
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.dll
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.pdb
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.csproj.App.config
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.csprojResolveAssemblyReference.cache
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.pdb
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.DLL.dll.config
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.DLL.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.DLL.pdb
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Independentsoft.Office.Word.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Json.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.Data.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.Data.pdb
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Independentsoft.Office.Word.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Json.pdb
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Primitives.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.DLL.dll.config
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.DLL.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.DLL.pdb
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\DocumentFormat.OpenXml.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Independentsoft.Office.Word.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Json.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Newtonsoft.Json.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.Data.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Extensions.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Formatting.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Primitives.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.Data.pdb
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\DocumentFormat.OpenXml.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Independentsoft.Office.Word.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Json.pdb
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Newtonsoft.Json.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Extensions.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Formatting.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Primitives.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.csproj.App.config
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.csprojResolveAssemblyReference.cache
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.pdb

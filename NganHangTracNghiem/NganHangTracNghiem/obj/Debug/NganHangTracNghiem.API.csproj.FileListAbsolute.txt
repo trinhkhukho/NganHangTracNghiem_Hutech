@@ -1,0 +1,216 @@
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\ApplicationInsights.config
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\csc.exe
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\System.Collections.Immutable.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\vbc.exe
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\VBCSCompiler.exe
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\VBCSCompiler.exe.config
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\NganHangTracNghiem.dll.config
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\NganHangTracNghiem.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\NganHangTracNghiem.pdb
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\EntityFramework.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\EntityFramework.SqlServer.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.Web.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.WindowsServer.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.ApplicationInsights.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Newtonsoft.Json.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\System.Net.Http.Formatting.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Cors.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Http.Cors.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Http.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Http.WebHost.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\EntityFramework.xml
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\EntityFramework.SqlServer.xml
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.Web.xml
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.WindowsServer.xml
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.ApplicationInsights.xml
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Http.Cors.xml
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Newtonsoft.Json.xml
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\System.Net.Http.Formatting.xml
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Http.xml
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Http.WebHost.xml
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.pdb
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.API.csprojResolveAssemblyReference.cache
+C:\Users\Duy Trinh\Documents\Visual Studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Duy Trinh\Documents\Visual Studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Helpers.dll
+C:\Users\Duy Trinh\Documents\Visual Studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Mvc.dll
+C:\Users\Duy Trinh\Documents\Visual Studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Razor.dll
+C:\Users\Duy Trinh\Documents\Visual Studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Duy Trinh\Documents\Visual Studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.WebPages.dll
+C:\Users\Duy Trinh\Documents\Visual Studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.WebPages.Razor.dll
+C:\Users\Duy Trinh\Documents\Visual Studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Helpers.xml
+C:\Users\Duy Trinh\Documents\Visual Studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Mvc.xml
+C:\Users\Duy Trinh\Documents\Visual Studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Razor.xml
+C:\Users\Duy Trinh\Documents\Visual Studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.WebPages.xml
+C:\Users\Duy Trinh\Documents\Visual Studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Duy Trinh\Documents\Visual Studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.WebPages.Razor.xml
+C:\Users\Duy Trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Cors.dll
+C:\Users\Duy Trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.dll
+C:\Users\Duy Trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Duy Trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Security.dll
+C:\Users\Duy Trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Duy Trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Owin.dll
+C:\Users\Duy Trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.xml
+C:\Users\Duy Trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Cors.xml
+C:\Users\Duy Trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Duy Trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Security.xml
+C:\Users\Duy Trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\ApplicationInsights.config
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\csc.exe
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\vbc.exe
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\VBCSCompiler.exe
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\NganHangTracNghiem.dll.config
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\NganHangTracNghiem.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\NganHangTracNghiem.pdb
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\EntityFramework.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\EntityFramework.SqlServer.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.Web.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Cors.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Security.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Newtonsoft.Json.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Owin.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\System.Net.Http.Formatting.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Cors.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Helpers.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Http.Cors.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Http.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Http.WebHost.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Mvc.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Razor.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.WebPages.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.WebPages.Razor.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\EntityFramework.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\EntityFramework.SqlServer.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.Web.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Cors.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Security.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Helpers.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Http.Cors.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Mvc.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Razor.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.WebPages.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.WebPages.Razor.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\Newtonsoft.Json.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\System.Net.Http.Formatting.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Http.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Http.WebHost.xml
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.API.csprojResolveAssemblyReference.cache
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.pdb
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\ApplicationInsights.config
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\csc.exe
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\System.Collections.Immutable.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\System.Reflection.Metadata.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\vbc.exe
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\VBCSCompiler.exe
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\VBCSCompiler.exe.config
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\NganHangTracNghiem.dll.config
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\NganHangTracNghiem.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\NganHangTracNghiem.pdb
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\EntityFramework.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\EntityFramework.SqlServer.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.Agent.Intercept.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.DependencyCollector.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.Web.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.WindowsServer.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.ApplicationInsights.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Cors.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Security.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Security.OAuth.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Web.Infrastructure.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Newtonsoft.Json.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Owin.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\System.Net.Http.Formatting.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Cors.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Helpers.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Http.Cors.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Http.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Http.WebHost.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Mvc.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Razor.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.WebPages.Deployment.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.WebPages.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.WebPages.Razor.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\EntityFramework.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\EntityFramework.SqlServer.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.DependencyCollector.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.Web.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.AI.WindowsServer.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.ApplicationInsights.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Cors.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Security.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Microsoft.Owin.Security.OAuth.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Helpers.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Http.Cors.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Mvc.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Razor.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.WebPages.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.WebPages.Deployment.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.WebPages.Razor.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\Newtonsoft.Json.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\System.Net.Http.Formatting.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Http.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Http.WebHost.xml
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.API.csprojResolveAssemblyReference.cache
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.pdb

@@ -1,0 +1,20 @@
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.Data\bin\Debug\NganHangTracNghiem.Data.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.Data\bin\Debug\NganHangTracNghiem.Data.pdb
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.csprojResolveAssemblyReference.cache
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.dll
+c:\users\duy trinh\documents\visual studio 2015\Projects\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.pdb
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.Data\bin\Debug\NganHangTracNghiem.Data.dll
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.Data\bin\Debug\NganHangTracNghiem.Data.pdb
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.csprojResolveAssemblyReference.cache
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.dll
+C:\Users\Loc\Desktop\New folder (3)\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.pdb
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.Data\bin\Debug\NganHangTracNghiem.Data.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.Data\bin\Debug\NganHangTracNghiem.Data.pdb
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.csprojResolveAssemblyReference.cache
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.dll
+C:\Users\Loc\Desktop\Ngân Hàng Trắc Nghiệm\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.pdb
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.Data\bin\Debug\NganHangTracNghiem.Data.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.Data\bin\Debug\NganHangTracNghiem.Data.pdb
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.csprojResolveAssemblyReference.cache
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.dll
+D:\study\NganHangTracNghiem24.6\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.pdb

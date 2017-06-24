@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ObjectiveTestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Answer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionId" Type="Int64" />
+    <Property Name="Content" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Order" Type="Int32" />
+    <Property Name="Correct" Type="Boolean" />
+    <Property Name="Interchange" Type="Boolean" />
+    <NavigationProperty Name="Question" Relationship="Self.FK_CauTraLoi_CauHoi" FromRole="Answers" ToRole="Questions" />
+  </EntityType>
+  <EntityType Name="Chapter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Order" Type="Int32" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="SubjectId" Type="Int32" />
+    <Property Name="ManagementOrder" Type="Int32" />
+    <NavigationProperty Name="Questions" Relationship="Self.FK_CauHoi_Phan" FromRole="Chapters" ToRole="Questions" />
+    <NavigationProperty Name="Subject" Relationship="Self.FK_Phan_MonHoc" FromRole="Chapters" ToRole="Subjects" />
+  </EntityType>
+  <EntityType Name="Exam">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="Deleted" Type="Boolean" />
+    <NavigationProperty Name="Shifts" Relationship="Self.FK_CaThi_DotThi" FromRole="Exams" ToRole="Shifts" />
+  </EntityType>
+  <EntityType Name="Faculty">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="Comment" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Subjects" Relationship="Self.FK_MonHoc_Khoa" FromRole="Faculties" ToRole="Subjects" />
+  </EntityType>
+  <EntityType Name="Matrix">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectId" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ShiftSubjects" Relationship="Self.FK_CaThi_MonHoc_YeuCauRutTrich" FromRole="Matrices" ToRole="ShiftSubjects" />
+    <NavigationProperty Name="MatrixDetails" Relationship="Self.FK_ChiTietYeuCauRutTrich_YeuCauRutTrich1" FromRole="Matrices" ToRole="MatrixDetails" />
+  </EntityType>
+  <EntityType Name="MatrixDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MatrixId" Type="Int64" />
+    <Property Name="ChapterId" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Excluded" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Matrix" Relationship="Self.FK_ChiTietYeuCauRutTrich_YeuCauRutTrich1" FromRole="MatrixDetails" ToRole="Matrices" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Interchange" Type="Boolean" />
+    <Property Name="SubjectiveDifficulty" Type="Decimal" Precision="18" Scale="10" />
+    <Property Name="SelectedTimes" Type="Int32" />
+    <Property Name="CorrectTimes" Type="Int32" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="ChapterId" Type="Int32" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="Mark" Type="Decimal" Precision="18" Scale="10" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="ParentId" Type="Int64" />
+    <Property Name="Audio" Type="Boolean" />
+    <Property Name="Discrimination" Type="Decimal" Precision="18" Scale="10" />
+    <Property Name="ManagementOrder" Type="Int32" />
+    <Property Name="SubjectId" Type="Int32" />
+    <Property Name="ListenedTimes" Type="Int32" />
+    <Property Name="ObjectiveDifficulty" Type="Decimal" Precision="18" Scale="10" />
+    <NavigationProperty Name="Answers" Relationship="Self.FK_CauTraLoi_CauHoi" FromRole="Questions" ToRole="Answers" />
+    <NavigationProperty Name="Chapter" Relationship="Self.FK_CauHoi_Phan" FromRole="Questions" ToRole="Chapters" />
+    <NavigationProperty Name="QuestionSheetDetails" Relationship="Self.FK_ChiTietDeThi_CauHoi" FromRole="Questions" ToRole="QuestionSheetDetails" />
+  </EntityType>
+  <EntityType Name="QuestionSheetDetail">
+    <Key>
+      <PropertyRef Name="QuestionSheetId" />
+      <PropertyRef Name="QuestionId" />
+    </Key>
+    <Property Name="QuestionSheetId" Type="Int64" Nullable="false" />
+    <Property Name="QuestionId" Type="Int64" Nullable="false" />
+    <Property Name="Order" Type="Int32" />
+    <Property Name="AnswerId" Type="Int32" />
+    <Property Name="Correct" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="ListenTimes" Type="Int32" />
+    <NavigationProperty Name="Question" Relationship="Self.FK_ChiTietDeThi_CauHoi" FromRole="QuestionSheetDetails" ToRole="Questions" />
+    <NavigationProperty Name="QuestionSheet" Relationship="Self.FK_ChiTietDeThi_DeThi" FromRole="QuestionSheetDetails" ToRole="QuestionSheets" />
+  </EntityType>
+  <EntityType Name="QuestionSheet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Approved" Type="Boolean" />
+    <Property Name="Started" Type="Boolean" />
+    <Property Name="Completed" Type="Boolean" />
+    <Property Name="ExtraTime" Type="Int32" />
+    <Property Name="ExtraTimeReason" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Mark" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ShiftSubjectStudentId" Type="Int64" />
+    <Property Name="NumberOfCorrect" Type="Int32" />
+    <Property Name="Total" Type="Int32" />
+    <Property Name="Difficulty" Type="Decimal" Precision="18" Scale="10" />
+    <NavigationProperty Name="QuestionSheetDetails" Relationship="Self.FK_ChiTietDeThi_DeThi" FromRole="QuestionSheets" ToRole="QuestionSheetDetails" />
+    <NavigationProperty Name="ShiftSubjectStudents" Relationship="Self.FK_CaThi_MonHoc_SinhVien_DeThi" FromRole="QuestionSheets" ToRole="ShiftSubjectStudents" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="Self.UserRoles" FromRole="Roles" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Shift">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StartTime" Type="DateTime" Precision="3" />
+    <Property Name="EndTime" Type="DateTime" Precision="3" />
+    <Property Name="Activated" Type="Boolean" />
+    <Property Name="ActivateTime" Type="DateTime" Precision="3" />
+    <Property Name="Duration" Type="Int32" />
+    <Property Name="Ended" Type="Boolean" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="ExamId" Type="Int32" />
+    <Property Name="QuestionSheetCreated" Type="Boolean" />
+    <Property Name="Deleted" Type="Boolean" />
+    <NavigationProperty Name="Exam" Relationship="Self.FK_CaThi_DotThi" FromRole="Shifts" ToRole="Exams" />
+    <NavigationProperty Name="ShiftSubjects" Relationship="Self.FK_CaThi_MonHoc_CaThi" FromRole="Shifts" ToRole="ShiftSubjects" />
+  </EntityType>
+  <EntityType Name="ShiftSubject">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShiftId" Type="Int32" />
+    <Property Name="SubjectId" Type="Int32" />
+    <Property Name="MatrixId" Type="Int64" />
+    <NavigationProperty Name="Matrix" Relationship="Self.FK_CaThi_MonHoc_YeuCauRutTrich" FromRole="ShiftSubjects" ToRole="Matrices" />
+    <NavigationProperty Name="Shift" Relationship="Self.FK_CaThi_MonHoc_CaThi" FromRole="ShiftSubjects" ToRole="Shifts" />
+    <NavigationProperty Name="Subject" Relationship="Self.FK_CaThi_MonHoc_MonHoc" FromRole="ShiftSubjects" ToRole="Subjects" />
+    <NavigationProperty Name="ShiftSubjectStudents" Relationship="Self.FK_CaThi_MonHoc_SinhVien_CaThi_MonHoc" FromRole="ShiftSubjects" ToRole="ShiftSubjectStudents" />
+  </EntityType>
+  <EntityType Name="ShiftSubjectStudent">
+    <Key>
+      <PropertyRef Name="ShiftSubjectId" />
+      <PropertyRef Name="StudentId" />
+    </Key>
+    <Property Name="ShiftSubjectId" Type="Int64" Nullable="false" />
+    <Property Name="StudentId" Type="Int32" Nullable="false" />
+    <Property Name="QuestionSheetId" Type="Int64" />
+    <Property Name="LogIn" Type="Boolean" />
+    <Property Name="LastLogIn" Type="Boolean" />
+    <Property Name="LastLogOut" Type="Boolean" />
+    <NavigationProperty Name="QuestionSheet" Relationship="Self.FK_CaThi_MonHoc_SinhVien_DeThi" FromRole="ShiftSubjectStudents" ToRole="QuestionSheets" />
+    <NavigationProperty Name="ShiftSubject" Relationship="Self.FK_CaThi_MonHoc_SinhVien_CaThi_MonHoc" FromRole="ShiftSubjectStudents" ToRole="ShiftSubjects" />
+    <NavigationProperty Name="Student" Relationship="Self.FK_CaThi_MonHoc_SinhVien_SinhVien" FromRole="ShiftSubjectStudents" ToRole="Students" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ShiftSubjectStudents" Relationship="Self.FK_CaThi_MonHoc_SinhVien_SinhVien" FromRole="Students" ToRole="ShiftSubjectStudents" />
+  </EntityType>
+  <EntityType Name="Subject">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="FacultyId" Type="Int32" />
+    <Property Name="ManagementOrder" Type="Int32" />
+    <NavigationProperty Name="Chapters" Relationship="Self.FK_Phan_MonHoc" FromRole="Subjects" ToRole="Chapters" />
+    <NavigationProperty Name="Faculty" Relationship="Self.FK_MonHoc_Khoa" FromRole="Subjects" ToRole="Faculties" />
+    <NavigationProperty Name="ShiftSubjects" Relationship="Self.FK_CaThi_MonHoc_MonHoc" FromRole="Subjects" ToRole="ShiftSubjects" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="LogOut" Type="Boolean" />
+    <Property Name="LastActivity" Type="DateTime" Precision="3" />
+    <Property Name="LastLogIn" Type="DateTime" Precision="3" />
+    <Property Name="LastPasswordChanged" Type="DateTime" Precision="3" />
+    <Property Name="LastLogOut" Type="DateTime" Precision="3" />
+    <Property Name="Salt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Comment" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BuildInUser" Type="Boolean" />
+    <NavigationProperty Name="Roles" Relationship="Self.UserRoles" FromRole="Users" ToRole="Roles" />
+  </EntityType>
+  <Association Name="FK_CauTraLoi_CauHoi">
+    <End Role="Questions" Type="Self.Question" Multiplicity="0..1" />
+    <End Role="Answers" Type="Self.Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Answers">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CauHoi_Phan">
+    <End Role="Chapters" Type="Self.Chapter" Multiplicity="1" />
+    <End Role="Questions" Type="Self.Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chapters">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Questions">
+        <PropertyRef Name="ChapterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Phan_MonHoc">
+    <End Role="Subjects" Type="Self.Subject" Multiplicity="0..1" />
+    <End Role="Chapters" Type="Self.Chapter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subjects">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Chapters">
+        <PropertyRef Name="SubjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CaThi_DotThi">
+    <End Role="Exams" Type="Self.Exam" Multiplicity="0..1" />
+    <End Role="Shifts" Type="Self.Shift" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Exams">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Shifts">
+        <PropertyRef Name="ExamId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MonHoc_Khoa">
+    <End Role="Faculties" Type="Self.Faculty" Multiplicity="0..1" />
+    <End Role="Subjects" Type="Self.Subject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Faculties">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Subjects">
+        <PropertyRef Name="FacultyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CaThi_MonHoc_YeuCauRutTrich">
+    <End Role="Matrices" Type="Self.Matrix" Multiplicity="0..1" />
+    <End Role="ShiftSubjects" Type="Self.ShiftSubject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Matrices">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShiftSubjects">
+        <PropertyRef Name="MatrixId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChiTietYeuCauRutTrich_YeuCauRutTrich1">
+    <End Role="Matrices" Type="Self.Matrix" Multiplicity="0..1" />
+    <End Role="MatrixDetails" Type="Self.MatrixDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Matrices">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MatrixDetails">
+        <PropertyRef Name="MatrixId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChiTietDeThi_CauHoi">
+    <End Role="Questions" Type="Self.Question" Multiplicity="1" />
+    <End Role="QuestionSheetDetails" Type="Self.QuestionSheetDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuestionSheetDetails">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChiTietDeThi_DeThi">
+    <End Role="QuestionSheets" Type="Self.QuestionSheet" Multiplicity="1" />
+    <End Role="QuestionSheetDetails" Type="Self.QuestionSheetDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuestionSheets">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuestionSheetDetails">
+        <PropertyRef Name="QuestionSheetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CaThi_MonHoc_SinhVien_DeThi">
+    <End Role="QuestionSheets" Type="Self.QuestionSheet" Multiplicity="0..1" />
+    <End Role="ShiftSubjectStudents" Type="Self.ShiftSubjectStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuestionSheets">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShiftSubjectStudents">
+        <PropertyRef Name="QuestionSheetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CaThi_MonHoc_CaThi">
+    <End Role="Shifts" Type="Self.Shift" Multiplicity="0..1" />
+    <End Role="ShiftSubjects" Type="Self.ShiftSubject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shifts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShiftSubjects">
+        <PropertyRef Name="ShiftId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CaThi_MonHoc_MonHoc">
+    <End Role="Subjects" Type="Self.Subject" Multiplicity="0..1" />
+    <End Role="ShiftSubjects" Type="Self.ShiftSubject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subjects">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShiftSubjects">
+        <PropertyRef Name="SubjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CaThi_MonHoc_SinhVien_CaThi_MonHoc">
+    <End Role="ShiftSubjects" Type="Self.ShiftSubject" Multiplicity="1" />
+    <End Role="ShiftSubjectStudents" Type="Self.ShiftSubjectStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShiftSubjects">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShiftSubjectStudents">
+        <PropertyRef Name="ShiftSubjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CaThi_MonHoc_SinhVien_SinhVien">
+    <End Role="Students" Type="Self.Student" Multiplicity="1" />
+    <End Role="ShiftSubjectStudents" Type="Self.ShiftSubjectStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShiftSubjectStudents">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserRoles">
+    <End Role="Users" Type="Self.User" Multiplicity="*" />
+    <End Role="Roles" Type="Self.Role" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="ObjectiveTestEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Answers" EntityType="Self.Answer" />
+    <EntitySet Name="Chapters" EntityType="Self.Chapter" />
+    <EntitySet Name="Exams" EntityType="Self.Exam" />
+    <EntitySet Name="Faculties" EntityType="Self.Faculty" />
+    <EntitySet Name="Matrices" EntityType="Self.Matrix" />
+    <EntitySet Name="MatrixDetails" EntityType="Self.MatrixDetail" />
+    <EntitySet Name="Questions" EntityType="Self.Question" />
+    <EntitySet Name="QuestionSheetDetails" EntityType="Self.QuestionSheetDetail" />
+    <EntitySet Name="QuestionSheets" EntityType="Self.QuestionSheet" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="Shifts" EntityType="Self.Shift" />
+    <EntitySet Name="ShiftSubjects" EntityType="Self.ShiftSubject" />
+    <EntitySet Name="ShiftSubjectStudents" EntityType="Self.ShiftSubjectStudent" />
+    <EntitySet Name="Students" EntityType="Self.Student" />
+    <EntitySet Name="Subjects" EntityType="Self.Subject" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_CauTraLoi_CauHoi" Association="Self.FK_CauTraLoi_CauHoi">
+      <End Role="Questions" EntitySet="Questions" />
+      <End Role="Answers" EntitySet="Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CauHoi_Phan" Association="Self.FK_CauHoi_Phan">
+      <End Role="Chapters" EntitySet="Chapters" />
+      <End Role="Questions" EntitySet="Questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Phan_MonHoc" Association="Self.FK_Phan_MonHoc">
+      <End Role="Subjects" EntitySet="Subjects" />
+      <End Role="Chapters" EntitySet="Chapters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CaThi_DotThi" Association="Self.FK_CaThi_DotThi">
+      <End Role="Exams" EntitySet="Exams" />
+      <End Role="Shifts" EntitySet="Shifts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MonHoc_Khoa" Association="Self.FK_MonHoc_Khoa">
+      <End Role="Faculties" EntitySet="Faculties" />
+      <End Role="Subjects" EntitySet="Subjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CaThi_MonHoc_YeuCauRutTrich" Association="Self.FK_CaThi_MonHoc_YeuCauRutTrich">
+      <End Role="Matrices" EntitySet="Matrices" />
+      <End Role="ShiftSubjects" EntitySet="ShiftSubjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChiTietYeuCauRutTrich_YeuCauRutTrich1" Association="Self.FK_ChiTietYeuCauRutTrich_YeuCauRutTrich1">
+      <End Role="Matrices" EntitySet="Matrices" />
+      <End Role="MatrixDetails" EntitySet="MatrixDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChiTietDeThi_CauHoi" Association="Self.FK_ChiTietDeThi_CauHoi">
+      <End Role="Questions" EntitySet="Questions" />
+      <End Role="QuestionSheetDetails" EntitySet="QuestionSheetDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChiTietDeThi_DeThi" Association="Self.FK_ChiTietDeThi_DeThi">
+      <End Role="QuestionSheets" EntitySet="QuestionSheets" />
+      <End Role="QuestionSheetDetails" EntitySet="QuestionSheetDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CaThi_MonHoc_SinhVien_DeThi" Association="Self.FK_CaThi_MonHoc_SinhVien_DeThi">
+      <End Role="QuestionSheets" EntitySet="QuestionSheets" />
+      <End Role="ShiftSubjectStudents" EntitySet="ShiftSubjectStudents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CaThi_MonHoc_CaThi" Association="Self.FK_CaThi_MonHoc_CaThi">
+      <End Role="Shifts" EntitySet="Shifts" />
+      <End Role="ShiftSubjects" EntitySet="ShiftSubjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CaThi_MonHoc_MonHoc" Association="Self.FK_CaThi_MonHoc_MonHoc">
+      <End Role="Subjects" EntitySet="Subjects" />
+      <End Role="ShiftSubjects" EntitySet="ShiftSubjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CaThi_MonHoc_SinhVien_CaThi_MonHoc" Association="Self.FK_CaThi_MonHoc_SinhVien_CaThi_MonHoc">
+      <End Role="ShiftSubjects" EntitySet="ShiftSubjects" />
+      <End Role="ShiftSubjectStudents" EntitySet="ShiftSubjectStudents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CaThi_MonHoc_SinhVien_SinhVien" Association="Self.FK_CaThi_MonHoc_SinhVien_SinhVien">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="ShiftSubjectStudents" EntitySet="ShiftSubjectStudents" />
+    </AssociationSet>
+    <AssociationSet Name="UserRoles" Association="Self.UserRoles">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Roles" EntitySet="Roles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NganHangTracNghiem.API", "NganHangTracNghiem\NganHangTracNghiem.API.csproj", "{2671D457-41D3-4E57-A086-8C655A3AC89F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NganHangTracNghiem.Web", "NganHangTracNghiem.Web\NganHangTracNghiem.Web.csproj", "{D7FBA252-BC22-4D4C-A4EA-7AA6F0C1584D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NganHangTracNghiem.Data", "NganHangTracNghiem.Data\NganHangTracNghiem.Data.csproj", "{7302619E-7073-4B8B-883A-6A9EE14EC78A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NganHangTracNghiem.DLL", "NganHangTracNghiem.DLL\NganHangTracNghiem.DLL.csproj", "{599E3833-DA6B-4839-998E-E0A7D10D1377}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NganHangTracNghiem.Website", "NganHangTracNghiem.Website\NganHangTracNghiem.Website.csproj", "{36C6D184-81CF-478B-BB37-9F86022D36EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2671D457-41D3-4E57-A086-8C655A3AC89F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2671D457-41D3-4E57-A086-8C655A3AC89F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2671D457-41D3-4E57-A086-8C655A3AC89F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2671D457-41D3-4E57-A086-8C655A3AC89F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7FBA252-BC22-4D4C-A4EA-7AA6F0C1584D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7FBA252-BC22-4D4C-A4EA-7AA6F0C1584D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7FBA252-BC22-4D4C-A4EA-7AA6F0C1584D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7FBA252-BC22-4D4C-A4EA-7AA6F0C1584D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7302619E-7073-4B8B-883A-6A9EE14EC78A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7302619E-7073-4B8B-883A-6A9EE14EC78A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7302619E-7073-4B8B-883A-6A9EE14EC78A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7302619E-7073-4B8B-883A-6A9EE14EC78A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{599E3833-DA6B-4839-998E-E0A7D10D1377}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{599E3833-DA6B-4839-998E-E0A7D10D1377}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{599E3833-DA6B-4839-998E-E0A7D10D1377}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{599E3833-DA6B-4839-998E-E0A7D10D1377}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36C6D184-81CF-478B-BB37-9F86022D36EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36C6D184-81CF-478B-BB37-9F86022D36EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36C6D184-81CF-478B-BB37-9F86022D36EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36C6D184-81CF-478B-BB37-9F86022D36EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
