@@ -258,6 +258,7 @@
     <Compile Include="Models\QuestionSheetDetail.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Question_Chapter.cs" />
     <Compile Include="Models\Role.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

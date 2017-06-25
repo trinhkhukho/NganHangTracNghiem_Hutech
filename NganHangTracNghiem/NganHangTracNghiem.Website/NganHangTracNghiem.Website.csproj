@@ -1327,6 +1327,8 @@
     <Content Include="Scripts\Angular\GroupQuestions\GroupQuestion.html" />
     <Content Include="Scripts\Angular\Login\Login.html" />
     <Content Include="Scripts\Angular\Login\Login.js" />
+    <Content Include="Scripts\Angular\Questions\editQuestion.js" />
+    <Content Include="Scripts\Angular\Questions\editQuestion.html" />
     <Content Include="Scripts\Angular\Questions\addQuestion.html" />
     <Content Include="Scripts\Angular\app.js" />
     <Content Include="Scripts\Angular\Home\home.html" />

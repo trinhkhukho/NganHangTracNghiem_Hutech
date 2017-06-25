@@ -6,20 +6,20 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using NganHangTracNghiem.Data;
-using NganHangTracNghiem.Data;
 
 namespace NganHangTracNghiem.DLL
 {
     public class QuestionsSevices
     {
+        //tạo câu hỏi đơn
         public int CreateQuestion(ModelQuestions questionsModel, string host)
         {
             try
             {
                 string url_InsertQuestion = host + "/api/Questions";
                 string url_InsertAnswer = host + "/api/Answers";
-                HttpClient client_Question = new HttpClient();//using call api save Question
-                HttpClient client_answer = new HttpClient();//using call api save Answer
+                HttpClient client_Question = new HttpClient(); //using call api save Question
+                HttpClient client_answer = new HttpClient(); //using call api save Answer
                 Questions qs = new Questions();
                 Answers Answer_A = new Answers();
                 Answers Answer_B = new Answers();
@@ -27,7 +27,7 @@ namespace NganHangTracNghiem.DLL
                 Answers Answer_D = new Answers();
                 //gán dữ liệu cho câu hỏi
                 qs.Content = questionsModel.DeBai;
-                qs.ChapterId = 9;//gán cứng chapter
+                qs.ChapterId = 9; //gán cứng chapter
                 qs.Mark = questionsModel.Diem;
                 qs.Discrimination = questionsModel.DoPhanCach;
                 qs.ObjectiveDifficulty = questionsModel.DoKho;
@@ -37,7 +37,8 @@ namespace NganHangTracNghiem.DLL
                 {
                     client_Question = new HttpClient();
                     client_Question.BaseAddress = new Uri(host);
-                    client_Question.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    client_Question.DefaultRequestHeaders.Accept.Add(
+                        new MediaTypeWithQualityHeaderValue("application/json"));
                     var reponse = client_Question.GetAsync("api/Questions/0").Result;
                     if (reponse.IsSuccessStatusCode)
                     {
@@ -81,17 +82,17 @@ namespace NganHangTracNghiem.DLL
 
         }
 
-
+        // tạo đề bài cho câu hỏi nhóm
         public long CreateQuestionGroupParent(ModelQuestionsGroupParent questionsModel, string host)
         {
             try
             {
                 string url_InsertQuestion = host + "/api/Questions";
-                HttpClient client_Question = new HttpClient();//using call api save Question
+                HttpClient client_Question = new HttpClient(); //using call api save Question
                 Questions qs = new Questions();
                 //gán dữ liệu cho câu hỏi
                 qs.Content = questionsModel.DeBai;
-                qs.ChapterId = 9;//gán cứng chapter
+                qs.ChapterId = 9; //gán cứng chapter
                 qs.Mark = questionsModel.Diem;
                 qs.Discrimination = questionsModel.DoPhanCach;
                 qs.ObjectiveDifficulty = questionsModel.DoKho;
@@ -101,7 +102,8 @@ namespace NganHangTracNghiem.DLL
                 {
                     client_Question = new HttpClient();
                     client_Question.BaseAddress = new Uri(host);
-                    client_Question.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    client_Question.DefaultRequestHeaders.Accept.Add(
+                        new MediaTypeWithQualityHeaderValue("application/json"));
                     var reponse = client_Question.GetAsync("api/Questions/0").Result;
                     if (reponse.IsSuccessStatusCode)
                     {
@@ -119,24 +121,25 @@ namespace NganHangTracNghiem.DLL
                 {
                     return 0;
                 }
-                
+
             }
             catch
             {
                 return 0;
             }
-           
+
 
         }
 
+        //tạo câu hỏi con
         public int CreateQuestionGroupChil(ModelQuestionsGroupChil questionsModel, string host)
         {
             try
             {
                 string url_InsertQuestion = host + "/api/Questions";
                 string url_InsertAnswer = host + "/api/Answers";
-                HttpClient client_Question = new HttpClient();//using call api save Question
-                HttpClient client_answer = new HttpClient();//using call api save Answer
+                HttpClient client_Question = new HttpClient(); //using call api save Question
+                HttpClient client_answer = new HttpClient(); //using call api save Answer
                 Questions qs = new Questions();
                 Answers Answer_A = new Answers();
                 Answers Answer_B = new Answers();
@@ -144,7 +147,7 @@ namespace NganHangTracNghiem.DLL
                 Answers Answer_D = new Answers();
                 //gán dữ liệu cho câu hỏi
                 qs.Content = questionsModel.DeBai;
-                qs.ChapterId = 9;//gán cứng chapter
+                qs.ChapterId = 9; //gán cứng chapter
                 qs.Mark = questionsModel.Diem;
                 qs.ParentId = questionsModel.ParentId;
                 qs.Discrimination = questionsModel.DoPhanCach;
@@ -155,7 +158,8 @@ namespace NganHangTracNghiem.DLL
                 {
                     client_Question = new HttpClient();
                     client_Question.BaseAddress = new Uri(host);
-                    client_Question.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    client_Question.DefaultRequestHeaders.Accept.Add(
+                        new MediaTypeWithQualityHeaderValue("application/json"));
                     var reponse = client_Question.GetAsync("api/Questions/0").Result;
                     if (reponse.IsSuccessStatusCode)
                     {
@@ -199,5 +203,38 @@ namespace NganHangTracNghiem.DLL
 
         }
 
+        // lấy câu hỏi con lên
+        //public List<Questions> GetQuestion(int userId, string host)
+        //{
+        //    List<Questions> listQuestions = new List<Questions>();
+        //    string url_getQuestion = host + "/api/QuestionUser/" + userId;
+        //    HttpClient client_Question = new HttpClient(); //using call api save Question
+        //    client_Question.BaseAddress = new Uri(host);
+        //    client_Question.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        //    var reponse = client_Question.GetAsync(url_getQuestion).Result;
+        //    if (reponse.IsSuccessStatusCode)
+        //    {
+        //        listQuestions = reponse.Content.ReadAsAsync<List<Questions>>().Result;
+        //    }
+
+        //    return listQuestions;
+        //}
+
+        public HttpResponseMessage GetQuestion(int userId, string host)
+        {
+            List<Questions> listQuestions = new List<Questions>();
+            string url_getQuestion = host + "/api/QuestionUser/" + userId;
+            HttpClient client_Question = new HttpClient(); //using call api save Question
+            client_Question.BaseAddress = new Uri(host);
+            client_Question.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var reponse = client_Question.GetAsync(url_getQuestion).Result;
+            if (reponse.IsSuccessStatusCode)
+            {
+                listQuestions = reponse.Content.ReadAsAsync<List<Questions>>().Result;
+            }
+
+            return reponse;
+        }
     }
 }
+

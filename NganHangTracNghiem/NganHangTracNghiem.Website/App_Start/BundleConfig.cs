@@ -30,7 +30,7 @@ namespace NganHangTracNghiem.Website
 
             bundles.Add(new ScriptBundle("~/bundles/Angular").Include(
 
-               
+
                 "~/Scripts/Angular/app.js",
                 "~/Scripts/Angular/Sevieces/serviceGetId.js",
                 "~/Scripts/Angular/Sevieces/serviceShareData.js",
@@ -39,7 +39,8 @@ namespace NganHangTracNghiem.Website
                 "~/Scripts/Angular/GroupQuestions/GroupQuestionCrt.js",
                 "~/Scripts/Angular/GroupQuestions/QuestionCrt.js",
                 "~/Scripts/Angular/Readfile/ReadFile.js",
-                "~/Scripts/Angular/Readfile/Result.js"
+                "~/Scripts/Angular/Readfile/Result.js",
+                "~/Scripts/Angular/Questions/editQuestion.js"
 
 
             ));

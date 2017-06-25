@@ -46,6 +46,10 @@
                 {
                     templateUrl: 'Scripts/Angular/Readfile/Result.html'
                 })
+            .when('/getQuestion',
+                {
+                    templateUrl: 'Scripts/Angular/Questions/editQuestion.html'
+                })
     };
 
 })();

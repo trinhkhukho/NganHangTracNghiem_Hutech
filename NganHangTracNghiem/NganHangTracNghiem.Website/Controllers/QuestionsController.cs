@@ -23,7 +23,6 @@ namespace NganHangTracNghiem.Website.Controllers
         {
             try
             {
-                HttpResponseMessage response = null;
                 ReadXML rd_host = new ReadXML();
                 string host;
                 string FilePathXML = System.Web.Hosting.HostingEnvironment.MapPath("/Scripts/XML/") + "ClinicInfo.xml";
@@ -78,6 +77,24 @@ namespace NganHangTracNghiem.Website.Controllers
             {
                 return InternalServerError();
             }
+        }
+
+        //lấy thông tin câu hỏi theo user
+        //thêm mới câu hỏi đơn
+        [HttpGet]
+        [Route("api/Question/get")]
+        public HttpResponseMessage getQuestion(ModelQuestions CauHoi)
+        {
+                HttpResponseMessage response = null;
+                ReadXML rd_host = new ReadXML();
+                string host;
+                string FilePathXML = System.Web.Hosting.HostingEnvironment.MapPath("/Scripts/XML/") + "ClinicInfo.xml";
+                host = rd_host.ReadXML_Host(FilePathXML, "host");
+                QuestionsSevices sevices = new QuestionsSevices();
+                response = sevices.GetQuestion(10001, host);
+                return response;
+
+
         }
     }
 }

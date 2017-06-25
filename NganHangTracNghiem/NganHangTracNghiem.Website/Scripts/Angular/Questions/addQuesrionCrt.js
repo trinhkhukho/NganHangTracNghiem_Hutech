@@ -1,12 +1,4 @@
-﻿//get host of web API
-//var xml = new XMLHttpRequest();
-//xml.open('GET', 'ClinicInfo.xml', false)
-//xml.send();
-//var xmlData = xml.responseXML;
-//var host;
-//xmlData = (new DOMParser()).parseFromString(xml.responseText, 'text/xml');
-//var clinic = xmlData.getElementsByTagName("clinic");
-//host = clinic[0].getElementsByTagName("host")[0].firstChild.data;
+﻿
 (function (app) {
     'use strict';
     app.controller('QuestionController', questionCrt);
@@ -17,14 +9,6 @@
         $scope.addQuestion = function () {
            
             blockUI.start();
-
-            //$timeout(function () {
-            //    blockUI.stop(
-            //    toastr.success('nội dung', 'Tiêu đề'));
-            //}, 5000);
-
-
-
             var hvA = false, hvB = false, hvC = false, hvD = false;
             var daA = false, daB = false, daC = false, daD = false;
             //lấy giá trị câu hỏi trong cleditor
@@ -47,7 +31,6 @@
             if ($('#CauDhv').is(':checked')) {
                 hvD = true;
             }
-
             //lấy hoán vị
             if ($('#CauAda').is(':checked')) {
                 daA = true;
