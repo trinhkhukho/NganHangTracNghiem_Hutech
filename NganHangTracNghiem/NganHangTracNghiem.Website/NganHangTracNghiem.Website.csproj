@@ -1321,8 +1321,6 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\Angular\Chapter\ChapterCrt.js" />
     <Content Include="Scripts\Angular\Chapter\Chapter.html" />
-    <Content Include="Scripts\Angular\Chapter\index.html" />
-    <Content Include="Scripts\Angular\Chapter\index.js" />
     <Content Include="Scripts\Angular\GroupQuestions\QuestionCrt.js" />
     <Content Include="Scripts\Angular\GroupQuestions\Question.html" />
     <Content Include="Scripts\Angular\GroupQuestions\GroupQuestionCrt.js" />
