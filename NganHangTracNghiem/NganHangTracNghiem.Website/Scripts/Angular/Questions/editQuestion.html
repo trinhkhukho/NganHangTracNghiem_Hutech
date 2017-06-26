@@ -1,85 +1,101 @@
 ﻿<link href="../../../Content/ckeditor.css" rel="stylesheet" />
 <div class="main-panel" ng-controller="editQuestionController">
-<nav class="navbar navbar-transparent navbar-absolute">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="">Danh sách đề thi</a>
-        </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-
-                        <span class="notification">5</span>
-                        <i class="fa fa-comment-o" aria-hidden="true">5</i>
-
-                    </a>
-
-                </li>
-
-            </ul>
-            <form class="navbar-form navbar-right" role="search">
-                <div class="form-group  is-empty">
-                    <input type="text" class="form-control" placeholder="Search">
-                    <span class="material-input"></span>
-                </div>
-                <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                    <div class="ripple-container"></div>
+    <nav class="navbar navbar-transparent navbar-absolute">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
-            </form>
-        </div>
-    </div>
-</nav>
+                <a class="navbar-brand" href="">Danh sách đề thi</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
 
-<div class="content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header" data-background-color="blue">
-                        <div class="row">
-                            <div class="col-md-10">
-                                <h4 class="title">Danh sách câu hỏi</h4>
-                            </div>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
-                        </div>
+                            <span class="notification">5</span>
+                            <i class="fa fa-comment-o" aria-hidden="true">5</i>
+
+                        </a>
+
+                    </li>
+
+                </ul>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group  is-empty">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="material-input"></span>
                     </div>
-                    <div class="card-content">
-                        <form>
-                            <table class="table table-hover">
-                                <tr>
-                                    <th>
-                                        Mã câu hỏi
-                                    </th>
-                                    <th>
-                                        Chương phần
-                                    </th>
-                                    <th>
-                                        Nội dung
-                                    </th>
-                                </tr>
-                                <tr ng-repeat="item in ListQuestions | orderBy : 'Id'">
-                                    <td>{{ item.Id }}</td>
-                                    <td>{{ item.Name }}</td>
-                                    <td>{{ item.Content }}</td>
-                                </tr>
-                            </table>
-                        </form>
+                    <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <div class="ripple-container"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header" data-background-color="blue">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <h4 class="title">Danh sách câu hỏi</h4>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <form>
+                                <table class="table table-hover">
+                                    <tr>
+                                        <th>
+                                            Mã câu hỏi
+                                        </th>
+                                        <th>
+                                            Chương phần
+                                        </th>
+                                        <th>
+                                            Nội dung
+                                        </th>
+                                        <th style="text-align: center">
+                                            Chỉnh sửa
+                                        </th>
+                                        <th>
+                                            Xóa
+                                        </th>
+                                    </tr>
+                                    <tr ng-repeat="item in ListQuestions | orderBy : 'Id'">
+                                        <td>{{ item.Id }}</td>
+                                        <td>{{ item.Name }}</td>
+                                        <td>{{ item.Content }}</td>
+                                        <td>
+                                            <a href="" ng-click="editQuestion(item.Id)">
+                                               <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="" ng-click="deleteQuestion()">
+                                                <i class="fa fa-times" style="color: red" aria-hidden="true"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
-</div>
 </div>
 <script src="../../../Content/ckeditor/ckeditor.js"></script>
 <script src="../../../Content/ckfinder/ckfinder.js"></script>
@@ -96,7 +112,7 @@
 
         $('#CauAda').prop('checked', true);
         $('#CauAda').click(function () {
- 
+
             if ($('#CauAda').is(':checked')) {
                 $('#CauBda').prop('checked', false);
                 $('#CauCda').prop('checked', false);

@@ -19,10 +19,11 @@ namespace NganHangTracNghiem.Website
                 "~/Scripts/JS/bootstrap.js",
                 "~/Scripts/JS/material-dashboard.js",
                 "~/Scripts/JS/material.min.js",
-                "~/Scripts/JS/ui-bootstrap-tpls-2.5.0.min.js",
 
-                "~/Scripts/JS/angular-block-ui.min.js",
                 "~/Scripts/JS/angular-animate.js",
+                "~/Scripts/JS/angular-sanitize.js",
+                "~/Scripts/JS/angular-block-ui.min.js",
+                "~/Scripts/JS/ui-bootstrap-tpls-2.5.0.min.js",
                 "~/Scripts/JS/angular-toastr.tpls.js"
 
 
@@ -41,6 +42,7 @@ namespace NganHangTracNghiem.Website
                 "~/Scripts/Angular/Readfile/ReadFile.js",
                 "~/Scripts/Angular/Readfile/Result.js",
                 "~/Scripts/Angular/Questions/editQuestion.js"
+                //"~/Scripts/Angular/Questions/popQuestion.js"
 
 
             ));

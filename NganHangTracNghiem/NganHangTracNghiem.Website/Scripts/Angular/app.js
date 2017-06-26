@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    angular.module('myApp', ['ngRoute', 'ngAnimate', 'blockUI', 'toastr'])
+    angular.module('myApp', ['ngRoute', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'blockUI', 'toastr'])
         .config(config);
       
 

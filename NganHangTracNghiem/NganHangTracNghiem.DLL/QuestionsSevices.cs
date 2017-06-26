@@ -203,11 +203,28 @@ namespace NganHangTracNghiem.DLL
 
         }
 
-        // lấy câu hỏi con lên
-        //public List<Questions> GetQuestion(int userId, string host)
+   // lấy danh sách câu hỏi
+        public HttpResponseMessage GetQuestion(int userId, string host)
+        {
+            List<Questions> listQuestions = new List<Questions>();
+            string url_getQuestion = host + "/api/QuestionUser/" + userId;
+            HttpClient client_Question = new HttpClient(); //using call api save Question
+            client_Question.BaseAddress = new Uri(host);
+            client_Question.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var reponse = client_Question.GetAsync(url_getQuestion).Result;
+            //if (reponse.IsSuccessStatusCode)
+            //{
+            //    listQuestions = reponse.Content.ReadAsAsync<List<Questions>>().Result;
+            //}
+            return reponse;
+        }
+
+
+       // lấy đáp án của câu hỏi
+        //public List<Answers> GetQuestion(int id, string host)
         //{
         //    List<Questions> listQuestions = new List<Questions>();
-        //    string url_getQuestion = host + "/api/QuestionUser/" + userId;
+        //    string url_getQuestion = host + "/api/QuestionUser/" + ;
         //    HttpClient client_Question = new HttpClient(); //using call api save Question
         //    client_Question.BaseAddress = new Uri(host);
         //    client_Question.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -220,21 +237,7 @@ namespace NganHangTracNghiem.DLL
         //    return listQuestions;
         //}
 
-        public HttpResponseMessage GetQuestion(int userId, string host)
-        {
-            List<Questions> listQuestions = new List<Questions>();
-            string url_getQuestion = host + "/api/QuestionUser/" + userId;
-            HttpClient client_Question = new HttpClient(); //using call api save Question
-            client_Question.BaseAddress = new Uri(host);
-            client_Question.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            var reponse = client_Question.GetAsync(url_getQuestion).Result;
-            if (reponse.IsSuccessStatusCode)
-            {
-                listQuestions = reponse.Content.ReadAsAsync<List<Questions>>().Result;
-            }
 
-            return reponse;
-        }
     }
 }
 
