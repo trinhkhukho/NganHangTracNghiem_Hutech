@@ -39,7 +39,7 @@
                                     </div>
                                     <div class="col-md-9">
                                         <div class="form-group">
-                                            <textarea name="CauA"></textarea>
+                                            <textarea id="CauA"></textarea>
                                         </div>
 
                                     </div>
@@ -65,7 +65,7 @@
                                     </div>
                                     <div class="col-md-9">
                                         <div class="form-group">
-                                            <textarea name="CauB"></textarea>
+                                            <textarea id="CauB"></textarea>
                                         </div>
 
                                     </div>
@@ -91,7 +91,7 @@
                                     </div>
                                     <div class="col-md-9">
                                         <div class="form-group">
-                                            <textarea name="CauC"></textarea>
+                                            <textarea id="CauC"></textarea>
                                         </div>
 
                                     </div>
@@ -117,7 +117,7 @@
                                     </div>
                                     <div class="col-md-9">
                                         <div class="form-group">
-                                            <textarea name="CauD"></textarea>
+                                            <textarea id="CauD"></textarea>
                                         </div>
 
                                     </div>
@@ -135,7 +135,7 @@
                                         </div>
                                         <div class="checkbox-material" style="margin: 0; padding: 0;">
                                             <label style="margin: 0; padding: 0;">
-                                                <input type="checkbox" id="CauDda" ng-model="CauHoi.daD" ng-value="true">
+                                                <input type="checkbox" id="CauDda" >
                                                 Đáp án
                                             </label>
                                         </div>
@@ -182,10 +182,10 @@
     $(document).ready(function () {
         //CKEDITOR.disableAutoInline = true;
         CKEDITOR.replace('CauHoi');
-        CKEDITOR.inline('CauA');
-        CKEDITOR.inline('CauB');
-        CKEDITOR.inline('CauC');
-        CKEDITOR.inline('CauD');
+        CKEDITOR.replace('CauA');
+        CKEDITOR.replace('CauB');
+        CKEDITOR.replace('CauC');
+        CKEDITOR.replace('CauD');
         
 
         CKFinder.setupCKEditor(null, '/Content/ckfinder/');
@@ -193,7 +193,7 @@
         //    'id': 'DapAnA',
         //    'class': 'form-control'
         //});
-        $('#CauAda').prop('checked', true);
+        //$('#CauAda').prop('checked', true);
         $('#CauAda').click(function () {
 
             if ($('#CauAda').is(':checked')) {

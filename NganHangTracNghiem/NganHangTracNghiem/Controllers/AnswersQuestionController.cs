@@ -11,6 +11,7 @@ namespace NganHangTracNghiem.Controllers
     public class AnswersQuestionController : ApiController
     {
         ObjectiveTestEntities db = new ObjectiveTestEntities();
+        //get api/AnswersQuestion/15720
         public IHttpActionResult GetAnswersQuestion(int id)
         {
             try

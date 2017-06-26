@@ -45,6 +45,8 @@
     <Compile Include="Faculties.cs" />
     <Compile Include="ListAnswers.cs" />
     <Compile Include="ListQuestion.cs" />
+    <Compile Include="ModelQuestionsDelete.cs" />
+    <Compile Include="ModelQuestionsEdit.cs" />
     <Compile Include="ModelQuestionsGroupChil.cs" />
     <Compile Include="ModelQuestionsGroupParent.cs" />
     <Compile Include="ModelQuestions.cs" />

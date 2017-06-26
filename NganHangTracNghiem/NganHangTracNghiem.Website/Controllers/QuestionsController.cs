@@ -98,21 +98,46 @@ namespace NganHangTracNghiem.Website.Controllers
         }
 
 
-        //hàm lấy ra list đáp án nếu có ID đề bài
-        //[HttpGet]
-        //[Route("api/Question/getAnswers")]
-        //public HttpResponseMessage getQuestion(long id)
-        //{
-        //    HttpResponseMessage response = null;
-        //    ReadXML rd_host = new ReadXML();
-        //    string host;
-        //    string FilePathXML = System.Web.Hosting.HostingEnvironment.MapPath("/Scripts/XML/") + "ClinicInfo.xml";
-        //    host = rd_host.ReadXML_Host(FilePathXML, "host");
-        //    QuestionsSevices sevices = new QuestionsSevices();
-        //    response = sevices.GetQuestion(10001, host);
-        //    return response;
+        //chỉnh sửa câu hỏi
+        [HttpPost]
+        [Route("api/Question/edit")]
+        public IHttpActionResult Edit(ModelQuestionsEdit CauHoi)
+        {
+            try
+            {
+                ReadXML rd_host = new ReadXML();
+                string host;
+                string FilePathXML = System.Web.Hosting.HostingEnvironment.MapPath("/Scripts/XML/") + "ClinicInfo.xml";
+                host = rd_host.ReadXML_Host(FilePathXML, "host");
+                QuestionsSevices sevices = new QuestionsSevices();
+                int kq = sevices.EditQuestion(CauHoi, host);
+                return Ok(kq);
+            }
+            catch
+            {
+                return InternalServerError();
+            }
+        }
 
+        [HttpPost]
+        [Route("api/Question/delete")]
+        public IHttpActionResult Delete(ModelQuestionsDelete CauHoi)
+        {
+            try
+            {
+                ReadXML rd_host = new ReadXML();
+                string host;
+                string FilePathXML = System.Web.Hosting.HostingEnvironment.MapPath("/Scripts/XML/") + "ClinicInfo.xml";
+                host = rd_host.ReadXML_Host(FilePathXML, "host");
+                QuestionsSevices sevices = new QuestionsSevices();
+                int kq = sevices.deleteQuestion(CauHoi, host);
+                return Ok(kq);
+            }
+            catch
+            {
+                return InternalServerError();
+            }
+        }
 
-        //}
     }
 }

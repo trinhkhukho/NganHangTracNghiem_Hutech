@@ -203,7 +203,7 @@ namespace NganHangTracNghiem.DLL
 
         }
 
-   // lấy danh sách câu hỏi
+        // lấy danh sách câu hỏi
         public HttpResponseMessage GetQuestion(int userId, string host)
         {
             List<Questions> listQuestions = new List<Questions>();
@@ -220,24 +220,104 @@ namespace NganHangTracNghiem.DLL
         }
 
 
-       // lấy đáp án của câu hỏi
-        //public List<Answers> GetQuestion(int id, string host)
-        //{
-        //    List<Questions> listQuestions = new List<Questions>();
-        //    string url_getQuestion = host + "/api/QuestionUser/" + ;
-        //    HttpClient client_Question = new HttpClient(); //using call api save Question
-        //    client_Question.BaseAddress = new Uri(host);
-        //    client_Question.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        //    var reponse = client_Question.GetAsync(url_getQuestion).Result;
-        //    if (reponse.IsSuccessStatusCode)
-        //    {
-        //        listQuestions = reponse.Content.ReadAsAsync<List<Questions>>().Result;
-        //    }
+        // Chỉnh sửa câu hỏi
+        public int EditQuestion(ModelQuestionsEdit questionsModel, string host)
+        {
+            try
+            {
+                string url_InsertQuestion = host + "/api/Questions/" + questionsModel.IdQuestion;
+                string url_InsertAnswer = host + "/api/Answers/";
+                HttpClient client_Question = new HttpClient(); //using call api save Question
+                HttpClient client_answer = new HttpClient(); //using call api save Answer
+                Questions qs = new Questions();
+                Answers Answer_A = new Answers();
+                Answers Answer_B = new Answers();
+                Answers Answer_C = new Answers();
+                Answers Answer_D = new Answers();
+                //gán dữ liệu cho câu hỏi
+                qs.Content = questionsModel.DeBai;
+                qs.ChapterId = 9; //gán cứng chapter
+                qs.Mark = questionsModel.Diem;
+                qs.Discrimination = questionsModel.DoPhanCach;
+                qs.ObjectiveDifficulty = questionsModel.DoKho;
+                client_Question = new HttpClient();
+                //var result_q = client_Question.PutAsJsonAsync(url_InsertQuestion, qs).Result;
+                var result_q = client_Question.DeleteAsync(url_InsertQuestion).Result;
+                //var a= client_Question.PutAsJsonAsync()
+                if (result_q.IsSuccessStatusCode)
+                {
+                    //client_Question = new HttpClient();
+                    //client_Question.BaseAddress = new Uri(host);
+                    //client_Question.DefaultRequestHeaders.Accept.Add(
+                    //    new MediaTypeWithQualityHeaderValue("application/json"));
+                    //var reponse = client_Question.GetAsync("api/Questions/0").Result;
+                    //if (reponse.IsSuccessStatusCode)
+                    //{
+                    //    qs = reponse.Content.ReadAsAsync<Questions>().Result;
+                    //    //gán dữ liệu cho đáp án
+                    //    Answer_A.QuestionId = qs.Id;
+                    //    Answer_A.Content = questionsModel.CauA;
+                    //    Answer_A.Interchange = questionsModel.HoanViA;
+                    //    Answer_A.Correct = questionsModel.DapAnA;
+                    //    var result_A = client_answer.PostAsJsonAsync(url_InsertAnswer, Answer_A).Result;
+                    //    //gán dữ liệu đáp án câu B
+                    //    Answer_B.QuestionId = qs.Id;
+                    //    Answer_B.Content = questionsModel.CauB;
+                    //    Answer_B.Interchange = questionsModel.HoanViB;
+                    //    Answer_B.Correct = questionsModel.DapAnB;
+                    //    var result_B = client_answer.PostAsJsonAsync(url_InsertAnswer, Answer_B).Result;
+                    //    ///gán dữ liệu đáp án Câu C
+                    //    Answer_C.QuestionId = qs.Id;
+                    //    Answer_C.Content = questionsModel.CauC;
+                    //    Answer_C.Interchange = questionsModel.HoanViC;
+                    //    Answer_C.Correct = questionsModel.DapAnC;
+                    //    var result_C = client_answer.PostAsJsonAsync(url_InsertAnswer, Answer_C).Result;
+                    //    ///gán dữ liệu đáp án Câu D
+                    //    Answer_D.QuestionId = qs.Id;
+                    //    Answer_D.Content = questionsModel.CauD;
+                    //    Answer_D.Interchange = questionsModel.HoanViD;
+                    //    Answer_D.Correct = questionsModel.DapAnD;
+                    //    var result_D = client_answer.PostAsJsonAsync(url_InsertAnswer, Answer_D).Result;
+                    //}
+                    //else
+                    //{
+                    //    return 0;
+                    //}
+                }
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
 
-        //    return listQuestions;
-        //}
+        }
+        //xóa câu hỏi
+        public int deleteQuestion(ModelQuestionsDelete questionsModel, string host)
+        {
+            try
+            {
+                string url_InsertQuestion = host + "/api/Questions/";
+                string url_InsertAnswer = host + "/api/Answers/";
+                HttpClient client = new HttpClient(); //using call api save Question
 
+                client = new HttpClient();
+                var result_a = client.DeleteAsync(url_InsertAnswer + questionsModel.IdAnswerA).Result;
+                var result_b = client.DeleteAsync(url_InsertAnswer + questionsModel.IdAnswerB).Result;
+                var result_c = client.DeleteAsync(url_InsertAnswer + questionsModel.IdAnswerC).Result;
+                var result_d = client.DeleteAsync(url_InsertAnswer + questionsModel.IdAnswerD).Result;
+                if (result_a.IsSuccessStatusCode && result_b.IsSuccessStatusCode && result_c.IsSuccessStatusCode && result_d.IsSuccessStatusCode)
+                {
+                    var result_q = client.DeleteAsync(url_InsertQuestion + questionsModel.IdQuestion).Result;
+                }
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
 
+        }
     }
 }
 

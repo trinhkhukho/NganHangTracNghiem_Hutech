@@ -31,49 +31,6 @@
       
             });
         };
-
-        $scope.deleteQuestion = function (Id) {
-            blockUI.start();
-
-            var IdAnswerA = null;
-            var IdAnswerB = null;
-            var IdAnswerC = null;
-            var IdAnswerD = null;
-
-            var r = confirm("Bạn có chắc muốn xóa câu hỏi " + Id);
-            if (r == true) {
-                $http.get(hostapi + 'api/AnswersQuestion/' + Id).then(function (response) {
-                    debugger
-                    var lsAnswer = response.data;
-                    IdAnswerA = lsAnswer[0].Id;
-                    IdAnswerB = lsAnswer[1].Id;
-                    IdAnswerC = lsAnswer[2].Id;
-                    IdAnswerD = lsAnswer[3].Id;
-                    var data = {
-                        'IdQuestion': Id,
-                        'IdAnswerA': IdAnswerA,
-                        'IdAnswerB': IdAnswerB,
-                        'IdAnswerC': IdAnswerC,
-                        'IdAnswerD': IdAnswerD
-
-                    }
-                    $http.post("api/Question/delete", data).then(function (response) {
-                        blockUI.stop();
-                        var ketqua = response.data;
-                        if (ketqua != null) {
-
-                            toastr.success('', 'Xóa câu hỏi thành công');
-
-                        } else {
-                            toastr.error('', 'Đã có lỗi xảy ra');
-
-                        }
-                    });
-                });
-               
-              
-            } 
-        };
     };
 
 
