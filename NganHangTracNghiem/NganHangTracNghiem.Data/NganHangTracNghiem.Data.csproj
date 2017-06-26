@@ -43,6 +43,7 @@
     <Compile Include="Answers.cs" />
     <Compile Include="Chapters.cs" />
     <Compile Include="Faculties.cs" />
+    <Compile Include="ListAnswers.cs" />
     <Compile Include="ListQuestion.cs" />
     <Compile Include="ModelQuestionsGroupChil.cs" />
     <Compile Include="ModelQuestionsGroupParent.cs" />

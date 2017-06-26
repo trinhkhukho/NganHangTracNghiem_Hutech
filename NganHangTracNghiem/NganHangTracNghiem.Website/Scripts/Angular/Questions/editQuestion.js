@@ -1,9 +1,10 @@
 ﻿(function (app) {
     'use strict';
     app.controller('editQuestionController', questionCrt);
-    questionCrt.$inject = ['$scope', '$http', '$route', '$timeout', '$uibModal', 'blockUI', 'toastr', 'serviceGetId'];
-    function questionCrt($scope, $http, $route, $timeout, $uibModal, blockUI, toastr, serviceGetId) {
+    questionCrt.$inject = ['$scope', '$http', '$route', '$timeout', '$sce', '$uibModal', 'blockUI', 'toastr', 'serviceGetId'];
+    function questionCrt($scope, $http, $route, $timeout, $sce, $uibModal, blockUI, toastr, serviceGetId) {
         blockUI.start();
+        $scope.trustAsHtml = $sce.trustAsHtml;
         //lấy dữ liệu
         $http.get("api/Question/get").then(function (response) {
             blockUI.stop();
