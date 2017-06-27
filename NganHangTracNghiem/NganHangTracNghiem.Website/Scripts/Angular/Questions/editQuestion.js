@@ -4,6 +4,7 @@
     questionCrt.$inject = ['$scope', '$http', '$route', '$timeout', '$sce', '$uibModal', 'blockUI', 'toastr', 'serviceGetId'];
     function questionCrt($scope, $http, $route, $timeout, $sce, $uibModal, blockUI, toastr, serviceGetId) {
         blockUI.start();
+        debugger 
         $scope.trustAsHtml = $sce.trustAsHtml;
         //lấy dữ liệu
         $http.get("api/Question/get").then(function (response) {
@@ -11,10 +12,9 @@
             var ketqua = response.data;
             if (ketqua != null) {
                 $scope.ListQuestions = ketqua;
-                toastr.success('', 'Tải dnah sách câu hỏi thành công');
-
+               
             } else {
-                toastr.error('', 'Không tải được danh sách câu hỏi');
+                toastr.error('', 'Lỗi khi tải danh sách câu hỏi ');
 
             }
         });
@@ -61,12 +61,11 @@
                         blockUI.stop();
                         var ketqua = response.data;
                         if (ketqua != null) {
-
                             toastr.success('', 'Xóa câu hỏi thành công');
-
+                            $route.reload(true);
                         } else {
                             toastr.error('', 'Đã có lỗi xảy ra');
-
+                          
                         }
                     });
                 });
@@ -78,8 +77,8 @@
 
 
     app.controller('popQuestionController', popCrt);
-    popCrt.$inject = ['$uibModalInstance', '$scope', 'blockUI', 'toastr', '$http', 'serviceGetId'];
-    function popCrt($uibModalInstance, $scope, blockUI,toastr, $http, serviceGetId) {
+    popCrt.$inject = ['$uibModalInstance', '$scope', 'blockUI', 'toastr', '$route', '$http', '$location', 'serviceGetId'];
+    function popCrt($uibModalInstance, $scope, blockUI, toastr, $route, $http, $location, serviceGetId) {
         var Id = serviceGetId.getData();
         var $ctrl = this;
         var AnswerA = null;
@@ -189,7 +188,7 @@
                     'HoanViA': hvA,
                     'HoanViB': hvB,
                     'HoanViC': hvC,
-                    'HoanViS': hvD,
+                    'HoanViD': hvD,
                     'Diem': $scope.CauHoi.Diem,
                     'DoPhanCach': $scope.CauHoi.DoPhanCach,
                     'DoKho': $scope.CauHoi.DoKho,
@@ -202,16 +201,15 @@
                 };
 
                 $http.post("api/Question/edit", data).then(function (response) {
-
                     blockUI.stop();
                     var ketqua = response.data;
                     if (ketqua == 1) {
-
                         toastr.success('', 'Thêm câu hỏi mới thành công');
-                
+                        $route.reload(true);
+                        $uibModalInstance.dismiss('cancel');
                     }
                     if (ketqua == 0) {
-                        toastr.success('', 'Thêm câu hỏi thất bại');
+                        toastr.error('', 'Thêm câu hỏi thất bại');
                     }
 
                 });

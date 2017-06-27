@@ -27,6 +27,6 @@ namespace NganHangTracNghiem.Data
         public Nullable<int> SubjectId { get; set; }
         public Nullable<int> ListenedTimes { get; set; }
         public Nullable<decimal> ObjectiveDifficulty { get; set; }
-
+        public Nullable<int> UserId { get; set; }
     }
 }
