@@ -1334,6 +1334,8 @@
     <Content Include="Scripts\Angular\Home\home.html" />
     <Content Include="Scripts\Angular\Questions\addQuesrionCrt.js" />
     <Content Include="Scripts\Angular\Questions\popQuestion.html" />
+    <Content Include="Scripts\Angular\Readfile\editQuestionResult.html" />
+    <Content Include="Scripts\Angular\Readfile\editQuestionResult.js" />
     <Content Include="Scripts\Angular\Readfile\Result.js" />
     <Content Include="Scripts\Angular\Readfile\ReadFile.html" />
     <Content Include="Scripts\Angular\Readfile\ReadFile.js" />

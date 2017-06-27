@@ -236,26 +236,6 @@
         <ScalarProperty Name="Id" ColumnName="RoleId" />
       </EndProperty>
     </AssociationSetMapping>
-    <FunctionImportMapping FunctionImportName="pro_Login" FunctionName="ObjectiveTestModel.Store.pro_Login">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_Login_Result">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Username" ColumnName="Username" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
-          <ScalarProperty Name="LogOut" ColumnName="LogOut" />
-          <ScalarProperty Name="LastActivity" ColumnName="LastActivity" />
-          <ScalarProperty Name="LastLogIn" ColumnName="LastLogIn" />
-          <ScalarProperty Name="LastPasswordChanged" ColumnName="LastPasswordChanged" />
-          <ScalarProperty Name="LastLogOut" ColumnName="LastLogOut" />
-          <ScalarProperty Name="Salt" ColumnName="Salt" />
-          <ScalarProperty Name="Comment" ColumnName="Comment" />
-          <ScalarProperty Name="BuildInUser" ColumnName="BuildInUser" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="pro_GetUser_byUserName" FunctionName="ObjectiveTestModel.Store.pro_GetUser_byUserName">
       <ResultMapping>
         <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_GetUser_byUserName_Result">

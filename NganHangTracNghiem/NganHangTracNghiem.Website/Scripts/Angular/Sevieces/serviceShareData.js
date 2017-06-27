@@ -8,7 +8,8 @@
 
         var KEY = 'App.SelectedValue';
 
-        var addData = function (newObj) {
+        var addData = function (newObj, key) {
+            KEY = key;
             var mydata = $window.sessionStorage.getItem(KEY);
             if (mydata) {
                 mydata = JSON.parse(mydata);
@@ -19,15 +20,17 @@
             $window.sessionStorage.setItem(KEY, JSON.stringify(mydata));
         };
 
-        var getData = function () {
+        var getData = function (key) {
+            KEY = key;
             var mydata = $window.sessionStorage.getItem(KEY);
             if (mydata) {
                 mydata = mydata;
             }
             return mydata || [];
         };
-        var clearall = function clearAll() {
-            $window.sessionStorage.clear();
+        var clearall = function clearAll(key) {
+            KEY = key;
+            $window.sessionStorage.removeItem(KEY);
         }
         return {
             addData: addData,

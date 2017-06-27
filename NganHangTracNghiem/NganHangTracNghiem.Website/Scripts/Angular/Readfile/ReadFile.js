@@ -50,12 +50,12 @@
                 alert("Up câu hỏi thành công");
                 debugger
              
-                serviceShareData.clearall();
+                serviceShareData.clearall('datareadfile');
                 $scope.ListQuestions = JSON.parse(this.response);
                 LsQuestions_Success = $scope.ListQuestions.Question_Success;
                 LsQuestions_Error = $scope.ListQuestions.Question_Error;
                 var SelectedValue = $scope.ListQuestions;
-                serviceShareData.addData(SelectedValue);
+                serviceShareData.addData(SelectedValue,'datareadfile');
                 blockUI.stop();
                 $location.url('Result');
                 $scope.$apply();

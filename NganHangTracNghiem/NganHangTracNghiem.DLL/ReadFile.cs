@@ -31,6 +31,11 @@ namespace NganHangTracNghiem.DDL
         string m_img = @"http://localhost:53112/Img/";
         string m_audio= @"http://localhost:53112/Audio/";
         private string m_filePath = null;
+        string mark_df = "0,5";
+        string SubjectiveDifficulty_df = "0,5";
+        string Discrimination_df = "0,5";
+        int userId = 10001;
+        int ChapterID = 9;
         public ListQuestion OpenWordprocessingDocumentReadonly(string filepath,string filepath_zip,string host)
         {
             m_img = host + "Img/";
@@ -109,8 +114,13 @@ namespace NganHangTracNghiem.DDL
                             }
                             if (Group_Question.Id == 0)//if group question don't save 
                             {
+                                Group_Question.UserId = userId;
                                 Group_Question.Content = Content;
-                                Group_Question.ChapterId = 9;
+                                Group_Question.ChapterId = ChapterID;
+                                Group_Question.SubjectiveDifficulty = Convert.ToDecimal(SubjectiveDifficulty_df);
+                                Group_Question.CreateDate = DateTime.Now;
+                                Group_Question.Mark = Convert.ToDecimal(mark_df);
+                                Group_Question.Discrimination = Convert.ToDecimal(Discrimination_df);
                                 //call api save questions
                                 //================================================================
                                 client_Question = new HttpClient();
@@ -133,6 +143,13 @@ namespace NganHangTracNghiem.DDL
                                 else
                                 {
                                     Group_Question.Id = id_question;
+                                    Group_Question.UserId = userId;
+                                    Group_Question.Content = Content;
+                                    Group_Question.ChapterId = ChapterID;
+                                    Group_Question.SubjectiveDifficulty = Convert.ToDecimal(SubjectiveDifficulty_df);
+                                    Group_Question.CreateDate = DateTime.Now;
+                                    Group_Question.Mark = Convert.ToDecimal(mark_df);
+                                    Group_Question.Discrimination = Convert.ToDecimal(Discrimination_df);
                                     qd = new Question_Detail();
                                     qd.Question = Group_Question;
                                     qd.Erorr = 3000;
@@ -199,6 +216,13 @@ namespace NganHangTracNghiem.DDL
                                     Question.ParentId = Group_Question.Id;
                                 }
                                 Question.Id = id_question;
+                                Question.UserId = userId;
+                                Question.SubjectiveDifficulty = Convert.ToDecimal(SubjectiveDifficulty_df);
+                                Question.Content = Content;
+                                Question.ChapterId = ChapterID;
+                                Question.CreateDate = DateTime.Now;
+                                Question.Mark = Convert.ToDecimal(mark_df);
+                                Question.Discrimination = Convert.ToDecimal(Discrimination_df);
                                 qd = new Question_Detail();
                                 qd.Question = Question;
                                 if (Group == 1)
@@ -237,6 +261,14 @@ namespace NganHangTracNghiem.DDL
                                     Question.ParentId = Group_Question.Id;
                                 }
                                 Question.Id = id_question;
+                                Question.UserId = userId;
+                                Question.SubjectiveDifficulty = Convert.ToDecimal(SubjectiveDifficulty_df);
+                                Question.Content = Content;
+                                Question.ChapterId = ChapterID;
+                                Question.CreateDate = DateTime.Now;
+                                Question.Mark = Convert.ToDecimal(mark_df);
+                                Question.Discrimination = Convert.ToDecimal(Discrimination_df);
+                                qd = new Question_Detail();
                                 qd = new Question_Detail();
                                 if (Group == 1)
                                 {
@@ -376,6 +408,14 @@ namespace NganHangTracNghiem.DDL
                                     Question.ParentId = Group_Question.Id;
                                 }
                                 Question.Id = id_question;
+                                Question.UserId = userId;
+                                Question.SubjectiveDifficulty = Convert.ToDecimal(SubjectiveDifficulty_df);
+                                Question.Content = Content;
+                                Question.ChapterId = ChapterID;
+                                Question.CreateDate = DateTime.Now;
+                                Question.Mark = Convert.ToDecimal(mark_df);
+                                Question.Discrimination = Convert.ToDecimal(Discrimination_df);
+                                qd = new Question_Detail();
                                 qd = new Question_Detail();
                                 if (Group == 1)
                                 {
@@ -414,6 +454,14 @@ namespace NganHangTracNghiem.DDL
                                     Question.ParentId = Group_Question.Id;
                                 }
                                 Question.Id = id_question;
+                                Question.UserId = userId;
+                                Question.SubjectiveDifficulty = Convert.ToDecimal(SubjectiveDifficulty_df);
+                                Question.Content = Content;
+                                Question.ChapterId = ChapterID;
+                                Question.CreateDate = DateTime.Now;
+                                Question.Mark = Convert.ToDecimal(mark_df);
+                                Question.Discrimination = Convert.ToDecimal(Discrimination_df);
+                                qd = new Question_Detail();
                                 qd = new Question_Detail();
                                 qd.Question = Question;
                                 if (Group == 1)
@@ -449,9 +497,14 @@ namespace NganHangTracNghiem.DDL
                             {
                                 if (Question.Id == 0)
                                 {
+                                    Question.UserId = userId;
+                                    Question.SubjectiveDifficulty = Convert.ToDecimal(SubjectiveDifficulty_df);
                                     Question.Content = Content;
-                                    Question.ChapterId = 9;
+                                    Question.ChapterId = ChapterID;
+                                    Question.CreateDate = DateTime.Now;
                                     Question.ParentId = Group_Question.Id;
+                                    Question.Mark= Convert.ToDecimal(mark_df);
+                                    Question.Discrimination= Convert.ToDecimal(Discrimination_df);
                                     //call api save questions
                                     //================================================================
                                     client_Question = new HttpClient();
@@ -488,7 +541,12 @@ namespace NganHangTracNghiem.DDL
                             {
                                 if (Question.Id == 0)
                                 {
-                                    Question.ChapterId = 9;
+                                    Question.UserId = userId;
+                                    Question.ChapterId = ChapterID;
+                                    Question.SubjectiveDifficulty = Convert.ToDecimal(SubjectiveDifficulty_df);
+                                    Question.CreateDate = DateTime.Now;
+                                    Question.Mark = Convert.ToDecimal(mark_df);
+                                    Question.Discrimination = Convert.ToDecimal(Discrimination_df);
                                     //call api save questions
                                     //================================================================
                                     client_Question = new HttpClient();
@@ -604,16 +662,12 @@ namespace NganHangTracNghiem.DDL
                             SubjectiveDifficulty = element.InnerText.Replace("[<df>]", "").Replace("[</df>]", "");
                             try
                             {
-                                Question.SubjectiveDifficulty = Convert.ToDecimal(SubjectiveDifficulty);
+                                Decimal sub = Convert.ToDecimal(SubjectiveDifficulty);
+                                this.SubjectiveDifficulty_df = sub.ToString();
                             }
                             catch
                             {
-                                Question.SubjectiveDifficulty = 0.5M;
-                            }
-
-                            if (SubjectiveDifficulty == string.Empty)
-                            {
-                                Question.SubjectiveDifficulty = 0.5M;
+                                
                             }
                             continue;
 
@@ -626,16 +680,12 @@ namespace NganHangTracNghiem.DDL
                             Discrimination = element.InnerText.Replace("[<dpc>]", "").Replace("[</dpc>]", "");
                             try
                             {
-                                Question.Discrimination = Convert.ToDecimal(Discrimination);
+                                Decimal dis = Convert.ToDecimal(Discrimination);
+                                this.Discrimination_df = dis.ToString();
                             }
                             catch
                             {
-                                Question.Discrimination = 0.5M;
-                            }
-
-                            if (Discrimination == string.Empty)
-                            {
-                                Question.Discrimination = 0.5M;
+                                
                             }
                             continue;
                         }
@@ -649,16 +699,12 @@ namespace NganHangTracNghiem.DDL
                                 Mark = element.InnerText.Replace("[<sc>]", "").Replace("[</sc>]", "");
                                 try
                                 {
-                                    Group_Question.Mark = Convert.ToDecimal(Mark);
+                                    Decimal mar = Convert.ToDecimal(Mark);
+                                    this.mark_df = mar.ToString();
                                 }
                                 catch
                                 {
-                                    Group_Question.Mark = 0.5M;
-                                }
-
-                                if (Mark == string.Empty)
-                                {
-                                    Group_Question.Mark = 0.5M;
+                                    
                                 }
                                 continue;
                             }
@@ -667,16 +713,12 @@ namespace NganHangTracNghiem.DDL
                                 Mark = element.InnerText.Replace("[<sc>]", "").Replace("[</sc>]", "");
                                 try
                                 {
-                                    Question.Mark = Convert.ToDecimal(Mark);
+                                    Decimal mar = Convert.ToDecimal(Mark);
+                                    this.mark_df = mar.ToString();
                                 }
                                 catch
                                 {
-                                    Question.Mark = 0.5M;
-                                }
 
-                                if (Mark == string.Empty)
-                                {
-                                    Question.Mark = 0.5M;
                                 }
                                 continue;
                             }

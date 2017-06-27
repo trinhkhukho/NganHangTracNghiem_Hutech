@@ -1,0 +1,248 @@
+﻿<div>
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title" style="text-align: center">Nhập câu hỏi</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header" data-background-color="blue">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <h4 class="title">Chỉnh sửa câu hỏi </h4>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <form>
+
+                                <div class="row">
+                                    <div>
+                                        <div class="col-md-2" style="text-align: left">
+                                            <label>Câu hỏi</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <textarea id="CauHoi"></textarea>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-md-1" style="text-align: right">
+                                        <label>A:</label>
+                                    </div>
+                                    <div class="col-md-11">
+                                        <div class="form-group">
+                                            <textarea id="CauA"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <div class="checkbox-material" style="margin: 0; padding: 0;">
+                                                <label style="margin: 0; padding: 0;">
+                                                    <input type="checkbox" id="CauAhv">
+                                                    Cho phép hoán vị
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="checkbox-material" style="margin: 0; padding: 0;">
+                                                <label style="margin: 0; padding: 0;">
+                                                    <input type="checkbox" id="CauAda">
+                                                    Đáp án
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-1" style="text-align: right">
+                                        <label>B:</label>
+                                    </div>
+                                    <div class="col-md-11">
+                                        <div class="form-group">
+                                            <textarea id="CauB"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <div class="checkbox-material" style="margin: 0; padding: 0;">
+                                                <label style="margin: 0; padding: 0;">
+                                                    <input type="checkbox" id="CauBhv">
+                                                    Cho phép hoán vị
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="checkbox-material" style="margin: 0; padding: 0;">
+                                                <label style="margin: 0; padding: 0;">
+                                                    <input type="checkbox" id="CauBda">
+                                                    Đáp án
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-1" style="text-align: right">
+                                        <label>C:</label>
+                                    </div>
+                                    <div class="col-md-11">
+                                        <div class="form-group">
+                                            <textarea id="CauC"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="checkbox-material" style="margin: 0; padding: 0;">
+                                            <label style="margin: 0; padding: 0;">
+                                                <input type="checkbox" id="CauChv">
+                                                Cho phép hoán vị
+                                            </label>
+                                        </div>
+                                        <div class="checkbox-material" style="margin: 0; padding: 0;">
+                                            <label style="margin: 0; padding: 0;">
+                                                <input type="checkbox" id="CauCda">
+                                                Đáp án
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-1" style="text-align: right">
+                                        <label>D:</label>
+                                    </div>
+                                    <div class="col-md-11">
+                                        <div class="form-group">
+                                            <textarea id="CauD"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+
+                                            <div class="checkbox-material" style="margin: 0; padding: 0;">
+                                                <label style="margin: 0; padding: 0;">
+                                                    <input type="checkbox" id="CauDhv">
+                                                    Cho phép hoán vị
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="checkbox-material" style="margin: 0; padding: 0;">
+                                                <label style="margin: 0; padding: 0;">
+                                                    <input type="checkbox" id="CauDda">
+                                                    Đáp án
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group" style="margin-top: 1px;">
+                                            <input type="text" class="form-control" ng-model="CauHoi.Diem" placeholder="Điểm" style="border-bottom: 1px;">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group" style="margin-top: 1px;">
+                                            <input type="number" class="form-control" ng-model="CauHoi.DoKho" placeholder="Độ khó" style="border-bottom: 1px;" max="1" min="0">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group" style="margin-top: 1px;">
+                                            <input type="number" class="form-control" ng-model="CauHoi.DoPhanCach" placeholder="Độ phân cách" style="border-bottom: 1px;" max="1" min="0">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="clearfix"></div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="$ctrl.Submit()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+    </div>
+</div>
+<script src="../../../Content/ckeditor/ckeditor.js"></script>
+<script src="../../../Content/ckfinder/ckfinder.js"></script>
+<script src="../../../Content/ckeditor/adapters/jquery.js"></script>
+<script>
+    $(document).ready(function () {
+        //CKEDITOR.disableAutoInline = true;
+        CKEDITOR.replace('CauHoi');
+        CKEDITOR.replace('CauA');
+        CKEDITOR.replace('CauB');
+        CKEDITOR.replace('CauC');
+        CKEDITOR.replace('CauD');
+
+
+        CKFinder.setupCKEditor(null, '/Content/ckfinder/');
+        //$('#DapAnA1 div').attr({
+        //    'id': 'DapAnA',
+        //    'class': 'form-control'
+        //});
+        //$('#CauAda').prop('checked', true);
+        $('#CauAda').click(function () {
+
+            if ($('#CauAda').is(':checked')) {
+                $('#CauBda').prop('checked', false);
+                $('#CauCda').prop('checked', false);
+                $('#CauDda').prop('checked', false);
+            } else {
+                $('#CauAda').prop('checked', true);
+            }
+        });
+        $('#CauBda').click(function () {
+            if ($('#CauBda').is(':checked')) {
+                $('#CauAda').prop('checked', false);
+                $('#CauCda').prop('checked', false);
+                $('#CauDda').prop('checked', false);
+            } else {
+                $('#CauAda').prop('checked', true);
+            }
+        });
+        $('#CauCda').click(function () {
+            if ($('#CauCda').is(':checked')) {
+                $('#CauAda').prop('checked', false);
+                $('#CauBda').prop('checked', false);
+                $('#CauDda').prop('checked', false);
+            } else {
+                $('#CauAda').prop('checked', true);
+            }
+        });
+        $('#CauDda').click(function () {
+            if ($('#CauDda').is(':checked')) {
+                $('#CauAda').prop('checked', false);
+                $('#CauBda').prop('checked', false);
+                $('#CauCda').prop('checked', false);
+            } else {
+                $('#CauAda').prop('checked', true);
+            }
+        });
+    });
+
+
+</script>

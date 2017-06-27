@@ -1,4 +1,7 @@
 ﻿
+
+
+
 <div class="main-panel">
     <nav class="navbar navbar-transparent navbar-absolute">
         <div class="container-fluid">
@@ -35,12 +38,13 @@
     </nav>
     <div class="content" ng-controller="Result">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row">          
                 <div class="col-lg-12">
+                    <br />
                     <main>
-                        <input id="tab1" type="radio" name="tabs" checked>
+                        <input id="tab1" type="radio" name="tabs" class="input_tab" checked>
                         <label for="tab1">Up thành công</label>
-                        <input id="tab2" type="radio" name="tabs">
+                        <input id="tab2" type="radio"  class="input_tab" name="tabs">
                         <label for="tab2">Câu hỏi lỗi</label>
                         <section id="content1">
                             <div ng-repeat="Question_Success in Question_Successs">
@@ -70,13 +74,13 @@
                                             <div class="col-md-3">
                                                 <h5 class="text-info">Độ phân cách: </h5>
                                                 <h5 class="text-info">Độ Khó: </h5>
-                                                <!--<h5 class="text-info">Điểm: </h5>-->
+                                                <h5 class="text-info">Điểm: </h5>
                                                 <h5 class="text-primary">Nội dung câu hỏi con</h5>
                                             </div>
                                             <div class="col-md-9">
                                                 <h5 class="text-danger">{{Question_Success.Question.Discrimination}}</h5>
                                                 <h5 class="text-danger">{{Question_Success.Question.SubjectiveDifficulty}}</h5>
-                                                <!--<h5 class="text-danger">{{Question_Success.Question.Mark}}</h5>-->
+                                                <h5 class="text-danger">{{Question_Success.Question.Mark}}</h5>
                                             </div>
                                         </div>
                                         <h4 ng-bind-html="trustAsHtml(Question_Success.Question.Content)"></h4>
@@ -162,7 +166,7 @@
                                 </div>
 
                             </div>
-                            <!--<pagination total-items="Question_Successs.length" ng-model="currentpage" items-per-page="pagesize"></pagination>-->
+                            
                         </section>
                         <section id="content2">
                             <div ng-repeat="Question_Error in Question_Errors">
@@ -178,6 +182,8 @@
                                         <h5 class="text-danger">{{Question_Error.Question.Discrimination}}</h5>
                                         <h5 class="text-danger">{{Question_Error.Question.SubjectiveDifficulty}}</h5>
                                         <h5 class="text-danger">{{Question_Error.Question.Mark}}</h5>
+                                        <button type="submit" class="btn btn-danger pull-right" ng-click="deleteQuestion($index)">xóa</button>
+                                        <button type="submit" class="btn btn-primary pull-right" ng-click="editQuestion(Question_Error)">sửa</button>
                                     </div>
                                 </div>
                                 <h4 ng-bind-html="trustAsHtml(Question_Error.Question.Content)"></h4>
@@ -222,13 +228,11 @@
 
 </div>
 <script>
-            (function (e, t, n) { var r = e.querySelectorAll("html")[0]; r.className = r.className.replace(/(^|\s)no-js(\s|$)/, "$1js$2") })(document, window, 0);
+    (function (e, t, n) { var r = e.querySelectorAll("html")[0]; r.className = r.className.replace(/(^|\s)no-js(\s|$)/, "$1js$2") })(document, window, 0);
 </script>
 <script src="../Content/css/jquery-3.2.1.min.js"></script>
 <script src="../Content/css/material-dashboard.js"></script>
 <script src="../Content/css/material.min.js"></script>
-
-
 <style>
     /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
     @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
@@ -275,9 +279,9 @@
         border-top: 1px solid #ddd;
     }
 
-    input {
-        display: none;
-    }
+.input_tab{
+    display: none;
+}
 
     label {
         display: inline-block;

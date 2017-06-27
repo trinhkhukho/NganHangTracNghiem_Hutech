@@ -25,6 +25,5 @@ F:\Hutech_TracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNg
 F:\Hutech_TracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.pdb
 D:\study\NganHangGitHub\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\bin\Debug\NganHangTracNghiem.Data.dll
 D:\study\NganHangGitHub\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\bin\Debug\NganHangTracNghiem.Data.pdb
-D:\study\NganHangGitHub\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.csprojResolveAssemblyReference.cache
 D:\study\NganHangGitHub\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.dll
 D:\study\NganHangGitHub\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.pdb

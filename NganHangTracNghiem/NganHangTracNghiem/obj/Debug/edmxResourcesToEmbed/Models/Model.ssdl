@@ -427,10 +427,6 @@
   <Function Name="pro_GetUser_byUserName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Username" Type="nvarchar" Mode="In" />
   </Function>
-  <Function Name="pro_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="Username" Type="nvarchar" Mode="In" />
-    <Parameter Name="Password" Type="nvarchar" Mode="In" />
-  </Function>
   <EntityContainer Name="ObjectiveTestModelStoreContainer">
     <EntitySet Name="Answers" EntityType="Self.Answers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Chapters" EntityType="Self.Chapters" Schema="dbo" store:Type="Tables" />
