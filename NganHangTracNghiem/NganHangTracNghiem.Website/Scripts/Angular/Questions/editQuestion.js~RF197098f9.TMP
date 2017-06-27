@@ -4,7 +4,6 @@
     questionCrt.$inject = ['$scope', '$http', '$route', '$timeout', '$sce', '$uibModal', 'blockUI', 'toastr', 'serviceGetId'];
     function questionCrt($scope, $http, $route, $timeout, $sce, $uibModal, blockUI, toastr, serviceGetId) {
         blockUI.start();
-        debugger 
         $scope.trustAsHtml = $sce.trustAsHtml;
         //lấy dữ liệu
         $http.get("api/Question/get").then(function (response) {
@@ -12,9 +11,10 @@
             var ketqua = response.data;
             if (ketqua != null) {
                 $scope.ListQuestions = ketqua;
-               
+                toastr.success('', 'Tải dnah sách câu hỏi thành công');
+
             } else {
-                toastr.error('', 'Lỗi khi tải danh sách câu hỏi ');
+                toastr.error('', 'Không tải được danh sách câu hỏi');
 
             }
         });
@@ -31,54 +31,12 @@
       
             });
         };
-
-        $scope.deleteQuestion = function (Id) {
-            blockUI.start();
-
-            var IdAnswerA = null;
-            var IdAnswerB = null;
-            var IdAnswerC = null;
-            var IdAnswerD = null;
-
-            var r = confirm("Bạn có chắc muốn xóa câu hỏi " + Id);
-            if (r == true) {
-                $http.get(hostapi + 'api/AnswersQuestion/' + Id).then(function (response) {
-                    debugger
-                    var lsAnswer = response.data;
-                    IdAnswerA = lsAnswer[0].Id;
-                    IdAnswerB = lsAnswer[1].Id;
-                    IdAnswerC = lsAnswer[2].Id;
-                    IdAnswerD = lsAnswer[3].Id;
-                    var data = {
-                        'IdQuestion': Id,
-                        'IdAnswerA': IdAnswerA,
-                        'IdAnswerB': IdAnswerB,
-                        'IdAnswerC': IdAnswerC,
-                        'IdAnswerD': IdAnswerD
-
-                    }
-                    $http.post("api/Question/delete", data).then(function (response) {
-                        blockUI.stop();
-                        var ketqua = response.data;
-                        if (ketqua != null) {
-                            toastr.success('', 'Xóa câu hỏi thành công');
-                            $route.reload(true);
-                        } else {
-                            toastr.error('', 'Đã có lỗi xảy ra');
-                          
-                        }
-                    });
-                });
-               
-              
-            } 
-        };
     };
 
 
     app.controller('popQuestionController', popCrt);
-    popCrt.$inject = ['$uibModalInstance', '$scope', 'blockUI', 'toastr', '$route', '$http', '$location', 'serviceGetId'];
-    function popCrt($uibModalInstance, $scope, blockUI, toastr, $route, $http, $location, serviceGetId) {
+    popCrt.$inject = ['$uibModalInstance', '$scope', 'blockUI', 'toastr', '$http', 'serviceGetId'];
+    function popCrt($uibModalInstance, $scope, blockUI,toastr, $http, serviceGetId) {
         var Id = serviceGetId.getData();
         var $ctrl = this;
         var AnswerA = null;
@@ -188,7 +146,7 @@
                     'HoanViA': hvA,
                     'HoanViB': hvB,
                     'HoanViC': hvC,
-                    'HoanViD': hvD,
+                    'HoanViS': hvD,
                     'Diem': $scope.CauHoi.Diem,
                     'DoPhanCach': $scope.CauHoi.DoPhanCach,
                     'DoKho': $scope.CauHoi.DoKho,
@@ -201,15 +159,16 @@
                 };
 
                 $http.post("api/Question/edit", data).then(function (response) {
+
                     blockUI.stop();
                     var ketqua = response.data;
                     if (ketqua == 1) {
+
                         toastr.success('', 'Thêm câu hỏi mới thành công');
-                        $route.reload(true);
-                        $uibModalInstance.dismiss('cancel');
+                
                     }
                     if (ketqua == 0) {
-                        toastr.error('', 'Thêm câu hỏi thất bại');
+                        toastr.success('', 'Thêm câu hỏi thất bại');
                     }
 
                 });

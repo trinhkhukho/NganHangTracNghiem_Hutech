@@ -432,10 +432,6 @@
         <Function Name="pro_GetUser_byUserName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Username" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="pro_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Username" Type="nvarchar" Mode="In" />
-          <Parameter Name="Password" Type="nvarchar" Mode="In" />
-        </Function>
         <EntityContainer Name="ObjectiveTestModelStoreContainer">
           <EntitySet Name="Answers" EntityType="Self.Answers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Chapters" EntityType="Self.Chapters" Schema="dbo" store:Type="Tables" />
@@ -1043,7 +1039,7 @@
             <Parameter Name="Password" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="pro_GetUser_byUserName" ReturnType="Collection(ObjectiveTestModel.pro_GetUser_byUserName_Result)">
-            <Parameter Name="Username" Mode="In" Type="String" />
+          <Parameter Name="Username" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="pro_Login_Result">
@@ -1319,26 +1315,6 @@
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>
           </AssociationSetMapping>
-          <FunctionImportMapping FunctionImportName="pro_Login" FunctionName="ObjectiveTestModel.Store.pro_Login">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_Login_Result">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
-                <ScalarProperty Name="LogOut" ColumnName="LogOut" />
-                <ScalarProperty Name="LastActivity" ColumnName="LastActivity" />
-                <ScalarProperty Name="LastLogIn" ColumnName="LastLogIn" />
-                <ScalarProperty Name="LastPasswordChanged" ColumnName="LastPasswordChanged" />
-                <ScalarProperty Name="LastLogOut" ColumnName="LastLogOut" />
-                <ScalarProperty Name="Salt" ColumnName="Salt" />
-                <ScalarProperty Name="Comment" ColumnName="Comment" />
-                <ScalarProperty Name="BuildInUser" ColumnName="BuildInUser" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="pro_GetUser_byUserName" FunctionName="ObjectiveTestModel.Store.pro_GetUser_byUserName">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_GetUser_byUserName_Result">
