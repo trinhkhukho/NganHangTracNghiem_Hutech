@@ -7,15 +7,20 @@
     resultCrt.$inject = ['$scope', '$sce', '$http', '$location', 'blockUI', 'toastr', 'serviceShareData', '$uibModal', '$route', '$timeout'];
     function resultCrt($scope, $sce, $http, $location, blockUI, toastr, serviceShareData, $uibModal, $route, $timeout) {
         $scope.from = {};
-        $scope.pagesize = 5;
-        $scope.currentpage = 1;
+        $scope.pageSize = 3;
+        $scope.currentPage = 1;
+        $scope.pageSizeErr = 3;
+        $scope.currentPageErr = 1;
         $scope.trustAsHtml = $sce.trustAsHtml;
         $scope.ListQuestions = null;
         $scope.ListQuestions = serviceShareData.getData('datareadfile');
         var ListQuestions = JSON.parse($scope.ListQuestions);
         $scope.Question_Successs = ListQuestions[0].Question_Success;
+        debugger;
         $scope.Question_Errors = ListQuestions[0].Question_Error;
-        $scope.editQuestion = function (question) {
+        $scope.editQuestion = function (question,id) {
+            serviceShareData.clearall('id');
+            serviceShareData.addData(id, 'id');
             serviceShareData.clearall('dataeditquestion');
             serviceShareData.addData(question, 'dataeditquestion');
             $uibModal.open({
@@ -35,6 +40,7 @@
                 $scope.ListQuestions[0].Question_Error.splice(question_delete,1);
                 toastr.success('', 'Xóa câu hỏi thành công');
                 serviceShareData.clearall('datareadfile');
+
                 var SelectedValue = $scope.ListQuestions[0];
                 serviceShareData.addData(SelectedValue, 'datareadfile');
                 $route.reload(true);
@@ -163,12 +169,23 @@
 
 
             };
-
-            $http.post("api/Question/edit", data).then(function (response) {
+            debugger;
+            $http.post("api/Question/add", data).then(function (response) {
                 blockUI.stop();
                 var ketqua = response.data;
                 if (ketqua == 1) {
                     toastr.success('', 'Thêm câu hỏi mới thành công');
+                    $scope.ListQuestions = null;
+                    $scope.ListQuestions = serviceShareData.getData('datareadfile');
+                    var ListQuestions = JSON.parse($scope.ListQuestions);
+                    var id = JSON.parse(serviceShareData.getData('id'));
+                    var question_delete = ListQuestions[0].Question_Error[id];
+                    $scope.ListQuestions = ListQuestions;
+                    $scope.ListQuestions[0].Question_Error.splice(question_delete, 1);
+                    $scope.ListQuestions[0].Question_Success.push(question_delete);
+                    serviceShareData.clearall('datareadfile');
+                    var SelectedValue = $scope.ListQuestions[0];
+                    serviceShareData.addData(SelectedValue, 'datareadfile');
                     $route.reload(true);
                     $uibModalInstance.dismiss('cancel');
                 }

@@ -10,9 +10,12 @@
         $http.get("api/Question/get").then(function (response) {
             blockUI.stop();
             var ketqua = response.data;
+
             if (ketqua != null) {
+                debugger;
                 $scope.ListQuestions = ketqua;
-               
+                $scope.pageSize = 10;
+                $scope.currentPage = 1;
             } else {
                 toastr.error('', 'Lỗi khi tải danh sách câu hỏi ');
 

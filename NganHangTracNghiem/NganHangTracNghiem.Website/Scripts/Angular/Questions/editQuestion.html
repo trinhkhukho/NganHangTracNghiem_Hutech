@@ -68,7 +68,7 @@
                                             Xóa
                                         </th>
                                     </tr>
-                                    <tr ng-repeat="item in ListQuestions | orderBy : 'Id'">
+                                    <tr ng-repeat="item in ListQuestions | startFrom: (currentPage-1)*pageSize | limitTo: pageSize |orderBy : 'Id'">
                                        
                                         <td>{{ item.Id }}</td>
                                         <td>{{ item.Name }}</td>
@@ -88,6 +88,11 @@
                                 </table>
                             </form>
                         </div>
+                        <div  style="margin-left:20px;">
+                            <ul uib-pagination total-items="ListQuestions.length" ng-model="currentPage" items-per-page="pageSize"></ul>
+                        </div>
+                        
+                        
                     </div>
                 </div>
             </div>

@@ -1,7 +1,13 @@
-﻿(function () {
+﻿
+(function () {
     'use strict';
     angular.module('myApp', ['ngRoute', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'blockUI', 'toastr'])
-        .config(config);
+        .config(config)
+    .filter('startFrom', function () {
+        return function (data, start) {
+            return data.slice(start);
+        }
+    });
       
 
 //var myApp = angular.module('myApp', ['ngRoute']);

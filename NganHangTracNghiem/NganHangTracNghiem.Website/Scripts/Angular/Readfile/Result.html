@@ -43,7 +43,7 @@
                         <input id="tab2" type="radio"  class="input_tab" name="tabs">
                         <label for="tab2">Câu hỏi lỗi</label>
                         <section id="content1">
-                            <div ng-repeat="Question_Success in Question_Successs">
+                            <div ng-repeat="Question_Success in Question_Successs | startFrom: (currentPage-1)*pageSize | limitTo: pageSize">
                                 <div ng-if="Question_Success.Group==1">
                                     <hr />
                                     <h4 class="text-info">Câu hỏi nhóm</h4>
@@ -160,12 +160,14 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
-                            
+                            <hr />
+                            <div style="margin-left:20px;">
+                                <ul uib-pagination total-items="Question_Successs.length" ng-model="currentPage" items-per-page="pageSize"></ul>
+                            </div>
                         </section>
                         <section id="content2">
-                            <div ng-repeat="Question_Error in Question_Errors">
+                            <div ng-repeat="Question_Error in Question_Errors | startFrom: (currentPageErr-1)*pageSizeErr | limitTo: pageSizeErr">
                                 <hr />
                                 <div class="row">
                                     <div class="col-md-2">
@@ -179,7 +181,7 @@
                                         <h5 class="text-danger">{{Question_Error.Question.SubjectiveDifficulty}}</h5>
                                         <h5 class="text-danger">{{Question_Error.Question.Mark}}</h5>
                                         <button type="submit" class="btn btn-danger pull-right" ng-click="deleteQuestion($index)">xóa</button>
-                                        <button type="submit" class="btn btn-primary pull-right" ng-click="editQuestion(Question_Error)">sửa</button>
+                                        <button type="submit" class="btn btn-primary pull-right" ng-click="editQuestion(Question_Error,$index)">sửa</button>
                                     </div>
                                 </div>
                                 <h4 ng-bind-html="trustAsHtml(Question_Error.Question.Content)"></h4>
@@ -214,6 +216,9 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div style="margin-left:20px;">
+                                <ul uib-pagination total-items="Question_Errors.length" ng-model="currentPageErr" items-per-page="pageSizeErr"></ul>
                             </div>
                         </section>
                     </main>
