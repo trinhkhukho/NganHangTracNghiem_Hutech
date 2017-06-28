@@ -2,10 +2,11 @@
 (function (app) {
     'use strict';
     app.controller('QuestionController', questionCrt);
-    questionCrt.$inject = ['$scope', '$http', '$route', '$timeout', 'blockUI', 'toastr'];
-    function questionCrt($scope, $http, $route, $timeout, blockUI, toastr) {
+    questionCrt.$inject = ['$scope', '$http', '$route', '$timeout', 'blockUI', 'toastr', 'serviceChapterId'];
+    function questionCrt($scope, $http, $route, $timeout, blockUI, toastr, serviceChapterId) {
         //var DapAn;
-
+        debugger;
+        $scope.ChapterId = serviceChapterId.getChapterId();
         $scope.addQuestion = function () {
            
             blockUI.start();
