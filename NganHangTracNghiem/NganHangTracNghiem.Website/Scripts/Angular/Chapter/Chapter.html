@@ -49,7 +49,7 @@
                             <p class="category">Vui lòng nhập đầy đủ thông tin để tạo đề thi !</p>
                         </div>
                         <div class="card-content">
-                            <form>
+                            <form ng-submit="submit()">
                                 <div class="row">
                                     <div class="col-md-6">
 
@@ -83,8 +83,8 @@
                                         </div>
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <select class="form-control" id="faculties" ng-model="$scope.Selected.FacultiesSelected" ng-change="SelectFacultie()">
-                                                    <option value="0" disabled="" selected="" style="display: none;">Chọn Khoa</option>
+                                                <select required class="form-control" id="faculties" ng-model="$scope.Selected.FacultiesSelected" ng-change="SelectFacultie()">
+                                                    <option value="" style="display: none;">Chọn Khoa</option>
                                                     <option ng-repeat="Khoa in Faculties" value="{{Khoa.Id}}">{{Khoa.Name}}</option>
                                                 </select>
                                             </div>
@@ -103,8 +103,8 @@
                                         </div>
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <select class="form-control" id="subjects" ng-model="$scope.Selected.SubjectsSelected" ng-change="SelectSubject()">
-                                                    <option value="0" disabled="" selected="" style="display: none;">Chọn môn học</option>
+                                                <select required class="form-control" id="subjects" ng-model="$scope.Selected.SubjectsSelected" ng-change="SelectSubject()">
+                                                    <option value="" style="display: none;">Chọn môn học</option>
                                                     <option ng-repeat="MonHoc in SubjectResult" value="{{MonHoc.Id}}">{{MonHoc.Name }}</option>
                                                 </select>
                                                 
@@ -119,8 +119,8 @@
                                         </div>
                                         <div class="col-md-9">
                                             <div class="form-group">
-                                                <select class="form-control" id="chapters" ng-model="$scope.Selected.ChapterSelected" ng-change="SelectChapter()">
-                                                    <option value="0" disabled="" selected="" style="display: none;">Chọn phần</option>
+                                                <select required class="form-control" id="chapters" ng-model="$scope.Selected.ChapterSelected" ng-change="SelectChapter()" >
+                                                    <option value="" style="display: none;">Chọn phần</option>
                                                     <option ng-repeat="Phan in ChapterResult" value="{{Phan.Id}}">{{Phan.Name}}</option>
                                                 </select>
                                             </div>
@@ -131,7 +131,7 @@
 
 
                                 <button type="submit" class="btn btn-primary pull-right">Tiếp tục >></button>
-
+                              
                                 <div class="clearfix"></div>
                             </form>
                         </div>
@@ -139,13 +139,6 @@
                 </div>
 
             </div>
-            <!--<div class="row">
-
-                <div >
-                    <button type="button" ng-click="open()" class="btn btn-primary pull-right">Thêm câu hỏi</button>
-                </div>
-
-            </div>-->
         </div>
     </div>
 </div>

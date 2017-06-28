@@ -34,6 +34,7 @@ namespace NganHangTracNghiem.Website
 
                 "~/Scripts/Angular/app.js",
                 "~/Scripts/Angular/Sevieces/serviceGetId.js",
+                "~/Scripts/Angular/Sevieces/serviceChapterId.js",
                 "~/Scripts/Angular/Sevieces/serviceShareData.js",
                 "~/Scripts/Angular/Questions/addQuesrionCrt.js",
                 "~/Scripts/Angular/Chapter/ChapterCrt.js",

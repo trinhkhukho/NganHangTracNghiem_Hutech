@@ -10,8 +10,8 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
 (function (app) {
     'use strict';
     app.controller('GetBasicController', chapterCrt);
-    chapterCrt.$inject = ['$scope', '$http'];
-    function chapterCrt($scope, $http) {
+    chapterCrt.$inject = ['$scope', '$http', 'serviceChapterId'];
+    function chapterCrt($scope, $http, serviceChapterId) {
         $scope.dataFaculties = {
             "Id": "",
             "Name": "",
@@ -72,19 +72,11 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
         $scope.SelectChapter = function () {
             $scope.Selected.ChapterSelected = document.getElementById("chapters").value;
         };
-  
-        ////Get infomation Khoa
-        //$http.get(hostapi + 'api/Faculties').then(function (response) {
-
-        //    $scope.Khoas = response.data;
-        //});
-        ////Get infomation môn học
-        //$http.get(hostapi + 'api/Subjects').then(function (response) {
-        //    $scope.MonHocs = response.data;
-        //});
-        ////Get infomation phần
-        //$http.get(hostapi + 'api/Chapters').then(function (response) {
-        //    $scope.Phans = response.data;
-        //});
+        $scope.submit = function () {
+            debugger;
+            serviceChapterId.clearall();
+            
+            serviceChapterId.addChapterId($scope.Selected.ChapterSelected);
+        }
     };
 })(angular.module('myApp'));
