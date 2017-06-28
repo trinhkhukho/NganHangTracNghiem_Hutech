@@ -2,17 +2,10 @@
 //var LsQuestions_Error;
 (function (app) {
     'use strict';
-    //app.filter('startFrom', function () {
-    //    return function (data, start) {
-    //        return data.slice(start);
-    //    }
-    //});
-
 
     app.controller('Result', resultCrt);
     resultCrt.$inject = ['$scope', '$sce', '$http', '$location', 'blockUI', 'toastr', 'serviceShareData', '$uibModal', '$route', '$timeout'];
     function resultCrt($scope, $sce, $http, $location, blockUI, toastr, serviceShareData, $uibModal, $route, $timeout) {
-        debugger
         $scope.from = {};
         $scope.pagesize = 5;
         $scope.currentpage = 1;
@@ -23,7 +16,7 @@
         $scope.Question_Successs = ListQuestions[0].Question_Success;
         $scope.Question_Errors = ListQuestions[0].Question_Error;
         $scope.editQuestion = function (question) {
-            //serviceShareData.clearall('dataeditquestion');
+            serviceShareData.clearall('dataeditquestion');
             serviceShareData.addData(question, 'dataeditquestion');
             $uibModal.open({
                 templateUrl: 'Scripts/Angular/Readfile/editQuestionResult.html',
@@ -64,13 +57,14 @@
         }
         $scope.Question = JSON.parse(serviceShareData.getData('dataeditquestion'));
         $scope.Question = $scope.Question[0];
-        debugger;
-        $('#CauHoi').val($scope.Question.Question.Content);
-        
+
         $scope.CauHoi.Diem = $scope.Question.Question.Mark;
         $scope.CauHoi.DoKho = $scope.Question.Question.Discrimination;
         $scope.CauHoi.DoPhanCach = $scope.Question.Question.SubjectiveDifficulty;
         AnswerA = $scope.Question.Answer[0];
+        $(document).ready(function () {
+            $('#CauHoi').val($scope.Question.Question.Content);
+
             $('#CauA').val(AnswerA.Content);
             if (AnswerA.Correct == true) {
                 $('#CauAda').prop('checked', true);
@@ -102,6 +96,9 @@
             if (AnswerD.Interchange == true) {
                 $('#CauDhv').prop('checked', true);
             }
+        });
+        
+     
         $ctrl.Submit = function () {
 
             blockUI.start();

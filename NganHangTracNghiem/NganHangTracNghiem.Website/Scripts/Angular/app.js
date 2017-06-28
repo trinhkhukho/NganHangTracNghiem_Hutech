@@ -46,9 +46,13 @@
                 {
                     templateUrl: 'Scripts/Angular/Readfile/Result.html'
                 })
-            .when('/getQuestion',
+            .when('/ListQuestion',
                 {
                     templateUrl: 'Scripts/Angular/Questions/editQuestion.html'
+                })
+            .when('/TypeQuestions',
+                {
+                    templateUrl: 'Scripts/Angular/Chapter/TypeQuestions.html'
                 })
     };
 

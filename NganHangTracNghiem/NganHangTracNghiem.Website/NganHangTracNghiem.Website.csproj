@@ -1297,7 +1297,10 @@
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\Images\1logo.png" />
     <Content Include="Content\css\Images\fb.png" />
+    <Content Include="Content\css\Images\Listqs.jpg" />
+    <Content Include="Content\css\Images\question.png" />
     <Content Include="Content\css\Images\sidebar-1.jpg" />
+    <Content Include="Content\css\Images\upload.jpg" />
     <Content Include="Content\css\InputFile\css\component.css" />
     <Content Include="Content\css\InputFile\css\demo.css" />
     <Content Include="Content\css\InputFile\css\normalize.css" />
@@ -1319,6 +1322,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Angular\Chapter\TypeQuestions.html" />
     <Content Include="Scripts\Angular\Chapter\ChapterCrt.js" />
     <Content Include="Scripts\Angular\Chapter\Chapter.html" />
     <Content Include="Scripts\Angular\GroupQuestions\QuestionCrt.js" />

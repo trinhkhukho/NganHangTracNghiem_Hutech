@@ -10,8 +10,8 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
 (function (app) {
     'use strict';
     app.controller('GetBasicController', chapterCrt);
-    chapterCrt.$inject = ['$scope', '$http', 'serviceChapterId'];
-    function chapterCrt($scope, $http, serviceChapterId) {
+    chapterCrt.$inject = ['$scope', '$http', '$location', 'serviceChapterId'];
+    function chapterCrt($scope, $http,$location, serviceChapterId) {
         $scope.dataFaculties = {
             "Id": "",
             "Name": "",
@@ -75,8 +75,8 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
         $scope.submit = function () {
             debugger;
             serviceChapterId.clearall();
-            
             serviceChapterId.addChapterId($scope.Selected.ChapterSelected);
+            $location.url('TypeQuestions');
         }
     };
 })(angular.module('myApp'));
