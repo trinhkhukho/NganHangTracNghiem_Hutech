@@ -44,6 +44,9 @@
             var IdAnswerD = null;
 
             var r = confirm("Bạn có chắc muốn xóa câu hỏi " + Id);
+            if (r == false) {
+                blockUI.stop();
+            }
             if (r == true) {
                 $http.get(hostapi + 'api/AnswersQuestion/' + Id).then(function (response) {
                     debugger
@@ -74,7 +77,8 @@
                 });
                
               
-            } 
+            }
+
         };
     };
 
