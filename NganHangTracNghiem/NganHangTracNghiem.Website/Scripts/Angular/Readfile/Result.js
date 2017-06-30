@@ -33,6 +33,9 @@
         };
         $scope.deleteQuestion = function (Id) {
             var r = confirm("Bạn có chắc muốn xóa câu hỏi này");
+            if (r == false) {
+                blockUI.stop();
+            }
             if (r == true) {
                 
                 var question_delete = ListQuestions[0].Question_Error[Id];
