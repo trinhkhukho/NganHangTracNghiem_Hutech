@@ -20,10 +20,10 @@
                 {
                     templateUrl: 'Scripts/Angular/Home/home.html'
                 })
-            //.when('/login',
-            //    {
-            //        templateUrl: 'Scripts/Angular/Login/Login.html'
-            //    })
+             .when('/login',
+                {
+                  templateUrl: 'Scripts/Angular/Login/Login.html'
+                })
             .when('/home',
                 {
                     templateUrl: 'Scripts/Angular/Home/home.html'

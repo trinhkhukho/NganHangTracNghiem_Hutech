@@ -478,3 +478,8 @@ F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\bin\D
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\obj\Debug\NganHangTracNghiem.Website.csprojResolveAssemblyReference.cache
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\obj\Debug\NganHangTracNghiem.Website.dll
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\obj\Debug\NganHangTracNghiem.Website.pdb
+D:\study\NganHangGitHub\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\bin\Microsoft.Owin.Cors.dll
+D:\study\NganHangGitHub\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\bin\System.Web.Cors.dll
+D:\study\NganHangGitHub\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\bin\System.Web.Http.Cors.dll
+D:\study\NganHangGitHub\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\bin\Microsoft.Owin.Cors.xml
+D:\study\NganHangGitHub\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\bin\System.Web.Http.Cors.xml

@@ -2,7 +2,6 @@
 //var LsQuestions_Error;
 (function (app) {
     'use strict';
-
     app.controller('Result', resultCrt);
     resultCrt.$inject = ['$scope', '$sce', '$http', '$location', 'blockUI', 'toastr', 'serviceShareData', '$uibModal', '$route', '$timeout'];
     function resultCrt($scope, $sce, $http, $location, blockUI, toastr, serviceShareData, $uibModal, $route, $timeout) {
@@ -12,7 +11,7 @@
         $scope.pageSizeErr = 3;
         $scope.currentPageErr = 1;
         $scope.trustAsHtml = $sce.trustAsHtml;
-        $scope.ListQuestions = null;
+        $scope.ListQuestions =null;
         $scope.ListQuestions = serviceShareData.getData('datareadfile');
         var ListQuestions = JSON.parse($scope.ListQuestions);
         $scope.Question_Successs = ListQuestions[0].Question_Success;
