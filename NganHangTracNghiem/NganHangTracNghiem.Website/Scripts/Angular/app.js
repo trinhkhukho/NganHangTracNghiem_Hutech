@@ -60,6 +60,10 @@
                 {
                     templateUrl: 'Scripts/Angular/Chapter/TypeQuestions.html'
                 })
+            .when('/Dashboard',
+                {
+                    templateUrl: 'Scripts/Angular/Dashboard/Dashboard.html'
+                })
     };
 
 })();

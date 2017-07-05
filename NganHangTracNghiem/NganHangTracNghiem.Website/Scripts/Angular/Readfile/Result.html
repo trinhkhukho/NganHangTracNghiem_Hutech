@@ -48,43 +48,62 @@
                                     <hr />
                                     <h4 class="text-info">Câu hỏi nhóm</h4>
                                     <div class="row">
-                                        <div class="col-md-3">
-                                            <h5 class="text-info">Độ phân cách: </h5>
-                                            <h5 class="text-info">Độ Khó: </h5>
-                                            <h5 class="text-info">Điểm: </h5>
-                                            <h5 class="text-primary">Nội dung câu hỏi nhóm</h5>
-
+                                        <div class="col-md-2">
+                                            <h5 class="text-info">Độ phân cách: {{Question_Success.Question.Discrimination}}</h5>
                                         </div>
-                                        <div class="col-md-9">
-                                            <h5 class="text-danger">{{Question_Success.Question.Discrimination}}</h5>
-                                            <h5 class="text-danger">{{Question_Success.Question.SubjectiveDifficulty}}</h5>
-                                            <h5 class="text-danger">{{Question_Success.Question.Mark}}</h5>
+                                        <div class="col-md-2">
+                                            <h5 class="text-info">Điểm: {{Question_Success.Question.Mark}}</h5>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <h5 class="text-info">Độ Khó: {{Question_Success.Question.SubjectiveDifficulty}}</h5>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button type="submit" class="btn btn-danger pull-right" ng-click="deleteQuestion($index)">xóa</button>
+                                            <button type="submit" class="btn btn-primary pull-right" ng-click="editQuestion(Question_Error,$index)">sửa</button>
                                         </div>
                                     </div>
+                                    <h5 class="text-primary">Nội dung câu hỏi</h5>
                                     <h4 ng-bind-html="trustAsHtml(Question_Success.Question.Content)"></h4>
                                 </div>
                                 <div ng-if="Question_Success.Group!=1">
                                     <div ng-if="Question_Success.QuestionOfGroup==1" style="margin-left:20px;">
                                         <hr />
                                         <div class="row">
-                                            <div class="col-md-3">
-                                                <h5 class="text-info">Độ phân cách: </h5>
-                                                <h5 class="text-info">Độ Khó: </h5>
-                                                <h5 class="text-info">Điểm: </h5>
-                                                <h5 class="text-primary">Nội dung câu hỏi con</h5>
+                                            <div class="col-md-2">
+                                                <h5 class="text-info">Độ phân cách: {{Question_Success.Question.Discrimination}}</h5>
                                             </div>
-                                            <div class="col-md-9">
-                                                <h5 class="text-danger">{{Question_Success.Question.Discrimination}}</h5>
-                                                <h5 class="text-danger">{{Question_Success.Question.SubjectiveDifficulty}}</h5>
-                                                <h5 class="text-danger">{{Question_Success.Question.Mark}}</h5>
+                                            <div class="col-md-2">
+                                                <h5 class="text-info">Điểm: {{Question_Success.Question.Mark}}</h5>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <h5 class="text-info">Độ Khó: {{Question_Success.Question.SubjectiveDifficulty}}</h5>
+                                            </div>
+                                            <div class="col-md-6">
+                                                
                                             </div>
                                         </div>
+                                        <h5 class="text-primary">Nội dung câu hỏi</h5>
+                                       
                                         <h4 ng-bind-html="trustAsHtml(Question_Success.Question.Content)"></h4>
-                                        <h5 style="margin-left:40px;" class="text-primary">Đáp án</h5>
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <h5 style="margin-left:40px;" class="text-primary">Đáp án</h5>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <h5 class="text-primary">đáp án</h5>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <h5 class="text-primary">hoán vị</h5>
+                                            </div>
+                                        </div>
                                         <div ng-repeat="Answer in Question_Success.Answer" style="margin-left:40px;">
                                             <div class="row">
                                                 <div class="col-md-8">
-                                                    <h4 ng-bind-html="trustAsHtml(Answer.Content)"></h4>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <h4 ng-bind-html="trustAsHtml(Answer.Content)"></h4>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="row">
@@ -99,11 +118,9 @@
                                                         <div class="col-md-6">
                                                             <div ng-if="Answer.Interchange!=true">
                                                                 <i class="fa fa-times text-danger"></i>
-                                                                Hoán vị
                                                             </div>
                                                             <div ng-if="Answer.Interchange==true">
                                                                 <i class="fa fa-check text-success"></i>
-                                                                Hoán vị
                                                             </div>
                                                         </div>
                                                     </div>
@@ -114,25 +131,40 @@
                                     <div ng-if="Question_Success.QuestionOfGroup!=1">
                                         <hr />
                                         <div class="row">
-                                            <div class="col-md-3">
-                                                <h5 class="text-info">Độ phân cách: </h5>
-                                                <h5 class="text-info">Độ Khó: </h5>
-                                                <h5 class="text-info">Điểm: </h5>
-                                                <h5 class="text-primary">Nội dung câu hỏi đơn</h5>
-
+                                            <div class="col-md-2">
+                                                <h5 class="text-info">Độ phân cách: {{Question_Success.Question.Discrimination}}</h5>
                                             </div>
-                                            <div class="col-md-9">
-                                                <h5 class="text-danger">{{Question_Success.Question.Discrimination}}</h5>
-                                                <h5 class="text-danger">{{Question_Success.Question.SubjectiveDifficulty}}</h5>
-                                                <h5 class="text-danger">{{Question_Success.Question.Mark}}</h5>
+                                            <div class="col-md-2">
+                                                <h5 class="text-info">Điểm: {{Question_Success.Question.Mark}}</h5>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <h5 class="text-info">Độ Khó: {{Question_Success.Question.SubjectiveDifficulty}}</h5>
+                                            </div>
+                                            <div class="col-md-6">
+                                                
                                             </div>
                                         </div>
+                                        <h5 class="text-primary">Nội dung câu hỏi</h5>
                                         <h4 ng-bind-html="trustAsHtml(Question_Success.Question.Content)"></h4>
-                                        <h5 style="margin-left:40px;" class="text-primary">Đáp án</h5>
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <h5 style="margin-left:40px;" class="text-primary">Đáp án</h5>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <h5 class="text-primary">đáp án</h5>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <h5 class="text-primary">hoán vị</h5>
+                                            </div>
+                                        </div>
                                         <div ng-repeat="Answer in Question_Success.Answer" style="margin-left:40px;">
                                             <div class="row">
                                                 <div class="col-md-8">
-                                                    <h4 ng-bind-html="trustAsHtml(Answer.Content)"></h4>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <h4 ng-bind-html="trustAsHtml(Answer.Content)"></h4>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="col-md-4">
                                                     <div class="row">
@@ -146,12 +178,10 @@
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div ng-if="Answer.Interchange!=true">
-                                                                <i class="fa fa-times text-danger"></i>
-                                                                Hoán vị
+                                                                <i class="fa fa-times text-danger"></i>                                                  
                                                             </div>
                                                             <div ng-if="Answer.Interchange==true">
-                                                                <i class="fa fa-check text-success"></i>
-                                                                Hoán vị
+                                                                <i class="fa fa-check text-success"></i>                                                               
                                                             </div>
                                                         </div>
                                                     </div>
@@ -169,27 +199,60 @@
                         <section id="content2">
                             <div ng-repeat="Question_Error in Question_Errors | startFrom: (currentPageErr-1)*pageSizeErr | limitTo: pageSizeErr">
                                 <hr />
+                                <div ng-if="Question_Error.Erorr==3000">
+                                    <h5 class="text-danger">câu hỏi chưa được lưu thử lại!</h5>
+                                </div>
+                                <div ng-if="Question_Error.Erorr==3001">
+                                    <h5 class="text-danger">thiếu nội dung câu hỏi! !</h5>
+                                </div>
+                                <div ng-if="Question_Error.Erorr==3002">
+                                    <h5 class="text-danger">thiếu nội dung đáp án!</h5>
+                                </div>
+                                <div ng-if="Question_Error.Erorr==3003">
+                                    <h5 class="text-danger">câu hỏi có 2 đáp án đúng !</h5>
+                                </div>
+                                <div ng-if="Question_Error.Erorr==3004">
+                                    <h5 class="text-danger">câu hỏi chưa chọn đáp án đúng !</h5>
+                                </div>
                                 <div class="row">
                                     <div class="col-md-2">
-                                        <h5 class="text-info">Độ phân cách: </h5>
-                                        <h5 class="text-info">Độ Khó: </h5>
-                                        <h5 class="text-info">Điểm: </h5>
-                                        <h5 class="text-primary">Nội dung câu hỏi</h5>
+                                        <h5 class="text-info">Độ phân cách: {{Question_Error.Question.Discrimination}}</h5>
                                     </div>
-                                    <div class="col-md-10">
-                                        <h5 class="text-danger">{{Question_Error.Question.Discrimination}}</h5>
-                                        <h5 class="text-danger">{{Question_Error.Question.SubjectiveDifficulty}}</h5>
-                                        <h5 class="text-danger">{{Question_Error.Question.Mark}}</h5>
+                                    <div class="col-md-2">
+                                        <h5 class="text-info">Điểm: {{Question_Error.Question.Mark}}</h5>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h5 class="text-info">Độ Khó: {{Question_Error.Question.SubjectiveDifficulty}}</h5>
+                                    </div>
+                                    <div class="col-md-6">
                                         <button type="submit" class="btn btn-danger pull-right" ng-click="deleteQuestion($index)">xóa</button>
                                         <button type="submit" class="btn btn-primary pull-right" ng-click="editQuestion(Question_Error,$index)">sửa</button>
                                     </div>
                                 </div>
+                                
+                                <h5 class="text-primary">Nội dung câu hỏi</h5>
                                 <h4 ng-bind-html="trustAsHtml(Question_Error.Question.Content)"></h4>
-                                <h5 style="margin-left:40px;" class="text-primary">Đáp án</h5>
+                               
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <h5 style="margin-left:40px;" class="text-primary">Đáp án</h5>
+                                        
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h5 class="text-primary">đáp án</h5>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h5 class="text-primary">hoán vị</h5>
+                                    </div>
+                                </div>
                                 <div ng-repeat="Answer in Question_Error.Answer" style="margin-left:40px;">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <h4 ng-bind-html="trustAsHtml(Answer.Content)"></h4>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h4 ng-bind-html="trustAsHtml(Answer.Content)"></h4>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="row">

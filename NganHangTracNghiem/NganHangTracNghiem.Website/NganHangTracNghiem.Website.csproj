@@ -1338,6 +1338,8 @@
     <Content Include="Scripts\Angular\Chapter\TypeQuestions.html" />
     <Content Include="Scripts\Angular\Chapter\ChapterCrt.js" />
     <Content Include="Scripts\Angular\Chapter\Chapter.html" />
+    <Content Include="Scripts\Angular\Dashboard\Dashboard.html" />
+    <Content Include="Scripts\Angular\Dashboard\Dashboard.js" />
     <Content Include="Scripts\Angular\GroupQuestions\QuestionCrt.js" />
     <Content Include="Scripts\Angular\GroupQuestions\Question.html" />
     <Content Include="Scripts\Angular\GroupQuestions\GroupQuestionCrt.js" />
@@ -1434,13 +1436,17 @@
     <Content Include="Scripts\fileTam\respond.min.js" />
     <Content Include="Scripts\JS\angular-animate.js" />
     <Content Include="Scripts\JS\angular-block-ui.min.js" />
+    <Content Include="Scripts\JS\angular-chart.js" />
+    <Content Include="Scripts\JS\angular-chart.min.js" />
     <Content Include="Scripts\JS\angular-route.js" />
     <Content Include="Scripts\JS\angular-sanitize.js" />
     <Content Include="Scripts\JS\angular-toastr.tpls.js" />
     <Content Include="Scripts\JS\angular.js" />
     <Content Include="Scripts\JS\angular.min.js" />
     <Content Include="Scripts\JS\bootstrap.js" />
+    <Content Include="Scripts\JS\canvasjs.min.js" />
     <Content Include="Scripts\JS\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\JS\jquery.canvasjs.min.js" />
     <Content Include="Scripts\JS\material-dashboard.js" />
     <Content Include="Scripts\JS\material.min.js" />
     <Content Include="Scripts\JS\ui-bootstrap-tpls-2.5.0.min.js" />

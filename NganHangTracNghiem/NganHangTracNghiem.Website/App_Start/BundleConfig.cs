@@ -19,7 +19,8 @@ namespace NganHangTracNghiem.Website
                 "~/Scripts/JS/bootstrap.js",
                 "~/Scripts/JS/material-dashboard.js",
                 "~/Scripts/JS/material.min.js",
-
+                "~/Scripts/JS/canvasjs.min.js",
+                "~/Scripts/JS/jquery.canvasjs.min.js",
                 "~/Scripts/JS/angular-animate.js",
                 "~/Scripts/JS/angular-sanitize.js",
                 "~/Scripts/JS/angular-block-ui.min.js",
@@ -43,7 +44,8 @@ namespace NganHangTracNghiem.Website
                 "~/Scripts/Angular/GroupQuestions/QuestionCrt.js",
                 "~/Scripts/Angular/Readfile/ReadFile.js",
                 "~/Scripts/Angular/Readfile/Result.js",
-                "~/Scripts/Angular/Questions/editQuestion.js"
+                "~/Scripts/Angular/Questions/editQuestion.js",
+                 "~/Scripts/Angular/Dashboard/Dashboard.js"
                 //"~/Scripts/Angular/Questions/popQuestion.js"
 
 

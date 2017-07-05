@@ -1,0 +1,84 @@
+﻿<div class="main-panel" >
+    <nav class="navbar navbar-transparent navbar-absolute">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#!TypeQuestions">thống kê</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                            <span class="notification">5</span>
+                            <i class="fa fa-comment-o" aria-hidden="true">5</i>
+
+                        </a>
+
+                    </li>
+
+                </ul>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group  is-empty">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="material-input"></span>
+                    </div>
+                    <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <div class="ripple-container"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="content" ng-controller="Dashboard_Faculties">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <br />
+                    <div class="card">
+                        <div class="card-header" data-background-color="green">
+                            <h4 class="title">Thống Kê Theo Khoa</h4>
+                            <p class="category">Thống kê số lượng câu hỏi theo khoa</p>
+                        </div>
+                        <div class="card-content table-responsive">
+                            <table class="table table-hover">
+                                <thead class="text-warning">
+                                <th>Tên Khoa</th>
+                                <th>Số Lượng Môn</th>
+                                <th>Số Lượng Phần</th>
+                                <th>Số Lượng câu hỏi</th>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="FacultiesQuestion in FacultiesQuestions">
+                                        <td>{{FacultiesQuestion.Name}}</td>
+                                        <td>{{FacultiesQuestion.NumberOfSubject}}</td>
+                                        <td>{{FacultiesQuestion.NumberOfSubjectChapter}}</td>
+                                        <td>{{FacultiesQuestion.NumberOfQuestion}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <br />
+                    <div class="card">
+                        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+</div>

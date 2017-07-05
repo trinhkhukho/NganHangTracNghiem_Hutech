@@ -429,9 +429,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="pro_Get_Chapters_Question" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="pro_Get_Faculty_Question" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="pro_Get_Subject_Question" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
         <Function Name="pro_GetUser_byUserName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Username" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="pro_Subject_FacultyId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="pro_Subject_FacultyId_Question" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="ObjectiveTestModelStoreContainer">
           <EntitySet Name="Answers" EntityType="Self.Answers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Chapters" EntityType="Self.Chapters" Schema="dbo" store:Type="Tables" />
@@ -1041,6 +1052,17 @@
           <FunctionImport Name="pro_GetUser_byUserName" ReturnType="Collection(ObjectiveTestModel.pro_GetUser_byUserName_Result)">
           <Parameter Name="Username" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="pro_Get_Chapters_Question" ReturnType="Collection(ObjectiveTestModel.pro_Get_Chapters_Question_Result)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="pro_Get_Faculty_Question" ReturnType="Collection(ObjectiveTestModel.pro_Get_Faculty_Question_Result)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="pro_Get_Subject_Question" ReturnType="Collection(ObjectiveTestModel.pro_Get_Subject_Question_Result)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="pro_Subject_FacultyId" ReturnType="Collection(ObjectiveTestModel.pro_Subject_FacultyId_Result)" />
+          <FunctionImport Name="pro_Subject_FacultyId_Question" ReturnType="Collection(ObjectiveTestModel.pro_Subject_FacultyId_Question_Result)" />
         </EntityContainer>
         <ComplexType Name="pro_Login_Result">
           <Property Type="Int32" Name="Id" Nullable="false" />
@@ -1073,6 +1095,50 @@
           <Property Type="String" Name="Salt" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="Comment" Nullable="true" MaxLength="100" />
           <Property Type="Boolean" Name="BuildInUser" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pro_Get_Chapters_Question_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Content" Nullable="true" MaxLength="1000" />
+          <Property Type="Boolean" Name="Deleted" Nullable="true" />
+          <Property Type="Int32" Name="ManagementOrder" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="ParentId" Nullable="true" />
+          <Property Type="Int32" Name="SubjectId" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pro_Get_Faculty_Question_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Comment" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="Deleted" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfSubject" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pro_Get_Subject_Question_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Code" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="ManagementOrder" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pro_Subject_FacultyId_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Comment" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="Deleted" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfSubject" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pro_Subject_FacultyId_Question_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Comment" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="Deleted" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfSubject" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1332,6 +1398,70 @@
                 <ScalarProperty Name="Salt" ColumnName="Salt" />
                 <ScalarProperty Name="Comment" ColumnName="Comment" />
                 <ScalarProperty Name="BuildInUser" ColumnName="BuildInUser" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pro_Get_Chapters_Question" FunctionName="ObjectiveTestModel.Store.pro_Get_Chapters_Question">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_Get_Chapters_Question_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="ManagementOrder" ColumnName="ManagementOrder" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+                <ScalarProperty Name="NumberOfQuestion" ColumnName="NumberOfQuestion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pro_Get_Faculty_Question" FunctionName="ObjectiveTestModel.Store.pro_Get_Faculty_Question">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_Get_Faculty_Question_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="NumberOfSubject" ColumnName="NumberOfSubject" />
+                <ScalarProperty Name="NumberOfSubjectChapter" ColumnName="NumberOfSubjectChapter" />
+                <ScalarProperty Name="NumberOfQuestion" ColumnName="NumberOfQuestion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pro_Get_Subject_Question" FunctionName="ObjectiveTestModel.Store.pro_Get_Subject_Question">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_Get_Subject_Question_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ManagementOrder" ColumnName="ManagementOrder" />
+                <ScalarProperty Name="NumberOfSubjectChapter" ColumnName="NumberOfSubjectChapter" />
+                <ScalarProperty Name="NumberOfQuestion" ColumnName="NumberOfQuestion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pro_Subject_FacultyId" FunctionName="ObjectiveTestModel.Store.pro_Subject_FacultyId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_Subject_FacultyId_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="NumberOfSubject" ColumnName="NumberOfSubject" />
+                <ScalarProperty Name="NumberOfSubjectChapter" ColumnName="NumberOfSubjectChapter" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pro_Subject_FacultyId_Question" FunctionName="ObjectiveTestModel.Store.pro_Subject_FacultyId_Question">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_Subject_FacultyId_Question_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="NumberOfSubject" ColumnName="NumberOfSubject" />
+                <ScalarProperty Name="NumberOfSubjectChapter" ColumnName="NumberOfSubjectChapter" />
+                <ScalarProperty Name="NumberOfQuestion" ColumnName="NumberOfQuestion" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
