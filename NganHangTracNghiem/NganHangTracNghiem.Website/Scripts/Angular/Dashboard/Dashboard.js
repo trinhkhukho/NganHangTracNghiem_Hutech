@@ -42,7 +42,7 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
         $scope.chart = new CanvasJS.Chart("chartContainer",
             {
                 title: {
-                    text: "Bieu Do"
+                    text: ""
                 },
                 animationEnabled: true,
                 legend: {
