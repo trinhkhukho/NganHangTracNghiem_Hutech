@@ -22,52 +22,48 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
         var array_point = new Array();
         $http.get(hostapi + 'api/pro_Subject_FacultyId_Question').then(function (response) {
             $scope.FacultiesQuestions = response.data;
-            //for (var i = 0; i < $scope.FacultiesQuestions.length; i++)
-            //{
-            //    datapoint.y = $scope.FacultiesQuestions[i].NumberOfQuestion;
-            //    datapoint.legendText = $scope.FacultiesQuestions[i].Name;
-            //    datapoint.label = $scope.FacultiesQuestions[i].Name;
-            //    array_point.push(datapoint);
-            //}
-           
-            //$route.reload(true);
-        });
-         window.onload = function () {
-                var chart = new CanvasJS.Chart("chartContainer",
-                {
-                    title: {
-                        text: "Desktop Search Engine Market Share, Dec-2012"
-                    },
-                    animationEnabled: true,
-                    legend: {
-                        verticalAlign: "center",
-                        horizontalAlign: "left",
-                        fontSize: 20,
-                        fontFamily: "Helvetica"
-                    },
-                    theme: "theme2",
-                    data: [
-                    {
-                        type: "pie",
-                        indexLabelFontFamily: "Garamond",
-                        indexLabelFontSize: 20,
-                        indexLabel: "{label} {y}%",
-                        startAngle: -20,
-                        showInLegend: true,
-                        toolTipContent: "{legendText} {y}%",
-                        //dataPoints: array_point
-                        dataPoints: [
-                            { y: 83.24, legendText: "Google", label: "Google" },
-                            { y: 8.16, legendText: "Yahoo!", label: "Yahoo!" },
-                            { y: 4.67, legendText: "Bing", label: "Bing" },
-                            { y: 1.67, legendText: "Baidu", label: "Baidu" },
-                            { y: 0.98, legendText: "Others", label: "Others" }
-                        ]
-                    }
-                    ]
-                });
-                chart.render();
+            debugger;
+            var parsedAppData = [];
+            var total = 0;
+            for (var i = 0; i < $scope.FacultiesQuestions.length; i++) {
+                total = total + $scope.FacultiesQuestions[i].NumberOfQuestion;
             }
-    };
-   
+            for(var i=0; i< $scope.FacultiesQuestions.length; i++)
+            {
+                parsedAppData.push({
+                    y: ($scope.FacultiesQuestions[i].NumberOfQuestion/total)*100,
+                    legendText: $scope.FacultiesQuestions[i].Name,
+                    label: $scope.FacultiesQuestions[i].Name
+                });
+            }
+            $scope.chart.options.data[0].dataPoints = parsedAppData;
+            $scope.chart.render();
+        });
+        $scope.chart = new CanvasJS.Chart("chartContainer",
+            {
+                title: {
+                    text: "Bieu Do"
+                },
+                animationEnabled: true,
+                legend: {
+                    verticalAlign: "center",
+                    horizontalAlign: "left",
+                    fontSize: 20,
+                    fontFamily: "Helvetica"
+                },
+                theme: "theme2",
+                data: [
+                {
+                    type: "pie",
+                    indexLabelFontFamily: "Garamond",
+                    indexLabelFontSize: 20,
+                    indexLabel: "{label} {y}%",
+                    startAngle: -20,
+                    showInLegend: true,
+                    toolTipContent: "{legendText} {y}%",
+                    dataPoints: []
+                }
+                ]
+            });
+        };
 })(angular.module('myApp'));
