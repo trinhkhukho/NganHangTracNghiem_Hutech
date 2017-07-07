@@ -46,7 +46,8 @@ namespace NganHangTracNghiem.Website
                 "~/Scripts/Angular/Readfile/Result.js",
                 "~/Scripts/Angular/Questions/editQuestion.js",
                 "~/Scripts/Angular/Dashboard/Dashboard.js",
-                "~/Scripts/Angular/Dashboard/Dashboard_Faculties.js"
+                "~/Scripts/Angular/Dashboard/Dashboard_Faculties.js",
+                "~/Scripts/Angular/Dashboard/Dashboard_Subject.js"
 
 
             ));

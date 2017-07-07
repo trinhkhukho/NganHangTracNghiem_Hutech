@@ -55,7 +55,7 @@
                                 <th>Số Lượng câu hỏi</th>
                                 </thead>
                                 <tbody>
-                                    <tr ng-repeat="FacultiesQuestion in FacultiesQuestions">
+                                    <tr ng-repeat="FacultiesQuestion in FacultiesQuestions" ng-click="SelectSubject(FacultiesQuestion.Id)">
                                         <td>{{FacultiesQuestion.Name}}</td>
                                         <td>{{FacultiesQuestion.NumberOfSubjectChapter}}</td>
                                         <td>{{FacultiesQuestion.NumberOfQuestion}}</td>

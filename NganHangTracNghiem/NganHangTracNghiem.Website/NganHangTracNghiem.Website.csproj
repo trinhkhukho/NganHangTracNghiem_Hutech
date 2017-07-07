@@ -1342,6 +1342,8 @@
     <Content Include="Scripts\Angular\Dashboard\Dashboard.js" />
     <Content Include="Scripts\Angular\Dashboard\Dashboard_Faculties.html" />
     <Content Include="Scripts\Angular\Dashboard\Dashboard_Faculties.js" />
+    <Content Include="Scripts\Angular\Dashboard\Dashboard_Subject.js" />
+    <Content Include="Scripts\Angular\Dashboard\Dashdoard_Subject.html" />
     <Content Include="Scripts\Angular\GroupQuestions\QuestionCrt.js" />
     <Content Include="Scripts\Angular\GroupQuestions\Question.html" />
     <Content Include="Scripts\Angular\GroupQuestions\GroupQuestionCrt.js" />

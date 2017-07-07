@@ -255,13 +255,13 @@
     <Compile Include="Models\pro_Get_Chapters_Question_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\pro_Get_Faculty_Question1_Result.cs">
+    <Compile Include="Models\pro_Get_Faculty_Question3_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\pro_Get_Faculty_Question_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\pro_Get_Subject_Question_Result.cs">
+    <Compile Include="Models\pro_Get_Subject_Question1_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\pro_Login_Result.cs">

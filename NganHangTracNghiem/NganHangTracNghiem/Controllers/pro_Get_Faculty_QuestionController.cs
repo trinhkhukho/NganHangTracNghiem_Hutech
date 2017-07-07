@@ -15,7 +15,7 @@ namespace NganHangTracNghiem.Controllers
         {
             try
             {
-                var result = db.pro_Get_Faculty_Question1(id);
+                var result = db.pro_Get_Faculty_Question3(id);
                 if(result!=null)
                 {
                     return Ok(result);

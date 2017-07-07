@@ -7,6 +7,7 @@ var host;
 xmlData = (new DOMParser()).parseFromString(xml.responseText, 'text/xml');
 var clinic = xmlData.getElementsByTagName("clinic");
 hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
+var reload = 0;
 (function (app) {
     'use strict';
     app.controller('Dashboard_Faculties', questionCrt);
@@ -19,13 +20,18 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
             legendText: null,
             label: null
         };
+        
         var array_point = new Array();
         $http.get(hostapi + 'api/pro_Subject_FacultyId_Question').then(function (response) {
             $scope.FacultiesQuestions = response.data;
             debugger;
             var parsedAppData = [];
             var total = 0;
+            if ($scope.FacultiesQuestions != null) {
+                reload = reload + 1;
+            }
             for (var i = 0; i < $scope.FacultiesQuestions.length; i++) {
+                
                 total = total + $scope.FacultiesQuestions[i].NumberOfQuestion;
             }
             for(var i=0; i< $scope.FacultiesQuestions.length; i++)
@@ -36,11 +42,7 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                     label: $scope.FacultiesQuestions[i].Name
                 });
             }
-            $scope.chart.options.data[0].dataPoints = parsedAppData;
-            $scope.chart.render();
-           
-        });
-        $scope.chart = new CanvasJS.Chart("chartContainer",
+            $scope.chart = new CanvasJS.Chart("chartContainer",
             {
                 title: {
                     text: ""
@@ -66,6 +68,12 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                 }
                 ]
             });
+            $scope.chart.options.data[0].dataPoints = parsedAppData;
+            $scope.chart.render();
+           
+
+        });
+        
         $scope.SelectFaculties = function (id) {
             serviceShareData.clearall("FacultiesID");
             serviceShareData.addData(id, "FacultiesID");

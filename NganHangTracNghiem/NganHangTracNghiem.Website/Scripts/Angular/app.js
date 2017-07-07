@@ -66,6 +66,10 @@
                 {
                     templateUrl: 'Scripts/Angular/Dashboard/Dashboard_Faculties.html'
                 })
+            .when('/Dashboard_Subject',
+                {
+                    templateUrl: 'Scripts/Angular/Dashboard/Dashdoard_Subject.html'
+                })
     };
 
 })();

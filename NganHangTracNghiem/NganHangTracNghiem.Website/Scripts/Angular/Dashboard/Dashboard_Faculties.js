@@ -7,17 +7,18 @@ var host;
 xmlData = (new DOMParser()).parseFromString(xml.responseText, 'text/xml');
 var clinic = xmlData.getElementsByTagName("clinic");
 hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
+
 (function (app) {
     'use strict';
     app.controller('Dashboard_FacultiesID', Dashboard_FacultiesCrt);
     Dashboard_FacultiesCrt.$inject = ['$scope', '$http', '$route', '$timeout', 'blockUI', 'toastr', 'serviceChapterId', 'serviceShareData', '$location'];
     function Dashboard_FacultiesCrt($scope, $http, $route, $timeout, blockUI, toastr, serviceChapterId, serviceShareData, $location) {
         debugger;
+        
         var id=JSON.parse(serviceShareData.getData("FacultiesID"))[0];
         $http.get(hostapi + 'api/pro_Get_Faculty_Question/' + id).then(function (response) {
             $scope.FacultiesQuestions = response.data;
-            debugger;
-            var parsedAppData = [];
+            var parsedAppData = [];     
             var total = 0;
             for (var i = 0; i < $scope.FacultiesQuestions.length; i++) {
                 total = total + $scope.FacultiesQuestions[i].NumberOfQuestion;
@@ -29,10 +30,7 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                     label: $scope.FacultiesQuestions[i].Name
                 });
             }
-            $scope.chart.options.data[0].dataPoints = parsedAppData;
-            $scope.chart.render();
-        });
-        $scope.chart = new CanvasJS.Chart("chartContainer",
+            $scope.chart = new CanvasJS.Chart("chartContainer",
             {
                 title: {
                     text: ""
@@ -58,6 +56,15 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                 }
                 ]
             });
+            $scope.chart.options.data[0].dataPoints = parsedAppData;
+            $scope.chart.render();
+           
+        });
+        $scope.SelectSubject = function (id) {
+            serviceShareData.clearall("SubjectID");
+            serviceShareData.addData(id, "SubjectID");
+            $location.url('Dashboard_Subject');
+        };
     };
 
 })(angular.module('myApp'));

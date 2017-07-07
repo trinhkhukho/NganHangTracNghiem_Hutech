@@ -531,6 +531,15 @@
     <FunctionImport Name="pro_Get_Faculty_Question1" ReturnType="Collection(ObjectiveTestModel.pro_Get_Faculty_Question1_Result)">
       <Parameter Name="Id" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="pro_Get_Subject_Question1" ReturnType="Collection(ObjectiveTestModel.pro_Get_Subject_Question1_Result)">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="pro_Get_Faculty_Question2" ReturnType="Collection(ObjectiveTestModel.pro_Get_Faculty_Question2_Result)">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="pro_Get_Faculty_Question3" ReturnType="Collection(ObjectiveTestModel.pro_Get_Faculty_Question3_Result)">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="pro_Login_Result">
     <Property Type="Int32" Name="Id" Nullable="false" />
@@ -614,6 +623,29 @@
     <Property Type="String" Name="Code" Nullable="true" MaxLength="10" />
     <Property Type="Boolean" Name="Deleted" Nullable="true" />
     <Property Type="Int32" Name="NumberOfSubject" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="pro_Get_Subject_Question1_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Content" Nullable="true" MaxLength="1000" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="ManagementOrder" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="pro_Get_Faculty_Question2_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="10" />
+    <Property Type="Boolean" Name="Deleted" Nullable="true" />
+    <Property Type="Int32" Name="Column1" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="pro_Get_Faculty_Question3_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="10" />
+    <Property Type="Boolean" Name="Deleted" Nullable="true" />
     <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
     <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
   </ComplexType>
