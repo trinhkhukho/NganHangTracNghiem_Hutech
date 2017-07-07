@@ -7,9 +7,11 @@
         //    }
         //});
     app.controller('fupController', fupCrt);
-    fupCrt.$inject = ['$scope', '$sce', '$http', '$location', 'blockUI', 'toastr', 'serviceShareData'];
-    function fupCrt($scope, $sce, $http, $location, blockUI, toastr, serviceShareData) {
+    fupCrt.$inject = ['$scope', '$sce', '$http', '$location', 'blockUI', 'toastr', 'serviceShareData', 'serviceChapterId'];
+    function fupCrt($scope, $sce, $http, $location, blockUI, toastr, serviceShareData, serviceChapterId) {
     
+        debugger;
+        $scope.ChapterId = serviceChapterId.getChapterId();
         var LsQuestions_Success;
         var LsQuestions_Error;
             $scope.trustAsHtml = $sce.trustAsHtml;
@@ -34,6 +36,7 @@
 
                 for (var i in $scope.files) {
                     data.append("uploadedFile", $scope.files[i]);
+                    data.append("chapterid",$scope.ChapterId);
                 }
 
                 // ADD LISTENERS.

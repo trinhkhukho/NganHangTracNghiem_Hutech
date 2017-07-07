@@ -23,6 +23,8 @@ namespace NganHangTracNghiem.Website.Controllers
             string path = System.Web.Hosting.HostingEnvironment.MapPath("/File/");
             System.Web.HttpFileCollection files = System.Web.HttpContext.Current.Request.Files;
             System.Web.HttpPostedFile file = files[0];
+            string chapterids=System.Web.HttpContext.Current.Request.Form.ToString().Remove(0,10);
+            int chapterid = int.Parse(chapterids);
             string filename = new FileInfo(file.FileName).Name;
             if (file.ContentLength > 0)
             {
@@ -38,7 +40,7 @@ namespace NganHangTracNghiem.Website.Controllers
                 string strExtexsion = Path.GetExtension(PathName).Trim();
                 if (strExtexsion.ToLower() == ".docx")
                 {
-                    ListQuestion ls = rd.OpenWordprocessingDocumentReadonly(PathName, null, host);
+                    ListQuestion ls = rd.OpenWordprocessingDocumentReadonly(PathName, null, host, chapterid);
                     File.Delete(PathName);
                     return Ok(ls);
                 }
@@ -48,7 +50,7 @@ namespace NganHangTracNghiem.Website.Controllers
                     id = new Guid();
                     ZipArchiveEntry entry = rd_zip.GetFileByName(path + id+filename, ".docx");
                     entry.ExtractToFile(path +id+ entry.Name, true);
-                    ListQuestion ls = rd.OpenWordprocessingDocumentReadonly(path + id + entry.Name, PathName, host);
+                    ListQuestion ls = rd.OpenWordprocessingDocumentReadonly(path + id + entry.Name, PathName, host, chapterid);
                     
                     //File.Delete(PathName);
                     return Ok(ls);
