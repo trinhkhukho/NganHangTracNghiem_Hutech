@@ -9,18 +9,12 @@ var clinic = xmlData.getElementsByTagName("clinic");
 hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
 (function (app) {
     'use strict';
-    app.controller('Dashboard_Faculties', questionCrt);
-    questionCrt.$inject = ['$scope', '$http', '$route', '$timeout', 'blockUI', 'toastr', 'serviceChapterId', 'serviceShareData', '$location'];
-    function questionCrt($scope, $http, $route, $timeout, blockUI, toastr, serviceChapterId, serviceShareData, $location) {
-        //thống kê số lượng câu hỏi theo khoa, môn, chương phần.
+    app.controller('Dashboard_FacultiesID', Dashboard_FacultiesCrt);
+    Dashboard_FacultiesCrt.$inject = ['$scope', '$http', '$route', '$timeout', 'blockUI', 'toastr', 'serviceChapterId', 'serviceShareData', '$location'];
+    function Dashboard_FacultiesCrt($scope, $http, $route, $timeout, blockUI, toastr, serviceChapterId, serviceShareData, $location) {
         debugger;
-        var datapoint = {
-            y: 0,
-            legendText: null,
-            label: null
-        };
-        var array_point = new Array();
-        $http.get(hostapi + 'api/pro_Subject_FacultyId_Question').then(function (response) {
+        var id=JSON.parse(serviceShareData.getData("FacultiesID"))[0];
+        $http.get(hostapi + 'api/pro_Get_Faculty_Question/' + id).then(function (response) {
             $scope.FacultiesQuestions = response.data;
             debugger;
             var parsedAppData = [];
@@ -28,17 +22,15 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
             for (var i = 0; i < $scope.FacultiesQuestions.length; i++) {
                 total = total + $scope.FacultiesQuestions[i].NumberOfQuestion;
             }
-            for(var i=0; i< $scope.FacultiesQuestions.length; i++)
-            {
+            for (var i = 0; i < $scope.FacultiesQuestions.length; i++) {
                 parsedAppData.push({
-                    y: ($scope.FacultiesQuestions[i].NumberOfQuestion/total)*100,
+                    y: ($scope.FacultiesQuestions[i].NumberOfQuestion / total) * 100,
                     legendText: $scope.FacultiesQuestions[i].Name,
                     label: $scope.FacultiesQuestions[i].Name
                 });
             }
             $scope.chart.options.data[0].dataPoints = parsedAppData;
             $scope.chart.render();
-           
         });
         $scope.chart = new CanvasJS.Chart("chartContainer",
             {
@@ -66,10 +58,6 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                 }
                 ]
             });
-        $scope.SelectFaculties = function (id) {
-            serviceShareData.clearall("FacultiesID");
-            serviceShareData.addData(id, "FacultiesID");
-            $location.url('Dashboard_Faculties');
-        };
     };
+
 })(angular.module('myApp'));

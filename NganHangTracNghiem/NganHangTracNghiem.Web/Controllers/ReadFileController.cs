@@ -37,7 +37,7 @@ namespace NganHangTracNghiem.Web.Controllers
                 string strExtexsion = Path.GetExtension(PathName).Trim();
                 if (strExtexsion.ToLower() == ".docx")
                 {
-                    ListQuestion ls = rd.OpenWordprocessingDocumentReadonly(PathName, null, host);
+                    ListQuestion ls = rd.OpenWordprocessingDocumentReadonly(PathName, null, host,0);
                     File.Delete(PathName);
                     return Ok(ls);
                 }
@@ -47,7 +47,7 @@ namespace NganHangTracNghiem.Web.Controllers
                     id = new Guid();
                     ZipArchiveEntry entry = rd_zip.GetFileByName(path + id+filename, ".docx");
                     entry.ExtractToFile(path +id+ entry.Name, true);
-                    ListQuestion ls = rd.OpenWordprocessingDocumentReadonly(path + id + entry.Name, PathName, host);
+                    ListQuestion ls = rd.OpenWordprocessingDocumentReadonly(path + id + entry.Name, PathName, host,0);
                     
                     //File.Delete(PathName);
                     return Ok(ls);

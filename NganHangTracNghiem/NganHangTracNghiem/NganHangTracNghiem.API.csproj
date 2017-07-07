@@ -255,6 +255,9 @@
     <Compile Include="Models\pro_Get_Chapters_Question_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\pro_Get_Faculty_Question1_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\pro_Get_Faculty_Question_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

@@ -15,7 +15,7 @@ namespace NganHangTracNghiem.Controllers
         {
             try
             {
-                var result = db.pro_Get_Faculty_Question(id);
+                var result = db.pro_Get_Faculty_Question1(id);
                 if(result!=null)
                 {
                     return Ok(result);
@@ -25,7 +25,7 @@ namespace NganHangTracNghiem.Controllers
                     return InternalServerError();
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 return InternalServerError();
             }
