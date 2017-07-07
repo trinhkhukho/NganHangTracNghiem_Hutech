@@ -10,8 +10,6 @@
     });
       
 
-//var myApp = angular.module('myApp', ['ngRoute']);
-
     config.$inject = ['$routeProvider'];
     function config($routeProvider) {
 
@@ -63,6 +61,10 @@
             .when('/Dashboard',
                 {
                     templateUrl: 'Scripts/Angular/Dashboard/Dashboard.html'
+                })
+            .when('/Dashboard_Faculties',
+                {
+                    templateUrl: 'Scripts/Angular/Dashboard/Dashboard_Faculties.html'
                 })
     };
 

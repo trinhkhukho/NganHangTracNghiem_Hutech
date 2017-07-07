@@ -1,4 +1,4 @@
-﻿<div class="main-panel" >
+﻿<div class="main-panel">
     <nav class="navbar navbar-transparent navbar-absolute">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -37,7 +37,7 @@
             </div>
         </div>
     </nav>
-    <div class="content" ng-controller="Dashboard_Faculties">
+    <div class="content" ng-controller="Dashboard_FacultiesID">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
@@ -50,15 +50,13 @@
                         <div class="card-content table-responsive">
                             <table class="table table-hover">
                                 <thead class="text-warning">
-                                <th>Tên Khoa</th>
-                                <th>Số Lượng Môn</th>
+                                <th>Tên Khoa</th>                              
                                 <th>Số Lượng Phần</th>
                                 <th>Số Lượng câu hỏi</th>
                                 </thead>
                                 <tbody>
-                                    <tr ng-repeat="FacultiesQuestion in FacultiesQuestions" ng-click="SelectFaculties(FacultiesQuestion.Id)">
+                                    <tr ng-repeat="FacultiesQuestion in FacultiesQuestions">
                                         <td>{{FacultiesQuestion.Name}}</td>
-                                        <td>{{FacultiesQuestion.NumberOfSubject}}</td>
                                         <td>{{FacultiesQuestion.NumberOfSubjectChapter}}</td>
                                         <td>{{FacultiesQuestion.NumberOfQuestion}}</td>
                                     </tr>
@@ -80,12 +78,12 @@
                         <div class="card-content table-responsive">
                             <div id="chartContainer" style="height: 300px; width: 100%;"></div>
                         </div>
-                        
+
                     </div>
                 </div>
 
             </div>
-            
+
         </div>
     </div>
 </div>

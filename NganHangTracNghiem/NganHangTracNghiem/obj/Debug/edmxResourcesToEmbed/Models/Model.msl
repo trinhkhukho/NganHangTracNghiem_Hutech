@@ -270,19 +270,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="pro_Get_Faculty_Question" FunctionName="ObjectiveTestModel.Store.pro_Get_Faculty_Question">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_Get_Faculty_Question_Result">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Comment" ColumnName="Comment" />
-          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
-          <ScalarProperty Name="NumberOfSubject" ColumnName="NumberOfSubject" />
-          <ScalarProperty Name="NumberOfSubjectChapter" ColumnName="NumberOfSubjectChapter" />
-          <ScalarProperty Name="NumberOfQuestion" ColumnName="NumberOfQuestion" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="pro_Get_Subject_Question" FunctionName="ObjectiveTestModel.Store.pro_Get_Subject_Question">
       <ResultMapping>
         <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_Get_Subject_Question_Result">
@@ -313,6 +300,19 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="NumberOfSubject" ColumnName="NumberOfSubject" />
+          <ScalarProperty Name="NumberOfSubjectChapter" ColumnName="NumberOfSubjectChapter" />
+          <ScalarProperty Name="NumberOfQuestion" ColumnName="NumberOfQuestion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pro_Get_Faculty_Question1" FunctionName="ObjectiveTestModel.Store.pro_Get_Faculty_Question">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_Get_Faculty_Question1_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
           <ScalarProperty Name="Deleted" ColumnName="Deleted" />
           <ScalarProperty Name="NumberOfSubject" ColumnName="NumberOfSubject" />
           <ScalarProperty Name="NumberOfSubjectChapter" ColumnName="NumberOfSubjectChapter" />

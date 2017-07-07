@@ -103,5 +103,14 @@ namespace NganHangTracNghiem.Models
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pro_Subject_FacultyId_Question_Result>("pro_Subject_FacultyId_Question");
         }
+    
+        public virtual ObjectResult<pro_Get_Faculty_Question1_Result> pro_Get_Faculty_Question1(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pro_Get_Faculty_Question1_Result>("pro_Get_Faculty_Question1", idParameter);
+        }
     }
 }

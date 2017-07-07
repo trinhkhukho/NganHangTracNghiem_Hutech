@@ -1340,6 +1340,8 @@
     <Content Include="Scripts\Angular\Chapter\Chapter.html" />
     <Content Include="Scripts\Angular\Dashboard\Dashboard.html" />
     <Content Include="Scripts\Angular\Dashboard\Dashboard.js" />
+    <Content Include="Scripts\Angular\Dashboard\Dashboard_Faculties.html" />
+    <Content Include="Scripts\Angular\Dashboard\Dashboard_Faculties.js" />
     <Content Include="Scripts\Angular\GroupQuestions\QuestionCrt.js" />
     <Content Include="Scripts\Angular\GroupQuestions\Question.html" />
     <Content Include="Scripts\Angular\GroupQuestions\GroupQuestionCrt.js" />
