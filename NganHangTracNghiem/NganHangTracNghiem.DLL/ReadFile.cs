@@ -35,9 +35,10 @@ namespace NganHangTracNghiem.DDL
         string SubjectiveDifficulty_df = "0,5";
         string Discrimination_df = "0,5";
         int userId = 10001;
-        int ChapterID = 9;
-        public ListQuestion OpenWordprocessingDocumentReadonly(string filepath,string filepath_zip,string host)
+        int ChapterID = 392;
+        public ListQuestion OpenWordprocessingDocumentReadonly(string filepath,string filepath_zip,string host, int _chapterID)
         {
+            this.ChapterID = _chapterID;
             m_img = host + "Img/";
             m_audio = host + "Audio/";
             List<Question_Detail> Question_Success= new List<Question_Detail>();

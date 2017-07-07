@@ -202,6 +202,11 @@
     <Compile Include="Controllers\ChaptersController.cs" />
     <Compile Include="Controllers\FacultiesController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\pro_Get_Chapters_QuestionController.cs" />
+    <Compile Include="Controllers\pro_Get_Faculty_QuestionController.cs" />
+    <Compile Include="Controllers\pro_Get_Subject_QuestionController.cs" />
+    <Compile Include="Controllers\pro_Subject_FacultyIdController.cs" />
+    <Compile Include="Controllers\pro_Subject_FacultyId_QuestionController.cs" />
     <Compile Include="Controllers\QuestionsController.cs" />
     <Compile Include="Controllers\QuestionUserController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
@@ -247,7 +252,25 @@
     <Compile Include="Models\pro_GetUser_byUserName_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\pro_Get_Chapters_Question_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pro_Get_Faculty_Question3_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pro_Get_Faculty_Question_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pro_Get_Subject_Question1_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\pro_Login_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pro_Subject_FacultyId_Question_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pro_Subject_FacultyId_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Question.cs">

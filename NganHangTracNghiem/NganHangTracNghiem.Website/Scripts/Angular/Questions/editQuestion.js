@@ -6,6 +6,7 @@
         blockUI.start();
         debugger 
         $scope.trustAsHtml = $sce.trustAsHtml;
+        $scope.ListQuestions = [];
         //lấy dữ liệu
         $http.get("api/Question/get").then(function (response) {
             blockUI.stop();

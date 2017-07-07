@@ -1,0 +1,83 @@
+﻿alter table Questions
+add  UserId int default null foreign key references Users(Id)
+--thống kê số lượng môn, chương phần theo khoa.
+if exists(select name from sysobjects where name ='pro_Subject_FacultyId')
+	drop procedure pro_Subject_FacultyId
+go
+create procedure pro_Subject_FacultyId
+as
+begin
+	select f.Id,f.Name,f.Comment,f.Deleted,count(s.FacultyId) as NumberOfSubject,count(c.SubjectId) as NumberOfSubjectChapter
+	from Faculties f left join Subjects s on f.Id=s.FacultyId left join Chapters c on s.Id=c.SubjectId
+	group by f.Id,f.Name,f.Comment,f.Deleted
+end
+go
+--Thống kê số lượng câu hỏi theo môn chương phần.
+if exists(select name from sysobjects where name ='pro_Subject_FacultyId_Question')
+	drop procedure pro_Subject_FacultyId_Question
+go
+create procedure pro_Subject_FacultyId_Question
+as
+begin
+	select f.Id,f.Name,f.Comment,f.Deleted,count(s.FacultyId) as NumberOfSubject,count(c.SubjectId) as NumberOfSubjectChapter,count(q.Id) as NumberOfQuestion
+	from Faculties f left join Subjects s on f.Id=s.FacultyId left join Chapters c on s.Id=c.SubjectId left join Questions q on c.Id=q.ChapterId
+	group by f.Id,f.Name,f.Comment,f.Deleted
+end
+go
+--thống kê số lương câu hỏi theo từng khoa.
+if exists(select name from sysobjects where name ='pro_Get_Faculty_Question')
+	drop procedure pro_Get_Faculty_Question
+go
+create procedure pro_Get_Faculty_Question
+(
+	@Id int
+)
+as
+begin
+	select a.Id,a.Name,a.Code,a.Deleted,count(a.NumberOfSubjectChapter) as NumberOfSubjectChapter,count(q.ChapterId) as NumberOfQuestion from
+	(
+		select s.Id,s.Name,s.Code,s.Deleted,c.Id as Ids,count(c.Id) as NumberOfSubjectChapter
+		from Chapters c  right join Subjects s  on s.Id=c.SubjectId 
+		where s.FacultyId=@Id
+		group by s.Id,s.Name,s.Code,s.Deleted,c.SubjectId,c.Id
+	) as a left join  Questions q on a.Ids=q.ChapterId
+	group by a.Id,a.Name,a.Code,a.Deleted,a.NumberOfSubjectChapter
+end
+go
+--thống kê số lượng câu hỏi theo từng môn.
+if exists(select name from sysobjects where name ='pro_Get_Subject_Question')
+	drop procedure pro_Get_Subject_Question
+go
+create procedure pro_Get_Subject_Question
+(
+	@Id int
+)
+as
+begin
+	select c.Id,c.Content,c.Name,c.ManagementOrder,count(q.Id) as NumberOfQuestion
+	from Chapters c  left join Questions q on c.Id=q.ChapterId
+	where c.SubjectId=@Id
+	group by c.Id,c.Content,c.Name,c.ManagementOrder
+end
+go
+--thống kê số lượng câu hỏi theo từng phần.
+if exists(select name from sysobjects where name ='pro_Get_Chapters_Question')
+	drop procedure pro_Get_Chapters_Question
+go
+create procedure pro_Get_Chapters_Question
+(
+	@Id int
+)
+as
+begin
+	select c.Id,c.Content,c.Deleted,c.ManagementOrder,c.Name,c.ParentId,c.SubjectId,count(s.ChapterId)as NumberOfQuestion
+	from Chapters c left join Questions s on c.Id=s.ChapterId
+	where c.Id=@Id
+	group by c.Id,c.Content,c.Deleted,c.ManagementOrder,c.Name,c.ParentId,c.SubjectId
+end
+--loc danh sách câu hỏi theo khoa, môn, trương phần.
+select q.Id,q.Audio,q.Content,q.CorrectTimes,q.CreateDate,q.ChapterId,q.Deleted,q.Discrimination
+,q.Duration,q.Interchange,q.ListenedTimes,q.ManagementOrder,q.Mark,q.ObjectiveDifficulty,
+q.ParentId,q.SelectedTimes,q.SubjectId,q.SubjectiveDifficulty,q.UpdateDate,q.UserId
+from Questions q, Chapters c, Subjects s, Faculties f
+where q.ChapterId=c.Id and c.SubjectId=s.Id and s.FacultyId=f.Id 

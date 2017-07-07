@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace NganHangTracNghiem.Website
 {
@@ -19,6 +20,8 @@ namespace NganHangTracNghiem.Website
             );
             config.Formatters.Remove(config.Formatters.XmlFormatter);
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("application/Json"));
+            //var CorsAttribute = new EnableCorsAttribute("* ", "* ", "* ");
+            //config.EnableCors(CorsAttribute);
         }
 
     }

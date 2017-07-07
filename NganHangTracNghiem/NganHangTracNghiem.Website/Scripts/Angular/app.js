@@ -10,8 +10,6 @@
     });
       
 
-//var myApp = angular.module('myApp', ['ngRoute']);
-
     config.$inject = ['$routeProvider'];
     function config($routeProvider) {
 
@@ -20,10 +18,10 @@
                 {
                     templateUrl: 'Scripts/Angular/Home/home.html'
                 })
-            //.when('/login',
-            //    {
-            //        templateUrl: 'Scripts/Angular/Login/Login.html'
-            //    })
+             .when('/login',
+                {
+                  templateUrl: 'Scripts/Angular/Login/Login.html'
+                })
             .when('/home',
                 {
                     templateUrl: 'Scripts/Angular/Home/home.html'
@@ -59,6 +57,18 @@
             .when('/TypeQuestions',
                 {
                     templateUrl: 'Scripts/Angular/Chapter/TypeQuestions.html'
+                })
+            .when('/Dashboard',
+                {
+                    templateUrl: 'Scripts/Angular/Dashboard/Dashboard.html'
+                })
+            .when('/Dashboard_Faculties',
+                {
+                    templateUrl: 'Scripts/Angular/Dashboard/Dashboard_Faculties.html'
+                })
+            .when('/Dashboard_Subject',
+                {
+                    templateUrl: 'Scripts/Angular/Dashboard/Dashdoard_Subject.html'
                 })
     };
 
