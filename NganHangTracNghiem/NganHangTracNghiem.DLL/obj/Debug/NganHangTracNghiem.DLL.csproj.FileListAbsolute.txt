@@ -159,3 +159,26 @@ F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.csprojResolveAssemblyReference.cache
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.dll
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.pdb
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.DLL.dll.config
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.DLL.dll
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.DLL.pdb
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\DocumentFormat.OpenXml.dll
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Independentsoft.Office.Word.dll
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Json.dll
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Newtonsoft.Json.dll
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.Data.dll
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Extensions.dll
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Formatting.dll
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Primitives.dll
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\NganHangTracNghiem.Data.pdb
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\DocumentFormat.OpenXml.xml
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Independentsoft.Office.Word.xml
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Json.pdb
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\Newtonsoft.Json.xml
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Extensions.xml
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Formatting.xml
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\bin\Debug\System.Net.Http.Primitives.xml
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.csproj.App.config
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.csprojResolveAssemblyReference.cache
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.dll
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.DLL\obj\Debug\NganHangTracNghiem.DLL.pdb
