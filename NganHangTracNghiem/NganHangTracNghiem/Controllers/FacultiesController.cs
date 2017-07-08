@@ -51,7 +51,7 @@ namespace NganHangTracNghiem.Controllers
                 return BadRequest();
             }
 
-            db.Entry(faculty).State = EntityState.Modified;
+            db.Entry(faculty).State = System.Data.Entity.EntityState.Modified;
 
             try
             {
