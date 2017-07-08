@@ -106,7 +106,7 @@ namespace NganHangTracNghiem.Controllers
             }
             catch
             {
-                return InternalServerError();
+                return NotFound();
             }
             
         }

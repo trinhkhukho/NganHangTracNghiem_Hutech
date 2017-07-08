@@ -15,6 +15,12 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
         $scope.pageSize = 10;
         $scope.currentPage = 1;
         $scope.Faculties = [];
+        $scope.FacultiesIns = {
+            'Id': null,
+            'Name': null,
+            'Deleted': null,
+            'Comment': null
+        };
         $http.get(hostapi + 'api/Faculties').then(function (response) {
             $scope.Faculties = response.data;
         });
@@ -57,6 +63,31 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                     });
             }
         };
+        $scope.insert = function () {
+            if($scope.FacultiesIns.Name==null||$scope.FacultiesIns.Name=='')
+            {
+                alert("Tên khoa không được để trống");
+            }
+            else
+            {
+                var data = {
+                    'Id': 0,
+                    'Name': '',
+                    'Deleted': false,
+                    'Comment': null
+                };
+                
+                data.Name = $scope.FacultiesIns.Name;
+                data.Comment = $scope.FacultiesIns.Comment;
+                data.Deleted = $scope.FacultiesIns.Deleted;
+                $http.post(hostapi + "api/Faculties", data).then(function (response) {
+                    debugger;
+                    alert("Thêm khoa thành công");
+                    $route.reload(true);
+                    
+                });
+            }
+        }
         $scope.SelectFaculties = function (id) {
             serviceShareData.clearall("FacultiesIDList");
             serviceShareData.addData(id, "FacultiesIDList");
@@ -83,11 +114,31 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                 blockUI.stop();
             }
             if (r == true) {
-                $http.delete(hostapi + "api/Faculties/" + faculties.Id).then(function (response) {
-                    blockUI.stop();
-                    debugger;
-                    $route.reload(true);
-                });
+                var data = {
+                    'Id': null,
+                    'Name': null,
+                    'Deleted': null,
+                    'Comment': null
+                };
+                data.Id = faculties.Id;
+                data.Name = faculties.Name;
+                data.Comment = faculties.Comment;
+                data.Deleted = faculties.Deleted;
+                $http.post("api/Faculties/delete",data)
+                    .then(function (response) {
+                        debugger;
+                        if (response.data == 1)
+                        {
+                            alert("xóa thành công");
+                            blockUI.stop();
+                        }
+                        else
+                        {
+                            alert("không thể xóa");
+                            blockUI.stop();
+                        }
+                            $route.reload(true);
+                    });
             }
         };
     };
