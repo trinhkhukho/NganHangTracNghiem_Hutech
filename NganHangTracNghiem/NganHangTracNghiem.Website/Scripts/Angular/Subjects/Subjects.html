@@ -1,4 +1,4 @@
-﻿<div class="main-panel" >
+﻿<div class="main-panel">
     <nav class="navbar navbar-transparent navbar-absolute">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -37,59 +37,50 @@
             </div>
         </div>
     </nav>
-    <div class="content" ng-controller="Dashboard_Faculties">
+    <div class="content" ng-controller="Subjects">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
                     <br />
                     <div class="card">
-                        <div class="card-header" data-background-color="green">
-                            <h4 class="title">Thống Kê Theo Khoa</h4>
-                            <p class="category">Thống kê số lượng câu hỏi theo khoa</p>
+                        <div class="card-header" data-background-color="blue">
+                            <h4 class="title" ng-model="NameFaculties">Khoa {{NameFaculties}}</h4>
+                            <p class="category">Danh sách môn của khoa {{NameFaculties}}</p>
                         </div>
                         <div class="card-content table-responsive">
                             <table class="table table-hover">
+                                
                                 <thead class="text-warning">
-                                <th>Tên Khoa</th>
-                                <th>Số Lượng Môn</th>
-                                <th>Số Lượng Phần</th>
-                                <th>Số Lượng câu hỏi</th>
+                                <th>Mã Môn</th>
+                                <th>Tên Môn</th>
+                                <th>Mã Khoa</th>
+                                <th>Khóa</th>
+                                <th>Ghi chú</th>
                                 </thead>
                                 <tbody>
-                                    <tr ng-repeat="FacultiesQuestion in FacultiesQuestions | startFrom: (currentPage-1)*pageSize | limitTo: pageSize" ng-click="SelectFaculties(FacultiesQuestion.Id)">
-                                        <td>{{FacultiesQuestion.Name}}</td>
-                                        <td>{{FacultiesQuestion.NumberOfSubject}}</td>
-                                        <td>{{FacultiesQuestion.NumberOfSubjectChapter}}</td>
-                                        <td>{{FacultiesQuestion.NumberOfQuestion}}</td>
+
+                                    <tr ng-repeat="Subject in Subjects | startFrom: (currentPage-1)*pageSize | limitTo: pageSize" >
+                                        <td>{{Subject.Id}}</td>
+                                        <td>{{Subject.Name}}</td>
+                                        <td>{{Subject.FacultyId}}</td>
+                                        <td ng-if="Subject.Deleted=true">
+                                            <i class="fa fa-check text-success"></i>
+                                        </td>
+                                        <td ng-if="Subject.Deleted!=true">
+                                            <i class="fa fa-check text-danger"></i>
+                                        </td>
+                                        <td>{{Subject.Comment}}</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                         <br />
                         <div style="margin-left:20px;">
-                            <ul uib-pagination total-items="FacultiesQuestions.length" ng-model="currentPage" items-per-page="pageSize"></ul>
+                            <ul uib-pagination total-items="Subject.length" ng-model="currentPage" items-per-page="pageSize"></ul>
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <br />
-                    <div class="card">
-                        <div class="card-header" data-background-color="blue">
-                            <h4 class="title">Biều Đồ</h4>
-                            <p class="category">Biều đồ thể hiện tỉ lệ câu hỏi theo từng khoa</p>
-                        </div>
-                        <div class="card-content table-responsive">
-                            <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-                        </div>
-                        
-                    </div>
-                </div>
-
-            </div>
-            
         </div>
     </div>
 </div>

@@ -75,9 +75,17 @@ begin
 	where c.Id=@Id
 	group by c.Id,c.Content,c.Deleted,c.ManagementOrder,c.Name,c.ParentId,c.SubjectId
 end
---loc danh sách câu hỏi theo khoa, môn, trương phần.
-select q.Id,q.Audio,q.Content,q.CorrectTimes,q.CreateDate,q.ChapterId,q.Deleted,q.Discrimination
-,q.Duration,q.Interchange,q.ListenedTimes,q.ManagementOrder,q.Mark,q.ObjectiveDifficulty,
-q.ParentId,q.SelectedTimes,q.SubjectId,q.SubjectiveDifficulty,q.UpdateDate,q.UserId
-from Questions q, Chapters c, Subjects s, Faculties f
-where q.ChapterId=c.Id and c.SubjectId=s.Id and s.FacultyId=f.Id 
+go
+--sua lai table UserRoles.
+if not exists(select b.name from sys.objects a inner join sys.columns b on a.object_id=b.object_id where a.name ='Roles' and b.name ='Deleted')
+	alter table Roles add Deleted Bit  default 0
+go
+if not exists(select b.name from sys.objects a inner join sys.columns b on a.object_id=b.object_id where a.name ='Roles' and b.name ='FacultiesId')
+	alter table Roles add FacultiesId int  foreign key references Faculties(Id)
+go
+if not exists(select b.name from sys.objects a inner join sys.columns b on a.object_id=b.object_id where a.name ='Roles' and b.name ='SubjectsId')
+	alter table Roles add SubjectsId int  foreign key references Subjects(Id)
+go
+if not exists(select b.name from sys.objects a inner join sys.columns b on a.object_id=b.object_id where a.name ='Roles' and b.name ='ChaptersId')
+	alter table Roles add ChaptersId int  foreign key references Chapters(Id)
+go

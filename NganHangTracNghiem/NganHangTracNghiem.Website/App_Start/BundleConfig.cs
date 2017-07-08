@@ -47,7 +47,11 @@ namespace NganHangTracNghiem.Website
                 "~/Scripts/Angular/Questions/editQuestion.js",
                 "~/Scripts/Angular/Dashboard/Dashboard.js",
                 "~/Scripts/Angular/Dashboard/Dashboard_Faculties.js",
-                "~/Scripts/Angular/Dashboard/Dashboard_Subject.js"
+                "~/Scripts/Angular/Dashboard/Dashboard_Subject.js",
+                "~/Scripts/Angular/Faculties/Faculties.js",
+                "~/Scripts/Angular/Subjects/Subjects.js",
+                "~/Scripts/Angular/Chapters/Chapters.js",
+                "~/Scripts/Angular/Faculties/EditFaculties.js"
 
 
             ));

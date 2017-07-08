@@ -55,13 +55,17 @@
                                 <th>Số Lượng câu hỏi</th>
                                 </thead>
                                 <tbody>
-                                    <tr ng-repeat="FacultiesQuestion in FacultiesQuestions">
+                                    <tr ng-repeat="FacultiesQuestion in FacultiesQuestions | startFrom: (currentPage-1)*pageSize | limitTo: pageSize">
                                         <td>{{FacultiesQuestion.Id}}</td>
                                         <td>{{FacultiesQuestion.Name}}</td>
                                         <td>{{FacultiesQuestion.NumberOfQuestion}}</td>
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                        <br />
+                        <div style="margin-left:20px;">
+                            <ul uib-pagination total-items="FacultiesQuestions.length" ng-model="currentPage" items-per-page="pageSize"></ul>
                         </div>
                     </div>
                 </div>

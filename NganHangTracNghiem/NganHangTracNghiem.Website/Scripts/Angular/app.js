@@ -70,6 +70,18 @@
                 {
                     templateUrl: 'Scripts/Angular/Dashboard/Dashdoard_Subject.html'
                 })
+            .when('/Faculties',
+                {
+                    templateUrl: 'Scripts/Angular/Faculties/Faculties.html'
+                })
+            .when('/Subjects',
+                {
+                    templateUrl: 'Scripts/Angular/Subjects/Subjects.html'
+                })
+            .when('/Chaptes',
+                {
+                    templateUrl: 'Scripts/Angular/Chaptes/Chaptes.html'
+                })
     };
 
 })();

@@ -51,7 +51,7 @@ namespace NganHangTracNghiem.Controllers
                 return BadRequest();
             }
 
-            db.Entry(faculty).State = EntityState.Modified;
+            db.Entry(faculty).State = System.Data.Entity.EntityState.Modified;
 
             try
             {
@@ -91,16 +91,24 @@ namespace NganHangTracNghiem.Controllers
         [ResponseType(typeof(Faculty))]
         public IHttpActionResult DeleteFaculty(int id)
         {
-            Faculty faculty = db.Faculties.Find(id);
-            if (faculty == null)
+            try
+            {
+                Faculty faculty = db.Faculties.Find(id);
+                if (faculty == null)
+                {
+                    return NotFound();
+                }
+
+                db.Faculties.Remove(faculty);
+                db.SaveChanges();
+
+                return Ok(faculty);
+            }
+            catch
             {
                 return NotFound();
             }
-
-            db.Faculties.Remove(faculty);
-            db.SaveChanges();
-
-            return Ok(faculty);
+            
         }
 
         protected override void Dispose(bool disposing)
