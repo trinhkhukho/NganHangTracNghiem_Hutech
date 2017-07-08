@@ -10,8 +10,8 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
 (function (app) {
     'use strict';
     app.controller('Faculties', FacultiesCrt);
-    FacultiesCrt.$inject = ['$scope', '$http', '$location', 'serviceShareData', '$uibModal', 'blockUI'];
-    function FacultiesCrt($scope, $http, $location, serviceShareData, $uibModal, blockUI) {
+    FacultiesCrt.$inject = ['$scope', '$http', '$location', 'serviceShareData', '$uibModal', 'blockUI', '$route'];
+    function FacultiesCrt($scope, $http, $location, serviceShareData, $uibModal, blockUI, $route) {
         $scope.pageSize = 10;
         $scope.currentPage = 1;
         $scope.Faculties = [];
@@ -25,10 +25,27 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                 blockUI.stop();
             }
             if (r == true) {
-                faculties.Deleted = true;
-                $http.Post(hostapi + "api/Faculties", faculties).then(function (response) {
+                var data = {
+                    'Id': null,
+                    'Name': null,
+                    'Deleted': null,
+                    'Comment':null
+                };
+                if (faculties.Deleted == true)
+                {
+                    data.Deleted = false;
+                }
+                else
+                {
+                    data.Deleted = true;
+                }
+                data.Id = faculties.Id;
+                data.Name = faculties.Name;
+                data.Comment = faculties.Comment;
+                $http.put(hostapi + "api/Faculties/" + faculties.Id, data).then(function (response) {
                         blockUI.stop();
                         debugger;
+                        $route.reload(true);
                     });
             }
         };
