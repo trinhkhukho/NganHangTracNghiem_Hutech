@@ -14,7 +14,8 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
     Dashboard_FacultiesCrt.$inject = ['$scope', '$http', '$route', '$timeout', 'blockUI', 'toastr', 'serviceChapterId', 'serviceShareData', '$location'];
     function Dashboard_FacultiesCrt($scope, $http, $route, $timeout, blockUI, toastr, serviceChapterId, serviceShareData, $location) {
         debugger;
-        
+        $scope.pageSize = 10;
+        $scope.currentPage = 1;
         var id=JSON.parse(serviceShareData.getData("FacultiesID"))[0];
         $http.get(hostapi + 'api/pro_Get_Faculty_Question/' + id).then(function (response) {
             $scope.FacultiesQuestions = response.data;

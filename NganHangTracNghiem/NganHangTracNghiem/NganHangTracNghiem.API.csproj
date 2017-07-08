@@ -200,6 +200,7 @@
     <Compile Include="Controllers\AnswersController.cs" />
     <Compile Include="Controllers\AnswersQuestionController.cs" />
     <Compile Include="Controllers\ChaptersController.cs" />
+    <Compile Include="Controllers\Chapters_SubjectIDController.cs" />
     <Compile Include="Controllers\FacultiesController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\pro_Get_Chapters_QuestionController.cs" />
@@ -212,6 +213,7 @@
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\SaveFileController.cs" />
     <Compile Include="Controllers\SubjectsController.cs" />
+    <Compile Include="Controllers\Subjects_FacultiesIDController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -334,6 +336,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Audio\" />
     <Folder Include="Img\" />
+    <Folder Include="Views\Subjects_FacultiesID\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

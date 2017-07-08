@@ -15,6 +15,8 @@ var reload = 0;
     function questionCrt($scope, $http, $route, $timeout, blockUI, toastr, serviceChapterId, serviceShareData, $location) {
         //thống kê số lượng câu hỏi theo khoa, môn, chương phần.
         debugger;
+        $scope.pageSize = 10;
+        $scope.currentPage = 1;
         var datapoint = {
             y: 0,
             legendText: null,

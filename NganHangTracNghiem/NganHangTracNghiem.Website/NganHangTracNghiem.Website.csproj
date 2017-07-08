@@ -1335,6 +1335,8 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Angular\Chapters\Chapters.html" />
+    <Content Include="Scripts\Angular\Chapters\Chapters.js" />
     <Content Include="Scripts\Angular\Chapter\TypeQuestions.html" />
     <Content Include="Scripts\Angular\Chapter\ChapterCrt.js" />
     <Content Include="Scripts\Angular\Chapter\Chapter.html" />
@@ -1344,6 +1346,12 @@
     <Content Include="Scripts\Angular\Dashboard\Dashboard_Faculties.js" />
     <Content Include="Scripts\Angular\Dashboard\Dashboard_Subject.js" />
     <Content Include="Scripts\Angular\Dashboard\Dashdoard_Subject.html" />
+    <Content Include="Scripts\Angular\Faculties\EditFaculties.html" />
+    <Content Include="Scripts\Angular\Faculties\EditFaculties.js" />
+    <Content Include="Scripts\Angular\Faculties\Faculties.html" />
+    <Content Include="Scripts\Angular\Faculties\Faculties.js" />
+    <Content Include="Scripts\Angular\Faculties\InsertFaculties.html" />
+    <Content Include="Scripts\Angular\Faculties\InsertFaculties.js" />
     <Content Include="Scripts\Angular\GroupQuestions\QuestionCrt.js" />
     <Content Include="Scripts\Angular\GroupQuestions\Question.html" />
     <Content Include="Scripts\Angular\GroupQuestions\GroupQuestionCrt.js" />
@@ -1368,6 +1376,8 @@
     <Content Include="Scripts\Angular\Sevieces\serviceChapterId.js" />
     <Content Include="Scripts\Angular\Sevieces\serviceShareData.js" />
     <Content Include="Scripts\Angular\Sevieces\serviceGetId.js" />
+    <Content Include="Scripts\Angular\Subjects\Subjects.html" />
+    <Content Include="Scripts\Angular\Subjects\Subjects.js" />
     <Content Include="Scripts\fileTam\bootstrap.js" />
     <Content Include="Scripts\fileTam\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -1447,8 +1457,11 @@
     <Content Include="Scripts\JS\angular-toastr.tpls.js" />
     <Content Include="Scripts\JS\angular.js" />
     <Content Include="Scripts\JS\angular.min.js" />
+    <Content Include="Scripts\JS\bootstrap-notify.js" />
     <Content Include="Scripts\JS\bootstrap.js" />
     <Content Include="Scripts\JS\canvasjs.min.js" />
+    <Content Include="Scripts\JS\chartist.min.js" />
+    <Content Include="Scripts\JS\demo.js" />
     <Content Include="Scripts\JS\jquery-3.2.1.min.js" />
     <Content Include="Scripts\JS\jquery.canvasjs.min.js" />
     <Content Include="Scripts\JS\material-dashboard.js" />
