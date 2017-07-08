@@ -66,11 +66,16 @@
                                     <tr ng-repeat="Facultie in Faculties | startFrom: (currentPage-1)*pageSize | limitTo: pageSize">
                                         <td  ng-click="SelectFaculties(Facultie.Id)">{{Facultie.Id}}</td>
                                         <td  ng-click="SelectFaculties(Facultie.Id)">{{Facultie.Name}}</td>
-                                        <td ng-if="Facultie.Deleted=true"  ng-click="Block(Facultie)">
-                                            <i class="fa fa-check text-success"></i>
+                                        <td ng-if="Facultie.Deleted!=true">
+                                            <a href="" ng-click="Block(Facultie)">
+                                                <i class="fa fa-check text-success"></i>
+                                            </a>
                                         </td>
-                                        <td ng-if="Facultie.Deleted!=true"  ng-click="Block(Facultie)">
-                                            <i class="fa fa-check text-danger"></i>
+                                        <td ng-if="Facultie.Deleted==true">
+                                            <a href="" ng-click="Block(Facultie)">
+                                                <i class="fa fa-times text-danger"></i>
+                                            </a>
+                                            
                                         </td>
                                         <td  ng-click="SelectFaculties(Facultie.Id)">{{Facultie.Comment}}</td>
                                         <td >
@@ -79,7 +84,7 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="">
+                                            <a href="" ng-click="DeleteFaculties(Facultie)">
                                                 <i class="fa fa-times" style="color: red" aria-hidden="true"></i>
                                             </a>
                                         </td>

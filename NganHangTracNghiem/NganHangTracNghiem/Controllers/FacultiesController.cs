@@ -91,16 +91,24 @@ namespace NganHangTracNghiem.Controllers
         [ResponseType(typeof(Faculty))]
         public IHttpActionResult DeleteFaculty(int id)
         {
-            Faculty faculty = db.Faculties.Find(id);
-            if (faculty == null)
+            try
             {
-                return NotFound();
+                Faculty faculty = db.Faculties.Find(id);
+                if (faculty == null)
+                {
+                    return NotFound();
+                }
+
+                db.Faculties.Remove(faculty);
+                db.SaveChanges();
+
+                return Ok(faculty);
             }
-
-            db.Faculties.Remove(faculty);
-            db.SaveChanges();
-
-            return Ok(faculty);
+            catch
+            {
+                return InternalServerError();
+            }
+            
         }
 
         protected override void Dispose(bool disposing)

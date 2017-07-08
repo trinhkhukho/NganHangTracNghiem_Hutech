@@ -20,7 +20,15 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
         });
         $scope.Block = function (faculties) {
             blockUI.start();
-            var r = confirm("Bạn có chắc muốn khóa khoa  " + faculties.Name);
+            if (faculties.Deleted == true)
+                {
+                    var r = confirm("Mở khóa khoa " + faculties.Name);
+                }
+                else
+                {
+                    var r = confirm("khóa khoa " + faculties.Name);
+                }
+            
             if (r == false) {
                 blockUI.stop();
             }
@@ -55,9 +63,9 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
             $location.url('Subjects');
         };
         $scope.editFaculties = function (faculties) {
-            
+            debugger;
             serviceShareData.clearall();
-            serviceShareData.addData(faculties,"Faculties");
+            serviceShareData.addData(faculties, "Faculties");
             $uibModal.open({
                 templateUrl: 'Scripts/Angular/Faculties/EditFaculties.html',
                 size: 'lg',
@@ -66,6 +74,21 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                 controllerAs: '$ctrl'
 
             });
+        };
+        $scope.DeleteFaculties = function (faculties) {
+            debugger;
+            blockUI.start();
+            var r = confirm("Bạn chắc chắn xóa khoa " + faculties.Name);
+            if (r == false) {
+                blockUI.stop();
+            }
+            if (r == true) {
+                $http.delete(hostapi + "api/Faculties/" + faculties.Id).then(function (response) {
+                    blockUI.stop();
+                    debugger;
+                    $route.reload(true);
+                });
+            }
         };
     };
 })(angular.module('myApp'));

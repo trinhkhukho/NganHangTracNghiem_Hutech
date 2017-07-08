@@ -13,8 +13,11 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
     EditFacultiesCrt.$inject = ['$scope', '$http', '$location', 'serviceShareData', '$uibModalInstance'];
     function EditFacultiesCrt($scope, $http, $location, serviceShareData, $uibModalInstance) {
         var $ctrl = this;
+        debugger
+        $scope.Faculties = JSON.parse(serviceShareData.getData("Faculties"));
+        $scope.Facultie = $scope.Faculties[0];
         $ctrl.cancel = function () {
-            debugger
+            
             $uibModalInstance.dismiss('cancel');
         };
     };
