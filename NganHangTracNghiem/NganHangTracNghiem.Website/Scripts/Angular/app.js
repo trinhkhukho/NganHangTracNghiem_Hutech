@@ -1,7 +1,7 @@
 ﻿
 (function () {
     'use strict';
-    angular.module('myApp', ['ngRoute', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'blockUI', 'toastr'])
+    angular.module('myApp', ['ngRoute', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'blockUI', 'toastr', 'angularjs-datetime-picker'])
         .config(config)
     .filter('startFrom', function () {
         return function (data, start) {
@@ -52,7 +52,7 @@
                 })
             .when('/ListQuestion',
                 {
-                    templateUrl: 'Scripts/Angular/Questions/editQuestion.html'
+                    templateUrl: 'Scripts/Angular/QuestionManager/editQuestion.html'
                 })
             .when('/TypeQuestions',
                 {

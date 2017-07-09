@@ -1307,6 +1307,7 @@
     <Content Include="Content\ckfinder\translations.txt" />
     <Content Include="Content\css\angular-block-ui.min.css" />
     <Content Include="Content\css\angular-toastr.css" />
+    <Content Include="Content\css\angularjs-datetime-picker.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\Images\1logo.png" />
@@ -1359,13 +1360,13 @@
     <Content Include="Scripts\Angular\GroupQuestions\GroupQuestion.html" />
     <Content Include="Scripts\Angular\Login\Login.html" />
     <Content Include="Scripts\Angular\Login\Login.js" />
-    <Content Include="Scripts\Angular\Questions\editQuestion.js" />
-    <Content Include="Scripts\Angular\Questions\editQuestion.html" />
+    <Content Include="Scripts\Angular\QuestionManager\editQuestion.js" />
+    <Content Include="Scripts\Angular\QuestionManager\editQuestion.html" />
     <Content Include="Scripts\Angular\Questions\addQuestion.html" />
     <Content Include="Scripts\Angular\app.js" />
     <Content Include="Scripts\Angular\Home\home.html" />
     <Content Include="Scripts\Angular\Questions\addQuesrionCrt.js" />
-    <Content Include="Scripts\Angular\Questions\popQuestion.html" />
+    <Content Include="Scripts\Angular\QuestionManager\popQuestion.html" />
     <Content Include="Scripts\Angular\Readfile\editQuestionResult.html" />
     <Content Include="Scripts\Angular\Readfile\editQuestionResult.js" />
     <Content Include="Scripts\Angular\Readfile\Result.js" />
@@ -1458,6 +1459,7 @@
     <Content Include="Scripts\JS\angular-toastr.tpls.js" />
     <Content Include="Scripts\JS\angular.js" />
     <Content Include="Scripts\JS\angular.min.js" />
+    <Content Include="Scripts\JS\angularjs-datetime-picker.js" />
     <Content Include="Scripts\JS\bootstrap-notify.js" />
     <Content Include="Scripts\JS\bootstrap.js" />
     <Content Include="Scripts\JS\canvasjs.min.js" />
