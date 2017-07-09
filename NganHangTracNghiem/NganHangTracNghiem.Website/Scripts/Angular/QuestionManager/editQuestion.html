@@ -54,7 +54,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <select required class="form-control" id="faculties" ng-model="$scope.Selected.FacultiesSelected" ng-change="SelectFacultie()">
+                                        <select required class="form-control" id="faculties" ng-model="QuestionSearch.FacultiesSelected" ng-change="SelectFacultie()">
                                             <option value="" style="display: none;">Chọn Khoa</option>
                                             <option ng-repeat="Khoa in Faculties" value="{{Khoa.Id}}">{{Khoa.Name}}</option>
                                         </select>
@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <select required class="form-control" id="subjects" ng-model="$scope.Selected.SubjectsSelected" ng-change="SelectSubject()">
+                                        <select required class="form-control" id="subjects" ng-model="QuestionSearch.SubjectsSelected" ng-change="SelectSubject()">
                                             <option value="" style="display: none;">Chọn môn học</option>
                                             <option ng-repeat="MonHoc in SubjectResult" value="{{MonHoc.Id}}">{{MonHoc.Name }}</option>
                                         </select>
@@ -71,7 +71,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <select required class="form-control" id="chapters" ng-model="$scope.Selected.ChapterSelected" ng-change="SelectChapter()">
+                                        <select required class="form-control" id="chapters" ng-model="QuestionSearch.ChapterSelected" ng-change="SelectChapter()">
                                             <option value="" style="display: none;">Chọn phần</option>
                                             <option ng-repeat="Phan in ChapterResult" value="{{Phan.Id}}">{{Phan.Name}}</option>
                                         </select>
@@ -82,27 +82,30 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <div class="form-group label-floating is-empty">
-                                        <label class="control-label">Từ ngày</label>
-                                        <!--<input type="text" class="form-control" ng-model="FacultiesIns.Comment">-->
-                                        <input datetime-picker ng-model="model" />
-                                        <span class="material-input"></span>
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" uib-datepicker-popup ng-model="StartDate" is-open="popupstartday.opened"  ng-required="true" close-text="Close"/>
+                                          
+                                        </div>
+
+                         
+                                        <div class="col-md-2">
+                                            <a><span ng-click="openDataPicker1()"><i class="fa fa-calendar"></i></span></a>
+                                        </div>
                                     </div>
 
                                 </div>
                                 <div class="col-md-4">
                                     <p class="form-group label-floating is-empty">
                                         <div class="col-md-10">
-                                            <label class="control-label">Từ ngày</label>
-                                            <input type="text" class="form-control" uib-datepicker-popup ng-model="datatime" is-open="popup2.opened"  ng-required="true" close-text="Close"/>
+                             
+                                            <input type="text" class="form-control" uib-datepicker-popup ng-model="EndDay" is-open="popupendday.opened"  ng-required="true" close-text="Close"/>
                                             <span class="material-input"></span>
                                         </div>
 
-                                        <!--<span class="input-group-btn">
-                                            <button type="button" class="btn btn-default" ng-click="openDataPicker()"><i class="fa fa-calendar"></i></button>
-                                        </span>-->
+                        
                                         <div class="col-md-2">
-                                            <a><span ng-click="openDataPicker()"><i class="fa fa-calendar"></i></span></a>
+                                            <a><span ng-click="openDataPicker2()"><i class="fa fa-calendar"></i></span></a>
                                         </div>
                                     </p>
 
