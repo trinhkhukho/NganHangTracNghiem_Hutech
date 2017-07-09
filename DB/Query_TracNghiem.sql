@@ -89,3 +89,56 @@ go
 if not exists(select b.name from sys.objects a inner join sys.columns b on a.object_id=b.object_id where a.name ='Roles' and b.name ='ChaptersId')
 	alter table Roles add ChaptersId int  foreign key references Chapters(Id)
 go
+
+if exists(select name from sysobjects where name ='pro_search_Question')
+	drop procedure pro_search_Question
+go
+create proc pro_search_Question(
+	@FacultiesId int,
+	@SubjectId int,
+	@ChapterId int,
+	@StartDate Date,
+	@EndDate Date
+)
+as
+begin
+	if(@FacultiesId!=0 and @SubjectId!=0 and @ChapterId!=0)
+	begin
+		select q.Id,q.ChapterId,q.CreateDate,q.Deleted,q.Discrimination,q.Interchange,q.Mark,q.ObjectiveDifficulty,q.ParentId,q.UserId 
+		from Questions q,Chapters c, Subjects s, Faculties f
+		where f.Id=s.FacultyId and s.Id=c.SubjectId and c.Id=q.ChapterId 
+		and CONVERT(date,q.CreateDate,103) between CONVERT(date,@StartDate,103) and  CONVERT(date,@EndDate,103)
+		and q.ChapterId=@ChapterId and c.SubjectId=@SubjectId and s.FacultyId=@FacultiesId
+	end
+	else
+	begin
+		if(@FacultiesId!=0 and @SubjectId!=0 and @ChapterId=0)
+		begin
+			select q.Id,q.ChapterId,q.CreateDate,q.Deleted,q.Discrimination,q.Interchange,q.Mark,q.ObjectiveDifficulty,q.ParentId,q.UserId 
+			from Questions q,Chapters c, Subjects s, Faculties f
+			where f.Id=s.FacultyId and s.Id=c.SubjectId and c.Id=q.ChapterId 
+			and CONVERT(date,q.CreateDate,103) between CONVERT(date,@StartDate,103) and  CONVERT(date,@EndDate,103)
+			and s.FacultyId=@FacultiesId and c.SubjectId=@SubjectId
+		end
+		else
+		begin
+			if(@FacultiesId!=0 and @SubjectId=0 and @ChapterId=0)
+			begin
+				select q.Id,q.ChapterId,q.CreateDate,q.Deleted,q.Discrimination,q.Interchange,q.Mark,q.ObjectiveDifficulty,q.ParentId,q.UserId 
+				from Questions q,Chapters c, Subjects s, Faculties f
+				where f.Id=s.FacultyId and s.Id=c.SubjectId and c.Id=q.ChapterId 
+				and CONVERT(date,q.CreateDate,103) between CONVERT(date,@StartDate,103) and  CONVERT(date,@EndDate,103)
+				and s.FacultyId=@FacultiesId
+			end
+			else
+			begin
+				select q.Id,q.ChapterId,q.CreateDate,q.Deleted,q.Discrimination,q.Interchange,q.Mark,q.ObjectiveDifficulty,q.ParentId,q.UserId 
+				from Questions q,Chapters c, Subjects s, Faculties f
+				where f.Id=s.FacultyId and s.Id=c.SubjectId and c.Id=q.ChapterId 
+				and CONVERT(date,q.CreateDate,103) between CONVERT(date,@StartDate,103) and  CONVERT(date,@EndDate,103)
+			end
+		end
+	end
+end
+
+exec pro_search_Question 158,0,0,'07/06/2017','07/06/2017'
