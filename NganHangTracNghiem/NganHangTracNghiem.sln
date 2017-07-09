@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NganHangTracNghiem.API", "NganHangTracNghiem\NganHangTracNghiem.API.csproj", "{2671D457-41D3-4E57-A086-8C655A3AC89F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NganHangTracNghiem", "NganHangTracNghiem\NganHangTracNghiem.csproj", "{2671D457-41D3-4E57-A086-8C655A3AC89F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NganHangTracNghiem.Web", "NganHangTracNghiem.Web\NganHangTracNghiem.Web.csproj", "{D7FBA252-BC22-4D4C-A4EA-7AA6F0C1584D}"
 EndProject
