@@ -544,8 +544,6 @@
       <Parameter Name="FacultiesId" Mode="In" Type="Int32" />
       <Parameter Name="SubjectId" Mode="In" Type="Int32" />
       <Parameter Name="ChapterId" Mode="In" Type="Int32" />
-      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
-      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="pro_Login_Result">

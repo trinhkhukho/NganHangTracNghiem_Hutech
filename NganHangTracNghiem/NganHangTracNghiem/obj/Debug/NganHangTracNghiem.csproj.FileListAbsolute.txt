@@ -117,3 +117,4 @@ D:\study\NganHangGitHub\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTra
 D:\study\NganHangGitHub\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Http.WebHost.xml
 D:\study\NganHangGitHub\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.dll
 D:\study\NganHangGitHub\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.pdb
+D:\study\NganHangGitHub\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.csprojResolveAssemblyReference.cache

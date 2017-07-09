@@ -440,8 +440,6 @@
     <Parameter Name="FacultiesId" Type="int" Mode="In" />
     <Parameter Name="SubjectId" Type="int" Mode="In" />
     <Parameter Name="ChapterId" Type="int" Mode="In" />
-    <Parameter Name="StartDate" Type="date" Mode="In" />
-    <Parameter Name="EndDate" Type="date" Mode="In" />
   </Function>
   <Function Name="pro_Subject_FacultyId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="pro_Subject_FacultyId_Question" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
