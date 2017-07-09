@@ -74,14 +74,14 @@
      
         $scope.Search = function () {
             debugger
-            var _dateS = $filter('date')(new Date($scope.EndDay), 'MM/dd/yyyy');
-            var _dateE = $filter('date')(new Date($scope.EndDay), 'MM/dd/yyyy');
+            //Date _dateS = $filter('date')(new Date($scope.StartDate), 'MM/dd/yyyy');
+            //var _dateE = $filter('date')(new Date($scope.EndDay), 'MM/dd/yyyy');
             var dataSearch = {
                 "chapterId": $scope.QuestionSearch.ChapterSelected,
                 "subjectId": $scope.QuestionSearch.SubjectsSelected,
                 "facultiesId": $scope.QuestionSearch.FacultiesSelected,
-                "starDate": _dateS,
-                "endDate": _dateE
+                "starDate":new Date(2017,7,9),
+                "endDate": new Date(2017, 7, 9)
             };
             blockUI.start();
             $http.post(hostapi + "api/SearchQuestion", dataSearch).then(function (response) {
