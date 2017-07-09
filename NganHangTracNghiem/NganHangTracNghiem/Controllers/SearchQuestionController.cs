@@ -18,7 +18,7 @@ namespace NganHangTracNghiem.Controllers
         public IHttpActionResult GetQuestions(QuestionSearch q)
         {
             db.Configuration.ProxyCreationEnabled = false;
-            var result = db.pro_search_Question(q.facultiesId,q.subjectId,q.chapterId,q.starDate,q.endDate).ToList();
+            var result = db.pro_search_Question(q.facultiesId,q.subjectId,q.chapterId).ToList();
             if(result != null&& result.Count()>0)
             {
                 List<QuestionSearchResult> lsResult = new List<QuestionSearchResult>();

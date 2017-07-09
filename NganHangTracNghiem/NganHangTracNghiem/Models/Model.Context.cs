@@ -140,7 +140,7 @@ namespace NganHangTracNghiem.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pro_Get_Faculty_Question3_Result>("pro_Get_Faculty_Question3", idParameter);
         }
     
-        public virtual ObjectResult<pro_search_Question_Result> pro_search_Question(Nullable<int> facultiesId, Nullable<int> subjectId, Nullable<int> chapterId, Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate)
+        public virtual ObjectResult<pro_search_Question_Result> pro_search_Question(Nullable<int> facultiesId, Nullable<int> subjectId, Nullable<int> chapterId)
         {
             var facultiesIdParameter = facultiesId.HasValue ?
                 new ObjectParameter("FacultiesId", facultiesId) :
@@ -154,15 +154,7 @@ namespace NganHangTracNghiem.Models
                 new ObjectParameter("ChapterId", chapterId) :
                 new ObjectParameter("ChapterId", typeof(int));
     
-            var startDateParameter = startDate.HasValue ?
-                new ObjectParameter("StartDate", startDate) :
-                new ObjectParameter("StartDate", typeof(System.DateTime));
-    
-            var endDateParameter = endDate.HasValue ?
-                new ObjectParameter("EndDate", endDate) :
-                new ObjectParameter("EndDate", typeof(System.DateTime));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pro_search_Question_Result>("pro_search_Question", facultiesIdParameter, subjectIdParameter, chapterIdParameter, startDateParameter, endDateParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pro_search_Question_Result>("pro_search_Question", facultiesIdParameter, subjectIdParameter, chapterIdParameter);
         }
     }
 }
