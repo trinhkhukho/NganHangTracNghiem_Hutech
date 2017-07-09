@@ -15,6 +15,14 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
         $scope.pageSize = 10;
         $scope.Subjects = [];
         $scope.currentPage = 1;
+        $scope.SubjectsIns = {
+            'Id': 0,
+            'Code': null,
+            'Name': null,
+            'Deleted': null,
+            'FacultiesId': null,
+            'ManagementOrder': null
+        };
         var id = JSON.parse(serviceShareData.getData("FacultiesIDList"))[0];
         $http.get(hostapi + 'api/Subjects_FacultiesId/' + id).then(function (response) {
             $scope.Subjects = response.data;
