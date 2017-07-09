@@ -1,8 +1,8 @@
 ﻿(function (app) {
     'use strict';
     app.controller('editQuestionController', questionCrt);
-    questionCrt.$inject = ['$scope', '$http', '$route', '$timeout', '$sce', '$uibModal', 'blockUI', 'toastr', 'serviceGetId'];
-    function questionCrt($scope, $http, $route, $timeout, $sce, $uibModal, blockUI, toastr, serviceGetId) {
+    questionCrt.$inject = ['$scope', '$http', '$route', '$timeout', '$sce', '$uibModal', 'blockUI', 'toastr', 'serviceGetId', '$filter'];
+    function questionCrt($scope, $http, $route, $timeout, $sce, $uibModal, blockUI, toastr, serviceGetId, $filter) {
 
         $scope.trustAsHtml = $sce.trustAsHtml;
         $scope.ListQuestions = [];
@@ -45,24 +45,48 @@
         $scope.SelectChapter = function () {
             $scope.Selected.ChapterSelected = document.getElementById("chapters").value;
         };
-    
-        //$scope.datatime = new Date();
-        //$scope.openDataPicker = function () {
-        //    $scope.popup2.opened = true;
-        //};
-        //$scope.popup2 = {
-        //    opened: false
-        //};
+    //gán dữ liệu cho startday
+        $scope.StartDate = new Date();
+        $scope.openDataPicker1 = function () {
+            $scope.popupstartday.opened = true;
+        };
+        $scope.popupstartday = {
+            opened: false
+        };
+        //gán dữ liệu cho endday
+        $scope.EndDay = new Date();
+        $scope.openDataPicker2 = function () {
+            $scope.popupendday.opened = true;
+        };
+        $scope.popupendday = {
+            opened: false
+        };
+        $scope.QuestionSearch = {
+            "FacultiesSelected":0,
+            "SubjectsSelected":0,
+            "ChapterSelected":0
+        };
 
 
 
 
         //nhấn nút search
+     
         $scope.Search = function () {
-            blockUI.start();
             debugger
-            $http.get("api/Question/get").then(function (response) {
+            var _dateS = $filter('date')(new Date($scope.EndDay), 'MM/dd/yyyy');
+            var _dateE = $filter('date')(new Date($scope.EndDay), 'MM/dd/yyyy');
+            var dataSearch = {
+                "chapterId": $scope.QuestionSearch.ChapterSelected,
+                "subjectId": $scope.QuestionSearch.SubjectsSelected,
+                "facultiesId": $scope.QuestionSearch.FacultiesSelected,
+                "starDate": _dateS,
+                "endDate": _dateE
+            };
+            blockUI.start();
+            $http.post(hostapi + "api/SearchQuestion", dataSearch).then(function (response) {
                 blockUI.stop();
+                debugger 
                 var ketqua = response.data;
 
                 if (ketqua != null) {
@@ -74,7 +98,23 @@
                     toastr.error('', 'Lỗi khi tải danh sách câu hỏi ');
 
                 }
+                $route.reload(true);
+
             });
+            //$http.get("api/Question/get").then(function (response) {
+            //    blockUI.stop();
+            //    var ketqua = response.data;
+
+            //    if (ketqua != null) {
+            //        debugger;
+            //        $scope.ListQuestions = ketqua;
+            //        $scope.pageSize = 10;
+            //        $scope.currentPage = 1;
+            //    } else {
+            //        toastr.error('', 'Lỗi khi tải danh sách câu hỏi ');
+
+            //    }
+            //});
         }
 
         //bật pop chỉnh sửa câu hỏi
