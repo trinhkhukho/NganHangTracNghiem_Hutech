@@ -19,8 +19,8 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
             'Id': 0,
             'Code': null,
             'Name': null,
-            'Deleted': null,
-            'FacultiesId': id,
+            'Deleted': false,
+            'FacultyId': 0,
             'ManagementOrder': null
         };
         var id = JSON.parse(serviceShareData.getData("FacultiesIDList"))[0];
@@ -52,11 +52,44 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
             }
             else
             {
-                $scope.SubjectsIns.FacultiesId = id;
+                $scope.SubjectsIns.FacultyId = id;
                 $http.post(hostapi + 'api/Subjects', $scope.SubjectsIns).then(function (response) {
                     alert("thêm môn học thành công");
                     $route.reload(true);
                 });
+            }
+        };
+        $scope.DeleteFaculties = function (subject) {
+            debugger;
+            blockUI.start();
+            var r = confirm("Bạn chắc chắn xóa môn " + subject.Name);
+            if (r == false) {
+                blockUI.stop();
+            }
+            if (r == true) {
+                var data = {
+                    'Id': null,
+                    'Name': null,
+                    'Deleted': null,
+                    'Comment': null
+                };
+                data.Id = faculties.Id;
+                data.Name = faculties.Name;
+                data.Comment = faculties.Comment;
+                data.Deleted = faculties.Deleted;
+                $http.post("api/Faculties/delete", data)
+                    .then(function (response) {
+                        debugger;
+                        if (response.data == 1) {
+                            alert("xóa thành công");
+                            blockUI.stop();
+                        }
+                        else {
+                            alert("không thể xóa");
+                            blockUI.stop();
+                        }
+                        $route.reload(true);
+                    });
             }
         };
     };
