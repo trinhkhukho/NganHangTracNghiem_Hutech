@@ -25,8 +25,8 @@ namespace NganHangTracNghiem.Website
                 "~/Scripts/JS/angular-sanitize.js",
                 "~/Scripts/JS/angular-block-ui.min.js",
                 "~/Scripts/JS/ui-bootstrap-tpls-2.5.0.min.js",
-                "~/Scripts/JS/angular-toastr.tpls.js"
-
+                "~/Scripts/JS/angular-toastr.tpls.js",
+                "~/Scripts/JS/angularjs-datetime-picker.js"
 
             ));
 
@@ -44,7 +44,7 @@ namespace NganHangTracNghiem.Website
                 "~/Scripts/Angular/GroupQuestions/QuestionCrt.js",
                 "~/Scripts/Angular/Readfile/ReadFile.js",
                 "~/Scripts/Angular/Readfile/Result.js",
-                "~/Scripts/Angular/Questions/editQuestion.js",
+                "~/Scripts/Angular/QuestionManager/editQuestion.js",
                 "~/Scripts/Angular/Dashboard/Dashboard.js",
                 "~/Scripts/Angular/Dashboard/Dashboard_Faculties.js",
                 "~/Scripts/Angular/Dashboard/Dashboard_Subject.js",
@@ -61,7 +61,8 @@ namespace NganHangTracNghiem.Website
                 "~/Content/css/material-dashboard.css",
                 "~/Content/font-awesome-4.7.0/css/font-awesome.min.css",
                 "~/Content/css/angular-block-ui.min.css",
-                "~/Content/css/angular-toastr.css"
+                "~/Content/css/angular-toastr.css",
+                "~/Content/css/angularjs-datetime-picker.css"
 
                 ));
 

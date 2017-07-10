@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#!TypeQuestions">thống kê</a>
+                
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -50,7 +50,28 @@
                         </div>
                         <div class="card-content table-responsive">
                             <br />
-
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label">Tên khoa</label>
+                                        <input type="text" class="form-control" ng-model="FacultiesIns.Name">
+                                        <span class="material-input"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label">Ghi chú</label>
+                                        <input type="text" class="form-control" ng-model="FacultiesIns.Comment">
+                                        <span class="material-input"></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-2">
+                                    <a href="" ng-click="insert()" class="btn btn-primary btn-round">thêm<div class="ripple-container" ></div></a>
+                                </div>
+                            </div>
+                            <br />
+                            <hr />
                             <table class="table table-hover">
                                 </thead>
                                 <thead class="text-warning" class="row">

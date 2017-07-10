@@ -436,6 +436,11 @@
   <Function Name="pro_GetUser_byUserName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Username" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="pro_search_Question" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FacultiesId" Type="int" Mode="In" />
+    <Parameter Name="SubjectId" Type="int" Mode="In" />
+    <Parameter Name="ChapterId" Type="int" Mode="In" />
+  </Function>
   <Function Name="pro_Subject_FacultyId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="pro_Subject_FacultyId_Question" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="ObjectiveTestModelStoreContainer">

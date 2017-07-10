@@ -540,6 +540,11 @@
     <FunctionImport Name="pro_Get_Faculty_Question3" ReturnType="Collection(ObjectiveTestModel.pro_Get_Faculty_Question3_Result)">
       <Parameter Name="Id" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="pro_search_Question" ReturnType="Collection(ObjectiveTestModel.pro_search_Question_Result)">
+      <Parameter Name="FacultiesId" Mode="In" Type="Int32" />
+      <Parameter Name="SubjectId" Mode="In" Type="Int32" />
+      <Parameter Name="ChapterId" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="pro_Login_Result">
     <Property Type="Int32" Name="Id" Nullable="false" />
@@ -648,5 +653,17 @@
     <Property Type="Boolean" Name="Deleted" Nullable="true" />
     <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
     <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="pro_search_Question_Result">
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="ChapterId" Nullable="false" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Deleted" Nullable="true" />
+    <Property Type="Decimal" Name="Discrimination" Nullable="true" Precision="18" Scale="10" />
+    <Property Type="Boolean" Name="Interchange" Nullable="true" />
+    <Property Type="Decimal" Name="Mark" Nullable="true" Precision="18" Scale="10" />
+    <Property Type="Decimal" Name="ObjectiveDifficulty" Nullable="true" Precision="18" Scale="10" />
+    <Property Type="Int64" Name="ParentId" Nullable="true" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
   </ComplexType>
 </Schema>

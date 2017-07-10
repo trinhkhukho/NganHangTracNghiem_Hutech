@@ -1,4 +1,5 @@
 ﻿<link href="../../../Content/ckeditor.css" rel="stylesheet" />
+
 <div class="main-panel" ng-controller="editQuestionController">
     <nav class="navbar navbar-transparent navbar-absolute">
         <div class="container-fluid">
@@ -37,18 +38,94 @@
 
     <div class="content">
         <div class="container-fluid">
+     
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header" data-background-color="blue">
                             <div class="row">
                                 <div class="col-md-10">
-                                    <h4 class="title">Danh sách câu hỏi</h4>
+                                    <h4 class="title">Quản lý câu hỏi</h4>
                                 </div>
 
                             </div>
                         </div>
                         <div class="card-content">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select required class="form-control" id="faculties" ng-model="QuestionSearch.FacultiesSelected" ng-change="SelectFacultie()">
+                                            <option value="" style="display: none;">Chọn Khoa</option>
+                                            <option ng-repeat="Khoa in Faculties" value="{{Khoa.Id}}">{{Khoa.Name}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select required class="form-control" id="subjects" ng-model="QuestionSearch.SubjectsSelected" ng-change="SelectSubject()">
+                                            <option value="" style="display: none;">Chọn môn học</option>
+                                            <option ng-repeat="MonHoc in SubjectResult" value="{{MonHoc.Id}}">{{MonHoc.Name }}</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select required class="form-control" id="chapters" ng-model="QuestionSearch.ChapterSelected" ng-change="SelectChapter()">
+                                            <option value="" style="display: none;">Chọn phần</option>
+                                            <option ng-repeat="Phan in ChapterResult" value="{{Phan.Id}}">{{Phan.Name}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" uib-datepicker-popup ng-model="StartDate" is-open="popupstartday.opened"  ng-required="true" close-text="Close"/>
+                                          
+                                        </div>
+
+                         
+                                        <div class="col-md-2">
+                                            <a><span ng-click="openDataPicker1()"><i class="fa fa-calendar"></i></span></a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <p class="form-group label-floating is-empty">
+                                        <div class="col-md-10">
+                             
+                                            <input type="text" class="form-control" uib-datepicker-popup ng-model="EndDay" is-open="popupendday.opened"  ng-required="true" close-text="Close"/>
+                                            <span class="material-input"></span>
+                                        </div>
+
+                        
+                                        <div class="col-md-2">
+                                            <a><span ng-click="openDataPicker2()"><i class="fa fa-calendar"></i></span></a>
+                                        </div>
+                                    </p>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="" ng-click="Search()" style="margin-bottom: 0px" class="btn btn-primary btn-round pull-right">Tìm kiếm
+                                        <div class="ripple-container"></div></a>
+                                </div>
+                            </div>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <b style="font-size: 20px">
+                                        Danh sách câu hỏi
+                                    </b>
+                                </div>
+                            </div>
+                            <br/>
                             <form>
                                 <table class="table table-hover">
                                     <tr>
@@ -69,7 +146,7 @@
                                         </th>
                                     </tr>
                                     <tr ng-repeat="item in ListQuestions | startFrom: (currentPage-1)*pageSize | limitTo: pageSize |orderBy : 'Id'">
-                                       
+
                                         <td>{{ item.Id }}</td>
                                         <td>{{ item.Name }}</td>
                                         <td>
@@ -88,11 +165,11 @@
                                 </table>
                             </form>
                         </div>
-                        <div  style="margin-left:20px;">
+                        <div style="margin-left: 20px;">
                             <ul uib-pagination total-items="ListQuestions.length" ng-model="currentPage" items-per-page="pageSize"></ul>
                         </div>
-                        
-                        
+
+
                     </div>
                 </div>
             </div>

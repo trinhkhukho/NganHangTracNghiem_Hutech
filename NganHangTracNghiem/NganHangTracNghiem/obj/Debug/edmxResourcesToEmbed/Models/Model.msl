@@ -318,5 +318,21 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pro_search_Question" FunctionName="ObjectiveTestModel.Store.pro_search_Question">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_search_Question_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ChapterId" ColumnName="ChapterId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Discrimination" ColumnName="Discrimination" />
+          <ScalarProperty Name="Interchange" ColumnName="Interchange" />
+          <ScalarProperty Name="Mark" ColumnName="Mark" />
+          <ScalarProperty Name="ObjectiveDifficulty" ColumnName="ObjectiveDifficulty" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>
