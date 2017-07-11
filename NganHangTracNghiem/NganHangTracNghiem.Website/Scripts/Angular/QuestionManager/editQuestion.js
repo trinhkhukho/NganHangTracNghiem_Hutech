@@ -45,22 +45,7 @@
         $scope.SelectChapter = function () {
             $scope.Selected.ChapterSelected = document.getElementById("chapters").value;
         };
-    //gán dữ liệu cho startday
-        $scope.StartDate = new Date();
-        $scope.openDataPicker1 = function () {
-            $scope.popupstartday.opened = true;
-        };
-        $scope.popupstartday = {
-            opened: false
-        };
-        //gán dữ liệu cho endday
-        $scope.EndDay = new Date();
-        $scope.openDataPicker2 = function () {
-            $scope.popupendday.opened = true;
-        };
-        $scope.popupendday = {
-            opened: false
-        };
+
         $scope.QuestionSearch = {
             "FacultiesSelected":0,
             "SubjectsSelected":0,
@@ -79,9 +64,7 @@
             var dataSearch = {
                 "chapterId": $scope.QuestionSearch.ChapterSelected,
                 "subjectId": $scope.QuestionSearch.SubjectsSelected,
-                "facultiesId": $scope.QuestionSearch.FacultiesSelected,
-                "starDate":new Date(2017,7,9),
-                "endDate": new Date(2017, 7, 9)
+                "facultiesId": $scope.QuestionSearch.FacultiesSelected
             };
             blockUI.start();
             $http.post(hostapi + "api/SearchQuestion", dataSearch).then(function (response) {
