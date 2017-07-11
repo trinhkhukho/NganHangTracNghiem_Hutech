@@ -51,7 +51,8 @@ namespace NganHangTracNghiem.Website
                 "~/Scripts/Angular/Faculties/Faculties.js",
                 "~/Scripts/Angular/Subjects/Subjects.js",
                 "~/Scripts/Angular/Chapters/Chapters.js",
-                "~/Scripts/Angular/Faculties/EditFaculties.js"
+                "~/Scripts/Angular/Faculties/EditFaculties.js",
+                "~/Scripts/Angular/Subjects/EditSubjects.js"
 
 
             ));

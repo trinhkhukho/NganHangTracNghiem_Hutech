@@ -82,32 +82,35 @@
                                 <thead class="text-warning row">
                                 <th class="col-md-1">Mã Môn</th>
                                 <th class="col-md-2">Tên Môn</th>
-                                <th class="col-md-2">Mã Khoa</th>
+                                <th class="col-md-2">Code</th>
                                 <th class="col-md-2">Khóa</th>
-                                <th class="col-md-2">Stt</th>
                                 <th class="col-md-1">sửa</th>
                                 <th class="col-md-1">xóa</th>
                                 </thead>
                                 <tbody>
 
                                     <tr ng-repeat="Subject in Subjects | startFrom: (currentPage-1)*pageSize | limitTo: pageSize" >
-                                        <td>{{Subject.Id}}</td>
-                                        <td>{{Subject.Name}}</td>
-                                        <td>{{Subject.FacultyId}}</td>
-                                        <td ng-if="Subject.Deleted=true">
-                                            <i class="fa fa-check text-success"></i>
+                                        <td ng-click="SelectSubjects(Subject.Id)">{{Subject.Id}}</td>
+                                        <td ng-click="SelectSubjects(Subject.Id)">{{Subject.Name}}</td>
+                                        <td ng-click="SelectSubjects(Subject.Id)">{{Subject.Code}}</td>
+                                        <td ng-if="Subject.Deleted==true">
+                                            <a href="" ng-click="Block(Subject)">
+                                                <i class="fa fa-times text-danger"></i>
+                                            </a>
+                                            
                                         </td>
                                         <td ng-if="Subject.Deleted!=true">
-                                            <i class="fa fa-check text-danger"></i>
-                                        </td>
-                                        <td>{{Subject.ManagementOrder}}</td>
+                                            <a href="" ng-click="Block(Subject)">
+                                                <i class="fa fa-check text-success"></i>
+                                            </a>                                        </td>
+                                        
                                         <td>
-                                            <a href="" ng-click="editFaculties(Facultie)">
+                                            <a href="" ng-click="editSubjects(Subject)">
                                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="" ng-click="DeleteFaculties(Facultie)">
+                                            <a href="" ng-click="DeleteSubject(Subject)">
                                                 <i class="fa fa-times" style="color: red" aria-hidden="true"></i>
                                             </a>
                                         </td>

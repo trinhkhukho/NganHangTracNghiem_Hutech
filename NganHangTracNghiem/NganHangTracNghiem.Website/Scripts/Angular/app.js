@@ -78,9 +78,9 @@
                 {
                     templateUrl: 'Scripts/Angular/Subjects/Subjects.html'
                 })
-            .when('/Chaptes',
+            .when('/Chapters',
                 {
-                    templateUrl: 'Scripts/Angular/Chaptes/Chaptes.html'
+                    templateUrl: 'Scripts/Angular/Chapters/Chapters.html'
                 })
     };
 

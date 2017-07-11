@@ -1,10 +1,131 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-	<meta charset="utf-8" />
-</head>
-<body>
+﻿<div class="main-panel">
+    <nav class="navbar navbar-transparent navbar-absolute">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
 
-</body>
-</html>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                            <span class="notification">5</span>
+                            <i class="fa fa-comment-o" aria-hidden="true">5</i>
+
+                        </a>
+
+                    </li>
+
+                </ul>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group  is-empty">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="material-input"></span>
+                    </div>
+                    <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <div class="ripple-container"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="content" ng-controller="Chapters">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <br />
+                    <div class="card">
+                        <div class="card-header" data-background-color="blue">
+                            <h4 class="title" ng-model="NameSubjects">Khoa {{NameSubjects}}</h4>
+                            <p class="category">Danh sách môn của khoa {{NameSubjects}}</p>
+                        </div>
+                        <div class="card-content table-responsive">
+                            <br />
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label">Tên Môn</label>
+                                        <input type="text" class="form-control" ng-model="ChaptersIns.Name">
+                                        <span class="material-input"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label">Số thứ tự</label>
+                                        <input type="text" class="form-control" ng-model="ChaptersIns.ManagementOrder">
+                                        <span class="material-input"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group label-floating is-empty">
+                                        <label class="control-label">Content</label>
+                                        <input type="text" class="form-control" ng-model="ChaptersIns.Content">
+                                        <span class="material-input"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <a href="" ng-click="insert()" class="btn btn-primary btn-round">thêm<div class="ripple-container"></div></a>
+                                </div>
+                            </div>
+                            <br />
+                            <hr />
+                            <table class="table table-hover">
+
+                                <thead class="text-warning row">
+                                <th class="col-md-1">Mã Môn</th>
+                                <th class="col-md-2">Tên Môn</th>
+                                <th class="col-md-2">Code</th>
+                                <th class="col-md-2">Khóa</th>
+                                <th class="col-md-1">sửa</th>
+                                <th class="col-md-1">xóa</th>
+                                </thead>
+                                <tbody>
+
+                                    <tr ng-repeat="Chapter in Chapters | startFrom: (currentPage-1)*pageSize | limitTo: pageSize">
+                                        <td>{{Chapter.Id}}</td>
+                                        <td>{{Chapter.Name}}</td>
+                                        <td>{{Chapter.Content}}</td>
+                                        <td ng-if="Chapter.Deleted==true">
+                                            <a href="" ng-click="Block(Chapter)">
+                                                <i class="fa fa-times text-danger"></i>
+                                            </a>
+
+                                        </td>
+                                        <td ng-if="Chapter.Deleted!=true">
+                                            <a href="" ng-click="Block(Chapter)">
+                                                <i class="fa fa-check text-success"></i>
+                                            </a>
+                                        </td>
+
+                                        <td>
+                                            <a href="" ng-click="editSubjects(Subject)">
+                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="" ng-click="DeleteChapter(Chapter)">
+                                                <i class="fa fa-times" style="color: red" aria-hidden="true"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br />
+                        <div style="margin-left:20px;">
+                            <ul uib-pagination total-items="Chapters.length" ng-model="currentPage" items-per-page="pageSize"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

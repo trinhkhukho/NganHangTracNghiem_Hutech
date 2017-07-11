@@ -228,11 +228,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ChaptersController.cs" />
     <Compile Include="Controllers\FacultiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QuestionsController.cs" />
     <Compile Include="Controllers\ReadFileController.cs" />
     <Compile Include="Controllers\ReadFileZipController.cs" />
+    <Compile Include="Controllers\SubjectController.cs" />
     <Compile Include="Controllers\testController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1379,6 +1381,8 @@
     <Content Include="Scripts\Angular\Sevieces\serviceChapterId.js" />
     <Content Include="Scripts\Angular\Sevieces\serviceShareData.js" />
     <Content Include="Scripts\Angular\Sevieces\serviceGetId.js" />
+    <Content Include="Scripts\Angular\Subjects\EditSubjects.html" />
+    <Content Include="Scripts\Angular\Subjects\EditSubjects.js" />
     <Content Include="Scripts\Angular\Subjects\Subjects.html" />
     <Content Include="Scripts\Angular\Subjects\Subjects.js" />
     <Content Include="Scripts\fileTam\bootstrap.js" />
