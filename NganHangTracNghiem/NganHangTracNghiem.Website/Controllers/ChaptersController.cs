@@ -10,11 +10,11 @@ using System.Net.Http.Headers;
 
 namespace NganHangTracNghiem.Website.Controllers
 {
-    public class SubjectController : ApiController
+    public class ChaptersController : ApiController
     {
         [HttpPost]
-        [Route("api/Subject/delete")]
-        public IHttpActionResult FacultiesDelete(Subjects s)
+        [Route("api/Chapters/delete")]
+        public IHttpActionResult ChaptersDelete(Chapters c)
         {
             try
             {
@@ -25,7 +25,7 @@ namespace NganHangTracNghiem.Website.Controllers
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri(host);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                var reponse = client.DeleteAsync(host + "api/Subjects/" + s.ID).Result;
+                var reponse = client.DeleteAsync(host + "api/Chapters/" + c.ID).Result;
                 if (reponse.IsSuccessStatusCode)
                 {
                     return Ok(1);
