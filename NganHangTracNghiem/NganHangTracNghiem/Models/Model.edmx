@@ -445,6 +445,8 @@
           <Parameter Name="FacultiesId" Type="int" Mode="In" />
           <Parameter Name="SubjectId" Type="int" Mode="In" />
           <Parameter Name="ChapterId" Type="int" Mode="In" />
+          <Parameter Name="StarDate" Type="date" Mode="In" />
+          <Parameter Name="EndDate" Type="date" Mode="In" />
         </Function>
         <Function Name="pro_Subject_FacultyId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="pro_Subject_FacultyId_Question" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -1084,6 +1086,8 @@
             <Parameter Name="FacultiesId" Mode="In" Type="Int32" />
             <Parameter Name="SubjectId" Mode="In" Type="Int32" />
             <Parameter Name="ChapterId" Mode="In" Type="Int32" />
+            <Parameter Name="StarDate" Mode="In" Type="DateTime" />
+            <Parameter Name="EndDate" Mode="In" Type="DateTime" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="pro_Login_Result">

@@ -234,6 +234,7 @@
     <Compile Include="Controllers\QuestionsController.cs" />
     <Compile Include="Controllers\ReadFileController.cs" />
     <Compile Include="Controllers\ReadFileZipController.cs" />
+    <Compile Include="Controllers\SearchQuestionsController.cs" />
     <Compile Include="Controllers\SubjectController.cs" />
     <Compile Include="Controllers\testController.cs" />
     <Compile Include="Global.asax.cs">

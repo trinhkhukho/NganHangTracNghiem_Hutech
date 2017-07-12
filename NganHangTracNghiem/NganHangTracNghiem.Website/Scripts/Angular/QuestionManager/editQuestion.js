@@ -80,9 +80,11 @@
                 "chapterId": $scope.QuestionSearch.ChapterSelected,
                 "subjectId": $scope.QuestionSearch.SubjectsSelected,
                 "facultiesId": $scope.QuestionSearch.FacultiesSelected,
-                "starDate":new Date(2017,7,9),
-                "endDate": new Date(2017, 7, 9)
+                "starDate":new Date(),
+                "endDate": new Date()
             };
+            dataSearch.starDate = new Date("2017-07-06");
+            dataSearch.endDate = new Date("2017-07-06");
             blockUI.start();
             $http.post(hostapi + "api/SearchQuestion", dataSearch).then(function (response) {
                 blockUI.stop();
