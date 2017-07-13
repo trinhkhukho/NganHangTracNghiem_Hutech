@@ -82,6 +82,11 @@
                 {
                     templateUrl: 'Scripts/Angular/Chapters/Chapters.html'
                 })
+            .when('/Decentralization',
+                {
+                    templateUrl: 'Scripts/Angular/Decentralization/Decentralization.html'
+                })
+        //Decentralization
     };
 
 })();

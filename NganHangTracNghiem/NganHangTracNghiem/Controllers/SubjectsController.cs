@@ -56,6 +56,15 @@ namespace NganHangTracNghiem.Controllers
             try
             {
                 db.SaveChanges();
+                Role r = db.Roles.Where(n => n.SubjectId == subject.Id & n.ChapterId == null).SingleOrDefault();
+                if (r != null)
+                {
+                    r.FacultiesId = subject.FacultyId;
+                    r.FacultiesId = subject.Id;
+                    r.Name = subject.Name;
+                    db.Entry(r).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -83,6 +92,21 @@ namespace NganHangTracNghiem.Controllers
 
             db.Subjects.Add(subject);
             db.SaveChanges();
+            Role r = new Role();
+            Role r_old = db.Roles.OrderByDescending(n => n.Id).Take(1).SingleOrDefault();
+            if (r_old != null)
+            {
+                r.Id = r_old.Id + 1;
+            }
+            else
+            {
+                r.Id = 1;
+            }
+            r.FacultiesId = subject.FacultyId;
+            r.SubjectId = subject.Id;
+            r.Name = subject.Name;
+            db.Roles.Add(r);
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = subject.Id }, subject);
         }
@@ -98,6 +122,12 @@ namespace NganHangTracNghiem.Controllers
             }
 
             db.Subjects.Remove(subject);
+            Role r = db.Roles.Where(n =>n.SubjectId == id & n.ChapterId == null).SingleOrDefault();
+            if(r!=null)
+            {
+                db.Roles.Remove(r);
+
+            }
             db.SaveChanges();
 
             return Ok(subject);

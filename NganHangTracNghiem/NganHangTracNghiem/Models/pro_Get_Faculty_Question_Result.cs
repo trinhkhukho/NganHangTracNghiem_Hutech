@@ -13,9 +13,9 @@ namespace NganHangTracNghiem.Models
     
     public partial class pro_Get_Faculty_Question_Result
     {
-        public int Id { get; set; }
+        public Nullable<int> Id { get; set; }
         public string Name { get; set; }
-        public string Comment { get; set; }
+        public string Code { get; set; }
         public Nullable<bool> Deleted { get; set; }
         public Nullable<int> NumberOfSubject { get; set; }
         public Nullable<int> NumberOfSubjectChapter { get; set; }

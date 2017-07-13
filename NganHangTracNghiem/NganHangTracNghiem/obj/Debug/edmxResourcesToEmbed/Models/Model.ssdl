@@ -125,6 +125,10 @@
     </Key>
     <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="ChapterId" Type="int" />
+    <Property Name="SubjectId" Type="int" />
+    <Property Name="FacultiesId" Type="int" />
+    <Property Name="Deleted" Type="bit" />
   </EntityType>
   <EntityType Name="Shifts">
     <Key>
@@ -200,6 +204,7 @@
     </Key>
     <Property Name="UserId" Type="int" Nullable="false" />
     <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="Content" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Users">
     <Key>

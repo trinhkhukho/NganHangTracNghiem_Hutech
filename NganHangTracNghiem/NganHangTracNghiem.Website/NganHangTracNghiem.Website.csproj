@@ -1352,6 +1352,8 @@
     <Content Include="Scripts\Angular\Dashboard\Dashboard_Faculties.js" />
     <Content Include="Scripts\Angular\Dashboard\Dashboard_Subject.js" />
     <Content Include="Scripts\Angular\Dashboard\Dashdoard_Subject.html" />
+    <Content Include="Scripts\Angular\Decentralization\Decentralization.html" />
+    <Content Include="Scripts\Angular\Decentralization\Decentralization.js" />
     <Content Include="Scripts\Angular\Faculties\EditFaculties.html" />
     <Content Include="Scripts\Angular\Faculties\EditFaculties.js" />
     <Content Include="Scripts\Angular\Faculties\Faculties.html" />

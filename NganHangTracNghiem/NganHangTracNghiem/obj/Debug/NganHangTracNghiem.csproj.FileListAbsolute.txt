@@ -259,7 +259,6 @@ D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\bi
 D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\bin\System.Net.Http.Formatting.xml
 D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Http.xml
 D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\bin\System.Web.Http.WebHost.xml
-D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.csprojResolveAssemblyReference.cache
 D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.dll
 D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.pdb
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\bin\ApplicationInsights.config
@@ -334,3 +333,4 @@ F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\bin\System.We
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.csprojResolveAssemblyReference.cache
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.dll
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.pdb
+D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.csprojResolveAssemblyReference.cache
