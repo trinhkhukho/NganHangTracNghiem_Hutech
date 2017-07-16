@@ -45,29 +45,30 @@
                                 <div class="checkbox text-danger">
                                     + Khoa {{Decentralizations.fucalties.Name}}
                                     <label>
-                                        <input type="checkbox" name="optionsCheckboxes"><span class="checkbox-material"><span class="check"></span></span>
+                                        <input type="checkbox" name="optionsCheckboxes" ng-model="Decentralizations.fucalties.check"><span class="checkbox-material"><span class="check"></span></span>
                                     </label>
 
                                 </div>
 
-                                <div ng-repeat="subjects_chapter in Decentralizations.fucalties.Subjects" style="margin-left:40px;">
+                                <div ng-repeat="subjects_chapter in Decentralizations.subject_chapter" style="margin-left:40px;">
                                     <div class="checkbox text-info">
-                                        + Môn {{subjects_chapter.Name}}
+                                        + Môn {{subjects_chapter.subject.Name}}
                                         <label>
-                                            <input type="checkbox" name="optionsCheckboxes"><span class="checkbox-material"> <span class="check"></span></span>
+                                            <input type="checkbox" name="optionsCheckboxes" ng-model="subjects_chapter.subject.check"><span class="checkbox-material"> <span class="check"></span></span>
                                         </label>
 
                                     </div>
-                                    <div ng-repeat="chapter in subjects_chapter.Chapters" style="margin-left:40px;">
+                                    <div ng-repeat="chapter in subjects_chapter.chapter" style="margin-left:40px;">
                                         <div class="checkbox text-danger">
                                             + Phần {{chapter.Name}}
                                             <label>
-                                                <input type="checkbox" name="optionsCheckboxes"><span class="checkbox-material"> <span class="check"></span></span>
+                                                <input type="checkbox" name="optionsCheckboxes" ng-model="chapter.check"><span class="checkbox-material"> <span class="check"></span></span>
                                             </label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <button class="btn btn-success align-center" ng-click="save()" type="button">Lưu</button>
                         </div>
 
 

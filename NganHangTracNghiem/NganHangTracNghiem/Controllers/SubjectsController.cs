@@ -104,6 +104,7 @@ namespace NganHangTracNghiem.Controllers
             }
             r.FacultiesId = subject.FacultyId;
             r.SubjectId = subject.Id;
+            r.ChapterId = 0;
             r.Name = subject.Name;
             db.Roles.Add(r);
             db.SaveChanges();

@@ -9,6 +9,5 @@ namespace NganHangTracNghiem.Models
     {
         public SubjectDecen subject { get; set;}
         public List<ChaptersDecen> chapter { get; set; }
-        public bool check { get; set; }
     }
 }

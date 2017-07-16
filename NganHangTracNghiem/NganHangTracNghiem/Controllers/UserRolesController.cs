@@ -37,7 +37,7 @@ namespace NganHangTracNghiem.Controllers
 
         // PUT: api/UserRoles/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutUserRole(int id, UserRole userRole)
+        public IHttpActionResult PutUserRole(int id, UserRole  userRole)
         {
             if (!ModelState.IsValid)
             {
@@ -49,6 +49,7 @@ namespace NganHangTracNghiem.Controllers
                 return BadRequest();
             }
 
+            
             db.Entry(userRole).State = EntityState.Modified;
 
             try
@@ -72,14 +73,27 @@ namespace NganHangTracNghiem.Controllers
 
         // POST: api/UserRoles
         [ResponseType(typeof(UserRole))]
-        public IHttpActionResult PostUserRole(UserRole userRole)
+        public IHttpActionResult PostUserRole(UsRole userRole)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
-            db.UserRoles.Add(userRole);
+            UserRole us = new UserRole();
+            us.UserId = userRole.UserID;
+            if (userRole.RoleID != 0)
+            {
+                us.RoleId = userRole.RoleID;
+            }
+            else
+            {
+                Role r = db.Roles.Where(n => n.FacultiesId == userRole.FacultiesID & n.SubjectId == userRole.SubjectID & n.ChapterId == userRole.ChapterID).SingleOrDefault();
+                if (r != null)
+                {
+                    us.RoleId = r.Id;
+                }
+            }
+            db.UserRoles.Add(us);
 
             try
             {
@@ -87,7 +101,7 @@ namespace NganHangTracNghiem.Controllers
             }
             catch (DbUpdateException)
             {
-                if (UserRoleExists(userRole.UserId))
+                if (UserRoleExists(userRole.UserID))
                 {
                     return Conflict();
                 }
@@ -97,7 +111,7 @@ namespace NganHangTracNghiem.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = userRole.UserId }, userRole);
+            return CreatedAtRoute("DefaultApi", new { id = userRole.UserID }, userRole);
         }
 
         // DELETE: api/UserRoles/5

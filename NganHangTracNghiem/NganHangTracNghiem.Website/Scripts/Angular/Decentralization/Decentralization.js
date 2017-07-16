@@ -12,12 +12,67 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
     app.controller('Decentralization', DecentralizationCrt);
     DecentralizationCrt.$inject = ['$scope', '$http', '$location', 'serviceChapterId'];
     function DecentralizationCrt($scope, $http, $location, serviceChapterId) {
-       
+        $scope.ListDecentralization = [];
         $http.get(hostapi + 'api/GetDecentralizationList').then(function (response) {
             debugger;
             $scope.ListDecentralization = response.data.ListFuculties;
-            $scope.Fuculties = $scope.ListDecentralization.fucalties;
         });
-        
+        var data = {
+            UserID: 10001,
+            ChapterID: 0,
+            SubjectID: 0,
+            FacultiesID: 0,
+            RoleID:0
+        };
+        $scope.save = function () {
+            debugger;
+            for(var i=0; i<$scope.ListDecentralization.length;i++)
+            {
+                debugger;
+                if($scope.ListDecentralization[i].fucalties.check==true)
+                {
+                    data.ChapterID = 0;
+                    data.SubjectID = 0;
+                    data.RoleID = 0;
+                    data.FacultiesID = $scope.ListDecentralization[i].fucalties.ID;
+                    $http.post(hostapi + 'api/UserRoles',data).then(function (response) {
+                        debugger;
+                        
+                    });
+                }
+                else
+                {
+                    for (var j = 0 ; j < $scope.ListDecentralization[i].subject_chapter.length; j++)
+                    {
+                        if($scope.ListDecentralization[i].subject_chapter[j].subject.check==true)
+                        {
+                            data.ChapterID = 0;
+                            data.SubjectID = $scope.ListDecentralization[i].subject_chapter[j].subject.ID;
+                            data.RoleID = 0;
+                            data.FacultiesID = $scope.ListDecentralization[i].fucalties.ID;
+                            $http.post(hostapi + 'api/UserRoles', data).then(function (response) {
+                                debugger;
+
+                            });
+                        }
+                        else
+                        {
+                            for (var h = 0; h < $scope.ListDecentralization[i].subject_chapter[j].chapter.length; h++) {
+                                if ($scope.ListDecentralization[i].subject_chapter[j].chapter[h].check == true) {
+                                    data.ChapterID = $scope.ListDecentralization[i].subject_chapter[j].chapter[h].ID;
+                                    data.SubjectID = $scope.ListDecentralization[i].subject_chapter[j].subject.ID;
+                                    data.RoleID = 0;
+                                    data.FacultiesID = $scope.ListDecentralization[i].fucalties.ID;
+                                    $http.post(hostapi + 'api/UserRoles', data).then(function (response) {
+                                        debugger;
+
+                                    });
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        };
     };
 })(angular.module('myApp'));

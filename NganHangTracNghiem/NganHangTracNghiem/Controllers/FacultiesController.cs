@@ -105,6 +105,8 @@ namespace NganHangTracNghiem.Controllers
             }
             r.FacultiesId = faculty.Id;
             r.Name = faculty.Name;
+            r.ChapterId = 0;
+            r.SubjectId = 0;
             db.Roles.Add(r);
             db.SaveChanges();
             return CreatedAtRoute("DefaultApi", new { id = faculty.Id }, faculty);
