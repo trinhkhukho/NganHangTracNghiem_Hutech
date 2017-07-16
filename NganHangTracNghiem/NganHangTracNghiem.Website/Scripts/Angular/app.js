@@ -1,7 +1,7 @@
 ﻿
 (function () {
     'use strict';
-    angular.module('myApp', ['ngRoute', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'blockUI', 'toastr', 'angularjs-datetime-picker'])
+    angular.module('myApp', ['ngRoute', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'blockUI', 'toastr', 'angularjs-datetime-picker', 'angularTreeview'])
         .config(config)
     .filter('startFrom', function () {
         return function (data, start) {

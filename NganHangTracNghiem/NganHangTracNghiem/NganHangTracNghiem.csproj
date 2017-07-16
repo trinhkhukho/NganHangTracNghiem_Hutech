@@ -202,6 +202,7 @@
     <Compile Include="Controllers\ChaptersController.cs" />
     <Compile Include="Controllers\Chapters_SubjectIDController.cs" />
     <Compile Include="Controllers\FacultiesController.cs" />
+    <Compile Include="Controllers\GetDecentralizationListController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\pro_Get_Chapters_QuestionController.cs" />
     <Compile Include="Controllers\pro_Get_Faculty_QuestionController.cs" />
@@ -227,12 +228,16 @@
     <Compile Include="Models\Chapter.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ChaptersDecen.cs" />
     <Compile Include="Models\Exam.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Faculty.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\FucultiesDecen.cs" />
+    <Compile Include="Models\Fuculties_Subject.cs" />
+    <Compile Include="Models\ListDecentralization.cs" />
     <Compile Include="Models\Matrix.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -305,6 +310,8 @@
     <Compile Include="Models\Subject.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SubjectDecen.cs" />
+    <Compile Include="Models\Subject_Chapter.cs" />
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -345,6 +352,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NganHangTracNghiem.Data\NganHangTracNghiem.Data.csproj">
+      <Project>{7302619E-7073-4B8B-883A-6A9EE14EC78A}</Project>
+      <Name>NganHangTracNghiem.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

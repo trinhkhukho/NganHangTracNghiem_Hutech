@@ -1310,6 +1310,7 @@
     <Content Include="Content\ckfinder\translations.txt" />
     <Content Include="Content\css\angular-block-ui.min.css" />
     <Content Include="Content\css\angular-toastr.css" />
+    <Content Include="Content\css\angular.treeview.css" />
     <Content Include="Content\css\angularjs-datetime-picker.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
@@ -1319,6 +1320,12 @@
     <Content Include="Content\css\Images\question.png" />
     <Content Include="Content\css\Images\sidebar-1.jpg" />
     <Content Include="Content\css\Images\upload.jpg" />
+    <Content Include="Content\css\img\file.png" />
+    <Content Include="Content\css\img\folder-closed.png" />
+    <Content Include="Content\css\img\folder.png" />
+    <Content Include="Content\css\img\jsfiddle01.png" />
+    <Content Include="Content\css\img\jsfiddle02.png" />
+    <Content Include="Content\css\img\preview.png" />
     <Content Include="Content\css\InputFile\css\component.css" />
     <Content Include="Content\css\InputFile\css\demo.css" />
     <Content Include="Content\css\InputFile\css\normalize.css" />
@@ -1471,6 +1478,8 @@
     <Content Include="Scripts\JS\angular-toastr.tpls.js" />
     <Content Include="Scripts\JS\angular.js" />
     <Content Include="Scripts\JS\angular.min.js" />
+    <Content Include="Scripts\JS\angular.treeview.js" />
+    <Content Include="Scripts\JS\angular.treeview.min.js" />
     <Content Include="Scripts\JS\angularjs-datetime-picker.js" />
     <Content Include="Scripts\JS\bootstrap-notify.js" />
     <Content Include="Scripts\JS\bootstrap.js" />

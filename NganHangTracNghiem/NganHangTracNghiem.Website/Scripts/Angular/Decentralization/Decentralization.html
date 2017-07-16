@@ -20,167 +20,61 @@
             </div>
         </div>
     </nav>
-    <br />
-    <br />
-    <div class="content">
+    <div class="content" ng-controller="Decentralization">
         <div class="container-fluid">
 
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header" data-background-color="blue">
-                            <h4 class="title">Thông tin đề thi</h4>
-                            <p class="category">Vui lòng nhập đầy đủ thông tin để tạo đề thi !</p>
+                            <h4 class="title">Phân Quyền</h4>
+                            <p class="category">Tích vào quyền cho phép sử dụng !</p>
                         </div>
-                        <div class="card-content">
-                            <div class="tree well">
-                                <ul>
-                                    <li>
-                                        <span><i class="icon-folder-open"></i> Parent</span> <a href="">Goes somewhere</a>
-                                        <ul>
-                                            <li>
-                                                <span><i class="icon-minus-sign"></i> Child</span> <a href="">Goes somewhere</a>
-                                                <ul>
-                                                    <li>
-                                                        <span><i class="icon-leaf"></i> Grand Child</span> <a href="">Goes somewhere</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <span><i class="icon-minus-sign"></i> Child</span> <a href="">Goes somewhere</a>
-                                                <ul>
-                                                    <li>
-                                                        <span><i class="icon-leaf"></i> Grand Child</span> <a href="">Goes somewhere</a>
-                                                    </li>
-                                                    <li>
-                                                        <span><i class="icon-minus-sign"></i> Grand Child</span> <a href="">Goes somewhere</a>
-                                                        <ul>
-                                                            <li>
-                                                                <span><i class="icon-minus-sign"></i> Great Grand Child</span> <a href="">Goes somewhere</a>
-                                                                <ul>
-                                                                    <li>
-                                                                        <span><i class="icon-leaf"></i> Great great Grand Child</span> <a href="">Goes somewhere</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <span><i class="icon-leaf"></i> Great great Grand Child</span> <a href="">Goes somewhere</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                            <li>
-                                                                <span><i class="icon-leaf"></i> Great Grand Child</span> <a href="">Goes somewhere</a>
-                                                            </li>
-                                                            <li>
-                                                                <span><i class="icon-leaf"></i> Great Grand Child</span> <a href="">Goes somewhere</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <span><i class="icon-leaf"></i> Grand Child</span> <a href="">Goes somewhere</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <span><i class="icon-folder-open"></i> Parent2</span> <a href="">Goes somewhere</a>
-                                        <ul>
-                                            <li>
-                                                <span><i class="icon-leaf"></i> Child</span> <a href="">Goes somewhere</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
+
+                        <div class="card-content" style="margin-left:50px;">
+                            <div class="checkbox text-danger">
+                                + Admin
+                                <label>
+                                    <input type="checkbox" name="optionsCheckboxes"><span class="checkbox-material"> <span class="check"></span></span>
+                                </label>
+
                             </div>
 
-                          
+                            <h5 class="text-danger"></h5>
+                            <div ng-repeat="Decentralizations in ListDecentralization">
+                                <div class="checkbox text-danger">
+                                    + Khoa {{Decentralizations.fucalties.Name}}
+                                    <label>
+                                        <input type="checkbox" name="optionsCheckboxes"><span class="checkbox-material"><span class="check"></span></span>
+                                    </label>
+
+                                </div>
+
+                                <div ng-repeat="subjects_chapter in Decentralizations.fucalties.Subjects" style="margin-left:40px;">
+                                    <div class="checkbox text-info">
+                                        + Môn {{subjects_chapter.Name}}
+                                        <label>
+                                            <input type="checkbox" name="optionsCheckboxes"><span class="checkbox-material"> <span class="check"></span></span>
+                                        </label>
+
+                                    </div>
+                                    <div ng-repeat="chapter in subjects_chapter.Chapters" style="margin-left:40px;">
+                                        <div class="checkbox text-danger">
+                                            + Phần {{chapter.Name}}
+                                            <label>
+                                                <input type="checkbox" name="optionsCheckboxes"><span class="checkbox-material"> <span class="check"></span></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+
                     </div>
                 </div>
-
             </div>
+
         </div>
     </div>
 </div>
-<style>
-    .tree {
-    min-height:20px;
-    padding:19px;
-    margin-bottom:20px;
-    background-color:#fbfbfb;
-    border:1px solid #999;
-    -webkit-border-radius:4px;
-    -moz-border-radius:4px;
-    border-radius:4px;
-    -webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.05);
-    box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.05)
-}
-.tree li {
-    list-style-type:none;
-    margin:0;
-    padding:10px 5px 0 5px;
-    position:relative;
-
-    
-}
-.tree li::before, .tree li::after {
-    content:'';
-    left:-20px;
-    position:absolute;
-    right:auto;
-            
-}
-.tree li::before {
-    border-left:1px solid #999;
-    bottom:50px;
-    height:100%;
-    top:0;
-    width:1px
-}
-.tree li::after {
-    border-top:1px solid #999;
-    height:20px;
-    top:25px;
-    width:25px
-}
-.tree li span {
-    -moz-border-radius:5px;
-    -webkit-border-radius:5px;
-    border:1px solid #999;
-    border-radius:5px;
-    display:inline-block;
-    padding:3px 8px;
-    text-decoration:none
-
-}
-.tree li.parent_li>span {
-    cursor:pointer
-}
-.tree>ul>li::before, .tree>ul>li::after {
-    border:0
-}
-.tree li:last-child::before {
-    height:30px
-}
-.tree li.parent_li>span:hover, .tree li.parent_li>span:hover+ul li span {
-    background:#eee;
-    border:1px solid #94a0b4;
-    color:#000
-}
-</style>
-<script>
-    $(function () {
-        $('.tree li:has(ul)').addClass('parent_li').find(' > span').attr('title', 'Collapse this branch');
-        $('.tree li.parent_li > span').on('click', function (e) {
-            var children = $(this).parent('li.parent_li').find(' > ul > li');
-            if (children.is(":visible")) {
-                children.hide('fast');
-                $(this).attr('title', 'Expand this branch').find(' > i').addClass('icon-plus-sign').removeClass('icon-minus-sign');
-            } else {
-                children.show('fast');
-                $(this).attr('title', 'Collapse this branch').find(' > i').addClass('icon-minus-sign').removeClass('icon-plus-sign');
-            }
-            e.stopPropagation();
-        });
-    });
-</script>
