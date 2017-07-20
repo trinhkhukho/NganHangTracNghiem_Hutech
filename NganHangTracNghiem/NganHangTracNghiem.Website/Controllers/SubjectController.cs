@@ -12,6 +12,9 @@ namespace NganHangTracNghiem.Website.Controllers
 {
     public class SubjectController : ApiController
     {
+<<<<<<< HEAD
+
+=======
         [HttpPost]
         [Route("api/Subject/delete")]
         public IHttpActionResult FacultiesDelete(Subjects s)
@@ -37,5 +40,6 @@ namespace NganHangTracNghiem.Website.Controllers
                 return InternalServerError();
             }
         }
+>>>>>>> 238dbfbc9465788ac5df0eab2db48d122551bab5
     }
 }
