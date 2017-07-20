@@ -9,5 +9,6 @@ namespace NganHangTracNghiem.Website.Controllers
 {
     public class SubjectController : ApiController
     {
+
     }
 }
