@@ -15,7 +15,7 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
         $scope.ListDecentralization = [];
         $http.get(hostapi + 'api/GetDecentralizationList').then(function (response) {
             debugger;
-            $scope.ListDecentralization = response.data.ListFuculties;
+            $scope.ListDecentralization = response.data;
         });
         var data = {
             UserID: 10001,

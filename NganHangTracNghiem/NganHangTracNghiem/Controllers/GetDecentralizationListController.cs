@@ -15,60 +15,44 @@ namespace NganHangTracNghiem.Controllers
         {
             try
             {
+                List<Treeview> tree = new List<Treeview>();
                 db.Configuration.ProxyCreationEnabled = false;
-                var lsFS = new List<Fuculties_Subject>();
                 List<Faculty> lsFuculty = db.Faculties.ToList();
                 foreach (var f in lsFuculty)
                 {
-                    Fuculties_Subject fs = new Fuculties_Subject();
+                    Treeview tr = new Treeview();
+                    List<Nodes> nodes = new List<Nodes>();
+                    Nodes nd = new Nodes();
                     var lsS = db.Subjects.Where(n => n.FacultyId == f.Id);
-                    List<Subject_Chapter> lsSC = new List<Subject_Chapter>();
                     foreach (var s in lsS)
                     {
-                        Subject_Chapter sc = new Subject_Chapter();
-                        SubjectDecen subde = new SubjectDecen();
-                        subde.ID = Convert.ToInt32(s.Id);
-                        subde.Name = s.Name;
-                        subde.Deleted = Convert.ToBoolean(s.Deleted);
-                        subde.Code = s.Code;
-                        subde.FacultyId = Convert.ToInt32(s.FacultyId);
-                        subde.check = false;
-                        subde.ManagementOrder = Convert.ToInt32(s.ManagementOrder);
-                        sc.subject = subde;
-                        List<ChaptersDecen> cd = new List<ChaptersDecen>();
+                        
+                        nd.Id = Convert.ToInt32(s.Id);
+                        nd.Name = s.Name;
+                        nd.Check = false;
+                        List<Node> node = new List<Node>();
                         List<Chapter> ct = db.Chapters.Where(n => n.SubjectId == s.Id).ToList();
                         foreach (var c in ct)
                         {
-                            ChaptersDecen cds = new ChaptersDecen();
-                            cds.ID = c.Id;
-                            cds.check = false;
-                            cds.Name = c.Name;
-                            cds.Order = Convert.ToInt32(c.Order);
-                            cds.Conten = c.Content;
-                            cds.ParentId = Convert.ToInt32(c.ParentId);
-                            cds.Deleted = Convert.ToBoolean(c.Deleted);
-                            cds.SubjectId = Convert.ToInt32(c.SubjectId);
-                            cds.ManagementOrder = Convert.ToInt32(c.ManagementOrder);
-                            cd.Add(cds);
+                            Node n = new Node();
+                            n.Id = c.Id;
+                            n.Check = false;
+                            n.Name = c.Name;
+                            node.Add(n);
                         }
-                        sc.chapter = cd;
-                        lsSC.Add(sc);
+                        nd.child = node;
                     }
-                    FucultiesDecen fude = new FucultiesDecen();
-                    fude.ID = f.Id;
-                    fude.Name = f.Name;
-                    fude.Deleted = Convert.ToBoolean(f.Deleted);
-                    fude.Comment = f.Comment;
-                    fude.check = false;
-                    fs.fucalties = fude;
-                    fs.subject_chapter = lsSC;
-                    lsFS.Add(fs);
+                    nodes.Add(nd);
+                    tr.Id = Convert.ToInt32(f.Id);
+                    tr.Name = f.Name;
+                    tr.Check = false;
+                    tr.child = nodes;
+                    tree.Add(tr); 
                 }
-                ListDecentralization lsD = new ListDecentralization();
-                lsD.ListFuculties = lsFS;
-                if (lsFS.Count > 0 && lsFS != null)
+                
+                if (tree.Count > 0 && tree != null)
                 {
-                    return Ok(lsD);
+                    return Ok(tree);
                 }
                 else
                 {

@@ -14,6 +14,60 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
     function UserCrt($scope, $http, $location, serviceShareData, $uibModal, blockUI, $route) {
         $scope.pageSize = 10;
         $scope.currentPage = 1;
+        debugger;
+        var data = [
+          {
+              "id": 1,
+              "title": "node1",
+              "nodes": [
+                {
+                    "id": 11,
+                    "title": "node1.1",
+                    "nodes": [
+                      {
+                          "id": 111,
+                          "title": "node1.1.1",
+                          "nodes": []
+                      }
+                    ]
+                },
+                {
+                    "id": 12,
+                    "title": "node1.2",
+                    "nodes": []
+                }
+              ]
+          },
+          {
+              "id": 2,
+              "title": "node2",
+              "nodrop": true,
+              "nodes": [
+                {
+                    "id": 21,
+                    "title": "node2.1",
+                    "nodes": []
+                },
+                {
+                    "id": 22,
+                    "title": "node2.2",
+                    "nodes": []
+                }
+              ]
+          },
+          {
+              "id": 3,
+              "title": "node3",
+              "nodes": [
+                {
+                    "id": 31,
+                    "title": "node3.1",
+                    "nodes": []
+                }
+              ]
+          }
+        ];
+        var a = data;
         $scope.ChaptersIns = {
             'Id': 0,
             'Name': null,
@@ -67,48 +121,28 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
         //            });
         //    }
         //};
-        //$scope.Block = function (chapters) {
-        //    blockUI.start();
-        //    if (chapters.Deleted == true) {
-        //        var r = confirm("Mở khóa phần " + chapters.Name);
-        //    }
-        //    else {
-        //        var r = confirm("khóa phần " + chapters.Name);
-        //    }
+        $scope.Block = function (user) {
+            blockUI.start();
+            if (user.Deleted == true) {
+                var r = confirm("Mở khóa user " + user.UserName);
+                user.Deleted = false;
+            }
+            else {
+                var r = confirm("khóa user " + user.UserName);
+                user.Deleted = true;
+            }
 
-        //    if (r == false) {
-        //        blockUI.stop();
-        //    }
-        //    if (r == true) {
-        //        var data = {
-        //            'Id': 0,
-        //            'Name': null,
-        //            'Content': null,
-        //            'Order': null,
-        //            'ParentId': null,
-        //            'Deleted': false,
-        //            'SubjectId': 0,
-        //            'ManagementOrder': null
-        //        };
-        //        if (chapters.Deleted == true) {
-        //            data.Deleted = false;
-        //        }
-        //        else {
-        //            data.Deleted = true;
-        //        }
-        //        data.Name = chapters.Name;
-        //        data.Id = chapters.Id;
-        //        data.Content = chapters.Content;
-        //        data.Order = chapters.Order;
-        //        data.ParentId = chapters.ParentId;
-        //        data.SubjectId = chapters.SubjectId;
-        //        data.ManagementOrder = chapters.ManagementOrder;
-        //        $http.put(hostapi + "api/Chapters/" + chapters.Id, data).then(function (response) {
-        //            blockUI.stop();
-        //            debugger;
-        //            $route.reload(true);
-        //        });
-        //    }
-        //};
+            if (r == false) {
+                blockUI.stop();
+            }
+            if (r == true) {
+                
+                $http.put(hostapi + "api/User/" + user.Id, user).then(function (response) {
+                    blockUI.stop();
+                    debugger;
+                    $route.reload(true);
+                });
+            }
+        };
     };
 })(angular.module('myApp'));

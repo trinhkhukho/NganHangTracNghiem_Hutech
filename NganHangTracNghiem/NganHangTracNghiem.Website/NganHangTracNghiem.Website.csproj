@@ -1310,6 +1310,8 @@
     <Content Include="Content\ckfinder\translations.txt" />
     <Content Include="Content\css\angular-block-ui.min.css" />
     <Content Include="Content\css\angular-toastr.css" />
+    <Content Include="Content\css\angular-ui-tree.css" />
+    <Content Include="Content\css\angular-ui-tree.min.css" />
     <Content Include="Content\css\angular.treeview.css" />
     <Content Include="Content\css\angularjs-datetime-picker.css" />
     <Content Include="Content\css\bootstrap.css" />
@@ -1478,6 +1480,8 @@
     <Content Include="Scripts\JS\angular-route.js" />
     <Content Include="Scripts\JS\angular-sanitize.js" />
     <Content Include="Scripts\JS\angular-toastr.tpls.js" />
+    <Content Include="Scripts\JS\angular-ui-tree.js" />
+    <Content Include="Scripts\JS\angular-ui-tree.min.js" />
     <Content Include="Scripts\JS\angular.js" />
     <Content Include="Scripts\JS\angular.min.js" />
     <Content Include="Scripts\JS\angular.treeview.js" />

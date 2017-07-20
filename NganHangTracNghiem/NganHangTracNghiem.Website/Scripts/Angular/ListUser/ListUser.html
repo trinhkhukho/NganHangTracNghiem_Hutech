@@ -64,13 +64,13 @@
                                         <td>{{user.Username}}</td>
                                         <td>{{user.Content}}</td>
                                         <td ng-if="user.Deleted==true">
-                                            <a href="" ng-click="Block(Chapter)">
+                                            <a href="" ng-click="Block(user)">
                                                 <i class="fa fa-times text-danger"></i>
                                             </a>
 
                                         </td>
                                         <td ng-if="user.Deleted!=true">
-                                            <a href="" ng-click="Block(Chapter)">
+                                            <a href="" ng-click="Block(user)">
                                                 <i class="fa fa-check text-success"></i>
                                             </a>
                                         </td>

@@ -259,6 +259,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Node.cs" />
+    <Compile Include="Models\Nodes.cs" />
     <Compile Include="Models\pro_GetUser_byUserName_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -315,6 +317,7 @@
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Treeview.cs" />
     <Compile Include="Models\User.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
