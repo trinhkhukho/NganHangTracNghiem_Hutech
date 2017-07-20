@@ -26,8 +26,9 @@ namespace NganHangTracNghiem.Website
                 "~/Scripts/JS/angular-block-ui.min.js",
                 "~/Scripts/JS/ui-bootstrap-tpls-2.5.0.min.js",
                 "~/Scripts/JS/angular-toastr.tpls.js",
-                "~/Scripts/JS/angularjs-datetime-picker.js"
-
+                "~/Scripts/JS/angularjs-datetime-picker.js",
+                "~/Scripts/JS/angular.treeview.js",
+                "~/Scripts/JS/angular.treeview.min.js"
             ));
 
             bundles.Add(new ScriptBundle("~/bundles/Angular").Include(
@@ -51,9 +52,10 @@ namespace NganHangTracNghiem.Website
                 "~/Scripts/Angular/Faculties/Faculties.js",
                 "~/Scripts/Angular/Subjects/Subjects.js",
                 "~/Scripts/Angular/Chapters/Chapters.js",
-                "~/Scripts/Angular/Faculties/EditFaculties.js"
-
-
+                "~/Scripts/Angular/Faculties/EditFaculties.js",
+                "~/Scripts/Angular/Subjects/EditSubjects.js",
+                "~/Scripts/Angular/Decentralization/Decentralization.js",
+                "~/Scripts/Angular/ListUser/ListUser.js"
             ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
@@ -62,7 +64,8 @@ namespace NganHangTracNghiem.Website
                 "~/Content/font-awesome-4.7.0/css/font-awesome.min.css",
                 "~/Content/css/angular-block-ui.min.css",
                 "~/Content/css/angular-toastr.css",
-                "~/Content/css/angularjs-datetime-picker.css"
+                "~/Content/css/angularjs-datetime-picker.css",
+                "~/Content/css/angular.treeview.css"
 
                 ));
 

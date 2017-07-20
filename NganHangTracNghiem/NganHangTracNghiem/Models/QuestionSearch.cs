@@ -10,5 +10,7 @@ namespace NganHangTracNghiem.Models
         public int chapterId { get; set; }
         public int subjectId { get; set; }
         public int facultiesId { get; set; }
+        public DateTime StarDate { get; set; }
+        public DateTime EndDate { get; set; }
     }
 }

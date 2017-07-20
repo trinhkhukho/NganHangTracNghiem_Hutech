@@ -10,14 +10,15 @@
 namespace NganHangTracNghiem.Models
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class pro_Get_Faculty_Question2_Result
+    public partial class UserRole
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Code { get; set; }
-        public Nullable<bool> Deleted { get; set; }
-        public Nullable<int> Column1 { get; set; }
-        public Nullable<int> NumberOfQuestion { get; set; }
+        public int UserId { get; set; }
+        public int RoleId { get; set; }
+        public string Content { get; set; }
+    
+        public virtual Role Role { get; set; }
+        public virtual User User { get; set; }
     }
 }

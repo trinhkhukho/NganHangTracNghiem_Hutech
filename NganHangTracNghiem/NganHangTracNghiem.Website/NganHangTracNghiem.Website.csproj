@@ -228,11 +228,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ChaptersController.cs" />
     <Compile Include="Controllers\FacultiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QuestionsController.cs" />
     <Compile Include="Controllers\ReadFileController.cs" />
     <Compile Include="Controllers\ReadFileZipController.cs" />
+    <Compile Include="Controllers\SearchQuestionsController.cs" />
     <Compile Include="Controllers\SubjectController.cs" />
     <Compile Include="Controllers\testController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1308,6 +1310,7 @@
     <Content Include="Content\ckfinder\translations.txt" />
     <Content Include="Content\css\angular-block-ui.min.css" />
     <Content Include="Content\css\angular-toastr.css" />
+    <Content Include="Content\css\angular.treeview.css" />
     <Content Include="Content\css\angularjs-datetime-picker.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
@@ -1317,6 +1320,12 @@
     <Content Include="Content\css\Images\question.png" />
     <Content Include="Content\css\Images\sidebar-1.jpg" />
     <Content Include="Content\css\Images\upload.jpg" />
+    <Content Include="Content\css\img\file.png" />
+    <Content Include="Content\css\img\folder-closed.png" />
+    <Content Include="Content\css\img\folder.png" />
+    <Content Include="Content\css\img\jsfiddle01.png" />
+    <Content Include="Content\css\img\jsfiddle02.png" />
+    <Content Include="Content\css\img\preview.png" />
     <Content Include="Content\css\InputFile\css\component.css" />
     <Content Include="Content\css\InputFile\css\demo.css" />
     <Content Include="Content\css\InputFile\css\normalize.css" />
@@ -1350,6 +1359,8 @@
     <Content Include="Scripts\Angular\Dashboard\Dashboard_Faculties.js" />
     <Content Include="Scripts\Angular\Dashboard\Dashboard_Subject.js" />
     <Content Include="Scripts\Angular\Dashboard\Dashdoard_Subject.html" />
+    <Content Include="Scripts\Angular\Decentralization\Decentralization.html" />
+    <Content Include="Scripts\Angular\Decentralization\Decentralization.js" />
     <Content Include="Scripts\Angular\Faculties\EditFaculties.html" />
     <Content Include="Scripts\Angular\Faculties\EditFaculties.js" />
     <Content Include="Scripts\Angular\Faculties\Faculties.html" />
@@ -1360,6 +1371,8 @@
     <Content Include="Scripts\Angular\GroupQuestions\Question.html" />
     <Content Include="Scripts\Angular\GroupQuestions\GroupQuestionCrt.js" />
     <Content Include="Scripts\Angular\GroupQuestions\GroupQuestion.html" />
+    <Content Include="Scripts\Angular\ListUser\ListUser.html" />
+    <Content Include="Scripts\Angular\ListUser\ListUser.js" />
     <Content Include="Scripts\Angular\Login\Login.html" />
     <Content Include="Scripts\Angular\Login\Login.js" />
     <Content Include="Scripts\Angular\QuestionManager\editQuestion.js" />
@@ -1380,6 +1393,8 @@
     <Content Include="Scripts\Angular\Sevieces\serviceChapterId.js" />
     <Content Include="Scripts\Angular\Sevieces\serviceShareData.js" />
     <Content Include="Scripts\Angular\Sevieces\serviceGetId.js" />
+    <Content Include="Scripts\Angular\Subjects\EditSubjects.html" />
+    <Content Include="Scripts\Angular\Subjects\EditSubjects.js" />
     <Content Include="Scripts\Angular\Subjects\Subjects.html" />
     <Content Include="Scripts\Angular\Subjects\Subjects.js" />
     <Content Include="Scripts\fileTam\bootstrap.js" />
@@ -1465,6 +1480,8 @@
     <Content Include="Scripts\JS\angular-toastr.tpls.js" />
     <Content Include="Scripts\JS\angular.js" />
     <Content Include="Scripts\JS\angular.min.js" />
+    <Content Include="Scripts\JS\angular.treeview.js" />
+    <Content Include="Scripts\JS\angular.treeview.min.js" />
     <Content Include="Scripts\JS\angularjs-datetime-picker.js" />
     <Content Include="Scripts\JS\bootstrap-notify.js" />
     <Content Include="Scripts\JS\bootstrap.js" />

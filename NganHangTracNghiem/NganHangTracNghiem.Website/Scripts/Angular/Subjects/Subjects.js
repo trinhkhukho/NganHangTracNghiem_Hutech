@@ -10,8 +10,8 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
 (function (app) {
     'use strict';
     app.controller('Subjects', SubjectsCrt);
-    SubjectsCrt.$inject = ['$scope', '$http', '$location', 'serviceShareData','$route'];
-    function SubjectsCrt($scope, $http, $location, serviceShareData,$route) {
+    SubjectsCrt.$inject = ['$scope', '$http', '$location', 'serviceShareData', '$uibModal', 'blockUI', '$route'];
+    function SubjectsCrt($scope, $http, $location, serviceShareData, $uibModal, blockUI, $route) {
         $scope.pageSize = 10;
         $scope.Subjects = [];
         $scope.currentPage = 1;
@@ -59,7 +59,7 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                 });
             }
         };
-        $scope.DeleteFaculties = function (subject) {
+        $scope.DeleteSubject = function (subject) {
             debugger;
             blockUI.start();
             var r = confirm("Bạn chắc chắn xóa môn " + subject.Name);
@@ -67,17 +67,7 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                 blockUI.stop();
             }
             if (r == true) {
-                var data = {
-                    'Id': null,
-                    'Name': null,
-                    'Deleted': null,
-                    'Comment': null
-                };
-                data.Id = faculties.Id;
-                data.Name = faculties.Name;
-                data.Comment = faculties.Comment;
-                data.Deleted = faculties.Deleted;
-                $http.post("api/Faculties/delete", data)
+                $http.post("api/Subject/delete", subject)
                     .then(function (response) {
                         debugger;
                         if (response.data == 1) {
@@ -91,6 +81,62 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                         $route.reload(true);
                     });
             }
+        };
+        $scope.Block = function (subject) {
+            blockUI.start();
+            if (subject.Deleted == true) {
+                var r = confirm("Mở khóa môn " + subject.Name);
+            }
+            else {
+                var r = confirm("khóa môn " + subject.Name);
+            }
+
+            if (r == false) {
+                blockUI.stop();
+            }
+            if (r == true) {
+                var data = {
+                    'Id': null,
+                    'Name': null,
+                    'Deleted': null,
+                    'Code': null,
+                    'FacultyId': null,
+                    'ManagementOrder': null
+                };
+                if (subject.Deleted == true) {
+                    data.Deleted = false;
+                }
+                else {
+                    data.Deleted = true;
+                }
+                data.Name = subject.Name;
+                data.Id = subject.Id;
+                data.Code = subject.Code;
+                data.FacultyId = subject.FacultyId;
+                data.ManagementOrder = subject.ManagementOrder;
+                $http.put(hostapi + "api/Subjects/" + subject.Id, data).then(function (response) {
+                    blockUI.stop();
+                    debugger;
+                    $route.reload(true);
+                });
+            }
+        };
+        $scope.SelectSubjects = function (id) {
+            serviceShareData.clearall("SubjectIDList");
+            serviceShareData.addData(id, "SubjectIDList");
+            $location.url('Chapters');
+        };
+        $scope.editSubjects = function (subject) {
+            debugger;
+            serviceShareData.clearall();
+            serviceShareData.addData(subject, "Subjects");
+            $uibModal.open({
+                templateUrl: 'Scripts/Angular/Subjects/EditSubjects.html',
+                size: 'lg',
+                backdrop: 'static',
+                controller: 'EditSubject',
+                controllerAs: '$ctrl'
+            });
         };
     };
 })(angular.module('myApp'));

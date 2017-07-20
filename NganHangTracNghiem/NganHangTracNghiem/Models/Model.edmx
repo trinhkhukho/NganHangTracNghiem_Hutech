@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ObjectiveTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ObjectiveTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Answers">
           <Key>
             <PropertyRef Name="Id" />
@@ -130,6 +130,10 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChapterId" Type="int" />
+          <Property Name="SubjectId" Type="int" />
+          <Property Name="FacultiesId" Type="int" />
+          <Property Name="Deleted" Type="bit" />
         </EntityType>
         <EntityType Name="Shifts">
           <Key>
@@ -205,6 +209,7 @@
           </Key>
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="Content" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -445,6 +450,8 @@
           <Parameter Name="FacultiesId" Type="int" Mode="In" />
           <Parameter Name="SubjectId" Type="int" Mode="In" />
           <Parameter Name="ChapterId" Type="int" Mode="In" />
+          <Parameter Name="StarDate" Type="date" Mode="In" />
+          <Parameter Name="EndDate" Type="date" Mode="In" />
         </Function>
         <Function Name="pro_Subject_FacultyId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="pro_Subject_FacultyId_Question" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -536,7 +543,8 @@
             <End Role="Chapters" EntitySet="Chapters" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ObjectiveTestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -681,7 +689,11 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Users" Relationship="Self.UserRoles" FromRole="Roles" ToRole="Users" />
+          <Property Name="ChapterId" Type="Int32" />
+          <Property Name="SubjectId" Type="Int32" />
+          <Property Name="FacultiesId" Type="Int32" />
+          <Property Name="Deleted" Type="Boolean" />
+          <NavigationProperty Name="UserRoles" Relationship="Self.FK_ChiTietQuyen_Quyen" FromRole="Roles" ToRole="UserRoles" />
         </EntityType>
         <EntityType Name="Shift">
           <Key>
@@ -763,6 +775,17 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="Content" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_ChiTietQuyen_Quyen" FromRole="UserRoles" ToRole="Roles" />
+          <NavigationProperty Name="User" Relationship="Self.FK_ChiTietQuyen_NguoiDung" FromRole="UserRoles" ToRole="Users" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
@@ -782,7 +805,7 @@
           <Property Name="Comment" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="BuildInUser" Type="Boolean" />
           <NavigationProperty Name="Questions" Relationship="Self.FK__Questions__UserI__282DF8C2" FromRole="Users" ToRole="Questions" />
-          <NavigationProperty Name="Roles" Relationship="Self.UserRoles" FromRole="Users" ToRole="Roles" />
+          <NavigationProperty Name="UserRoles" Relationship="Self.FK_ChiTietQuyen_NguoiDung" FromRole="Users" ToRole="UserRoles" />
         </EntityType>
         <Association Name="FK_CauTraLoi_CauHoi">
           <End Role="Questions" Type="Self.Question" Multiplicity="0..1" />
@@ -916,6 +939,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ChiTietQuyen_Quyen">
+          <End Role="Roles" Type="Self.Role" Multiplicity="1" />
+          <End Role="UserRoles" Type="Self.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_CaThi_MonHoc_CaThi">
           <End Role="Shifts" Type="Self.Shift" Multiplicity="0..1" />
           <End Role="ShiftSubjects" Type="Self.ShiftSubject" Multiplicity="*" />
@@ -964,9 +999,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="UserRoles">
-          <End Role="Users" Type="Self.User" Multiplicity="*" />
-          <End Role="Roles" Type="Self.Role" Multiplicity="*" />
+        <Association Name="FK_ChiTietQuyen_NguoiDung">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="UserRoles" Type="Self.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ObjectiveTestEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Answers" EntityType="Self.Answer" />
@@ -985,6 +1028,7 @@
           <EntitySet Name="Students" EntityType="Self.Student" />
           <EntitySet Name="Subjects" EntityType="Self.Subject" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
           <EntitySet Name="Users" EntityType="Self.User" />
           <AssociationSet Name="FK_CauTraLoi_CauHoi" Association="Self.FK_CauTraLoi_CauHoi">
             <End Role="Questions" EntitySet="Questions" />
@@ -1030,6 +1074,10 @@
             <End Role="QuestionSheets" EntitySet="QuestionSheets" />
             <End Role="ShiftSubjectStudents" EntitySet="ShiftSubjectStudents" />
           </AssociationSet>
+          <AssociationSet Name="FK_ChiTietQuyen_Quyen" Association="Self.FK_ChiTietQuyen_Quyen">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UserRoles" EntitySet="UserRoles" />
+          </AssociationSet>
           <AssociationSet Name="FK_CaThi_MonHoc_CaThi" Association="Self.FK_CaThi_MonHoc_CaThi">
             <End Role="Shifts" EntitySet="Shifts" />
             <End Role="ShiftSubjects" EntitySet="ShiftSubjects" />
@@ -1046,61 +1094,58 @@
             <End Role="Students" EntitySet="Students" />
             <End Role="ShiftSubjectStudents" EntitySet="ShiftSubjectStudents" />
           </AssociationSet>
-          <AssociationSet Name="UserRoles" Association="Self.UserRoles">
+          <AssociationSet Name="FK_ChiTietQuyen_NguoiDung" Association="Self.FK_ChiTietQuyen_NguoiDung">
             <End Role="Users" EntitySet="Users" />
-            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UserRoles" EntitySet="UserRoles" />
           </AssociationSet>
-          <FunctionImport Name="pro_Login" ReturnType="Collection(ObjectiveTestModel.pro_Login_Result)">
-            <Parameter Name="Username" Mode="In" Type="String" />
-            <Parameter Name="Password" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="pro_GetUser_byUserName" ReturnType="Collection(ObjectiveTestModel.pro_GetUser_byUserName_Result)">
-          <Parameter Name="Username" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="pro_Get_Chapters_Question" ReturnType="Collection(ObjectiveTestModel.pro_Get_Chapters_Question_Result)">
-          <Parameter Name="Id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="pro_Get_Faculty_Question" ReturnType="Collection(ObjectiveTestModel.pro_Get_Faculty_Question_Result)">
-          <Parameter Name="Id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="pro_Get_Subject_Question" ReturnType="Collection(ObjectiveTestModel.pro_Get_Subject_Question_Result)">
-          <Parameter Name="Id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="pro_Subject_FacultyId" ReturnType="Collection(ObjectiveTestModel.pro_Subject_FacultyId_Result)" />
-          <FunctionImport Name="pro_Subject_FacultyId_Question" ReturnType="Collection(ObjectiveTestModel.pro_Subject_FacultyId_Question_Result)" />
-          <FunctionImport Name="pro_Get_Faculty_Question1" ReturnType="Collection(ObjectiveTestModel.pro_Get_Faculty_Question1_Result)">
-          <Parameter Name="Id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="pro_Get_Subject_Question1" ReturnType="Collection(ObjectiveTestModel.pro_Get_Subject_Question1_Result)">
-          <Parameter Name="Id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="pro_Get_Faculty_Question2" ReturnType="Collection(ObjectiveTestModel.pro_Get_Faculty_Question2_Result)">
             <Parameter Name="Id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="pro_Get_Faculty_Question3" ReturnType="Collection(ObjectiveTestModel.pro_Get_Faculty_Question3_Result)">
-          <Parameter Name="Id" Mode="In" Type="Int32" />
+          <FunctionImport Name="pro_Get_Faculty_Question" ReturnType="Collection(ObjectiveTestModel.pro_Get_Faculty_Question_Result)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="pro_Get_Subject_Question" ReturnType="Collection(ObjectiveTestModel.pro_Get_Subject_Question_Result)">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="pro_GetUser_byUserName" ReturnType="Collection(ObjectiveTestModel.pro_GetUser_byUserName_Result)">
+            <Parameter Name="Username" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="pro_search_Question" ReturnType="Collection(ObjectiveTestModel.pro_search_Question_Result)">
             <Parameter Name="FacultiesId" Mode="In" Type="Int32" />
             <Parameter Name="SubjectId" Mode="In" Type="Int32" />
             <Parameter Name="ChapterId" Mode="In" Type="Int32" />
+            <Parameter Name="StarDate" Mode="In" Type="DateTime" />
+            <Parameter Name="EndDate" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <FunctionImport Name="pro_Subject_FacultyId" ReturnType="Collection(ObjectiveTestModel.pro_Subject_FacultyId_Result)" />
+          <FunctionImport Name="pro_Subject_FacultyId_Question" ReturnType="Collection(ObjectiveTestModel.pro_Subject_FacultyId_Question_Result)" />
         </EntityContainer>
-        <ComplexType Name="pro_Login_Result">
+        <ComplexType Name="pro_Get_Chapters_Question_Result">
           <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="String" Name="Username" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Password" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
-          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Content" Nullable="true" MaxLength="1000" />
           <Property Type="Boolean" Name="Deleted" Nullable="true" />
-          <Property Type="Boolean" Name="LogOut" Nullable="true" />
-          <Property Type="DateTime" Name="LastActivity" Nullable="true" Precision="23" />
-          <Property Type="DateTime" Name="LastLogIn" Nullable="true" Precision="23" />
-          <Property Type="DateTime" Name="LastPasswordChanged" Nullable="true" Precision="23" />
-          <Property Type="DateTime" Name="LastLogOut" Nullable="true" Precision="23" />
-          <Property Type="String" Name="Salt" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Comment" Nullable="true" MaxLength="100" />
-          <Property Type="Boolean" Name="BuildInUser" Nullable="true" />
+          <Property Type="Int32" Name="ManagementOrder" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="ParentId" Nullable="true" />
+          <Property Type="Int32" Name="SubjectId" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pro_Get_Faculty_Question_Result">
+          <Property Type="Int32" Name="Id" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Code" Nullable="true" MaxLength="10" />
+          <Property Type="Boolean" Name="Deleted" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfSubject" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pro_Get_Subject_Question_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Code" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="ManagementOrder" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
+          <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
         </ComplexType>
         <ComplexType Name="pro_GetUser_byUserName_Result">
           <Property Type="Int32" Name="Id" Nullable="false" />
@@ -1118,32 +1163,17 @@
           <Property Type="String" Name="Comment" Nullable="true" MaxLength="100" />
           <Property Type="Boolean" Name="BuildInUser" Nullable="true" />
         </ComplexType>
-        <ComplexType Name="pro_Get_Chapters_Question_Result">
-          <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="String" Name="Content" Nullable="true" MaxLength="1000" />
+        <ComplexType Name="pro_search_Question_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="ChapterId" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
           <Property Type="Boolean" Name="Deleted" Nullable="true" />
-          <Property Type="Int32" Name="ManagementOrder" Nullable="true" />
-          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
-          <Property Type="Int32" Name="ParentId" Nullable="true" />
-          <Property Type="Int32" Name="SubjectId" Nullable="true" />
-          <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="pro_Get_Faculty_Question_Result">
-          <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="Comment" Nullable="true" MaxLength="100" />
-          <Property Type="Boolean" Name="Deleted" Nullable="true" />
-          <Property Type="Int32" Name="NumberOfSubject" Nullable="true" />
-          <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
-          <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="pro_Get_Subject_Question_Result">
-          <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="String" Name="Code" Nullable="true" MaxLength="10" />
-          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
-          <Property Type="Int32" Name="ManagementOrder" Nullable="true" />
-          <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
-          <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
+          <Property Type="Decimal" Name="Discrimination" Nullable="true" Precision="18" Scale="10" />
+          <Property Type="Boolean" Name="Interchange" Nullable="true" />
+          <Property Type="Decimal" Name="Mark" Nullable="true" Precision="18" Scale="10" />
+          <Property Type="Decimal" Name="ObjectiveDifficulty" Nullable="true" Precision="18" Scale="10" />
+          <Property Type="Int64" Name="ParentId" Nullable="true" />
+          <Property Type="Int32" Name="UserId" Nullable="true" />
         </ComplexType>
         <ComplexType Name="pro_Subject_FacultyId_Result">
           <Property Type="Int32" Name="Id" Nullable="false" />
@@ -1161,50 +1191,6 @@
           <Property Type="Int32" Name="NumberOfSubject" Nullable="true" />
           <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
           <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="pro_Get_Faculty_Question1_Result">
-          <Property Type="Int32" Name="Id" Nullable="true" />
-          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="Code" Nullable="true" MaxLength="10" />
-          <Property Type="Boolean" Name="Deleted" Nullable="true" />
-          <Property Type="Int32" Name="NumberOfSubject" Nullable="true" />
-          <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
-          <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="pro_Get_Subject_Question1_Result">
-          <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="String" Name="Content" Nullable="true" MaxLength="1000" />
-          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
-          <Property Type="Int32" Name="ManagementOrder" Nullable="true" />
-          <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="pro_Get_Faculty_Question2_Result">
-          <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="Code" Nullable="true" MaxLength="10" />
-          <Property Type="Boolean" Name="Deleted" Nullable="true" />
-          <Property Type="Int32" Name="Column1" Nullable="true" />
-          <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="pro_Get_Faculty_Question3_Result">
-          <Property Type="Int32" Name="Id" Nullable="false" />
-          <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
-          <Property Type="String" Name="Code" Nullable="true" MaxLength="10" />
-          <Property Type="Boolean" Name="Deleted" Nullable="true" />
-          <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
-          <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="pro_search_Question_Result">
-          <Property Type="Int64" Name="Id" Nullable="false" />
-          <Property Type="Int32" Name="ChapterId" Nullable="false" />
-          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
-          <Property Type="Boolean" Name="Deleted" Nullable="true" />
-          <Property Type="Decimal" Name="Discrimination" Nullable="true" Precision="18" Scale="10" />
-          <Property Type="Boolean" Name="Interchange" Nullable="true" />
-          <Property Type="Decimal" Name="Mark" Nullable="true" Precision="18" Scale="10" />
-          <Property Type="Decimal" Name="ObjectiveDifficulty" Nullable="true" Precision="18" Scale="10" />
-          <Property Type="Int64" Name="ParentId" Nullable="true" />
-          <Property Type="Int32" Name="UserId" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1344,6 +1330,10 @@
               <MappingFragment StoreEntitySet="Roles">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ChapterId" ColumnName="ChapterId" />
+                <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+                <ScalarProperty Name="FacultiesId" ColumnName="FacultiesId" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1419,6 +1409,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="UserRoles">
+            <EntityTypeMapping TypeName="ObjectiveTestModel.UserRole">
+              <MappingFragment StoreEntitySet="UserRoles">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="ObjectiveTestModel.User">
               <MappingFragment StoreEntitySet="Users">
@@ -1439,14 +1438,45 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="UserRoles" TypeName="ObjectiveTestModel.UserRoles" StoreEntitySet="UserRoles">
-            <EndProperty Name="Users">
-              <ScalarProperty Name="Id" ColumnName="UserId" />
-            </EndProperty>
-            <EndProperty Name="Roles">
-              <ScalarProperty Name="Id" ColumnName="RoleId" />
-            </EndProperty>
-          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="pro_Get_Chapters_Question" FunctionName="ObjectiveTestModel.Store.pro_Get_Chapters_Question">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_Get_Chapters_Question_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="ManagementOrder" ColumnName="ManagementOrder" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+                <ScalarProperty Name="NumberOfQuestion" ColumnName="NumberOfQuestion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pro_Get_Faculty_Question" FunctionName="ObjectiveTestModel.Store.pro_Get_Faculty_Question">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_Get_Faculty_Question_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="NumberOfSubject" ColumnName="NumberOfSubject" />
+                <ScalarProperty Name="NumberOfSubjectChapter" ColumnName="NumberOfSubjectChapter" />
+                <ScalarProperty Name="NumberOfQuestion" ColumnName="NumberOfQuestion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pro_Get_Subject_Question" FunctionName="ObjectiveTestModel.Store.pro_Get_Subject_Question">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_Get_Subject_Question_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ManagementOrder" ColumnName="ManagementOrder" />
+                <ScalarProperty Name="NumberOfSubjectChapter" ColumnName="NumberOfSubjectChapter" />
+                <ScalarProperty Name="NumberOfQuestion" ColumnName="NumberOfQuestion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="pro_GetUser_byUserName" FunctionName="ObjectiveTestModel.Store.pro_GetUser_byUserName">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_GetUser_byUserName_Result">
@@ -1467,17 +1497,19 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="pro_Get_Chapters_Question" FunctionName="ObjectiveTestModel.Store.pro_Get_Chapters_Question">
+          <FunctionImportMapping FunctionImportName="pro_search_Question" FunctionName="ObjectiveTestModel.Store.pro_search_Question">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_Get_Chapters_Question_Result">
+              <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_search_Question_Result">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="ChapterId" ColumnName="ChapterId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="Deleted" ColumnName="Deleted" />
-                <ScalarProperty Name="ManagementOrder" ColumnName="ManagementOrder" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Discrimination" ColumnName="Discrimination" />
+                <ScalarProperty Name="Interchange" ColumnName="Interchange" />
+                <ScalarProperty Name="Mark" ColumnName="Mark" />
+                <ScalarProperty Name="ObjectiveDifficulty" ColumnName="ObjectiveDifficulty" />
                 <ScalarProperty Name="ParentId" ColumnName="ParentId" />
-                <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
-                <ScalarProperty Name="NumberOfQuestion" ColumnName="NumberOfQuestion" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -1506,45 +1538,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="pro_Get_Subject_Question1" FunctionName="ObjectiveTestModel.Store.pro_Get_Subject_Question">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_Get_Subject_Question1_Result">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Content" ColumnName="Content" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ManagementOrder" ColumnName="ManagementOrder" />
-                <ScalarProperty Name="NumberOfQuestion" ColumnName="NumberOfQuestion" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="pro_Get_Faculty_Question3" FunctionName="ObjectiveTestModel.Store.pro_Get_Faculty_Question">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_Get_Faculty_Question3_Result">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Code" ColumnName="Code" />
-                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
-                <ScalarProperty Name="NumberOfSubjectChapter" ColumnName="NumberOfSubjectChapter" />
-                <ScalarProperty Name="NumberOfQuestion" ColumnName="NumberOfQuestion" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="pro_search_Question" FunctionName="ObjectiveTestModel.Store.pro_search_Question">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_search_Question_Result">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="ChapterId" ColumnName="ChapterId" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
-                <ScalarProperty Name="Discrimination" ColumnName="Discrimination" />
-                <ScalarProperty Name="Interchange" ColumnName="Interchange" />
-                <ScalarProperty Name="Mark" ColumnName="Mark" />
-                <ScalarProperty Name="ObjectiveDifficulty" ColumnName="ObjectiveDifficulty" />
-                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1559,8 +1552,8 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="False" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

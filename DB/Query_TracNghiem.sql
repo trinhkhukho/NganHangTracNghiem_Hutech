@@ -96,7 +96,9 @@ go
 create proc pro_search_Question(
 	@FacultiesId int,
 	@SubjectId int,
-	@ChapterId int
+	@ChapterId int,
+	@StarDate Date,
+	@EndDate Date
 )
 as
 begin
@@ -105,7 +107,8 @@ begin
 		select q.Id,q.ChapterId,q.CreateDate,q.Deleted,q.Discrimination,q.Interchange,q.Mark,q.ObjectiveDifficulty,q.ParentId,q.UserId 
 		from Questions q,Chapters c, Subjects s, Faculties f
 		where f.Id=s.FacultyId and s.Id=c.SubjectId and c.Id=q.ChapterId 
-		and q.ChapterId=@ChapterId and c.SubjectId=@SubjectId and s.FacultyId=@FacultiesId
+		and q.ChapterId=@ChapterId and c.SubjectId=@SubjectId and s.FacultyId=@FacultiesId 
+		and convert(date,q.CreateDate,103) between convert(date,@StarDate,103) and convert(date,@EndDate,103)
 	end
 	else
 	begin
@@ -115,6 +118,7 @@ begin
 			from Questions q,Chapters c, Subjects s, Faculties f
 			where f.Id=s.FacultyId and s.Id=c.SubjectId and c.Id=q.ChapterId 
 			and s.FacultyId=@FacultiesId and c.SubjectId=@SubjectId
+			and convert(date,q.CreateDate,103) between convert(date,@StarDate,103) and convert(date,@EndDate,103)
 		end
 		else
 		begin
@@ -124,15 +128,33 @@ begin
 				from Questions q,Chapters c, Subjects s, Faculties f
 				where f.Id=s.FacultyId and s.Id=c.SubjectId and c.Id=q.ChapterId 
 				and s.FacultyId=@FacultiesId
+				and convert(date,q.CreateDate,103) between convert(date,@StarDate,103) and convert(date,@EndDate,103)
 			end
 			else
 			begin
 				select q.Id,q.ChapterId,q.CreateDate,q.Deleted,q.Discrimination,q.Interchange,q.Mark,q.ObjectiveDifficulty,q.ParentId,q.UserId 
 				from Questions q,Chapters c, Subjects s, Faculties f
 				where f.Id=s.FacultyId and s.Id=c.SubjectId and c.Id=q.ChapterId 
+				and convert(date,q.CreateDate,103) between convert(date,@StarDate,103) and convert(date,@EndDate,103)
 			end
 		end
 	end
 end
 
-exec pro_search_Question 158,0,0,'07/06/2017','07/06/2017'
+--create date
+go
+if not exists(select b.name from sys.objects a inner join sys.columns b on a.object_id=b.object_id where a.name ='Roles' and b.name ='ChapterId')
+	alter table Roles add ChapterId int
+go
+if not exists(select b.name from sys.objects a inner join sys.columns b on a.object_id=b.object_id where a.name ='Roles' and b.name ='SubjectId')
+	alter table Roles add SubjectId int
+go
+if not exists(select b.name from sys.objects a inner join sys.columns b on a.object_id=b.object_id where a.name ='Roles' and b.name ='FacultiesId')
+	alter table Roles add FacultiesId int
+go
+if not exists(select b.name from sys.objects a inner join sys.columns b on a.object_id=b.object_id where a.name ='Roles' and b.name ='Deleted')
+	alter table Roles add Deleted Bit default 0
+go
+if not exists(select b.name from sys.objects a inner join sys.columns b on a.object_id=b.object_id where a.name ='UserRoles' and b.name ='Content')
+	alter table UserRoles add Content Nvarchar(50)
+go

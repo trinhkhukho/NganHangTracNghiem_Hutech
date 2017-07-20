@@ -141,7 +141,11 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Users" Relationship="Self.UserRoles" FromRole="Roles" ToRole="Users" />
+    <Property Name="ChapterId" Type="Int32" />
+    <Property Name="SubjectId" Type="Int32" />
+    <Property Name="FacultiesId" Type="Int32" />
+    <Property Name="Deleted" Type="Boolean" />
+    <NavigationProperty Name="UserRoles" Relationship="Self.FK_ChiTietQuyen_Quyen" FromRole="Roles" ToRole="UserRoles" />
   </EntityType>
   <EntityType Name="Shift">
     <Key>
@@ -223,6 +227,17 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="Content" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Role" Relationship="Self.FK_ChiTietQuyen_Quyen" FromRole="UserRoles" ToRole="Roles" />
+    <NavigationProperty Name="User" Relationship="Self.FK_ChiTietQuyen_NguoiDung" FromRole="UserRoles" ToRole="Users" />
+  </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="Id" />
@@ -242,7 +257,7 @@
     <Property Name="Comment" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="BuildInUser" Type="Boolean" />
     <NavigationProperty Name="Questions" Relationship="Self.FK__Questions__UserI__282DF8C2" FromRole="Users" ToRole="Questions" />
-    <NavigationProperty Name="Roles" Relationship="Self.UserRoles" FromRole="Users" ToRole="Roles" />
+    <NavigationProperty Name="UserRoles" Relationship="Self.FK_ChiTietQuyen_NguoiDung" FromRole="Users" ToRole="UserRoles" />
   </EntityType>
   <Association Name="FK_CauTraLoi_CauHoi">
     <End Role="Questions" Type="Self.Question" Multiplicity="0..1" />
@@ -376,6 +391,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ChiTietQuyen_Quyen">
+    <End Role="Roles" Type="Self.Role" Multiplicity="1" />
+    <End Role="UserRoles" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_CaThi_MonHoc_CaThi">
     <End Role="Shifts" Type="Self.Shift" Multiplicity="0..1" />
     <End Role="ShiftSubjects" Type="Self.ShiftSubject" Multiplicity="*" />
@@ -424,9 +451,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="UserRoles">
-    <End Role="Users" Type="Self.User" Multiplicity="*" />
-    <End Role="Roles" Type="Self.Role" Multiplicity="*" />
+  <Association Name="FK_ChiTietQuyen_NguoiDung">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="UserRoles" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
   </Association>
   <EntityContainer Name="ObjectiveTestEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Answers" EntityType="Self.Answer" />
@@ -445,6 +480,7 @@
     <EntitySet Name="Students" EntityType="Self.Student" />
     <EntitySet Name="Subjects" EntityType="Self.Subject" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
     <EntitySet Name="Users" EntityType="Self.User" />
     <AssociationSet Name="FK_CauTraLoi_CauHoi" Association="Self.FK_CauTraLoi_CauHoi">
       <End Role="Questions" EntitySet="Questions" />
@@ -490,6 +526,10 @@
       <End Role="QuestionSheets" EntitySet="QuestionSheets" />
       <End Role="ShiftSubjectStudents" EntitySet="ShiftSubjectStudents" />
     </AssociationSet>
+    <AssociationSet Name="FK_ChiTietQuyen_Quyen" Association="Self.FK_ChiTietQuyen_Quyen">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="UserRoles" EntitySet="UserRoles" />
+    </AssociationSet>
     <AssociationSet Name="FK_CaThi_MonHoc_CaThi" Association="Self.FK_CaThi_MonHoc_CaThi">
       <End Role="Shifts" EntitySet="Shifts" />
       <End Role="ShiftSubjects" EntitySet="ShiftSubjects" />
@@ -506,17 +546,10 @@
       <End Role="Students" EntitySet="Students" />
       <End Role="ShiftSubjectStudents" EntitySet="ShiftSubjectStudents" />
     </AssociationSet>
-    <AssociationSet Name="UserRoles" Association="Self.UserRoles">
+    <AssociationSet Name="FK_ChiTietQuyen_NguoiDung" Association="Self.FK_ChiTietQuyen_NguoiDung">
       <End Role="Users" EntitySet="Users" />
-      <End Role="Roles" EntitySet="Roles" />
+      <End Role="UserRoles" EntitySet="UserRoles" />
     </AssociationSet>
-    <FunctionImport Name="pro_Login" ReturnType="Collection(ObjectiveTestModel.pro_Login_Result)">
-      <Parameter Name="Username" Mode="In" Type="String" />
-      <Parameter Name="Password" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="pro_GetUser_byUserName" ReturnType="Collection(ObjectiveTestModel.pro_GetUser_byUserName_Result)">
-      <Parameter Name="Username" Mode="In" Type="String" />
-    </FunctionImport>
     <FunctionImport Name="pro_Get_Chapters_Question" ReturnType="Collection(ObjectiveTestModel.pro_Get_Chapters_Question_Result)">
       <Parameter Name="Id" Mode="In" Type="Int32" />
     </FunctionImport>
@@ -526,41 +559,45 @@
     <FunctionImport Name="pro_Get_Subject_Question" ReturnType="Collection(ObjectiveTestModel.pro_Get_Subject_Question_Result)">
       <Parameter Name="Id" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="pro_Subject_FacultyId" ReturnType="Collection(ObjectiveTestModel.pro_Subject_FacultyId_Result)" />
-    <FunctionImport Name="pro_Subject_FacultyId_Question" ReturnType="Collection(ObjectiveTestModel.pro_Subject_FacultyId_Question_Result)" />
-    <FunctionImport Name="pro_Get_Faculty_Question1" ReturnType="Collection(ObjectiveTestModel.pro_Get_Faculty_Question1_Result)">
-      <Parameter Name="Id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="pro_Get_Subject_Question1" ReturnType="Collection(ObjectiveTestModel.pro_Get_Subject_Question1_Result)">
-      <Parameter Name="Id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="pro_Get_Faculty_Question2" ReturnType="Collection(ObjectiveTestModel.pro_Get_Faculty_Question2_Result)">
-      <Parameter Name="Id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="pro_Get_Faculty_Question3" ReturnType="Collection(ObjectiveTestModel.pro_Get_Faculty_Question3_Result)">
-      <Parameter Name="Id" Mode="In" Type="Int32" />
+    <FunctionImport Name="pro_GetUser_byUserName" ReturnType="Collection(ObjectiveTestModel.pro_GetUser_byUserName_Result)">
+      <Parameter Name="Username" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="pro_search_Question" ReturnType="Collection(ObjectiveTestModel.pro_search_Question_Result)">
       <Parameter Name="FacultiesId" Mode="In" Type="Int32" />
       <Parameter Name="SubjectId" Mode="In" Type="Int32" />
       <Parameter Name="ChapterId" Mode="In" Type="Int32" />
+      <Parameter Name="StarDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
     </FunctionImport>
+    <FunctionImport Name="pro_Subject_FacultyId" ReturnType="Collection(ObjectiveTestModel.pro_Subject_FacultyId_Result)" />
+    <FunctionImport Name="pro_Subject_FacultyId_Question" ReturnType="Collection(ObjectiveTestModel.pro_Subject_FacultyId_Question_Result)" />
   </EntityContainer>
-  <ComplexType Name="pro_Login_Result">
+  <ComplexType Name="pro_Get_Chapters_Question_Result">
     <Property Type="Int32" Name="Id" Nullable="false" />
-    <Property Type="String" Name="Username" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="Password" Nullable="true" MaxLength="128" />
-    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
-    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Content" Nullable="true" MaxLength="1000" />
     <Property Type="Boolean" Name="Deleted" Nullable="true" />
-    <Property Type="Boolean" Name="LogOut" Nullable="true" />
-    <Property Type="DateTime" Name="LastActivity" Nullable="true" Precision="23" />
-    <Property Type="DateTime" Name="LastLogIn" Nullable="true" Precision="23" />
-    <Property Type="DateTime" Name="LastPasswordChanged" Nullable="true" Precision="23" />
-    <Property Type="DateTime" Name="LastLogOut" Nullable="true" Precision="23" />
-    <Property Type="String" Name="Salt" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="Comment" Nullable="true" MaxLength="100" />
-    <Property Type="Boolean" Name="BuildInUser" Nullable="true" />
+    <Property Type="Int32" Name="ManagementOrder" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="ParentId" Nullable="true" />
+    <Property Type="Int32" Name="SubjectId" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="pro_Get_Faculty_Question_Result">
+    <Property Type="Int32" Name="Id" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="10" />
+    <Property Type="Boolean" Name="Deleted" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfSubject" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="pro_Get_Subject_Question_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="ManagementOrder" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
+    <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
   </ComplexType>
   <ComplexType Name="pro_GetUser_byUserName_Result">
     <Property Type="Int32" Name="Id" Nullable="false" />
@@ -578,32 +615,17 @@
     <Property Type="String" Name="Comment" Nullable="true" MaxLength="100" />
     <Property Type="Boolean" Name="BuildInUser" Nullable="true" />
   </ComplexType>
-  <ComplexType Name="pro_Get_Chapters_Question_Result">
-    <Property Type="Int32" Name="Id" Nullable="false" />
-    <Property Type="String" Name="Content" Nullable="true" MaxLength="1000" />
+  <ComplexType Name="pro_search_Question_Result">
+    <Property Type="Int64" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="ChapterId" Nullable="false" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
     <Property Type="Boolean" Name="Deleted" Nullable="true" />
-    <Property Type="Int32" Name="ManagementOrder" Nullable="true" />
-    <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
-    <Property Type="Int32" Name="ParentId" Nullable="true" />
-    <Property Type="Int32" Name="SubjectId" Nullable="true" />
-    <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="pro_Get_Faculty_Question_Result">
-    <Property Type="Int32" Name="Id" Nullable="false" />
-    <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="Comment" Nullable="true" MaxLength="100" />
-    <Property Type="Boolean" Name="Deleted" Nullable="true" />
-    <Property Type="Int32" Name="NumberOfSubject" Nullable="true" />
-    <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
-    <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="pro_Get_Subject_Question_Result">
-    <Property Type="Int32" Name="Id" Nullable="false" />
-    <Property Type="String" Name="Code" Nullable="true" MaxLength="10" />
-    <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
-    <Property Type="Int32" Name="ManagementOrder" Nullable="true" />
-    <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
-    <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
+    <Property Type="Decimal" Name="Discrimination" Nullable="true" Precision="18" Scale="10" />
+    <Property Type="Boolean" Name="Interchange" Nullable="true" />
+    <Property Type="Decimal" Name="Mark" Nullable="true" Precision="18" Scale="10" />
+    <Property Type="Decimal" Name="ObjectiveDifficulty" Nullable="true" Precision="18" Scale="10" />
+    <Property Type="Int64" Name="ParentId" Nullable="true" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
   </ComplexType>
   <ComplexType Name="pro_Subject_FacultyId_Result">
     <Property Type="Int32" Name="Id" Nullable="false" />
@@ -621,49 +643,5 @@
     <Property Type="Int32" Name="NumberOfSubject" Nullable="true" />
     <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
     <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="pro_Get_Faculty_Question1_Result">
-    <Property Type="Int32" Name="Id" Nullable="true" />
-    <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="Code" Nullable="true" MaxLength="10" />
-    <Property Type="Boolean" Name="Deleted" Nullable="true" />
-    <Property Type="Int32" Name="NumberOfSubject" Nullable="true" />
-    <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
-    <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="pro_Get_Subject_Question1_Result">
-    <Property Type="Int32" Name="Id" Nullable="false" />
-    <Property Type="String" Name="Content" Nullable="true" MaxLength="1000" />
-    <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
-    <Property Type="Int32" Name="ManagementOrder" Nullable="true" />
-    <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="pro_Get_Faculty_Question2_Result">
-    <Property Type="Int32" Name="Id" Nullable="false" />
-    <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="Code" Nullable="true" MaxLength="10" />
-    <Property Type="Boolean" Name="Deleted" Nullable="true" />
-    <Property Type="Int32" Name="Column1" Nullable="true" />
-    <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="pro_Get_Faculty_Question3_Result">
-    <Property Type="Int32" Name="Id" Nullable="false" />
-    <Property Type="String" Name="Name" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="Code" Nullable="true" MaxLength="10" />
-    <Property Type="Boolean" Name="Deleted" Nullable="true" />
-    <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
-    <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="pro_search_Question_Result">
-    <Property Type="Int64" Name="Id" Nullable="false" />
-    <Property Type="Int32" Name="ChapterId" Nullable="false" />
-    <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
-    <Property Type="Boolean" Name="Deleted" Nullable="true" />
-    <Property Type="Decimal" Name="Discrimination" Nullable="true" Precision="18" Scale="10" />
-    <Property Type="Boolean" Name="Interchange" Nullable="true" />
-    <Property Type="Decimal" Name="Mark" Nullable="true" Precision="18" Scale="10" />
-    <Property Type="Decimal" Name="ObjectiveDifficulty" Nullable="true" Precision="18" Scale="10" />
-    <Property Type="Int64" Name="ParentId" Nullable="true" />
-    <Property Type="Int32" Name="UserId" Nullable="true" />
   </ComplexType>
 </Schema>
