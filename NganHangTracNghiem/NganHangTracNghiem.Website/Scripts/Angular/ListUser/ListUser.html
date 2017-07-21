@@ -47,6 +47,10 @@
                             <p class="category"></p>
                         </div>
                         <div class="card-content table-responsive">
+                            <a href="#!Register">
+                                <i class="fa fa-2x fa-address-book-o"  style="color: green" aria-hidden="true"></i>
+                                <label>Thêm</label>
+                            </a>
                             <table class="table table-hover">
 
                                 <thead class="text-warning row">
@@ -60,7 +64,7 @@
                                 </thead>
                                 <tbody>
 
-                                    <tr ng-repeat="user in Users | startFrom: (currentPage-1)*pageSize | limitTo: pageSize">
+                                    <tr ng-repeat="user in Users | startFrom: (currentPage-1)*pageSize | limitTo: pageSize" ng-model="Users">
                                         <td>{{user.Name}}</td>
                                         <td>{{user.Username}}</td>
                                         <td>{{user.Content}}</td>
@@ -81,13 +85,13 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="" ng-click="DeleteChapter(Chapter)">
+                                            <a href="" ng-click="DeleteUser(user)">
                                                 <i class="fa fa-times" style="color: red" aria-hidden="true"></i>
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="#!Decentralization">
-                                                <i class="fa fa-address-book" style="color: green" aria-hidden="true"></i>
+                                            <a href="">
+                                                <i class="fa fa-address-book" style="color: green" aria-hidden="true" ng-click="PhanQuyen(user)"></i>
                                             </a>
                                         </td>
                                     </tr>

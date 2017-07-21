@@ -90,6 +90,10 @@
                 {
                     templateUrl: 'Scripts/Angular/ListUser/ListUser.html'
                 })
+            .when('/Register',
+                {
+                    templateUrl: 'Scripts/Angular/Register/Register.html'
+                })
         //Decentralization
     };
 

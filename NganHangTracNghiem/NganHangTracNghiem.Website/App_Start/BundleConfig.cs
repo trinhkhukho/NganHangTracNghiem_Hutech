@@ -55,7 +55,8 @@ namespace NganHangTracNghiem.Website
                 "~/Scripts/Angular/Faculties/EditFaculties.js",
                 "~/Scripts/Angular/Subjects/EditSubjects.js",
                 "~/Scripts/Angular/Decentralization/Decentralization.js",
-                "~/Scripts/Angular/ListUser/ListUser.js"
+                "~/Scripts/Angular/ListUser/ListUser.js",
+                "~/Scripts/Angular/Register/Register.js"
             ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

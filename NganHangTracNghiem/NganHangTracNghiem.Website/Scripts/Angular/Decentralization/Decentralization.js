@@ -10,147 +10,175 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
 (function (app) {
     'use strict';
     app.controller('Decentralization', DecentralizationCrt);
-    DecentralizationCrt.$inject = ['$scope', '$http', '$location', 'serviceChapterId'];
-    function DecentralizationCrt($scope, $http, $location, serviceChapterId,dialog) {
-        $scope.ListDecentralization = [];
-        $scope.Subject=[];
-        $scope.Chapter=[];
-        $http.get(hostapi + 'api/GetDecentralizationList').then(function (response) {
-            debugger;
-            $scope.ListDecentralization = response.data;
-        });
-        var data = {
-            UserID: 10001,
-            ChapterID: 0,
-            SubjectID: 0,
-            FacultiesID: 0,
-            RoleID:0
-        };
-        $scope.save = function () {
-            debugger;
-            for(var i=0; i<$scope.ListDecentralization.length;i++)
-            {
+    DecentralizationCrt.$inject = ['$scope', '$http', '$location', 'serviceShareData'];
+    function DecentralizationCrt($scope, $http, $location, serviceShareData, dialog) {
+        debugger;
+        var userId_registers = serviceShareData.getData("UserId_Register");
+        var userId_exists = serviceShareData.getData("UserId_Exist");
+        if (userId_exists != null && userId_exists.length > 0) {
+            var userId_exist = JSON.parse(userId_exists)[0];
+            $scope.ListDecentralization = [];
+            $scope.ListDecentralizationUser;
+            $scope.Subject = [];
+            $scope.Chapter = [];
+            $http.get(hostapi + 'api/GetDecentralizationList').then(function (response) {
                 debugger;
-                if($scope.ListDecentralization[i].fucalties.check==true)
-                {
-                    data.ChapterID = 0;
-                    data.SubjectID = 0;
-                    data.RoleID = 0;
-                    data.FacultiesID = $scope.ListDecentralization[i].fucalties.ID;
-                    $http.post(hostapi + 'api/UserRoles',data).then(function (response) {
-                        debugger;
-                        
-                    });
-                }
-                else
-                {
-                    for (var j = 0 ; j < $scope.ListDecentralization[i].subject_chapter.length; j++)
-                    {
-                        if($scope.ListDecentralization[i].subject_chapter[j].subject.check==true)
-                        {
-                            data.ChapterID = 0;
-                            data.SubjectID = $scope.ListDecentralization[i].subject_chapter[j].subject.ID;
-                            data.RoleID = 0;
-                            data.FacultiesID = $scope.ListDecentralization[i].fucalties.ID;
-                            $http.post(hostapi + 'api/UserRoles', data).then(function (response) {
-                                debugger;
-
-                            });
-                        }
-                        else
-                        {
-                            for (var h = 0; h < $scope.ListDecentralization[i].subject_chapter[j].chapter.length; h++) {
-                                if ($scope.ListDecentralization[i].subject_chapter[j].chapter[h].check == true) {
-                                    data.ChapterID = $scope.ListDecentralization[i].subject_chapter[j].chapter[h].ID;
-                                    data.SubjectID = $scope.ListDecentralization[i].subject_chapter[j].subject.ID;
-                                    data.RoleID = 0;
-                                    data.FacultiesID = $scope.ListDecentralization[i].fucalties.ID;
-                                    $http.post(hostapi + 'api/UserRoles', data).then(function (response) {
-                                        debugger;
-
-                                    });
+                $scope.ListDecentralization = response.data;
+                $http.get(hostapi + 'api/GetUserRole_UserId/' + userId_exist).then(function (response) {
+                    debugger;
+                    $scope.ListDecentralizationUser = response.data;
+                    if ($scope.ListDecentralizationUser != null && $scope.ListDecentralizationUser.length > 0) {
+                        for (var i = 0; i < $scope.ListDecentralizationUser.length; i++) {
+                            for (var j = 0; j < $scope.ListDecentralization.length; j++) {
+                                for (var s = 0; s < $scope.ListDecentralization[j].child.length; s++) {
+                                    for (var c = 0; c < $scope.ListDecentralization[j].child[s].child.length; c++) {
+                                        if ($scope.ListDecentralization[j].child[s].child[c].Id == $scope.ListDecentralizationUser[i].ChapterId) {
+                                            $scope.ListDecentralization[j].child[s].child[c].check = true;
+                                        }
+                                    }
                                 }
+                            }
+                        }
+                    }
+                });
+            });
+
+            var data = {
+                UserID: userId_exist,
+                ChapterID: 0,
+                RoleID: 0
+            };
+            $scope.save = function () {
+                debugger;
+                var array = [];
+                for (var i = 0; i < $scope.Chapter.length; i++) {
+                    data = {
+                        UserID: userId_exist,
+                        ChapterID: 0,
+                        RoleID: 0
+                    };
+                    if ($scope.Chapter[i].check == true) {
+                        debugger;
+                        data.ChapterID = $scope.Chapter[i].Id;
+                        array.push(data);
+
+                    }
+                }
+                $http.post(hostapi + 'api/UserRoles', array).then(function (response) {
+                    alert("Phân quyền thanh công");
+                    $location.url('ListUser');
+                });
+            };
+            $scope.FucCheck = function (fuculties) {
+                debugger;
+                for (var i = 0; i < $scope.ListDecentralization.length; i++) {
+
+                    if ($scope.ListDecentralization[i].Id == fuculties.Id) {
+                        var status = $scope.ListDecentralization[i].check;
+                        for (var j = 0; j < $scope.ListDecentralization[i].child.length; j++) {
+                            $scope.ListDecentralization[i].child[j].check = status;
+                            for (var c = 0; c < $scope.ListDecentralization[i].child[j].child.length; c++) {
+                                if (status == false) {
+                                    for (var d = 0; d < $scope.Chapter.length; d++) {
+                                        if ($scope.Chapter[d].Id == $scope.ListDecentralization[i].child[j].child[c].Id) {
+                                            $scope.Chapter.splice(d, 1);
+                                        }
+                                    }
+                                }
+                                else {
+                                    $scope.Chapter.push($scope.ListDecentralization[i].child[j].child[c]);
+                                }
+                            }
+                            if (status == false) {
+                                for (var d = 0; d < $scope.Subject.length; d++) {
+                                    if ($scope.Subject[d].Id == $scope.ListDecentralization[i].child[j].Id) {
+                                        $scope.Subject.splice(d, 1);
+                                    }
+                                }
+                            }
+                            else {
+                                $scope.Subject.push($scope.ListDecentralization[i].child[j]);
+
                             }
                         }
                     }
                 }
             }
-
-        };
-        $scope.FucClick = function (fuculties) {
-            debugger;
-            if (fuculties.child[0].Id != 0)
-            {
-                $scope.Subject = fuculties.child;
-                $scope.Chapter = [];
-            }
-            else
-            {
-                $scope.Subject = []
-                $scope.Chapter = [];
-
-            }
         }
-        $scope.SubClick = function (subject) {
-            debugger;
-            if (subject.child[0].Id != 0) {
-                $scope.Chapter = subject.child;
+        else {
+            if (userId_registers != null && userId_registers.length > 0) {
+                var userId_register = JSON.parse(userId_registers)[0];
+                $scope.ListDecentralization = [];
+                $scope.Subject = [];
+                $scope.Chapter = [];
+                $http.get(hostapi + 'api/GetDecentralizationList').then(function (response) {
+                    debugger;
+                    $scope.ListDecentralization = response.data;
+                });
+                var data = {
+                    UserID: userId_register,
+                    ChapterID: 0,
+                    RoleID: 0
+                };
+                $scope.save = function () {
+                    debugger;
+                    var array = [];
+                    for (var i = 0; i < $scope.Chapter.length; i++) {
+                        data = {
+                            UserID: userId_register,
+                            ChapterID: 0,
+                            RoleID: 0
+                        };
+                        if ($scope.Chapter[i].check == true) {
+                            debugger;
+                            data.ChapterID = $scope.Chapter[i].Id;
+                            array.push(data);
 
+                        }
+                    }
+                    $http.post(hostapi + 'api/UserRoles', array).then(function (response) {
+                        alert("Phân quyền thanh công");
+                        $location.url('ListUser');
+                    });
+                };
+                $scope.FucCheck = function (fuculties) {
+                    debugger;
+                    for (var i = 0; i < $scope.ListDecentralization.length; i++) {
+
+                        if ($scope.ListDecentralization[i].Id == fuculties.Id) {
+                            var status = $scope.ListDecentralization[i].check;
+                            for (var j = 0; j < $scope.ListDecentralization[i].child.length; j++) {
+                                $scope.ListDecentralization[i].child[j].check = status;
+                                for (var c = 0; c < $scope.ListDecentralization[i].child[j].child.length; c++) {
+                                    if (status == false) {
+                                        for (var d = 0; d < $scope.Chapter.length; d++) {
+                                            if ($scope.Chapter[d].Id == $scope.ListDecentralization[i].child[j].child[c].Id) {
+                                                $scope.Chapter.splice(d, 1);
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        $scope.Chapter.push($scope.ListDecentralization[i].child[j].child[c]);
+                                    }
+                                }
+                                if (status == false) {
+                                    for (var d = 0; d < $scope.Subject.length; d++) {
+                                        if ($scope.Subject[d].Id == $scope.ListDecentralization[i].child[j].Id) {
+                                            $scope.Subject.splice(d, 1);
+                                        }
+                                    }
+                                }
+                                else {
+                                    $scope.Subject.push($scope.ListDecentralization[i].child[j]);
+
+                                }
+                            }
+                        }
+                    }
+                }
             }
             else {
-                $scope.chapter = []
 
-            }
-        }
-        $scope.FucCheck = function (fuculties)
-        {
-            debugger;
-            for(var i=0; i< $scope.ListDecentralization.length; i++)
-            {
-                
-                if($scope.ListDecentralization[i].Id==fuculties.Id)
-                {
-                    var status = $scope.ListDecentralization[i].check;
-                    for(var j =0; j<$scope.ListDecentralization[i].child.length; j++)
-                    {
-                        $scope.ListDecentralization[i].child[j].check = status;
-                        for (var c = 0; c < $scope.ListDecentralization[i].child[j].child.length; c++)
-                        {
-                            $scope.ListDecentralization[i].child[j].child[c].check = status;
-                            if (status == false)
-                            {
-                                for (var d = 0; d < $scope.Chapter.length; d++)
-                                {
-                                    if ($scope.Chapter[d].Id == $scope.ListDecentralization[i].child[j].child[c].Id)
-                                    {
-                                        $scope.Chapter.splice(d, 1);
-                                    }
-                                    
-                                }
-                                
-                            }
-                            else
-                            {
-                                $scope.Chapter.push($scope.ListDecentralization[i].child[j].child[c]);
-                            }
-                        }
-                        if (status == false)
-                        {
-                            for (var d = 0; d < $scope.Subject.length; d++)
-                            {
-                                if ($scope.Subject[d].Id == $scope.ListDecentralization[i].child[j].Id)
-                                {
-                                    $scope.Subject.splice(d, 1);
-                                }
-                            }
-                        }
-                        else
-                        {
-                            $scope.Subject.push($scope.ListDecentralization[i].child[j]);
-
-                        }
-                    }
-                }
             }
         }
     };

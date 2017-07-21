@@ -15,69 +15,6 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
         $scope.pageSize = 10;
         $scope.currentPage = 1;
         debugger;
-        var data = [
-          {
-              "id": 1,
-              "title": "node1",
-              "nodes": [
-                {
-                    "id": 11,
-                    "title": "node1.1",
-                    "nodes": [
-                      {
-                          "id": 111,
-                          "title": "node1.1.1",
-                          "nodes": []
-                      }
-                    ]
-                },
-                {
-                    "id": 12,
-                    "title": "node1.2",
-                    "nodes": []
-                }
-              ]
-          },
-          {
-              "id": 2,
-              "title": "node2",
-              "nodrop": true,
-              "nodes": [
-                {
-                    "id": 21,
-                    "title": "node2.1",
-                    "nodes": []
-                },
-                {
-                    "id": 22,
-                    "title": "node2.2",
-                    "nodes": []
-                }
-              ]
-          },
-          {
-              "id": 3,
-              "title": "node3",
-              "nodes": [
-                {
-                    "id": 31,
-                    "title": "node3.1",
-                    "nodes": []
-                }
-              ]
-          }
-        ];
-        var a = data;
-        $scope.ChaptersIns = {
-            'Id': 0,
-            'Name': null,
-            'Content': null,
-            'Order': null,
-            'ParentId': null,
-            'Deleted': false,
-            'SubjectId': 0,
-            'ManagementOrder': null
-        };
         $http.get(hostapi + 'api/Users').then(function (response) {
             $scope.Users = response.data;
         });
@@ -98,37 +35,37 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
         //        });
         //    }
         //};
-        //$scope.DeleteChapter = function (chapter) {
-        //    debugger;
-        //    blockUI.start();
-        //    var r = confirm("Bạn chắc chắn xóa phần " + chapter.Name);
-        //    if (r == false) {
-        //        blockUI.stop();
-        //    }
-        //    if (r == true) {
-        //        $http.post("api/Chapters/delete", chapter)
-        //            .then(function (response) {
-        //                debugger;
-        //                if (response.data == 1) {
-        //                    alert("xóa thành công");
-        //                    blockUI.stop();
-        //                }
-        //                else {
-        //                    alert("không thể xóa");
-        //                    blockUI.stop();
-        //                }
-        //                $route.reload(true);
-        //            });
-        //    }
-        //};
+        $scope.DeleteUser = function (user) {
+            debugger;
+            
+            var r = confirm("Bạn chắc chắn xóa user " + user.Name);
+            if (r == false) {
+                
+            }
+            if (r == true) {
+                $http.post("api/User/delete", user)
+                    .then(function (response) {
+                        debugger;
+                        if (response.data == 1) {
+                            alert("xóa thành công");
+                        }
+                        else {
+                            alert("không thể xóa");
+                        }
+                        $http.get(hostapi + 'api/Users').then(function (response) {
+                            $scope.Users = response.data;
+                        });
+                    });
+            }
+        };
         $scope.Block = function (user) {
             blockUI.start();
             if (user.Deleted == true) {
-                var r = confirm("Mở khóa user " + user.UserName);
+                var r = confirm("Mở khóa user " + user.Username);
                 user.Deleted = false;
             }
             else {
-                var r = confirm("khóa user " + user.UserName);
+                var r = confirm("khóa user " + user.Username);
                 user.Deleted = true;
             }
 
@@ -143,6 +80,12 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                     $route.reload(true);
                 });
             }
+        };
+        $scope.PhanQuyen = function (user) {
+            debugger;
+            serviceShareData.clearall("UserId_Exist");
+            serviceShareData.addData(user.Id, "UserId_Exist");
+            $location.url('Decentralization');
         };
     };
 })(angular.module('myApp'));

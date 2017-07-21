@@ -73,45 +73,60 @@ namespace NganHangTracNghiem.Controllers
 
         // POST: api/UserRoles
         [ResponseType(typeof(UserRole))]
-        public IHttpActionResult PostUserRole(UsRole userRole)
+        public IHttpActionResult PostUserRole(List<UsRole> userRole)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            UserRole us = new UserRole();
-            us.UserId = userRole.UserID;
-            if (userRole.RoleID != 0)
-            {
-                us.RoleId = userRole.RoleID;
-            }
-            else
-            {
-                Role r = db.Roles.Where(n => n.FacultiesId == userRole.FacultiesID & n.SubjectId == userRole.SubjectID & n.ChapterId == userRole.ChapterID).SingleOrDefault();
-                if (r != null)
-                {
-                    us.RoleId = r.Id;
-                }
-            }
-            db.UserRoles.Add(us);
-
             try
             {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                if (UserRoleExists(userRole.UserID))
+                int id_old = userRole[0].UserID;
+                var us_old = db.UserRoles.Where(n => n.UserId == id_old).ToList();
+                for(int j=0; j<us_old.Count(); j++)
                 {
-                    return Conflict();
+                    UserRole us_remove = us_old[j];
+                    db.UserRoles.Remove(us_remove);
+                }
+                db.SaveChanges();
+
+            }
+            catch
+            {
+
+            }
+            for (int i=0; i<userRole.Count; i++)
+            {
+                
+                UserRole us = new UserRole();
+                us.UserId = userRole[i].UserID;
+                if (userRole[i].RoleID != 0)
+                {
+                    us.RoleId = userRole[i].RoleID;
                 }
                 else
                 {
-                    throw;
+                    int id = userRole[i].ChapterID;
+                    Role r = db.Roles.Where(n => n.ChapterId == id).SingleOrDefault();
+                    if (r != null)
+                    {
+                        us.RoleId = r.Id;
+                    }
+                }
+                db.UserRoles.Add(us);
+
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    
                 }
             }
+            
 
-            return CreatedAtRoute("DefaultApi", new { id = userRole.UserID }, userRole);
+            return CreatedAtRoute("DefaultApi", new { id = 1}, userRole);
         }
 
         // DELETE: api/UserRoles/5

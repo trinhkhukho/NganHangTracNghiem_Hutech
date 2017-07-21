@@ -1,46 +1,43 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<div class="main-panel" ng-controller="getData">
+<nav class="navbar navbar-transparent navbar-absolute">
+    <div class="container-fluid">
 
-<head>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-signin-client_id" content="709759134396-mei4oim0vvro0hh2mmgjcrsnr4rk4ofe.apps.googleusercontent.com">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
-    <title>WebSite | Login</title>
-    <script src="../../JS/jquery-3.2.1.min.js"></script>
-    <script src="../../JS/angular.js"></script>
-    <script src="Register.js"></script>
-    <link href="../../../Content/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../../../Content/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
-    <link href="../../../Content/Login/animate.css" rel="stylesheet" />
-    <link href="../../../Content/Login/style.css" rel="stylesheet" />
-    <style type="text/css">
-        @media (max-width: 400px) {
-            .logo-name {
-                width: 50%;
-                margin: 0 auto;
-            }
-        }
-    </style>
-</head>
-<body class="gray-bg" ng-app="Register">
-    <form name="Register" id="Register">
-        <div class="signup-page">
-            <div class="container">
-                <div class="col-md-10 col-md-offset-1 col-sm-8 col-sm-offset-2 col-xs-12">
-                    <section class="panel panel-default ">
-                        <div class="panel-heading">
-                            <h5 class="panel-title text-center" style="color: #4267b2; font-size: 20px; font-weight: 400  ">ĐĂNG KÍ TÀI KHOẢN</h5>
+                        <span class="notification">5</span>
+                        <i class="fa fa-comment-o" aria-hidden="true">5</i>
+
+                    </a>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<br />
+<br />
+<div class="content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-lg-1">
+
+            </div>
+            <div class="col-lg-10">
+                <div class="card">
+                    <div class="card-header" data-background-color="green">
+                        <h4 class="title">Thông tin tài khoản</h4>
+                        <p class="category">Vui lòng nhập đầy đủ tài khoản !</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="col-lg-1">
                         </div>
-                        <div class="panel-body" ng-controller="getData">
-                            <div class="form-group text-center text-primary">
-                                <h4>
-                                    Chào mừng bạn đến với ngân hàng trắc nghiệm
-                                    <br>
-                                    Vui lòng nhập đầy đủ các thông tin sau:
-                                </h4>
-                            </div>
+                        <div class="col-lg-10">
                             <div class="form-group ">
                                 <p class="help-block text-muted" style="color:red;">
                                     <small ng-model="Error.NameError">{{Error.NameError}}</small>
@@ -71,32 +68,31 @@
                                 <input type="password" class="form-control" placeholder="Nhập lại mật khẩu" name="repassword" ng-model="user.PassWord2">
 
                             </div>
-                            <div class="form-group ">
-
-                                Bằng việc bấm nút đăng ký, bạn xác nhận.
-                                <br />
-                                Đồng ý với các điền khoản sử dụng của ngân hàng câu hỏi trắc nghiệm
-
-                            </div>
                             <div class="form-group">
                                 <p class="help-block text-muted" style="color:red;">
                                     <small ng-model="Error.PassWordCorrect"> {{Error.PassWordCorrect}}</small>
                                 </p>
-                                <input type="submit" id="btnDangKi" value="Đăng kí" class="btn btn-outline btn-primary dim full-width m-b" ng-click="submit()" />
+                                <input type="submit" value="Tạo tài khoản" class="btn btn-outline btn-primary dim full-width m-b" ng-click="submit()" />
                             </div>
+                            <br />
                         </div>
-                    </section>
+                        <div class="col-lg-1">
+                        </div>
+                       
+                    </div>
                 </div>
             </div>
+            <div class="col-lg-1">
+
+            </div>
         </div>
-        <script>
-            $('#btnDangKi').click(function () {
-                //gọi hàm đăng kí
-            });
-        </script>
+    </div>
+</div>
+</div>
 
 
-    </form>
 
-</body>
-</html>
+
+
+
+

@@ -203,6 +203,7 @@
     <Compile Include="Controllers\Chapters_SubjectIDController.cs" />
     <Compile Include="Controllers\FacultiesController.cs" />
     <Compile Include="Controllers\GetDecentralizationListController.cs" />
+    <Compile Include="Controllers\GetUserRole_UserIdController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\pro_Get_Chapters_QuestionController.cs" />
     <Compile Include="Controllers\pro_Get_Faculty_QuestionController.cs" />

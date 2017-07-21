@@ -9,8 +9,6 @@ namespace NganHangTracNghiem.Models
     {
         public int UserID { get; set; }
         public int ChapterID { get; set; }
-        public int SubjectID { get; set; }
-        public int FacultiesID { get; set; }
         public int RoleID { get; set; }
 
     }
