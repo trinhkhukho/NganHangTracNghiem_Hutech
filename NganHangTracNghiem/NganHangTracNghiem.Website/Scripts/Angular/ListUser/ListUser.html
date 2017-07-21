@@ -51,11 +51,12 @@
 
                                 <thead class="text-warning row">
                                 <th class="col-md-1">Họ Tên</th>
-                                <th class="col-md-2">User Name</th>
+                                <th class="col-md-3">User Name</th>
                                 <th class="col-md-2">Ghi chú</th>
                                 <th class="col-md-2">Khóa</th>
                                 <th class="col-md-1">sửa</th>
                                 <th class="col-md-1">xóa</th>
+                                <th class="col-md-2">Phân quyền</th>
                                 </thead>
                                 <tbody>
 
@@ -67,7 +68,6 @@
                                             <a href="" ng-click="Block(user)">
                                                 <i class="fa fa-times text-danger"></i>
                                             </a>
-
                                         </td>
                                         <td ng-if="user.Deleted!=true">
                                             <a href="" ng-click="Block(user)">
@@ -83,6 +83,11 @@
                                         <td>
                                             <a href="" ng-click="DeleteChapter(Chapter)">
                                                 <i class="fa fa-times" style="color: red" aria-hidden="true"></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="#!Decentralization">
+                                                <i class="fa fa-address-book" style="color: green" aria-hidden="true"></i>
                                             </a>
                                         </td>
                                     </tr>

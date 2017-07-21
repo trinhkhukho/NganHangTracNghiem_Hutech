@@ -1,5 +1,4 @@
-﻿
-<div class="main-panel">
+﻿<div class="main-panel">
     <nav class="navbar navbar-transparent navbar-absolute">
         <div class="container-fluid">
 
@@ -21,26 +20,78 @@
         <div class="container-fluid">
 
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-4">
                     <div class="card">
-                        <div class="card-header" data-background-color="blue">
-                            <h4 class="title">Phân Quyền</h4>
-                            <p class="category">Tích vào quyền cho phép sử dụng !</p>
+                        <div class="card-header" data-background-color="green">
+                            <h4 class="title">Khoa</h4>
+                            <p class="category">Danh sách khoa</p>
+                        </div>
+
+                        <div class="card-content">
+                            <div class="row" ng-repeat="ful in ListDecentralization">
+                                <div class="col-md-2">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsCheckboxes" ng-model="ful.check" ng-click="FucCheck(ful)"><span class="checkbox-material"><span class="check"></span></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-10">
+                                    <a>
+                                        <h5>{{ful.Name}}</h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header" data-background-color="orange">
+                            <h4 class="title">Môn</h4>
+                            <p class="category">Danh sách môn</p>
                         </div>
 
                         <div class="card-content" style="margin-left:50px;">
-                            <div 
-                                 data-angular-treeview="true"
-                                 data-tree-id="mytree"
-                                 data-tree-model="ListDecentralization"
-                                 data-node-id="ID"
-                                 data-node-label="Name"
-                                 data-node-children="child"
-                                 
-                                 >
-
+                            <div class="row" ng-repeat="sub in Subject" ng-model="Subject">
+                                <div class="col-md-2">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsCheckboxes" ng-model="sub.check"><span class="checkbox-material"><span class="check"></span></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-10">
+                                    <a>
+                                        <h5>{{sub.Name}}</h5>
+                                    </a>
+                                </div>
                             </div>
-                            <button class="btn btn-success align-center" ng-click="save()" type="button">Lưu</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header" data-background-color="red">
+                            <h4 class="title">Phần</h4>
+                            <p class="category">Danh sách phần</p>
+                        </div>
+
+                        <div class="card-content" style="margin-left:50px;">
+                            <div class="row" ng-repeat="chap in Chapter" ng-model="Chapter">
+                                <div class="col-md-2">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsCheckboxes" ng-model="chap.check"><span class="checkbox-material"><span class="check"></span></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-10">
+                                    <a>
+                                        <h5>{{chap.Name}}</h5>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
 
 
@@ -51,3 +102,32 @@
         </div>
     </div>
 </div>
+<style>
+    .tree-view-wrapper, .tree-view-wrapper ul {
+        list-style: none;
+    }
+
+    .show-hide, .edit {
+        cursor: pointer;
+    }
+
+    .tree-checkbox {
+        margin: 6px !important;
+    }
+
+    .edit {
+        margin-right: 6px !important;
+    }
+
+        .edit i {
+            color: #D77105;
+        }
+
+    .hide {
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+</style>

@@ -22,11 +22,11 @@ namespace NganHangTracNghiem.Controllers
                 {
                     Treeview tr = new Treeview();
                     List<Nodes> nodes = new List<Nodes>();
-                    Nodes nd = new Nodes();
+                    
                     var lsS = db.Subjects.Where(n => n.FacultyId == f.Id);
                     foreach (var s in lsS)
                     {
-                        
+                        Nodes nd = new Nodes();
                         nd.Id = Convert.ToInt32(s.Id);
                         nd.Name = s.Name;
                         nd.Check = false;
@@ -41,8 +41,9 @@ namespace NganHangTracNghiem.Controllers
                             node.Add(n);
                         }
                         nd.child = node;
+                        nodes.Add(nd);
                     }
-                    nodes.Add(nd);
+                    
                     tr.Id = Convert.ToInt32(f.Id);
                     tr.Name = f.Name;
                     tr.Check = false;
