@@ -56,6 +56,17 @@ namespace NganHangTracNghiem.API.Controllers
             try
             {
                 db.SaveChanges();
+                Role r = db.Roles.Where(n => n.ChapterId == id).SingleOrDefault();
+                if (r != null)
+                {
+                    var subject = db.Subjects.Where(n => n.Id == chapter.SubjectId).SingleOrDefault();
+                    r.ChapterId = chapter.Id;
+                    r.SubjectId = chapter.SubjectId;
+                    r.FacultiesId = subject.FacultyId;
+                    r.Name = chapter.Name;
+                    db.Entry(r).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -76,6 +87,7 @@ namespace NganHangTracNghiem.API.Controllers
         [ResponseType(typeof(Chapter))]
         public IHttpActionResult PostChapter(Chapter chapter)
         {
+            db.Configuration.ProxyCreationEnabled = false;
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -83,8 +95,24 @@ namespace NganHangTracNghiem.API.Controllers
 
             db.Chapters.Add(chapter);
             db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = chapter.Id }, chapter);
+            Role r = new Role();
+            Role r_old = db.Roles.OrderByDescending(n => n.Id).Take(1).SingleOrDefault();
+            if (r_old != null)
+            {
+                r.Id = r_old.Id + 1;
+            }
+            else
+            {
+                r.Id = 1;
+            }
+            var subject = db.Subjects.Where(n => n.Id == chapter.SubjectId).SingleOrDefault();
+            r.ChapterId = chapter.Id;
+            r.SubjectId = chapter.SubjectId;
+            r.FacultiesId = subject.FacultyId;
+            r.Name = chapter.Name;
+            db.Roles.Add(r);
+            db.SaveChanges();
+            return Ok();
         }
 
         // DELETE: api/Chapters/5
@@ -98,6 +126,12 @@ namespace NganHangTracNghiem.API.Controllers
             }
 
             db.Chapters.Remove(chapter);
+            Role r = db.Roles.Where( n=>n.ChapterId == id).SingleOrDefault();
+            if (r != null)
+            {
+                db.Roles.Remove(r);
+
+            }
             db.SaveChanges();
 
             return Ok(chapter);

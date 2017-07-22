@@ -1,7 +1,7 @@
 ﻿
 (function () {
     'use strict';
-    angular.module('myApp', ['ngRoute', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'blockUI', 'toastr', 'angularjs-datetime-picker'])
+    angular.module('myApp', ['ngRoute', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'blockUI', 'toastr', 'angularjs-datetime-picker', 'angularTreeview'])
         .config(config)
     .filter('startFrom', function () {
         return function (data, start) {
@@ -82,6 +82,19 @@
                 {
                     templateUrl: 'Scripts/Angular/Chapters/Chapters.html'
                 })
+            .when('/Decentralization',
+                {
+                    templateUrl: 'Scripts/Angular/Decentralization/Decentralization.html'
+                })
+            .when('/ListUser',
+                {
+                    templateUrl: 'Scripts/Angular/ListUser/ListUser.html'
+                })
+            .when('/Register',
+                {
+                    templateUrl: 'Scripts/Angular/Register/Register.html'
+                })
+        //Decentralization
     };
 
 })();

@@ -19,6 +19,7 @@ namespace NganHangTracNghiem.Controllers
         // GET: api/Users
         public IQueryable<User> GetUsers()
         {
+            db.Configuration.ProxyCreationEnabled = false;
             return db.Users;
         }
 
@@ -26,6 +27,7 @@ namespace NganHangTracNghiem.Controllers
         [ResponseType(typeof(User))]
         public IHttpActionResult GetUser(int id)
         {
+            db.Configuration.ProxyCreationEnabled = false;
             User user = db.Users.Find(id);
             if (user == null)
             {
@@ -110,11 +112,33 @@ namespace NganHangTracNghiem.Controllers
             {
                 return NotFound();
             }
+            try
+            {
+                
+                var us_old = db.UserRoles.Where(n => n.UserId ==id).ToList();
+                for (int j = 0; j < us_old.Count(); j++)
+                {
+                    UserRole us_remove = us_old[j];
+                    db.UserRoles.Remove(us_remove);
+                }
+                db.SaveChanges();
 
-            db.Users.Remove(user);
-            db.SaveChanges();
+            }
+            catch
+            {
 
-            return Ok(user);
+            }
+            try
+            {
+                db.Users.Remove(user);
+                db.SaveChanges();
+
+                return Ok(user);
+            }
+            catch
+            {
+                return InternalServerError();
+            }
         }
 
         protected override void Dispose(bool disposing)

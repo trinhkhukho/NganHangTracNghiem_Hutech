@@ -1,0 +1,140 @@
+﻿<div class="main-panel">
+    <nav class="navbar navbar-transparent navbar-absolute">
+        <div class="container-fluid">
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                            <span class="notification">5</span>
+                            <i class="fa fa-comment-o" aria-hidden="true">5</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="content" ng-controller="Decentralization">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <div class="card-header" data-background-color="green">
+                                        <h4 class="title">Khoa</h4>
+                                        <p class="category">Danh sách khoa</p>
+                                    </div>
+
+                                    <div class="card-content">
+                                        <div class="row" ng-repeat="ful in ListDecentralization">
+                                            <div class="col-md-2">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="optionsCheckboxes" ng-model="ful.check" ng-click="FucCheck(ful)"><span class="checkbox-material"><span class="check"></span></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <a>
+                                                    <h5>{{ful.Name}}</h5>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="submit" id="" value="Lưu" class="btn btn-outline btn-primary dim full-width m-b" ng-click="save()" />
+
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <div class="card-header" data-background-color="orange">
+                                        <h4 class="title">Môn</h4>
+                                        <p class="category">Danh sách môn</p>
+                                    </div>
+
+                                    <div class="card-content">
+                                        <div class="row" ng-repeat="sub in Subject" ng-model="Subject">
+                                            <div class="col-md-2">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="optionsCheckboxes" ng-model="sub.check"><span class="checkbox-material"><span class="check"></span></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <a>
+                                                    <h5>{{sub.Name}}</h5>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="card">
+                                    <div class="card-header" data-background-color="red">
+                                        <h4 class="title">Phần</h4>
+                                        <p class="category">Danh sách phần</p>
+                                    </div>
+
+                                    <div class="card-content">
+                                        <div class="row" ng-repeat="chap in Chapter" ng-model="Chapter">
+                                            <div class="col-md-2">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="optionsCheckboxes" ng-model="chap.check"><span class="checkbox-material"><span class="check"></span></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <a>
+                                                    <h5>{{chap.Name}}</h5>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .tree-view-wrapper, .tree-view-wrapper ul {
+        list-style: none;
+    }
+
+    .show-hide, .edit {
+        cursor: pointer;
+    }
+
+    .tree-checkbox {
+        margin: 6px !important;
+    }
+
+    .edit {
+        margin-right: 6px !important;
+    }
+
+        .edit i {
+            color: #D77105;
+        }
+
+    .hide {
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+</style>

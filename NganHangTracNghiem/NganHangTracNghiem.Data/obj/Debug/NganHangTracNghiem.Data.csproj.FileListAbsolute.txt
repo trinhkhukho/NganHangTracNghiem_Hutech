@@ -2,3 +2,16 @@ F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\bin\Debu
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\bin\Debug\NganHangTracNghiem.Data.pdb
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.dll
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.pdb
+<<<<<<< HEAD
+=======
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\bin\Debug\NganHangTracNghiem.Data.dll
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\bin\Debug\NganHangTracNghiem.Data.pdb
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.csprojResolveAssemblyReference.cache
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.dll
+D:\Hoc Tap\NganHangTracNghiem\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.pdb
+F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.csprojResolveAssemblyReference.cache
+D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\bin\Debug\NganHangTracNghiem.Data.dll
+D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\bin\Debug\NganHangTracNghiem.Data.pdb
+D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.dll
+D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.pdb
+>>>>>>> 9d21bcf1d9d9ba364c837bd7693b3c2fd2b3b481

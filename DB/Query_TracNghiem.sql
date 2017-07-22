@@ -141,4 +141,20 @@ begin
 	end
 end
 
-exec pro_search_Question 158,0,0,'07/06/2017','07/06/2017'
+--create date
+go
+if not exists(select b.name from sys.objects a inner join sys.columns b on a.object_id=b.object_id where a.name ='Roles' and b.name ='ChapterId')
+	alter table Roles add ChapterId int
+go
+if not exists(select b.name from sys.objects a inner join sys.columns b on a.object_id=b.object_id where a.name ='Roles' and b.name ='SubjectId')
+	alter table Roles add SubjectId int
+go
+if not exists(select b.name from sys.objects a inner join sys.columns b on a.object_id=b.object_id where a.name ='Roles' and b.name ='FacultiesId')
+	alter table Roles add FacultiesId int
+go
+if not exists(select b.name from sys.objects a inner join sys.columns b on a.object_id=b.object_id where a.name ='Roles' and b.name ='Deleted')
+	alter table Roles add Deleted Bit default 0
+go
+if not exists(select b.name from sys.objects a inner join sys.columns b on a.object_id=b.object_id where a.name ='UserRoles' and b.name ='Content')
+	alter table UserRoles add Content Nvarchar(50)
+go

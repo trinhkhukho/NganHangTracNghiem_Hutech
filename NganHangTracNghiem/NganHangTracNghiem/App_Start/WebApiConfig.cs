@@ -23,7 +23,11 @@ namespace NganHangTracNghiem
             );
             config.Formatters.Remove(config.Formatters.XmlFormatter);
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("application/Json"));
-          
+            //config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling
+            //    = Newtonsoft.Json.ReferenceLoopHandling.Serialize;
+            config.Formatters.JsonFormatter.SerializerSettings.PreserveReferencesHandling
+                 = Newtonsoft.Json.PreserveReferencesHandling.Objects;
+
         }
     }
 }

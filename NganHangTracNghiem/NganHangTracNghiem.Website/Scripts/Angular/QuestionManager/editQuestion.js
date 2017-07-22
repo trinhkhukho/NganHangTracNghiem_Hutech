@@ -64,6 +64,10 @@
             var dataSearch = {
                 "chapterId": $scope.QuestionSearch.ChapterSelected,
                 "subjectId": $scope.QuestionSearch.SubjectsSelected,
+<<<<<<< HEAD
+=======
+                "facultiesId": $scope.QuestionSearch.FacultiesSelected,
+>>>>>>> 9d21bcf1d9d9ba364c837bd7693b3c2fd2b3b481
                 "facultiesId": $scope.QuestionSearch.FacultiesSelected,
                 "starDate":new Date(),
                 "endDate": new Date()
