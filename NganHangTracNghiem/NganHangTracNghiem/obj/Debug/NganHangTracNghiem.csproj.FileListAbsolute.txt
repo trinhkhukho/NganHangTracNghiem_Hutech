@@ -339,3 +339,5 @@ F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\Nga
 D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.csprojResolveAssemblyReference.cache
 D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\bin\NganHangTracNghiem.Data.dll
 D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\bin\NganHangTracNghiem.Data.pdb
+F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\bin\NganHangTracNghiem.Data.dll
+F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\bin\NganHangTracNghiem.Data.pdb
