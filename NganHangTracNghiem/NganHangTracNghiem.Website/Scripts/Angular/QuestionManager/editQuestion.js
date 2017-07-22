@@ -64,13 +64,9 @@
             var dataSearch = {
                 "chapterId": $scope.QuestionSearch.ChapterSelected,
                 "subjectId": $scope.QuestionSearch.SubjectsSelected,
-<<<<<<< HEAD
-                "facultiesId": $scope.QuestionSearch.FacultiesSelected
-=======
                 "facultiesId": $scope.QuestionSearch.FacultiesSelected,
                 "starDate":new Date(),
                 "endDate": new Date()
->>>>>>> 3f5dcbc21548f20a6a22dd270165ac125cd27d29
             };
             dataSearch.starDate = new Date("2017-07-06");
             dataSearch.endDate = new Date("2017-07-06");
