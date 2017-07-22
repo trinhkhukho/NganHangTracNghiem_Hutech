@@ -3,20 +3,27 @@
     'use strict';
     angular.module('myApp', ['ngRoute', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'blockUI', 'toastr', 'angularjs-datetime-picker', 'angularTreeview'])
         .config(config)
+    .controller('checklogin', ['$scope', 'serviceShareData', '$http', '$location',  function($scope, serviceShareData, $http, $location) {
+        debugger;
+        $scope.user = serviceShareData.getData("UserLogin");
+        $scope.status = 0;
+        if ($scope.user != null && $scope.user.length > 0) {
+            $scope.status = 1;
+        };
+    }])
     .filter('startFrom', function () {
         return function (data, start) {
             return data.slice(start);
         }
-    });
-      
-
+    })
+    
     config.$inject = ['$routeProvider'];
     function config($routeProvider) {
 
         $routeProvider
             .when('/',
                 {
-                    templateUrl: 'Scripts/Angular/Home/home.html'
+                    templateUrl: 'Scripts/Angular/Login/Login.html'
                 })
              .when('/login',
                 {
@@ -94,7 +101,6 @@
                 {
                     templateUrl: 'Scripts/Angular/Register/Register.html'
                 })
-        //Decentralization
     };
 
 })();

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ObjectiveTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ObjectiveTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Answers">
           <Key>
             <PropertyRef Name="Id" />
@@ -543,8 +543,7 @@
             <End Role="Chapters" EntitySet="Chapters" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ObjectiveTestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1099,16 +1098,16 @@
             <End Role="UserRoles" EntitySet="UserRoles" />
           </AssociationSet>
           <FunctionImport Name="pro_Get_Chapters_Question" ReturnType="Collection(ObjectiveTestModel.pro_Get_Chapters_Question_Result)">
-            <Parameter Name="Id" Mode="In" Type="Int32" />
+          <Parameter Name="Id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="pro_Get_Faculty_Question" ReturnType="Collection(ObjectiveTestModel.pro_Get_Faculty_Question_Result)">
-            <Parameter Name="Id" Mode="In" Type="Int32" />
+          <Parameter Name="Id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="pro_Get_Subject_Question" ReturnType="Collection(ObjectiveTestModel.pro_Get_Subject_Question_Result)">
-            <Parameter Name="Id" Mode="In" Type="Int32" />
+          <Parameter Name="Id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="pro_GetUser_byUserName" ReturnType="Collection(ObjectiveTestModel.pro_GetUser_byUserName_Result)">
-            <Parameter Name="Username" Mode="In" Type="String" />
+          <Parameter Name="Username" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="pro_search_Question" ReturnType="Collection(ObjectiveTestModel.pro_search_Question_Result)">
             <Parameter Name="FacultiesId" Mode="In" Type="Int32" />
@@ -1119,6 +1118,27 @@
           </FunctionImport>
           <FunctionImport Name="pro_Subject_FacultyId" ReturnType="Collection(ObjectiveTestModel.pro_Subject_FacultyId_Result)" />
           <FunctionImport Name="pro_Subject_FacultyId_Question" ReturnType="Collection(ObjectiveTestModel.pro_Subject_FacultyId_Question_Result)" />
+          <FunctionImport Name="pro_search_Question1" ReturnType="Collection(ObjectiveTestModel.pro_search_Question1_Result)">
+            <Parameter Name="FacultiesId" Mode="In" Type="Int32" />
+            <Parameter Name="SubjectId" Mode="In" Type="Int32" />
+            <Parameter Name="ChapterId" Mode="In" Type="Int32" />
+            <Parameter Name="StarDate" Mode="In" Type="DateTime" />
+            <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pro_search_Question2" ReturnType="Collection(ObjectiveTestModel.pro_search_Question2_Result)">
+            <Parameter Name="FacultiesId" Mode="In" Type="Int32" />
+            <Parameter Name="SubjectId" Mode="In" Type="Int32" />
+            <Parameter Name="ChapterId" Mode="In" Type="Int32" />
+            <Parameter Name="StarDate" Mode="In" Type="DateTime" />
+            <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="pro_search_Question3" ReturnType="Collection(ObjectiveTestModel.pro_search_Question3_Result)">
+            <Parameter Name="FacultiesId" Mode="In" Type="Int32" />
+            <Parameter Name="SubjectId" Mode="In" Type="Int32" />
+            <Parameter Name="ChapterId" Mode="In" Type="Int32" />
+            <Parameter Name="StarDate" Mode="In" Type="DateTime" />
+            <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="pro_Get_Chapters_Question_Result">
           <Property Type="Int32" Name="Id" Nullable="false" />
@@ -1191,6 +1211,45 @@
           <Property Type="Int32" Name="NumberOfSubject" Nullable="true" />
           <Property Type="Int32" Name="NumberOfSubjectChapter" Nullable="true" />
           <Property Type="Int32" Name="NumberOfQuestion" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pro_search_Question1_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="ChapterId" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="Deleted" Nullable="true" />
+          <Property Type="Decimal" Name="Discrimination" Nullable="true" Precision="18" Scale="10" />
+          <Property Type="Boolean" Name="Interchange" Nullable="true" />
+          <Property Type="Decimal" Name="Mark" Nullable="true" Precision="18" Scale="10" />
+          <Property Type="Decimal" Name="ObjectiveDifficulty" Nullable="true" Precision="18" Scale="10" />
+          <Property Type="Int64" Name="ParentId" Nullable="true" />
+          <Property Type="Int32" Name="UserId" Nullable="true" />
+          <Property Type="String" Name="Content" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pro_search_Question2_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="ChapterId" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="Deleted" Nullable="true" />
+          <Property Type="Decimal" Name="Discrimination" Nullable="true" Precision="18" Scale="10" />
+          <Property Type="Boolean" Name="Interchange" Nullable="true" />
+          <Property Type="Decimal" Name="Mark" Nullable="true" Precision="18" Scale="10" />
+          <Property Type="Decimal" Name="ObjectiveDifficulty" Nullable="true" Precision="18" Scale="10" />
+          <Property Type="Int64" Name="ParentId" Nullable="true" />
+          <Property Type="Int32" Name="UserId" Nullable="true" />
+          <Property Type="String" Name="Content" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="pro_search_Question3_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="ChapterId" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="Deleted" Nullable="true" />
+          <Property Type="Decimal" Name="Discrimination" Nullable="true" Precision="18" Scale="10" />
+          <Property Type="Boolean" Name="Interchange" Nullable="true" />
+          <Property Type="Decimal" Name="Mark" Nullable="true" Precision="18" Scale="10" />
+          <Property Type="Decimal" Name="ObjectiveDifficulty" Nullable="true" Precision="18" Scale="10" />
+          <Property Type="Int64" Name="ParentId" Nullable="true" />
+          <Property Type="Int32" Name="UserId" Nullable="true" />
+          <Property Type="String" Name="Content" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1497,22 +1556,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="pro_search_Question" FunctionName="ObjectiveTestModel.Store.pro_search_Question">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_search_Question_Result">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="ChapterId" ColumnName="ChapterId" />
-                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
-                <ScalarProperty Name="Discrimination" ColumnName="Discrimination" />
-                <ScalarProperty Name="Interchange" ColumnName="Interchange" />
-                <ScalarProperty Name="Mark" ColumnName="Mark" />
-                <ScalarProperty Name="ObjectiveDifficulty" ColumnName="ObjectiveDifficulty" />
-                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="pro_Subject_FacultyId" FunctionName="ObjectiveTestModel.Store.pro_Subject_FacultyId">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_Subject_FacultyId_Result">
@@ -1535,6 +1578,23 @@
                 <ScalarProperty Name="NumberOfSubject" ColumnName="NumberOfSubject" />
                 <ScalarProperty Name="NumberOfSubjectChapter" ColumnName="NumberOfSubjectChapter" />
                 <ScalarProperty Name="NumberOfQuestion" ColumnName="NumberOfQuestion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pro_search_Question3" FunctionName="ObjectiveTestModel.Store.pro_search_Question">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_search_Question3_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ChapterId" ColumnName="ChapterId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Discrimination" ColumnName="Discrimination" />
+                <ScalarProperty Name="Interchange" ColumnName="Interchange" />
+                <ScalarProperty Name="Mark" ColumnName="Mark" />
+                <ScalarProperty Name="ObjectiveDifficulty" ColumnName="ObjectiveDifficulty" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

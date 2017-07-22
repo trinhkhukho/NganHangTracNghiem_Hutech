@@ -17,6 +17,7 @@ namespace NganHangTracNghiem.Models
         public Decimal ObjectiveDifficulty { get; set; }
         public long ParentId { get; set; }
         public int UserId { get; set; }
+        public string Content { get; set; }
 
     }
 }
