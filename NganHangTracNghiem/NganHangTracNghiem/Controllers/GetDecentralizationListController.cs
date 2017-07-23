@@ -15,6 +15,7 @@ namespace NganHangTracNghiem.Controllers
         {
             try
             {
+
                 List<Treeview> tree = new List<Treeview>();
                 db.Configuration.ProxyCreationEnabled = false;
                 List<Faculty> lsFuculty = db.Faculties.ToList();

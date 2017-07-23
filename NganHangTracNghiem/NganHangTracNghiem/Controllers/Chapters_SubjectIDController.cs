@@ -11,15 +11,24 @@ namespace NganHangTracNghiem.Controllers
     public class Chapters_SubjectIDController : ApiController
     {
         ObjectiveTestEntities db = new ObjectiveTestEntities();
-        public IHttpActionResult GetChapter(int id)
+        [HttpPost]
+        public IHttpActionResult PostChapter(List<int> lsID)
         {
             try
             {
                 db.Configuration.ProxyCreationEnabled = false;
-                var result = db.Chapters.Where(n => n.SubjectId == id);
-                if (result != null)
+                List<Chapter> lsChapter = new List<Chapter>();
+                for(int i=0; i<lsID.Count;i++)
                 {
-                    return Ok(result);
+                    
+                    int chId = lsID[i];
+                    Chapter ch = db.Chapters.Where(n => n.Id == chId).SingleOrDefault();
+                    lsChapter.Add(ch);
+                }
+               
+                if (lsChapter.Count >0)
+                {
+                    return Ok(lsChapter);
                 }
                 else
                 {

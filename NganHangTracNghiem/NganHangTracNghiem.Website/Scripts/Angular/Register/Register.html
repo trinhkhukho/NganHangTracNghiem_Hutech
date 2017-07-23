@@ -1,94 +1,165 @@
-﻿<div class="main-panel" ng-controller="getData">
-<nav class="navbar navbar-transparent navbar-absolute">
-    <div class="container-fluid">
-
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-
-                        <span class="notification">5</span>
-                        <i class="fa fa-comment-o" aria-hidden="true">5</i>
-
-                    </a>
-
-                </li>
-
-            </ul>
-        </div>
+﻿<div class="sidebar" data-color="blue" data-image="../Content/css/Images/sidebar-1.jpg" ng-controller="CheckDecentralization">
+    <div class="logo">
+        <a href="#!home" class="simple-text">
+            Ngân Hàng Trắc Nghiệm
+        </a>
     </div>
-</nav>
-<br />
-<br />
-<div class="content">
-    <div class="container-fluid">
+    <div class="sidebar-wrapper">
+        <ul class="nav" ng-if="Admin==true" ng-model="Admin">
+            <li>
+                <a href="#!chapter">
+                    <i class="fa fa-book" aria-hidden="true"></i> <b>Tạo đề thi</b>
+                </a>
+            </li>
+            <li>
+                <a href="#!ListQuestion">
 
-        <div class="row">
-            <div class="col-lg-1">
+                    <i class="fa fa-list-alt"></i> <b>Danh sách câu hỏi</b>
+                </a>
+            </li>
+            <li>
+                <a href="#!Dashboard">
 
+                    <i class="fa fa-dashboard"></i> <b>Thống kê</b>
+                </a>
+            </li>
+            <li>
+                <a href="#!Faculties">
+                    <i class="fa fa-table"></i><b>Danh Mục</b>
+                </a>
+            </li>
+            <li>
+                <a href="#!ListUser">
+                    <i class="fa fa-table"></i><b>Phân Quyền</b>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav" ng-if="Admin!=true" ng-model="Admin">
+            <li>
+                <a href="#!chapter">
+                    <i class="fa fa-book" aria-hidden="true"></i> <b>Tạo đề thi</b>
+                </a>
+            </li>
+            <li>
+                <a href="#!ListQuestion">
+
+                    <i class="fa fa-list-alt"></i> <b>Danh sách câu hỏi</b>
+                </a>
+            </li>
+            <li ng-if="ThongKe==true" ng-model="ThongKe">
+                <a href="#!Dashboard">
+
+                    <i class="fa fa-dashboard"></i> <b>Thống kê</b>
+                </a>
+            </li>
+            <li ng-if="DanhMuc==true" ng-model="DanhMuc">
+                <a href="#!Faculties">
+                    <i class="fa fa-table"></i><b>Danh Mục</b>
+                </a>
+            </li>
+            <li ng-if="PhanQuyen==true" ng-model="PhanQuyen">
+                <a href="#!ListUser">
+                    <i class="fa fa-table"></i><b>Phân Quyền</b>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="main">
+    <div class="main-panel" ng-controller="getData">
+        <nav class="navbar navbar-transparent navbar-absolute">
+            <div class="container-fluid">
+
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                                <span class="notification">5</span>
+                                <i class="fa fa-comment-o" aria-hidden="true">5</i>
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+                </div>
             </div>
-            <div class="col-lg-10">
-                <div class="card">
-                    <div class="card-header" data-background-color="green">
-                        <h4 class="title">Thông tin tài khoản</h4>
-                        <p class="category">Vui lòng nhập đầy đủ tài khoản !</p>
+        </nav>
+        <br />
+        <br />
+        <div class="content">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-lg-1">
+
                     </div>
-                    <div class="card-content">
-                        <div class="col-lg-1">
-                        </div>
-                        <div class="col-lg-10">
-                            <div class="form-group ">
-                                <p class="help-block text-muted" style="color:red;">
-                                    <small ng-model="Error.NameError">{{Error.NameError}}</small>
-                                </p>
-                                <input type="text" class="form-control" placeholder="Họ tên" name="user_name" value="" ng-model="user.Name">
+                    <div class="col-lg-10">
+                        <div class="card">
+                            <div class="card-header" data-background-color="green">
+                                <h4 class="title">Thông tin tài khoản</h4>
+                                <p class="category">Vui lòng nhập đầy đủ tài khoản !</p>
                             </div>
-                            <div class="form-group ">
-                                <p class="help-block text-muted" style="color:red;">
-                                    <small ng-model="Error.UserNameError"> {{Error.UserNameError}}</small>
-                                </p>
-                                <input type="text" class="form-control" placeholder="Tên đăng nhập" name="user_name" value="" ng-model="user.UserName">
+                            <div class="card-content">
+                                <div class="col-lg-1">
+                                </div>
+                                <div class="col-lg-10">
+                                    <div class="form-group ">
+                                        <p class="help-block text-muted" style="color:red;">
+                                            <small ng-model="Error.NameError">{{Error.NameError}}</small>
+                                        </p>
+                                        <input type="text" class="form-control" placeholder="Họ tên" name="user_name" value="" ng-model="user.Name">
+                                    </div>
+                                    <div class="form-group ">
+                                        <p class="help-block text-muted" style="color:red;">
+                                            <small ng-model="Error.UserNameError"> {{Error.UserNameError}}</small>
+                                        </p>
+                                        <input type="text" class="form-control" placeholder="Tên đăng nhập" name="user_name" value="" ng-model="user.UserName">
 
-                                <p class="help-block text-muted">
-                                    <small>Tên đăng nhập chỉ gồm chữ cái và chữ số, có độ dài từ 6 - 20 ký tự</small>
-                                </p>
-                            </div>
-                            <div class="form-group ">
-                                <p class="help-block text-muted" style="color:red;">
-                                    <small ng-model="Error.PassWordError"> {{Error.PassWordError}}</small>
-                                </p>
-                                <input type="password" class="form-control" placeholder="Nhập mật khẩu từ 6 - 20 ký tự" name="password" ng-model="user.PassWord">
+                                        <p class="help-block text-muted">
+                                            <small>Tên đăng nhập chỉ gồm chữ cái và chữ số, có độ dài từ 6 - 20 ký tự</small>
+                                        </p>
+                                    </div>
+                                    <div class="form-group ">
+                                        <p class="help-block text-muted" style="color:red;">
+                                            <small ng-model="Error.PassWordError"> {{Error.PassWordError}}</small>
+                                        </p>
+                                        <input type="password" class="form-control" placeholder="Nhập mật khẩu từ 6 - 20 ký tự" name="password" ng-model="user.PassWord">
+
+                                    </div>
+                                    <div class="form-group ">
+                                        <p class="help-block text-muted" style="color:red;">
+                                            <small ng-model="Error.PassWord2Error"> {{Error.PassWord2Error}}</small>
+                                        </p>
+                                        <input type="password" class="form-control" placeholder="Nhập lại mật khẩu" name="repassword" ng-model="user.PassWord2">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <p class="help-block text-muted" style="color:red;">
+                                            <small ng-model="Error.PassWordCorrect"> {{Error.PassWordCorrect}}</small>
+                                        </p>
+                                        <input type="submit" value="Tạo tài khoản" class="btn btn-outline btn-primary dim full-width m-b" ng-click="submit()" />
+                                    </div>
+                                    <br />
+                                </div>
+                                <div class="col-lg-1">
+                                </div>
 
                             </div>
-                            <div class="form-group ">
-                                <p class="help-block text-muted" style="color:red;">
-                                    <small ng-model="Error.PassWord2Error"> {{Error.PassWord2Error}}</small>
-                                </p>
-                                <input type="password" class="form-control" placeholder="Nhập lại mật khẩu" name="repassword" ng-model="user.PassWord2">
+                        </div>
+                    </div>
+                    <div class="col-lg-1">
 
-                            </div>
-                            <div class="form-group">
-                                <p class="help-block text-muted" style="color:red;">
-                                    <small ng-model="Error.PassWordCorrect"> {{Error.PassWordCorrect}}</small>
-                                </p>
-                                <input type="submit" value="Tạo tài khoản" class="btn btn-outline btn-primary dim full-width m-b" ng-click="submit()" />
-                            </div>
-                            <br />
-                        </div>
-                        <div class="col-lg-1">
-                        </div>
-                       
                     </div>
                 </div>
             </div>
-            <div class="col-lg-1">
-
-            </div>
         </div>
     </div>
 </div>
-</div>
+
+
 
 
 

@@ -19,6 +19,10 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
             var userId_exist = JSON.parse(userId_exists)[0];
             $scope.ListDecentralization = [];
             $scope.ListDecentralizationUser;
+            $scope.AdminCheck = false;
+            $scope.DanhMucCheck = false;
+            $scope.ThongKeCheck = false;
+            $scope.PhanQuyenCheck = false;
             $scope.Subject = [];
             $scope.Chapter = [];
             $http.get(hostapi + 'api/GetDecentralizationList').then(function (response) {
@@ -28,7 +32,20 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                     debugger;
                     $scope.ListDecentralizationUser = response.data;
                     if ($scope.ListDecentralizationUser != null && $scope.ListDecentralizationUser.length > 0) {
+
                         for (var i = 0; i < $scope.ListDecentralizationUser.length; i++) {
+                            if ($scope.ListDecentralizationUser[i].Id == 26) {
+                                $scope.DanhMucCheck = true;
+                            }
+                            if ($scope.ListDecentralizationUser[i].Id == 27) {
+                                $scope.ThongKeCheck = true;
+                            }
+                            if ($scope.ListDecentralizationUser[i].Id == 28) {
+                                $scope.PhanQuyenCheck = true;
+                            }
+                            if ($scope.ListDecentralizationUser[i].Id == 29) {
+                                $scope.AdminCheck = true;
+                            }
                             for (var j = 0; j < $scope.ListDecentralization.length; j++) {
                                 for (var s = 0; s < $scope.ListDecentralization[j].child.length; s++) {
                                     for (var c = 0; c < $scope.ListDecentralization[j].child[s].child.length; c++) {
@@ -39,10 +56,48 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                                 }
                             }
                         }
+                        if($scope.AdminCheck==true)
+                        {
+                            for (var j = 0; j < $scope.ListDecentralization.length; j++) {
+                                for (var s = 0; s < $scope.ListDecentralization[j].child.length; s++) {
+                                    for (var c = 0; c < $scope.ListDecentralization[j].child[s].child.length; c++) {
+                                        $scope.ListDecentralization[j].child[s].child[c].check = $scope.AdminCheck;
+                                        $scope.Chapter.push($scope.ListDecentralization[j].child[s].child[c]);
+                                    }
+                                    $scope.ListDecentralization[j].child[s].check = $scope.AdminCheck;
+                                    $scope.Subject.push($scope.ListDecentralization[j].child[s]);
+                                }
+                                $scope.ListDecentralization[j].check = $scope.AdminCheck;
+                            }
+                            $scope.DanhMucCheck = $scope.AdminCheck;
+                            $scope.PhanQuyenCheck = $scope.AdminCheck;
+                            $scope.ThongKeCheck = $scope.AdminCheck;
+                        }
                     }
                 });
             });
+            $scope.Admin = function () {
 
+                for (var j = 0; j < $scope.ListDecentralization.length; j++) {
+                    for (var s = 0; s < $scope.ListDecentralization[j].child.length; s++) {
+                        for (var c = 0; c < $scope.ListDecentralization[j].child[s].child.length; c++) {
+                            $scope.ListDecentralization[j].child[s].child[c].check = $scope.AdminCheck;
+                            $scope.Chapter.push($scope.ListDecentralization[j].child[s].child[c]);
+                        }
+                        $scope.ListDecentralization[j].child[s].check = $scope.AdminCheck;
+                        $scope.Subject.push($scope.ListDecentralization[j].child[s]);
+                    }
+                    $scope.ListDecentralization[j].check = $scope.AdminCheck;
+                }
+                $scope.DanhMucCheck = $scope.AdminCheck;
+                $scope.PhanQuyenCheck = $scope.AdminCheck;
+                $scope.ThongKeCheck = $scope.AdminCheck;
+                if($scope.AdminCheck==false)
+                {
+                    $scope.Chapter = [];
+                    $scope.Subject = [];
+                }
+            }
             var data = {
                 UserID: userId_exist,
                 ChapterID: 0,
@@ -51,12 +106,46 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
             $scope.save = function () {
                 debugger;
                 var array = [];
+                if($scope.AdminCheck == true)
+                {
+                    data = {
+                        UserID: userId_exist,
+                        ChapterID: 0,
+                        RoleID: 29
+                    };
+                    array.push(data);
+                }
+                if ($scope.DanhMucCheck == true) {
+                    data = {
+                        UserID: userId_exist,
+                        ChapterID: 0,
+                        RoleID: 26
+                    };
+                    array.push(data);
+                }
+                if ($scope.PhanQuyenCheck == true) {
+                    data = {
+                        UserID: userId_exist,
+                        ChapterID: 0,
+                        RoleID: 28
+                    };
+                    array.push(data);
+                }
+                if ($scope.ThongKeCheck == true) {
+                    data = {
+                        UserID: userId_exist,
+                        ChapterID: 0,
+                        RoleID: 27
+                    };
+                    array.push(data);
+                }
                 for (var i = 0; i < $scope.Chapter.length; i++) {
                     data = {
                         UserID: userId_exist,
                         ChapterID: 0,
                         RoleID: 0
                     };
+                    
                     if ($scope.Chapter[i].check == true) {
                         debugger;
                         data.ChapterID = $scope.Chapter[i].Id;

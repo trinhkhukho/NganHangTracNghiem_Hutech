@@ -1,21 +1,101 @@
-﻿<div class="main-panel">
+﻿<div class="sidebar" data-color="blue" data-image="../Content/css/Images/sidebar-1.jpg" ng-controller="CheckDecentralization">
+    <div class="logo">
+        <a href="#!home" class="simple-text">
+            Ngân Hàng Trắc Nghiệm
+        </a>
+    </div>
+    <div class="sidebar-wrapper">
+        <ul class="nav" ng-if="Admin==true" ng-model="Admin">
+            <li>
+                <a href="#!chapter">
+                    <i class="fa fa-book" aria-hidden="true"></i> <b>Tạo đề thi</b>
+                </a>
+            </li>
+            <li>
+                <a href="#!ListQuestion">
 
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="text-center">
-                        <h2>
-                            NGÂN HÀNG CÂU HỎI TRẮC NGHIỆM
-                        </h2>
-                        <div>
-                            <img src="../../../Content/css/Images/1logo.png"  style="width: 25%; min-width: 240px"/>  
+                    <i class="fa fa-list-alt"></i> <b>Danh sách câu hỏi</b>
+                </a>
+            </li>
+            <li>
+                <a href="#!Dashboard">
+
+                    <i class="fa fa-dashboard"></i> <b>Thống kê</b>
+                </a>
+            </li>
+            <li>
+                <a href="#!Faculties">
+                    <i class="fa fa-table"></i><b>Danh Mục</b>
+                </a>
+            </li>
+            <li>
+                <a href="#!ListUser">
+                    <i class="fa fa-table"></i><b>Phân Quyền</b>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa fa-sign-out"></i><b>Đăng xuất</b>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav" ng-if="Admin!=true" ng-model="Admin">
+            <li>
+                <a href="#!chapter">
+                    <i class="fa fa-book" aria-hidden="true"></i> <b>Tạo đề thi</b>
+                </a>
+            </li>
+            <li>
+                <a href="#!ListQuestion">
+
+                    <i class="fa fa-list-alt"></i> <b>Danh sách câu hỏi</b>
+                </a>
+            </li>
+            <li ng-if="ThongKe==true" ng-model="ThongKe">
+                <a href="#!Dashboard">
+
+                    <i class="fa fa-dashboard"></i> <b>Thống kê</b>
+                </a>
+            </li>
+            <li ng-if="DanhMuc==true" ng-model="DanhMuc">
+                <a href="#!Faculties">
+                    <i class="fa fa-table"></i><b>Danh Mục</b>
+                </a>
+            </li>
+            <li ng-if="PhanQuyen==true" ng-model="PhanQuyen">
+                <a href="#!ListUser">
+                    <i class="fa fa-table"></i><b>Phân Quyền</b>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa fa-sign-out"></i><b>Đăng xuất</b>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="main">
+    <div class="main-panel">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center">
+                            <h2>
+                                NGÂN HÀNG CÂU HỎI TRẮC NGHIỆM
+                            </h2>
+                            <div>
+                                <img src="../../../Content/css/Images/1logo.png" style="width: 25%; min-width: 240px" />
+                            </div>
+                            <br />
+                            <h4>Chào mừng bạn đến với website ngân hàng câu hỏi trắc nghiệm.</h4>
                         </div>
-                        <br/>
-                        <h4>Chào mừng bạn đến với website ngân hàng câu hỏi trắc nghiệm.</h4>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+

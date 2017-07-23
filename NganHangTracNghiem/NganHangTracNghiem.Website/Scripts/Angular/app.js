@@ -5,10 +5,14 @@
         .config(config)
     .controller('checklogin', ['$scope', 'serviceShareData', '$http', '$location',  function($scope, serviceShareData, $http, $location) {
         $scope.user = serviceShareData.getData("UserLogin");
-        $scope.status = 0;
         if ($scope.user != null && $scope.user.length > 0) {
-            $scope.status = 1;
-        };
+            $location.url('login');
+        }
+        else
+        {
+            
+            $location.url('home');
+        }
     }])
     .filter('startFrom', function () {
         return function (data, start) {
