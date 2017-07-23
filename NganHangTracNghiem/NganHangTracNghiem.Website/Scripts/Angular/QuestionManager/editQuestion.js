@@ -65,7 +65,10 @@
                 "chapterId": $scope.QuestionSearch.ChapterSelected,
                 "subjectId": $scope.QuestionSearch.SubjectsSelected,
 <<<<<<< HEAD
+<<<<<<< HEAD
       
+=======
+>>>>>>> ec135744fb3a91b20fdf4bceb22fc38add9b6c4b
 =======
 >>>>>>> ec135744fb3a91b20fdf4bceb22fc38add9b6c4b
                 "facultiesId": $scope.QuestionSearch.FacultiesSelected,
@@ -73,8 +76,13 @@
                 "endDate": new Date()
             };
 <<<<<<< HEAD
+<<<<<<< HEAD
             dataSearch.starDate = new Date("2016-07-13");
             dataSearch.endDate = new Date("2016-07-13");
+=======
+            dataSearch.starDate = new Date("2017-07-18");
+            dataSearch.endDate = new Date("2017-07-18");
+>>>>>>> ec135744fb3a91b20fdf4bceb22fc38add9b6c4b
 =======
             dataSearch.starDate = new Date("2017-07-18");
             dataSearch.endDate = new Date("2017-07-18");

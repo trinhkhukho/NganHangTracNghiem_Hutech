@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\bin\ApplicationInsights.config
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\csc.exe
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -74,6 +75,8 @@ F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\Nga
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.dll
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.pdb
 =======
+=======
+>>>>>>> ec135744fb3a91b20fdf4bceb22fc38add9b6c4b
 D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\bin\ApplicationInsights.config
 D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\csc.exe
 D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -148,4 +151,7 @@ D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\bi
 D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.csprojResolveAssemblyReference.cache
 D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.dll
 D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem\obj\Debug\NganHangTracNghiem.pdb
+<<<<<<< HEAD
+>>>>>>> ec135744fb3a91b20fdf4bceb22fc38add9b6c4b
+=======
 >>>>>>> ec135744fb3a91b20fdf4bceb22fc38add9b6c4b
