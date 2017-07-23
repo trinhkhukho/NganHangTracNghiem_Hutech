@@ -73,7 +73,20 @@
         $scope.SelectChapter = function () {
             $scope.Selected.ChapterSelected = document.getElementById("chapters").value;
         };
-
+        $scope.datatime1 = new Date();
+        $scope.openDataPicker1 = function () {
+            $scope.popup1.opened = true;
+        };
+        $scope.popup1 = {
+            opened: false
+        };
+        $scope.datatime2 = new Date();
+        $scope.openDataPicker2 = function () {
+            $scope.popup2.opened = true;
+        };
+        $scope.popup2 = {
+            opened: false
+        };
         $scope.QuestionSearch = {
             "FacultiesSelected":0,
             "SubjectsSelected":0,
@@ -98,8 +111,10 @@
                 "endDate": new Date()
             };
 
-            dataSearch.starDate = new Date("2016-07-13");
-            dataSearch.endDate = new Date("2016-07-13");
+            dataSearch.starDate = new Date("2017-07-22");
+            dataSearch.endDate = new Date("2017-07-23");
+            //dataSearch.starDate = $scope.datatime1;
+            //dataSearch.endDate = $scope.datatime2;
             blockUI.start();
             $http.post(hostapi + "api/SearchQuestion", dataSearch).then(function (response) {
                 blockUI.stop();

@@ -1,3 +1,55 @@
+<<<<<<< HEAD
+﻿<link href="../../../Content/ckeditor.css" rel="stylesheet" />
+
+<div class="main-panel" ng-controller="editQuestionController">
+    <nav class="navbar navbar-transparent navbar-absolute">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="notification">5</span>
+                            <i class="fa fa-comment-o" aria-hidden="true">5</i>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <br />
+    <div class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header" data-background-color="blue">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <h4 class="title">Quản lý câu hỏi</h4>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <!--<div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <select required class="form-control" id="faculties" ng-model="QuestionSearch.FacultiesSelected" ng-change="SelectFacultie()">
+                                            <option value="" style="display: none;">Chọn Khoa</option>
+                                            <option ng-repeat="Khoa in Faculties" value="{{Khoa.Id}}">{{Khoa.Name}}</option>
+                                        </select>
+=======
 ﻿<div class="sidebar" data-color="blue" data-image="../Content/css/Images/sidebar-1.jpg" ng-controller="CheckDecentralization">
     <div class="logo">
         <a href="#!home" class="simple-text">
@@ -103,6 +155,7 @@
                                 <div class="row">
                                     <div class="col-md-10">
                                         <h4 class="title">Quản lý câu hỏi</h4>
+>>>>>>> c808902d6c385f38b0d1c62ff15ae07d857bb96e
                                     </div>
 
                                 </div>
@@ -136,6 +189,112 @@
                                     </div>
 
 
+<<<<<<< HEAD
+                            </div>-->
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <div class="col-md-3">
+                                       <label>Khoa</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="form-group">
+                                            <select required class="form-control" id="faculties" ng-model="$scope.Selected.FacultiesSelected" ng-change="SelectFacultie()">
+                                                <option value="" style="display: none;">Chọn Khoa</option>
+                                                <option ng-repeat="Khoa in Faculties" value="{{Khoa.Id}}">{{Khoa.Name}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="col-md-3">
+                                        <label>Môn học</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="form-group">
+                                            <select required class="form-control" id="subjects" ng-model="$scope.Selected.SubjectsSelected" ng-change="SelectSubject()">
+                                                <option value="" style="display: none;">Chọn môn học</option>
+                                                <option ng-repeat="MonHoc in SubjectResult" value="{{MonHoc.Id}}">{{MonHoc.Name }}</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="col-md-3">
+                                    
+                                            <label>Chương/phần</label>
+                                     
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="form-group">
+                                            <select required class="form-control" id="chapters" ng-model="$scope.Selected.ChapterSelected" ng-change="SelectChapter()">
+                                                <option value="" style="display: none;">Chọn phần</option>
+                                                <option ng-repeat="Phan in ChapterResult" value="{{Phan.Id}}">{{Phan.Name}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="col-md-3">
+                                        <div>
+                                            <label>Từ ngày</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="col-md-10">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" uib-datepicker-popup ng-model="datatime1" is-open="popup1.opened" ng-required="true" close-text="Close" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <a><span ng-click="openDataPicker1()"><i class="fa fa-calendar"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="col-md-3">
+                                        <div>
+                                            <label>Đến ngày</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="col-md-10">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" uib-datepicker-popup ng-model="datatime2" is-open="popup2.opened" ng-required="true" close-text="Close" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <a><span ng-click="openDataPicker2()"><i class="fa fa-calendar"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a href="" ng-click="Search()" style="margin-bottom: 0px" class="btn btn-primary btn-round pull-right">
+                                        Tìm kiếm
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <br />
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <b style="font-size: 20px">
+                                        Danh sách câu hỏi
+                                    </b>
+=======
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
@@ -144,6 +303,7 @@
                                             <div class="ripple-container"></div>
                                         </a>
                                     </div>
+>>>>>>> c808902d6c385f38b0d1c62ff15ae07d857bb96e
                                 </div>
                                 <br />
                                 <br />
@@ -200,8 +360,12 @@
                                 <ul uib-pagination total-items="ListQuestions.length" ng-model="currentPage" items-per-page="pageSize"></ul>
                             </div>
 <<<<<<< HEAD
+                            <br />
+=======
+<<<<<<< HEAD
 =======
                             <br/>
+>>>>>>> c808902d6c385f38b0d1c62ff15ae07d857bb96e
                             <form>
                                 <table class="table table-hover">
                                     <tr>
@@ -221,12 +385,13 @@
                                             Xóa
                                         </th>
                                     </tr>
-                                    <tr ng-model="ListQuestions" ng-repeat="item in ListQuestions | startFrom: (currentPage-1)*pageSize | limitTo: pageSize |orderBy : 'Id'" >
+                                    <tr ng-model="ListQuestions" ng-repeat="item in ListQuestions | startFrom: (currentPage-1)*pageSize | limitTo: pageSize |orderBy : 'Id'">
 
                                         <td>{{ item.Id }}</td>
                                         <td>{{ item.Name }}</td>
                                         <td>
-                                            <div ng-bind-html="trustAsHtml(item.Content)"></div></td>
+                                            <div ng-bind-html="trustAsHtml(item.Content)"></div>
+                                        </td>
                                         <td>
                                             <a href="" ng-click="editQuestion(item.Id)">
                                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
@@ -237,7 +402,7 @@
                                                 <i class="fa fa-times" style="color: red" aria-hidden="true"></i>
                                             </a>
                                         </td>
-                                    </trng-model="ListQuestions">
+                                    </tr>
                                 </table>
                             </form>
                         </div>

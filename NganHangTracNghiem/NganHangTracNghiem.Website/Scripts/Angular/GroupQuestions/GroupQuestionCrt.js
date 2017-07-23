@@ -4,7 +4,11 @@
     app.controller('GroupQuestionController', questionCrt);
     questionCrt.$inject = ['$scope', '$http', '$location', 'blockUI', 'toastr', 'serviceGetId'];
     function questionCrt($scope, $http, $location, blockUI, toastr, serviceGetId) {
-     
+        $scope.CauHoi = {
+            Diem: 0.5,
+            DoKho: 0.5,
+            DoPhanCach: 0.5
+        };
         $scope.addQuestion = function () {
             blockUI.start();
             var deBai = CKEDITOR.instances.CauHoi.getData();
@@ -14,7 +18,6 @@
                 'DoPhanCach': $scope.CauHoi.DoPhanCach,
                 'DoKho': $scope.CauHoi.DoKho
             };
-       
             $http.post("api/Question/addGroupParent", data).then(function (response) {
                 blockUI.stop();
                 var ketqua = response.data;
@@ -22,20 +25,20 @@
                     toastr.success('', 'Thêm đề bài thất bại');
                 } else {
 
-   
+
                     toastr.success('', 'Thêm đề bài thành công');
                     //location.reload(true);
                     //ParentId = ketqua;
-              
+
                     serviceGetId.addData(ketqua);
                     $location.url('GroupQuestionChil');
-                }   
+                }
 
             });
 
         }
 
-        
+
     };
 
 

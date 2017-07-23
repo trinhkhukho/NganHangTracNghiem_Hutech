@@ -23,26 +23,22 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
 
             $http.get(hostapi + 'api/Users/' + $scope.user.Id).then(function (response) {
                 if (response.data != null) {
-                    debugger
                     var data = response.data;
                     data.Name = $scope.user.Name;
                     data.Username = $scope.user.Username;
                     $http.put(hostapi + "api/Users/" + $scope.user.Id, data).then(function (response) {
 
-                        debugger;
                         $route.reload(true);
                         $uibModalInstance.dismiss('cancel');
                     });
                 }
             });
 
-
         };
         $ctrl.defautPass = function () {
-            debugger
+
             var r = confirm("Bạn chắc chắn muốn đặt lại password của " + $scope.user.Name + " là 123456");
             if (r == false) {
-
             }
             if (r == true) {
                 $http.get(hostapi + 'api/Users/' + $scope.user.Id).then(function (response) {
