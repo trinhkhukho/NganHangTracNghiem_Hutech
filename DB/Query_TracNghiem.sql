@@ -104,7 +104,7 @@ as
 begin
 	if(@FacultiesId!=0 and @SubjectId!=0 and @ChapterId!=0)
 	begin
-		select q.Id,q.ChapterId,q.CreateDate,q.Deleted,q.Discrimination,q.Interchange,q.Mark,q.ObjectiveDifficulty,q.ParentId,q.UserId 
+		select q.Id,q.ChapterId,q.CreateDate,q.Deleted,q.Discrimination,q.Interchange,q.Mark,q.ObjectiveDifficulty,q.ParentId,q.UserId,q.Content
 		from Questions q,Chapters c, Subjects s, Faculties f
 		where f.Id=s.FacultyId and s.Id=c.SubjectId and c.Id=q.ChapterId 
 		and q.ChapterId=@ChapterId and c.SubjectId=@SubjectId and s.FacultyId=@FacultiesId 
@@ -114,7 +114,7 @@ begin
 	begin
 		if(@FacultiesId!=0 and @SubjectId!=0 and @ChapterId=0)
 		begin
-			select q.Id,q.ChapterId,q.CreateDate,q.Deleted,q.Discrimination,q.Interchange,q.Mark,q.ObjectiveDifficulty,q.ParentId,q.UserId 
+			select q.Id,q.ChapterId,q.CreateDate,q.Deleted,q.Discrimination,q.Interchange,q.Mark,q.ObjectiveDifficulty,q.ParentId,q.UserId,q.Content
 			from Questions q,Chapters c, Subjects s, Faculties f
 			where f.Id=s.FacultyId and s.Id=c.SubjectId and c.Id=q.ChapterId 
 			and s.FacultyId=@FacultiesId and c.SubjectId=@SubjectId
@@ -124,7 +124,7 @@ begin
 		begin
 			if(@FacultiesId!=0 and @SubjectId=0 and @ChapterId=0)
 			begin
-				select q.Id,q.ChapterId,q.CreateDate,q.Deleted,q.Discrimination,q.Interchange,q.Mark,q.ObjectiveDifficulty,q.ParentId,q.UserId 
+				select q.Id,q.ChapterId,q.CreateDate,q.Deleted,q.Discrimination,q.Interchange,q.Mark,q.ObjectiveDifficulty,q.ParentId,q.UserId,q.Content
 				from Questions q,Chapters c, Subjects s, Faculties f
 				where f.Id=s.FacultyId and s.Id=c.SubjectId and c.Id=q.ChapterId 
 				and s.FacultyId=@FacultiesId
@@ -132,7 +132,7 @@ begin
 			end
 			else
 			begin
-				select q.Id,q.ChapterId,q.CreateDate,q.Deleted,q.Discrimination,q.Interchange,q.Mark,q.ObjectiveDifficulty,q.ParentId,q.UserId 
+				select q.Id,q.ChapterId,q.CreateDate,q.Deleted,q.Discrimination,q.Interchange,q.Mark,q.ObjectiveDifficulty,q.ParentId,q.UserId ,q.Content
 				from Questions q,Chapters c, Subjects s, Faculties f
 				where f.Id=s.FacultyId and s.Id=c.SubjectId and c.Id=q.ChapterId 
 				and convert(date,q.CreateDate,103) between convert(date,@StarDate,103) and convert(date,@EndDate,103)

@@ -64,19 +64,26 @@
             var dataSearch = {
                 "chapterId": $scope.QuestionSearch.ChapterSelected,
                 "subjectId": $scope.QuestionSearch.SubjectsSelected,
+<<<<<<< HEAD
       
+=======
+>>>>>>> ec135744fb3a91b20fdf4bceb22fc38add9b6c4b
                 "facultiesId": $scope.QuestionSearch.FacultiesSelected,
                 "starDate":new Date(),
                 "endDate": new Date()
             };
+<<<<<<< HEAD
             dataSearch.starDate = new Date("2016-07-13");
             dataSearch.endDate = new Date("2016-07-13");
+=======
+            dataSearch.starDate = new Date("2017-07-18");
+            dataSearch.endDate = new Date("2017-07-18");
+>>>>>>> ec135744fb3a91b20fdf4bceb22fc38add9b6c4b
             blockUI.start();
             $http.post(hostapi + "api/SearchQuestion", dataSearch).then(function (response) {
                 blockUI.stop();
                 debugger 
                 var ketqua = response.data;
-
                 if (ketqua != null) {
                     debugger;
                     $scope.ListQuestions = ketqua;
@@ -84,7 +91,6 @@
                     $scope.currentPage = 1;
                 } else {
                     toastr.error('', 'Lỗi khi tải danh sách câu hỏi ');
-
                 }
             });
             //$http.get("api/Question/get").then(function (response) {

@@ -3,3 +3,8 @@ F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\bin\Debu
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.csprojResolveAssemblyReference.cache
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.dll
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.pdb
+D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\bin\Debug\NganHangTracNghiem.Data.dll
+D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\bin\Debug\NganHangTracNghiem.Data.pdb
+D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.csprojResolveAssemblyReference.cache
+D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.dll
+D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.pdb

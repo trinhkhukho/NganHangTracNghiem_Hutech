@@ -274,6 +274,15 @@
     <Compile Include="Models\pro_Get_Subject_Question_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\pro_search_Question1_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pro_search_Question2_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\pro_search_Question3_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\pro_search_Question_Result.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

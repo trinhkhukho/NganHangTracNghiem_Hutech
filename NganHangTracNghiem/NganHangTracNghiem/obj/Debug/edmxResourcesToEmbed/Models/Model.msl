@@ -300,22 +300,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="pro_search_Question" FunctionName="ObjectiveTestModel.Store.pro_search_Question">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_search_Question_Result">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="ChapterId" ColumnName="ChapterId" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
-          <ScalarProperty Name="Discrimination" ColumnName="Discrimination" />
-          <ScalarProperty Name="Interchange" ColumnName="Interchange" />
-          <ScalarProperty Name="Mark" ColumnName="Mark" />
-          <ScalarProperty Name="ObjectiveDifficulty" ColumnName="ObjectiveDifficulty" />
-          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="pro_Subject_FacultyId" FunctionName="ObjectiveTestModel.Store.pro_Subject_FacultyId">
       <ResultMapping>
         <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_Subject_FacultyId_Result">
@@ -338,6 +322,23 @@
           <ScalarProperty Name="NumberOfSubject" ColumnName="NumberOfSubject" />
           <ScalarProperty Name="NumberOfSubjectChapter" ColumnName="NumberOfSubjectChapter" />
           <ScalarProperty Name="NumberOfQuestion" ColumnName="NumberOfQuestion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pro_search_Question3" FunctionName="ObjectiveTestModel.Store.pro_search_Question">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_search_Question3_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ChapterId" ColumnName="ChapterId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Discrimination" ColumnName="Discrimination" />
+          <ScalarProperty Name="Interchange" ColumnName="Interchange" />
+          <ScalarProperty Name="Mark" ColumnName="Mark" />
+          <ScalarProperty Name="ObjectiveDifficulty" ColumnName="ObjectiveDifficulty" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

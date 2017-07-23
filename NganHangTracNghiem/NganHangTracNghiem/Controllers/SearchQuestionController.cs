@@ -20,7 +20,7 @@ namespace NganHangTracNghiem.Controllers
             db.Configuration.ProxyCreationEnabled = false;
             q.StarDate = Convert.ToDateTime(q.StarDate.ToString("dd/MM/yyyy"));
             q.EndDate = Convert.ToDateTime(q.EndDate.ToString("dd/MM/yyyy"));
-            var result = db.pro_search_Question(q.facultiesId,q.subjectId,q.chapterId, q.StarDate, q.EndDate).ToList();
+            var result = db.pro_search_Question3(q.facultiesId,q.subjectId,q.chapterId, q.StarDate, q.EndDate).ToList();
             if(result != null&& result.Count()>0)
             {
                 List<QuestionSearchResult> lsResult = new List<QuestionSearchResult>();
@@ -28,6 +28,7 @@ namespace NganHangTracNghiem.Controllers
                 {
                     QuestionSearchResult qs = new QuestionSearchResult();
                     qs.Id = result[i].Id;
+                    qs.Content = result[i].Content;
                     qs.ChapterId = result[i].ChapterId;
                     if(result[i].CreateDate!=null)
                     {
