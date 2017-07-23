@@ -6,6 +6,12 @@
         <a href="#!home" class="simple-text">
             Ngân Hàng Trắc Nghiệm
         </a>
+        <div style="text-align: center">
+            <label>
+                Xin chào:
+                {{username}}
+            </label>
+        </div>
     </div>
     <div class="sidebar-wrapper">
         <ul class="nav" ng-if="Admin==true" ng-model="Admin">
@@ -257,7 +263,7 @@
                                             </div>
                                             <div class="col-md-7">
                                                 <div class="form-group">
-                                                    <input type="number" class="form-control" ng-model="CauHoi.Diem" required="">
+                                                    <input type="number" step="0.1" min="0" max="1" class="form-control" ng-model="CauHoi.Diem" required="">
                                                 </div>
                                             </div>
                                         </div>
@@ -267,7 +273,7 @@
                                             </div>
                                             <div class="col-md-7">
                                                 <div class="form-group">
-                                                    <input type="number" class="form-control" ng-model="CauHoi.DoKho" max="1" min="0" required="">
+                                                    <input type="number" step="0.1" min="0" max="1" class="form-control" ng-model="CauHoi.DoKho" required="">
                                                 </div>
                                             </div>
                                         </div>
@@ -278,7 +284,7 @@
                                             <div class="col-md-7">
                                                 <div class="form-group">
 
-                                                    <input type="number" class="form-control" ng-model="CauHoi.DoPhanCach" placeholder="Độ phân cách" style="border-bottom: 1px;" max="1" min="0">
+                                                    <input type="number" step="0.1" min="0" max="1" class="form-control" ng-model="CauHoi.DoPhanCach" placeholder="Độ phân cách">
                                                 </div>
                                             </div>
 

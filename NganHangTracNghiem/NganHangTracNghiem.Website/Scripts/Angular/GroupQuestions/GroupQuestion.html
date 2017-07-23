@@ -3,6 +3,12 @@
         <a href="#!home" class="simple-text">
             Ngân Hàng Trắc Nghiệm
         </a>
+        <div style="text-align: center">
+            <label>
+                Xin chào:
+                {{username}}
+            </label>
+        </div>
     </div>
     <div class="sidebar-wrapper">
         <ul class="nav" ng-if="Admin==true" ng-model="Admin">
@@ -246,25 +252,44 @@
 
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <div class="form-group" style="margin-top: 1px;">
-                                                <input type="text" class="form-control" ng-model="CauHoi.Diem" placeholder="Điểm" required="">
+                                            <!--<div class="col-md-6" style="text-align: right">
+                                                <label>Điểm</label>
+                                            </div>-->
+                                            <div class="col-md-5" style="text-align: right">
+                                                <label>Điểm</label>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div class="form-group">
+                                                    <input type="number" step="0.1" min="0" max="1" class="form-control" ng-model="CauHoi.Diem" required="">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <div class="form-group" style="margin-top: 1px;">
-                                                <input type="number" class="form-control" ng-model="CauHoi.DoKho" placeholder="Độ khó" style="border-bottom: 1px;" max="1" min="0">
+                                            <div class="col-md-5" style="text-align: right">
+                                                <label>Độ khó</label>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div class="form-group">
+                                                    <input type="number" step="0.1" min="0" max="1" class="form-control" ng-model="CauHoi.DoKho" required="">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <div class="form-group" style="margin-top: 1px;">
-                                                <input type="number" class="form-control" ng-model="CauHoi.DoPhanCach" placeholder="Độ phân cách" style="border-bottom: 1px;" max="1" min="0">
+                                            <div class="col-md-5" style="text-align: right">
+                                                <label>Độ phân cách</label>
                                             </div>
-                                        </div>
+                                            <div class="col-md-7">
+                                                <div class="form-group">
 
+                                                    <input type="number" step="0.1" min="0" max="1" class="form-control" ng-model="CauHoi.DoPhanCach" placeholder="Độ phân cách">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="clearfix"></div>
                                     </div>
-                                    <div class="clearfix" style="border:blue solid 2px "></div>
+                                    <div class="clearfix"></div>
                                     <div class="row">
-
                                         <button type="button" ng-click="addQuestion()" class="btn btn-primary pull-right">Thêm câu hỏi</button>
                                     </div>
                                 </form>

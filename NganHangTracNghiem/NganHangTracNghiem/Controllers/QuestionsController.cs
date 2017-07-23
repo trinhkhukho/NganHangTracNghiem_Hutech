@@ -96,14 +96,23 @@ namespace NganHangTracNghiem.Controllers
         [ResponseType(typeof(Question))]
         public IHttpActionResult PostQuestion(Question question)
         {
-            db.Configuration.ProxyCreationEnabled = false;
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
-            }
+                db.Configuration.ProxyCreationEnabled = false;
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
 
-            db.Questions.Add(question);
-            db.SaveChanges();
+                db.Questions.Add(question);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            
 
             return CreatedAtRoute("DefaultApi", new { id = question.Id }, question);
         }

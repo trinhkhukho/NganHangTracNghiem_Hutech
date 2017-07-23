@@ -69,7 +69,8 @@
                 'DapAnA': daA,
                 'DapAnB': daB,
                 'DapAnC': daC,
-                'DapAnD': daD
+                'DapAnD': daD,
+                'ChapterId': $scope.ChapterId
 
 
             };
