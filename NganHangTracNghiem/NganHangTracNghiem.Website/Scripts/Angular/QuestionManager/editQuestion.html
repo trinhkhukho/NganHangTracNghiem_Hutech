@@ -6,6 +6,13 @@
         <a href="#!home" class="simple-text">
             Ngân Hàng Trắc Nghiệm
         </a>
+        <div style="text-align: center">
+            <label>
+                Xin chào:
+                {{username}}
+            </label>
+        </div>
+      
     </div>
     <div class="sidebar-wrapper">
         <ul class="nav" ng-if="Admin==true" ng-model="Admin">
@@ -285,61 +292,61 @@
     </div>
 </div>
 
-    <link href="../../../Content/ckeditor.css" rel="stylesheet" />
+<link href="../../../Content/ckeditor.css" rel="stylesheet" />
 
 
-    <script src="../../../Content/ckeditor/ckeditor.js"></script>
-    <script src="../../../Content/ckfinder/ckfinder.js"></script>
-    <script src="../../../Content/ckeditor/adapters/jquery.js"></script>
-    <script>
-        $(document).ready(function () {
-            ////CKEDITOR.disableAutoInline = true;
-            //CKEDITOR.replace('CauHoi');
-            //CKEDITOR.inline('CauA');
-            //CKEDITOR.inline('CauB');
-            //CKEDITOR.inline('CauC');
-            //CKEDITOR.inline('CauD');
-            //CKFinder.setupCKEditor(null, '/Content/ckfinder/');
+<script src="../../../Content/ckeditor/ckeditor.js"></script>
+<script src="../../../Content/ckfinder/ckfinder.js"></script>
+<script src="../../../Content/ckeditor/adapters/jquery.js"></script>
+<script>
+    $(document).ready(function () {
+        ////CKEDITOR.disableAutoInline = true;
+        //CKEDITOR.replace('CauHoi');
+        //CKEDITOR.inline('CauA');
+        //CKEDITOR.inline('CauB');
+        //CKEDITOR.inline('CauC');
+        //CKEDITOR.inline('CauD');
+        //CKFinder.setupCKEditor(null, '/Content/ckfinder/');
 
-            $('#CauAda').prop('checked', true);
-            $('#CauAda').click(function () {
+        $('#CauAda').prop('checked', true);
+        $('#CauAda').click(function () {
 
-                if ($('#CauAda').is(':checked')) {
-                    $('#CauBda').prop('checked', false);
-                    $('#CauCda').prop('checked', false);
-                    $('#CauDda').prop('checked', false);
-                } else {
-                    $('#CauAda').prop('checked', true);
-                }
-            });
-            $('#CauBda').click(function () {
-                if ($('#CauBda').is(':checked')) {
-                    $('#CauAda').prop('checked', false);
-                    $('#CauCda').prop('checked', false);
-                    $('#CauDda').prop('checked', false);
-                } else {
-                    $('#CauAda').prop('checked', true);
-                }
-            });
-            $('#CauCda').click(function () {
-                if ($('#CauCda').is(':checked')) {
-                    $('#CauAda').prop('checked', false);
-                    $('#CauBda').prop('checked', false);
-                    $('#CauDda').prop('checked', false);
-                } else {
-                    $('#CauAda').prop('checked', true);
-                }
-            });
-            $('#CauDda').click(function () {
-                if ($('#CauDda').is(':checked')) {
-                    $('#CauAda').prop('checked', false);
-                    $('#CauBda').prop('checked', false);
-                    $('#CauCda').prop('checked', false);
-                } else {
-                    $('#CauAda').prop('checked', true);
-                }
-            });
+            if ($('#CauAda').is(':checked')) {
+                $('#CauBda').prop('checked', false);
+                $('#CauCda').prop('checked', false);
+                $('#CauDda').prop('checked', false);
+            } else {
+                $('#CauAda').prop('checked', true);
+            }
         });
+        $('#CauBda').click(function () {
+            if ($('#CauBda').is(':checked')) {
+                $('#CauAda').prop('checked', false);
+                $('#CauCda').prop('checked', false);
+                $('#CauDda').prop('checked', false);
+            } else {
+                $('#CauAda').prop('checked', true);
+            }
+        });
+        $('#CauCda').click(function () {
+            if ($('#CauCda').is(':checked')) {
+                $('#CauAda').prop('checked', false);
+                $('#CauBda').prop('checked', false);
+                $('#CauDda').prop('checked', false);
+            } else {
+                $('#CauAda').prop('checked', true);
+            }
+        });
+        $('#CauDda').click(function () {
+            if ($('#CauDda').is(':checked')) {
+                $('#CauAda').prop('checked', false);
+                $('#CauBda').prop('checked', false);
+                $('#CauCda').prop('checked', false);
+            } else {
+                $('#CauAda').prop('checked', true);
+            }
+        });
+    });
 
 
-    </script>
+</script>

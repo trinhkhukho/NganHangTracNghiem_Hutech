@@ -14,7 +14,7 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
     function CheckDecentralizationCrt($scope, $http, $location, serviceShareData) {
         debugger;
         $scope.decentralization = serviceShareData.getData('UserDecen');
-        $scope.username =JSON.parse(serviceShareData.getData('UserLogin'));
+       
         debugger;
         if ($scope.decentralization.length <= 0)
         {
@@ -22,6 +22,7 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
         }
         else
         {
+            $scope.username =JSON.parse(serviceShareData.getData('UserLogin'))[0];
             $scope.decentralizations = JSON.parse($scope.decentralization)[0];
             $scope.Admin = false;
             $scope.DanhMuc = false;

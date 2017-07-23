@@ -123,8 +123,8 @@
                 "endDate": new Date()
             };
             debugger;
-            dataSearch.starDate = new Date("2017-07-22");
-            dataSearch.endDate = new Date("2017-07-23");
+            //dataSearch.starDate = new Date("2017-07-22");
+            //dataSearch.endDate = new Date("2017-07-23");
             dataSearch.starDate = $scope.datatime1;
             dataSearch.endDate = $scope.datatime2;
             blockUI.start();
@@ -162,7 +162,7 @@
             serviceGetId.clearall();
             serviceGetId.addData(Id);
             $uibModal.open({
-                templateUrl: 'Scripts/Angular/Questions/popQuestion.html',
+                templateUrl: 'Scripts/Angular/QuestionManager/popQuestion.html',
                 size: 'lg',
                 backdrop: 'static',
                 controller: 'popQuestionController',

@@ -92,7 +92,7 @@ namespace NganHangTracNghiem.DLL
                 Questions qs = new Questions();
                 //gán dữ liệu cho câu hỏi
                 qs.Content = questionsModel.DeBai;
-                qs.ChapterId = qs.ChapterId; //gán cứng chapter
+                qs.ChapterId = questionsModel.ChapterId; //gán cứng chapter
                 qs.Mark = questionsModel.Diem;
                 qs.Discrimination = questionsModel.DoPhanCach;
                 qs.ObjectiveDifficulty = questionsModel.DoKho;
@@ -252,7 +252,7 @@ namespace NganHangTracNghiem.DLL
 
                 qs.Id = questionsModel.IdQuestion;
                 qs.Content = questionsModel.DeBai;
-                qs.ChapterId = 9; //gán cứng chapter
+               /* qs.ChapterId = questionsModel.ChapterId;*/ //gán cứng chapter
                 qs.Mark = questionsModel.Diem;
                 qs.Discrimination = questionsModel.DoPhanCach;
                 qs.ObjectiveDifficulty = questionsModel.DoKho;
