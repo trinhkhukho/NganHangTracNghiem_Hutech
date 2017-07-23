@@ -11,6 +11,20 @@ namespace NganHangTracNghiem.Controllers
     public class Subjects_FacultiesIDController : ApiController
     {
         ObjectiveTestEntities db = new ObjectiveTestEntities();
+        [HttpGet]
+        public IHttpActionResult GetSubject(int id)
+        {
+            try
+            {
+                db.Configuration.ProxyCreationEnabled = false;
+                var sub = db.Subjects.Where(n => n.FacultyId == id);
+                return Ok(sub);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError();
+            }
+        }
         [HttpPost]
         public IHttpActionResult PostSubject(List<int> lsID)
         { 

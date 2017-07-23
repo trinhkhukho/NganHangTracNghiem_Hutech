@@ -19,13 +19,21 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
             $location.url('login');
         }
         else {
+            $scope.Admin = false;
+            $scope.DanhMuc = false;
             $scope.decentralization = JSON.parse($scope.decentralizations)[0];
             var data_decen_faculties = [];
             var data_decen_subject = [];
-            var id = JSON.parse(serviceShareData.getData("SubjectIDList"))[0];
             var data_decen_chapter = [];
             debugger;
             for (var i = 0; i < $scope.decentralization.length; i++) {
+                if ($scope.decentralization[i].Id == 29) {
+                    $scope.Admin = true;
+                    $scope.DanhMuc = true;
+                }
+                if ($scope.decentralization[i].Id == 26) {
+                    $scope.DanhMuc = true;
+                }
                 if ($scope.decentralization[i].FacultiesId != null) {
                     var status_f = 0;
                     for (var j = 0; j < data_decen_faculties.length; j++) {
@@ -48,19 +56,9 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                         data_decen_subject.push($scope.decentralization[i].SubjectId);
                     }
                 }
-                if ($scope.decentralization[i].ChapterId != null && $scope.decentralization[i].SubjectId == id) {
-                    var status_c = 0;
-                    for (var j = 0; j < data_decen_chapter.length; j++) {
-                        if (data_decen_chapter[j] == $scope.decentralization[i].ChapterId) {
-                            status_c = 1;
-                        }
-                    }
-                    if (status_c == 0) {
-                        data_decen_chapter.push($scope.decentralization[i].ChapterId);
-
-                    }
+                if ($scope.decentralization[i].ChapterId != null) {
+                    data_decen_chapter.push($scope.decentralization[i].ChapterId);
                 }
-                
             }
         }
 
@@ -77,10 +75,20 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
             'SubjectId': 0,
             'ManagementOrder': null
         };
+        var id = JSON.parse(serviceShareData.getData("SubjectIDList"))[0];
+        if ($scope.Admin == true || $scope.DanhMuc == true)
+        {
+            $http.get(hostapi + 'api/Chapters_SubjectID/' + id).then(function (response) {
+                $scope.Chapters = response.data;
+            });
+        }
+        else
+        {
+            $http.post(hostapi + 'api/Chapters_SubjectID', data_decen_chapter).then(function (response) {
+                $scope.Chapters = response.data;
+            });
+        }
         
-        $http.post(hostapi + 'api/Chapters_SubjectID',data_decen_chapter).then(function (response) {
-            $scope.Chapters = response.data;
-        });
         $http.get(hostapi + 'api/Subjects/' + id).then(function (response) {
             $scope.Subjects = response.data;
             $scope.NameSubjects = $scope.Subjects[0].Name;

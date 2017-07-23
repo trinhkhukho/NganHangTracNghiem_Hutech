@@ -19,13 +19,21 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
             $location.url('login');
         }
         else {
+            $scope.Admin = false;
+            $scope.DanhMuc = false;
             $scope.decentralization = JSON.parse($scope.decentralizations)[0];
             var data_decen_faculties = [];
             var data_decen_subject = [];
-            var id = JSON.parse(serviceShareData.getData("FacultiesIDList"))[0];
             var data_decen_chapter = [];
             debugger;
             for (var i = 0; i < $scope.decentralization.length; i++) {
+                if ($scope.decentralization[i].Id == 29) {
+                    $scope.Admin = true;
+                    $scope.DanhMuc = true;
+                }
+                if ($scope.decentralization[i].Id == 26) {
+                    $scope.DanhMuc = true;
+                }
                 if ($scope.decentralization[i].FacultiesId != null) {
                     var status_f = 0;
                     for (var j = 0; j < data_decen_faculties.length; j++) {
@@ -37,7 +45,7 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                         data_decen_faculties.push($scope.decentralization[i].FacultiesId);
                     }
                 }
-                if ($scope.decentralization[i].SubjectId != null && $scope.decentralization[i].FacultiesId == id) {
+                if ($scope.decentralization[i].SubjectId != null) {
                     var status_s = 0;
                     for (var j = 0; j < data_decen_subject.length; j++) {
                         if (data_decen_subject[j] == $scope.decentralization[i].SubjectId) {
@@ -64,11 +72,23 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
             'FacultyId': 0,
             'ManagementOrder': null
         };
+        var id =JSON.parse(serviceShareData.getData("FacultiesIDList"))[0];
+        if ($scope.Admin == true || $scope.DanhMuc == true)
+        {
+            $http.get(hostapi + 'api/Subjects_FacultiesID/'+id).then(function (response) {
+                debugger;
+                $scope.Subjects = response.data;
+            });
+            
+        }
+        else
+        {
+            $http.post(hostapi + 'api/Subjects_FacultiesID', data_decen_subject).then(function (response) {
+                debugger;
+                $scope.Subjects = response.data;
+            });
+        }
         
-        $http.post(hostapi + 'api/Subjects_FacultiesID', data_decen_subject).then(function (response) {
-            debugger;
-            $scope.Subjects = response.data;
-        });
         $http.get(hostapi + 'api/Faculties').then(function (response) {
             $scope.Faculties = response.data;
             for (var i = 0; i < $scope.Faculties.length; i++)
