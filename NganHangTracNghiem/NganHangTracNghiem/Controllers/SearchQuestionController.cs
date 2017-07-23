@@ -56,7 +56,6 @@ namespace NganHangTracNghiem.Controllers
                     {
                         qs.UserId = Convert.ToInt32(result[i].UserId);
                     }
-                    
                     lsResult.Add(qs);
                 }
                 return Ok(result);

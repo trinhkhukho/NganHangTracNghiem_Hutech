@@ -1,8 +1,33 @@
 ﻿(function (app) {
     'use strict';
     app.controller('editQuestionController', questionCrt);
-    questionCrt.$inject = ['$scope', '$http', '$route', '$timeout', '$sce', '$uibModal', 'blockUI', 'toastr', 'serviceGetId', '$filter'];
-    function questionCrt($scope, $http, $route, $timeout, $sce, $uibModal, blockUI, toastr, serviceGetId, $filter) {
+    questionCrt.$inject = ['$scope', '$http', '$route', '$timeout', '$sce', '$uibModal', 'blockUI', 'toastr', 'serviceGetId', '$filter', 'serviceShareData', '$location'];
+    function questionCrt($scope, $http, $route, $timeout, $sce, $uibModal, blockUI, toastr, serviceGetId, $filter, serviceShareData, $location) {
+        //kiểm tra đăng nhập.
+        $scope.decentralization;
+        $scope.decentralizations = serviceShareData.getData('UserDecen');
+        if ($scope.decentralizations.length <= 0) {
+            $location.url('login');
+        }
+        else {
+            $scope.decentralization = JSON.parse($scope.decentralizations)[0];
+            var data_decen_faculties = [];
+            var data_decen_subject = [];
+            var data_decen_chapter = [];
+            debugger;
+            for (var i = 0; i < $scope.decentralization.length; i++) {
+                if ($scope.decentralization[i].FacultiesId != null) {
+                    data_decen_faculties.push($scope.decentralization[i].FacultiesId);
+                }
+                if ($scope.decentralization[i].SubjectId != null) {
+                    data_decen_subject.push($scope.decentralization[i].SubjectId);
+                }
+                if ($scope.decentralization[i].ChapterId != null) {
+                    data_decen_chapter.push($scope.decentralization[i].ChapterId);
+                }
+            }
+        }
+
 
         $scope.trustAsHtml = $sce.trustAsHtml;
         $scope.ListQuestions = [];
@@ -14,14 +39,17 @@
             SubjectsSelected: "",
             ChapterSelected: ""
         };
-        $http.get(hostapi + 'api/Faculties').then(function (response) {
+        $http.post(hostapi + 'api/GetDecentralizationFaculties', data_decen_faculties).then(function (response) {
+            debugger;
             $scope.Faculties = response.data;
 
         });
-        $http.get(hostapi + 'api/Subjects').then(function (response) {
+        $http.post(hostapi + 'api/GetDecentralizationSubject', data_decen_subject).then(function (response) {
+            debugger;
             $scope.Subjects = response.data;
         });
-        $http.get(hostapi + 'api/Chapters').then(function (response) {
+        $http.post(hostapi + 'api/GetDecentralizationChapter', data_decen_chapter).then(function (response) {
+            debugger;
             $scope.chapters = response.data;
         });
         $scope.SelectFacultie = function () {

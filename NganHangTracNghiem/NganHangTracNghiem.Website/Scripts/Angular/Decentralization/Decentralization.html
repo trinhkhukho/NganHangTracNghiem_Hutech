@@ -1,114 +1,243 @@
-﻿<div class="main-panel">
-    <nav class="navbar navbar-transparent navbar-absolute">
-        <div class="container-fluid">
+﻿<div class="sidebar" data-color="blue" data-image="../Content/css/Images/sidebar-1.jpg" ng-controller="CheckDecentralization">
+    <div class="logo">
+        <a href="#!home" class="simple-text">
+            Ngân Hàng Trắc Nghiệm
+        </a>
+    </div>
+    <div class="sidebar-wrapper">
+        <ul class="nav" ng-if="Admin==true" ng-model="Admin">
+            <li>
+                <a href="#!chapter">
+                    <i class="fa fa-book" aria-hidden="true"></i> <b>Tạo đề thi</b>
+                </a>
+            </li>
+            <li>
+                <a href="#!ListQuestion">
 
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
+                    <i class="fa fa-list-alt"></i> <b>Danh sách câu hỏi</b>
+                </a>
+            </li>
+            <li>
+                <a href="#!Dashboard">
 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-dashboard"></i> <b>Thống kê</b>
+                </a>
+            </li>
+            <li>
+                <a href="#!Faculties">
+                    <i class="fa fa-table"></i><b>Danh Mục</b>
+                </a>
+            </li>
+            <li>
+                <a href="#!ListUser">
+                    <i class="fa fa-table"></i><b>Phân Quyền</b>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav" ng-if="Admin!=true" ng-model="Admin">
+            <li>
+                <a href="#!chapter">
+                    <i class="fa fa-book" aria-hidden="true"></i> <b>Tạo đề thi</b>
+                </a>
+            </li>
+            <li>
+                <a href="#!ListQuestion">
 
-                            <span class="notification">5</span>
-                            <i class="fa fa-comment-o" aria-hidden="true">5</i>
-                        </a>
-                    </li>
-                </ul>
+                    <i class="fa fa-list-alt"></i> <b>Danh sách câu hỏi</b>
+                </a>
+            </li>
+            <li ng-if="ThongKe==true" ng-model="ThongKe">
+                <a href="#!Dashboard">
+
+                    <i class="fa fa-dashboard"></i> <b>Thống kê</b>
+                </a>
+            </li>
+            <li ng-if="DanhMuc==true" ng-model="DanhMuc">
+                <a href="#!Faculties">
+                    <i class="fa fa-table"></i><b>Danh Mục</b>
+                </a>
+            </li>
+            <li ng-if="PhanQuyen==true" ng-model="PhanQuyen">
+                <a href="#!ListUser">
+                    <i class="fa fa-table"></i><b>Phân Quyền</b>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="main">
+    <div class="main-panel">
+        <nav class="navbar navbar-transparent navbar-absolute">
+            <div class="container-fluid">
+
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                                <span class="notification">5</span>
+                                <i class="fa fa-comment-o" aria-hidden="true">5</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-    <div class="content" ng-controller="Decentralization">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="card">
-                                    <div class="card-header" data-background-color="green">
-                                        <h4 class="title">Khoa</h4>
-                                        <p class="category">Danh sách khoa</p>
+        </nav>
+        <div class="content" ng-controller="Decentralization">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="col-md-2">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="optionsCheckboxes" ng-model="AdminCheck" ng-click="Admin()"><span class="checkbox-material"><span class="check"></span></span>
+                                            </label>
+                                        </div>
                                     </div>
+                                    <div class="col-md-10">
+                                        <a>
+                                            <h5>Admin</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="col-md-2">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="optionsCheckboxes" ng-model="DanhMucCheck"><span class="checkbox-material"><span class="check"></span></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <a>
+                                            <h5>Danh mục</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="col-md-2">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="optionsCheckboxes" ng-model="ThongKeCheck"><span class="checkbox-material"><span class="check"></span></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <a>
+                                            <h5>Thống kê</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="col-md-2">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="optionsCheckboxes" ng-model="PhanQuyenCheck"><span class="checkbox-material"><span class="check"></span></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <a>
+                                            <h5>Phân quyền</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="card">
+                                        <div class="card-header" data-background-color="green">
+                                            <h4 class="title">Khoa</h4>
+                                            <p class="category">Danh sách khoa</p>
+                                        </div>
 
-                                    <div class="card-content">
-                                        <div class="row" ng-repeat="ful in ListDecentralization">
-                                            <div class="col-md-2">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="optionsCheckboxes" ng-model="ful.check" ng-click="FucCheck(ful)"><span class="checkbox-material"><span class="check"></span></span>
-                                                    </label>
+                                        <div class="card-content">
+                                            <div class="row" ng-repeat="ful in ListDecentralization">
+                                                <div class="col-md-2">
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" name="optionsCheckboxes" ng-model="ful.check" ng-click="FucCheck(ful)"><span class="checkbox-material"><span class="check"></span></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <a>
+                                                        <h5>{{ful.Name}}</h5>
+                                                    </a>
                                                 </div>
                                             </div>
-                                            <div class="col-md-10">
-                                                <a>
-                                                    <h5>{{ful.Name}}</h5>
-                                                </a>
+                                        </div>
+                                    </div>
+                                    <input type="submit" id="" value="Lưu" class="btn btn-outline btn-primary dim full-width m-b" ng-click="save()" />
+
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="card">
+                                        <div class="card-header" data-background-color="orange">
+                                            <h4 class="title">Môn</h4>
+                                            <p class="category">Danh sách môn</p>
+                                        </div>
+
+                                        <div class="card-content">
+                                            <div class="row" ng-repeat="sub in Subject" ng-model="Subject">
+                                                <div class="col-md-2">
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" name="optionsCheckboxes" ng-model="sub.check"><span class="checkbox-material"><span class="check"></span></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <a>
+                                                        <h5>{{sub.Name}}</h5>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <input type="submit" id="" value="Lưu" class="btn btn-outline btn-primary dim full-width m-b" ng-click="save()" />
+                                <div class="col-lg-4">
+                                    <div class="card">
+                                        <div class="card-header" data-background-color="red">
+                                            <h4 class="title">Phần</h4>
+                                            <p class="category">Danh sách phần</p>
+                                        </div>
 
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="card">
-                                    <div class="card-header" data-background-color="orange">
-                                        <h4 class="title">Môn</h4>
-                                        <p class="category">Danh sách môn</p>
-                                    </div>
-
-                                    <div class="card-content">
-                                        <div class="row" ng-repeat="sub in Subject" ng-model="Subject">
-                                            <div class="col-md-2">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="optionsCheckboxes" ng-model="sub.check"><span class="checkbox-material"><span class="check"></span></span>
-                                                    </label>
+                                        <div class="card-content">
+                                            <div class="row" ng-repeat="chap in Chapter" ng-model="Chapter">
+                                                <div class="col-md-2">
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" name="optionsCheckboxes" ng-model="chap.check"><span class="checkbox-material"><span class="check"></span></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <a>
+                                                        <h5>{{chap.Name}}</h5>
+                                                    </a>
                                                 </div>
                                             </div>
-                                            <div class="col-md-10">
-                                                <a>
-                                                    <h5>{{sub.Name}}</h5>
-                                                </a>
-                                            </div>
                                         </div>
+
+
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
-                                <div class="card">
-                                    <div class="card-header" data-background-color="red">
-                                        <h4 class="title">Phần</h4>
-                                        <p class="category">Danh sách phần</p>
-                                    </div>
 
-                                    <div class="card-content">
-                                        <div class="row" ng-repeat="chap in Chapter" ng-model="Chapter">
-                                            <div class="col-md-2">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="optionsCheckboxes" ng-model="chap.check"><span class="checkbox-material"><span class="check"></span></span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <a>
-                                                    <h5>{{chap.Name}}</h5>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
+
 <style>
     .tree-view-wrapper, .tree-view-wrapper ul {
         list-style: none;

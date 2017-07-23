@@ -229,6 +229,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ChaptersController.cs" />
+    <Compile Include="Controllers\DecentralizationController.cs" />
     <Compile Include="Controllers\FacultiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QuestionsController.cs" />
@@ -1374,6 +1375,7 @@
     <Content Include="Scripts\Angular\GroupQuestions\Question.html" />
     <Content Include="Scripts\Angular\GroupQuestions\GroupQuestionCrt.js" />
     <Content Include="Scripts\Angular\GroupQuestions\GroupQuestion.html" />
+    <Content Include="Scripts\Angular\Home\home.js" />
     <Content Include="Scripts\Angular\ListUser\ListUser.html" />
     <Content Include="Scripts\Angular\ListUser\ListUser.js" />
     <Content Include="Scripts\Angular\Login\Login.html" />

@@ -21,11 +21,48 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
             PassWord: ""
         };
         $scope.message = "";
-
         $scope.submit = function () {
             debugger;
+            $http.post(hostapi + 'api/Login', $scope.user).then(function (response) {
+                debugger;
+                if (response.data != 0 && response.data != -1) {
+                    $http.get(hostapi + 'api/Users/' + response.data).then(function (response) {
+                        debugger;
+                        var a = JSON.parse(response.data);
+                        serviceShareData.clearall('UserLogin');
+                        serviceShareData.addData(a.Name, 'UserLogin');
+                    });
+                    $http.get('api/Decentralization/' + response.data).then(function (response) {
+                        debugger;
+                        if (response.data == 0) {
+                            alert("Tài khoản không có quyền truy cập !");
+                        }
+                        else {
+                            if (response.data == -1) {
+                                alert("Lỗi !");
+                            }
+                            else {
+                                var a = JSON.parse(response.data);
+                                serviceShareData.clearall('UserDecen');
+                                serviceShareData.addData(a, 'UserDecen');
+                                $location.url('home');
+                            }
+                        }
+                    });
 
-            alert("Tên đăng nhập hoặc mật khẩu sai !");
+                }
+                else {
+                    if (response.data == 0) {
+                        alert("Tên đăng nhập hoặc mật khẩu sai !");
+                    }
+                    else {
+                        if (response.data == -1) {
+                            alert("Lỗi !");
+                        }
+                    }
+                }
+            });
+
 
         };
     };

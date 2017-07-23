@@ -1,118 +1,188 @@
-﻿<div class="main-panel">
-    <nav class="navbar navbar-transparent navbar-absolute">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+﻿<div class="sidebar" data-color="blue" data-image="../Content/css/Images/sidebar-1.jpg" ng-controller="CheckDecentralization">
+    <div class="logo">
+        <a href="#!home" class="simple-text">
+            Ngân Hàng Trắc Nghiệm
+        </a>
+    </div>
+    <div class="sidebar-wrapper">
+        <ul class="nav" ng-if="Admin==true" ng-model="Admin">
+            <li>
+                <a href="#!chapter">
+                    <i class="fa fa-book" aria-hidden="true"></i> <b>Tạo đề thi</b>
+                </a>
+            </li>
+            <li>
+                <a href="#!ListQuestion">
+
+                    <i class="fa fa-list-alt"></i> <b>Danh sách câu hỏi</b>
+                </a>
+            </li>
+            <li>
+                <a href="#!Dashboard">
+
+                    <i class="fa fa-dashboard"></i> <b>Thống kê</b>
+                </a>
+            </li>
+            <li>
+                <a href="#!Faculties">
+                    <i class="fa fa-table"></i><b>Danh Mục</b>
+                </a>
+            </li>
+            <li>
+                <a href="#!ListUser">
+                    <i class="fa fa-table"></i><b>Phân Quyền</b>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav" ng-if="Admin!=true" ng-model="Admin">
+            <li>
+                <a href="#!chapter">
+                    <i class="fa fa-book" aria-hidden="true"></i> <b>Tạo đề thi</b>
+                </a>
+            </li>
+            <li>
+                <a href="#!ListQuestion">
+
+                    <i class="fa fa-list-alt"></i> <b>Danh sách câu hỏi</b>
+                </a>
+            </li>
+            <li ng-if="ThongKe==true" ng-model="ThongKe">
+                <a href="#!Dashboard">
+
+                    <i class="fa fa-dashboard"></i> <b>Thống kê</b>
+                </a>
+            </li>
+            <li ng-if="DanhMuc==true" ng-model="DanhMuc">
+                <a href="#!Faculties">
+                    <i class="fa fa-table"></i><b>Danh Mục</b>
+                </a>
+            </li>
+            <li ng-if="PhanQuyen==true" ng-model="PhanQuyen">
+                <a href="#!ListUser">
+                    <i class="fa fa-table"></i><b>Phân Quyền</b>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="main">
+    <div class="main-panel">
+        <nav class="navbar navbar-transparent navbar-absolute">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                                <span class="notification">5</span>
+                                <i class="fa fa-comment-o" aria-hidden="true">5</i>
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
             </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
+        </nav>
+        <br />
+        <div class="content" ng-controller="Subjects">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <br />
+                        <div class="card">
+                            <div class="card-header" data-background-color="blue">
+                                <h4 class="title" ng-model="NameFaculties">Khoa {{NameFaculties}}</h4>
+                                <p class="category">Danh sách môn của khoa {{NameFaculties}}</p>
+                            </div>
+                            <div class="card-content table-responsive">
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group label-floating is-empty">
+                                            <label class="control-label">Tên Môn</label>
+                                            <input type="text" class="form-control" ng-model="SubjectsIns.Name">
+                                            <span class="material-input"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group label-floating is-empty">
+                                            <label class="control-label">Số thứ tự</label>
+                                            <input type="text" class="form-control" ng-model="SubjectsIns.ManagementOrder">
+                                            <span class="material-input"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group label-floating is-empty">
+                                            <label class="control-label">Mã Môn Học</label>
+                                            <input type="text" class="form-control" ng-model="SubjectsIns.Code">
+                                            <span class="material-input"></span>
+                                        </div>
+                                    </div>
 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-
-                            <span class="notification">5</span>
-                            <i class="fa fa-comment-o" aria-hidden="true">5</i>
-
-                        </a>
-
-                    </li>
-
-                </ul>
-            
-            </div>
-        </div>
-    </nav>
-    <br/>
-    <div class="content" ng-controller="Subjects">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <br />
-                    <div class="card">
-                        <div class="card-header" data-background-color="blue">
-                            <h4 class="title" ng-model="NameFaculties">Khoa {{NameFaculties}}</h4>
-                            <p class="category">Danh sách môn của khoa {{NameFaculties}}</p>
-                        </div>
-                        <div class="card-content table-responsive">
-                            <br />
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group label-floating is-empty">
-                                        <label class="control-label">Tên Môn</label>
-                                        <input type="text" class="form-control" ng-model="SubjectsIns.Name">
-                                        <span class="material-input" ></span>
+                                    <div class="col-md-2">
+                                        <a href="" ng-click="insert()" class="btn btn-primary btn-round">thêm<div class="ripple-container"></div></a>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group label-floating is-empty">
-                                        <label class="control-label">Số thứ tự</label>
-                                        <input type="text" class="form-control" ng-model="SubjectsIns.ManagementOrder">
-                                        <span class="material-input" ></span>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-group label-floating is-empty">
-                                        <label class="control-label">Mã Môn Học</label>
-                                        <input type="text" class="form-control" ng-model="SubjectsIns.Code">
-                                        <span class="material-input" ></span>
-                                    </div>
-                                </div>
+                                <br />
+                                <hr />
+                                <table class="table table-hover">
 
-                                <div class="col-md-2">
-                                    <a href="" ng-click="insert()" class="btn btn-primary btn-round">thêm<div class="ripple-container"></div></a>
-                                </div>
+                                    <thead class="text-warning row">
+                                    <th class="col-md-1">Mã Môn</th>
+                                    <th class="col-md-2">Tên Môn</th>
+                                    <th class="col-md-2">Code</th>
+                                    <th class="col-md-2">Khóa</th>
+                                    <th class="col-md-1">sửa</th>
+                                    <th class="col-md-1">xóa</th>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr ng-repeat="Subject in Subjects | startFrom: (currentPage-1)*pageSize | limitTo: pageSize">
+                                            <td ng-click="SelectSubjects(Subject.Id)">{{Subject.Id}}</td>
+                                            <td ng-click="SelectSubjects(Subject.Id)">{{Subject.Name}}</td>
+                                            <td ng-click="SelectSubjects(Subject.Id)">{{Subject.Code}}</td>
+                                            <td ng-if="Subject.Deleted==true">
+                                                <a href="" ng-click="Block(Subject)">
+                                                    <i class="fa fa-times text-danger"></i>
+                                                </a>
+
+                                            </td>
+                                            <td ng-if="Subject.Deleted!=true">
+                                                <a href="" ng-click="Block(Subject)">
+                                                    <i class="fa fa-check text-success"></i>
+                                                </a>
+                                            </td>
+
+                                            <td>
+                                                <a href="" ng-click="editSubjects(Subject)">
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="" ng-click="DeleteSubject(Subject)">
+                                                    <i class="fa fa-times" style="color: red" aria-hidden="true"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                             <br />
-                            <hr />
-                            <table class="table table-hover">
-                                
-                                <thead class="text-warning row">
-                                <th class="col-md-1">Mã Môn</th>
-                                <th class="col-md-2">Tên Môn</th>
-                                <th class="col-md-2">Code</th>
-                                <th class="col-md-2">Khóa</th>
-                                <th class="col-md-1">sửa</th>
-                                <th class="col-md-1">xóa</th>
-                                </thead>
-                                <tbody>
-
-                                    <tr ng-repeat="Subject in Subjects | startFrom: (currentPage-1)*pageSize | limitTo: pageSize" >
-                                        <td ng-click="SelectSubjects(Subject.Id)">{{Subject.Id}}</td>
-                                        <td ng-click="SelectSubjects(Subject.Id)">{{Subject.Name}}</td>
-                                        <td ng-click="SelectSubjects(Subject.Id)">{{Subject.Code}}</td>
-                                        <td ng-if="Subject.Deleted==true">
-                                            <a href="" ng-click="Block(Subject)">
-                                                <i class="fa fa-times text-danger"></i>
-                                            </a>
-                                            
-                                        </td>
-                                        <td ng-if="Subject.Deleted!=true">
-                                            <a href="" ng-click="Block(Subject)">
-                                                <i class="fa fa-check text-success"></i>
-                                            </a>                                        </td>
-                                        
-                                        <td>
-                                            <a href="" ng-click="editSubjects(Subject)">
-                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="" ng-click="DeleteSubject(Subject)">
-                                                <i class="fa fa-times" style="color: red" aria-hidden="true"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <br />
-                        <div style="margin-left:20px;">
-                            <ul uib-pagination total-items="Subject.length" ng-model="currentPage" items-per-page="pageSize"></ul>
+                            <div style="margin-left:20px;">
+                                <ul uib-pagination total-items="Subject.length" ng-model="currentPage" items-per-page="pageSize"></ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -120,3 +190,4 @@
         </div>
     </div>
 </div>
+
