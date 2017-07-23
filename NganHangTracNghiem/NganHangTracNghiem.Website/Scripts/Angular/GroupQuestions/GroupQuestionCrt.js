@@ -4,6 +4,8 @@
     app.controller('GroupQuestionController', questionCrt);
     questionCrt.$inject = ['$scope', '$http', '$location', 'blockUI', 'toastr', 'serviceGetId'];
     function questionCrt($scope, $http, $location, blockUI, toastr, serviceGetId) {
+        $scope.ChapterId = JSON.parse(serviceShareData.getData("ChapterId"));
+        $scope.ChapterId = $scope.ChapterId[0];
         $scope.CauHoi = {
             Diem: 0.5,
             DoKho: 0.5,

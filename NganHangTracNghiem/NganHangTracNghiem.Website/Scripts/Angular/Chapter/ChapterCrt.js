@@ -24,7 +24,6 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
             var data_decen_faculties = [];
             var data_decen_subject = [];
             var data_decen_chapter = [];
-            debugger;
             for(var i=0; i<$scope.decentralization.length; i++)
             {
                 if($scope.decentralization[i].FacultiesId!=null)
@@ -57,7 +56,6 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                 }
             }
         }
-        debugger;
         $scope.dataFaculties = {
             "Id": "",
             "Name": "",
@@ -93,12 +91,10 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
 
         });
         $http.post(hostapi + 'api/GetDecentralizationSubject', data_decen_subject).then(function (response) {
-            debugger;
-            $scope.Subjects = response.data;
+          $scope.Subjects = response.data;
         });
         $http.post(hostapi + 'api/GetDecentralizationChapter', data_decen_chapter).then(function (response) {
-            debugger;
-            $scope.chapters = response.data;
+           $scope.chapters = response.data;
         });
         $scope.SelectFacultie = function () {
             if ($scope.Subjects != null) {
@@ -110,8 +106,7 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
 
         };
         $scope.SelectSubject = function () {
-            debugger;
-            if ($scope.chapters != null) {
+           if ($scope.chapters != null) {
                 $scope.Selected.SubjectsSelected = document.getElementById("subjects").value;
                 $scope.ChapterResult = $scope.chapters.filter(function (s) {
                     return (s.SubjectId == $scope.Selected.SubjectsSelected);
@@ -122,9 +117,10 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
             $scope.Selected.ChapterSelected = document.getElementById("chapters").value;
         };
         $scope.submit = function () {
-            debugger;
-            serviceChapterId.clearall();
-            serviceChapterId.addChapterId($scope.Selected.ChapterSelected);
+           //serviceChapterId.clearall();
+           // serviceChapterId.addChapterId($scope.Selected.ChapterSelected);
+            serviceShareData.clearall("ChapterId");
+            serviceShareData.addData($scope.Selected.ChapterSelected, "ChapterId");
             $location.url('TypeQuestions');
         }
     };
