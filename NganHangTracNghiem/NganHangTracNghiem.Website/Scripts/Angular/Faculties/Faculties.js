@@ -95,7 +95,7 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
         };
         $scope.editFaculties = function (faculties) {
             debugger;
-            serviceShareData.clearall();
+            serviceShareData.clearall("Faculties");
             serviceShareData.addData(faculties, "Faculties");
             $uibModal.open({
                 templateUrl: 'Scripts/Angular/Faculties/EditFaculties.html',

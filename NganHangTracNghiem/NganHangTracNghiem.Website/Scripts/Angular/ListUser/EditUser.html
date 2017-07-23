@@ -1,0 +1,93 @@
+﻿<div>
+    <form ng-submit="$ctrl.Submit()">
+        <div class="modal-body" id="modal-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="blue">
+                                <h4 class="title">Thông tin tài khoản</h4>
+                            </div>
+                            <div class="card-content">
+
+                                <div class="col-lg-1">
+                                </div>
+                                <div class="col-lg-12">
+                                    <!--<div class="form-group label-floating is-empty">
+                                        <p class="help-block text-muted" style="color: red;">
+                                            <small ng-model="Error.NameError">{{Error.NameError}}</small>
+                                        </p>
+                                        <label class="control-label">Họ và tên</label>
+                                        <input type="text" class="form-control" name="user_name" value="" ng-model="user.Name">
+                                        <span class="material-input"></span>
+
+                                    </div>
+                                    <div class="form-group label-floating is-empty">
+                                        <p class="help-block text-muted" style="color: red;">
+                                            <small ng-model="Error.UserNameError"> {{Error.UserNameError}}</small>
+                                        </p>
+                                        <label class="control-label">Tên đăng nhập</label>
+                                        <input type="text" class="form-control" name="user_name" value="" ng-model="user.Username">
+                                        <span class="material-input"></span>
+                                        <p class="help-block text-muted">
+                                            <small>Tên đăng nhập chỉ gồm chữ cái và chữ số, có độ dài từ 6 - 20 ký tự</small>
+                                        </p>
+                                    </div>-->
+                                    <div class="row">
+                                        <p class="help-block text-muted" style="color: red;">
+                                            <small ng-model="Error.NameError">{{Error.NameError}}</small>
+                                        </p>
+                                        <div class="col-md-2" style="text-align: right">
+                                            <label>Họ và tên</label>
+                                        </div>
+
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Họ tên" ng-model="user.Name" required="">
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <p class="help-block text-muted" style="color: red;">
+                                            <small ng-model="Error.UserNameError"> {{Error.UserNameError}}</small>
+                                        </p>
+                                        <div class="col-md-2" style="text-align: right">
+                                            <label>Tên đăng nhập</label>
+                                        </div>
+
+                                        <div class="col-md-9">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Tên đăng nhập" ng-model="user.Username" required="">
+                                            </div>
+                                            <p class="help-block text-muted">
+                                                <small>Tên đăng nhập chỉ gồm chữ cái và chữ số, có độ dài từ 6 - 20 ký tự</small>
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group " style="text-align: right">
+                                        <button class="btn btn-primary" type="button" ng-click="$ctrl.defautPass()">Đặt mật khẩu về mặc định</button>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-1">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary"> Lưu thay đổi </button>
+            <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()"> Thoát</button>
+
+
+        </div>
+    </form>
+</div>
