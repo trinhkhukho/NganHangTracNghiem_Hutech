@@ -122,11 +122,11 @@
                 "starDate": new Date(),
                 "endDate": new Date()
             };
-
+            debugger;
             dataSearch.starDate = new Date("2017-07-22");
             dataSearch.endDate = new Date("2017-07-23");
-            //dataSearch.starDate = $scope.datatime1;
-            //dataSearch.endDate = $scope.datatime2;
+            dataSearch.starDate = $scope.datatime1;
+            dataSearch.endDate = $scope.datatime2;
             blockUI.start();
             $http.post(hostapi + "api/SearchQuestion", dataSearch).then(function (response) {
                 blockUI.stop();

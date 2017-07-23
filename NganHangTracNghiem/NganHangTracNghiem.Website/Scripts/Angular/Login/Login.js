@@ -7,9 +7,6 @@ var host;
 xmlData = (new DOMParser()).parseFromString(xml.responseText, 'text/xml');
 var clinic = xmlData.getElementsByTagName("clinic");
 hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
-
-
-
 (function (app) {
     'use strict';
     app.controller('getlogin', fupCrt);
@@ -28,7 +25,7 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                 if (response.data != 0 && response.data != -1) {
                     $http.get(hostapi + 'api/Users/' + response.data).then(function (response) {
                         debugger;
-                        var a = JSON.parse(response.data);
+                        var a = response.data;
                         serviceShareData.clearall('UserLogin');
                         serviceShareData.addData(a.Name, 'UserLogin');
                     });
