@@ -6,9 +6,14 @@
     function questionCrt($scope, $http, $route, $timeout, blockUI, toastr, serviceChapterId) {
         //var DapAn;
         debugger;
+        $scope.CauHoi = {
+            Diem: 0.5,
+            DoKho: 0.5,
+            DoPhanCach: 0.5
+        };
         $scope.ChapterId = serviceChapterId.getChapterId();
-        $scope.addQuestion = function () {
-           
+        $scope.submit = function () {
+            debugger;
             blockUI.start();
             var hvA = false, hvB = false, hvC = false, hvD = false;
             var daA = false, daB = false, daC = false, daD = false;

@@ -92,12 +92,14 @@
             var dataSearch = {
                 "chapterId": $scope.QuestionSearch.ChapterSelected,
                 "subjectId": $scope.QuestionSearch.SubjectsSelected,
+
                 "facultiesId": $scope.QuestionSearch.FacultiesSelected,
                 "starDate":new Date(),
                 "endDate": new Date()
             };
-            dataSearch.starDate = new Date("2017-07-18");
-            dataSearch.endDate = new Date("2017-07-18");
+
+            dataSearch.starDate = new Date("2016-07-13");
+            dataSearch.endDate = new Date("2016-07-13");
             blockUI.start();
             $http.post(hostapi + "api/SearchQuestion", dataSearch).then(function (response) {
                 blockUI.stop();
@@ -111,8 +113,6 @@
                 } else {
                     toastr.error('', 'Lỗi khi tải danh sách câu hỏi ');
                 }
-                $route.reload(true);
-
             });
             //$http.get("api/Question/get").then(function (response) {
             //    blockUI.stop();

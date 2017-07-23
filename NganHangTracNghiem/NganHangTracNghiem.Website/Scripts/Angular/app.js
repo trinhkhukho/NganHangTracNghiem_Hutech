@@ -4,7 +4,6 @@
     angular.module('myApp', ['ngRoute', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'blockUI', 'toastr', 'angularjs-datetime-picker', 'angularTreeview'])
         .config(config)
     .controller('checklogin', ['$scope', 'serviceShareData', '$http', '$location',  function($scope, serviceShareData, $http, $location) {
-        debugger;
         $scope.user = serviceShareData.getData("UserLogin");
         if ($scope.user != null && $scope.user.length > 0) {
             $location.url('login');

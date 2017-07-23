@@ -14,7 +14,6 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
     function UserCrt($scope, $http, $location, serviceShareData, $uibModal, blockUI, $route) {
         $scope.pageSize = 10;
         $scope.currentPage = 1;
-        debugger;
         $http.get(hostapi + 'api/Users').then(function (response) {
             $scope.Users = response.data;
         });
@@ -87,5 +86,18 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
             serviceShareData.addData(user.Id, "UserId_Exist");
             $location.url('Decentralization');
         };
+        $scope.editUser = function (userEdit) {
+            serviceShareData.clearall("UserEdit");
+            serviceShareData.addData(userEdit, "UserEdit");
+            $uibModal.open({
+                templateUrl: 'Scripts/Angular/ListUser/EditUser.html',
+                size: 'lg',
+                backdrop: 'static',
+                controller: 'EditUser',
+                controllerAs: '$ctrl'
+
+            });
+        };
+
     };
 })(angular.module('myApp'));

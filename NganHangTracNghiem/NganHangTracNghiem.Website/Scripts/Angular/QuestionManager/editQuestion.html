@@ -199,6 +199,52 @@
                             <div style="margin-left: 20px;">
                                 <ul uib-pagination total-items="ListQuestions.length" ng-model="currentPage" items-per-page="pageSize"></ul>
                             </div>
+<<<<<<< HEAD
+=======
+                            <br/>
+                            <form>
+                                <table class="table table-hover">
+                                    <tr>
+                                        <th>
+                                            Mã câu hỏi
+                                        </th>
+                                        <th>
+                                            Chương phần
+                                        </th>
+                                        <th>
+                                            Nội dung
+                                        </th>
+                                        <th style="text-align: center">
+                                            Chỉnh sửa
+                                        </th>
+                                        <th>
+                                            Xóa
+                                        </th>
+                                    </tr>
+                                    <tr ng-model="ListQuestions" ng-repeat="item in ListQuestions | startFrom: (currentPage-1)*pageSize | limitTo: pageSize |orderBy : 'Id'" >
+
+                                        <td>{{ item.Id }}</td>
+                                        <td>{{ item.Name }}</td>
+                                        <td>
+                                            <div ng-bind-html="trustAsHtml(item.Content)"></div></td>
+                                        <td>
+                                            <a href="" ng-click="editQuestion(item.Id)">
+                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="" ng-click="deleteQuestion(item.Id)">
+                                                <i class="fa fa-times" style="color: red" aria-hidden="true"></i>
+                                            </a>
+                                        </td>
+                                    </trng-model="ListQuestions">
+                                </table>
+                            </form>
+                        </div>
+                        <div style="margin-left: 20px;">
+                            <ul uib-pagination total-items="ListQuestions.length" ng-model="currentPage" items-per-page="pageSize"></ul>
+                        </div>
+>>>>>>> 2464c2b8bfa6b27d6fe409f3c6e97285c53dd30b
 
 
                         </div>
