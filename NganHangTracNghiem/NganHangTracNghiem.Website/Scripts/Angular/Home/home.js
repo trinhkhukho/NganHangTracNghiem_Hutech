@@ -47,5 +47,9 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                 }
             }
         }
+        $scope.Logout = function () {
+            serviceShareData.clearall('UserDecen');
+            $location.url('login');
+        };
     };
 })(angular.module('myApp'));

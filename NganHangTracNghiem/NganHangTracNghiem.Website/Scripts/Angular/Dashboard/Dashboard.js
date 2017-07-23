@@ -13,6 +13,46 @@ var reload = 0;
     app.controller('Dashboard_Faculties', questionCrt);
     questionCrt.$inject = ['$scope', '$http', '$route', '$timeout', 'blockUI', 'toastr', 'serviceChapterId', 'serviceShareData', '$location'];
     function questionCrt($scope, $http, $route, $timeout, blockUI, toastr, serviceChapterId, serviceShareData, $location) {
+        //kiem tra dang nhap
+        $scope.decentralization;
+        $scope.decentralizations = serviceShareData.getData('UserDecen');
+        if ($scope.decentralizations.length <= 0) {
+            $location.url('login');
+        }
+        else {
+            $scope.decentralization = JSON.parse($scope.decentralizations)[0];
+            var data_decen_faculties = [];
+            var data_decen_subject = [];
+            var data_decen_chapter = [];
+            debugger;
+            for (var i = 0; i < $scope.decentralization.length; i++) {
+                if ($scope.decentralization[i].FacultiesId != null) {
+                    var status_f = 0;
+                    for (var j = 0; j < data_decen_faculties.length; j++) {
+                        if (data_decen_faculties[j] == $scope.decentralization[i].FacultiesId) {
+                            status_f = 1;
+                        }
+                    }
+                    if (status_f == 0) {
+                        data_decen_faculties.push($scope.decentralization[i].FacultiesId);
+                    }
+                }
+                if ($scope.decentralization[i].SubjectId != null) {
+                    var status_s = 0;
+                    for (var j = 0; j < data_decen_subject.length; j++) {
+                        if (data_decen_subject[j] == $scope.decentralization[i].SubjectId) {
+                            status_s = 1;
+                        }
+                    }
+                    if (status_s == 0) {
+                        data_decen_subject.push($scope.decentralization[i].SubjectId);
+                    }
+                }
+                if ($scope.decentralization[i].ChapterId != null) {
+                    data_decen_chapter.push($scope.decentralization[i].ChapterId);
+                }
+            }
+        }
         //thống kê số lượng câu hỏi theo khoa, môn, chương phần.
         debugger;
         $scope.pageSize = 10;
@@ -24,7 +64,7 @@ var reload = 0;
         };
         
         var array_point = new Array();
-        $http.get(hostapi + 'api/pro_Subject_FacultyId_Question').then(function (response) {
+        $http.post(hostapi + 'api/GetDecentralizationFaculties', data_decen_faculties).then(function (response) {
             $scope.FacultiesQuestions = response.data;
             debugger;
             var parsedAppData = [];
