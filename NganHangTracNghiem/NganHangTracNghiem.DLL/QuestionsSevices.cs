@@ -27,7 +27,7 @@ namespace NganHangTracNghiem.DLL
                 Answers Answer_D = new Answers();
                 //gán dữ liệu cho câu hỏi
                 qs.Content = questionsModel.DeBai;
-                qs.ChapterId = 9; //gán cứng chapter
+                qs.ChapterId = questionsModel.ChapterId; //gán cứng chapter
                 qs.Mark = questionsModel.Diem;
                 qs.Discrimination = questionsModel.DoPhanCach;
                 qs.ObjectiveDifficulty = questionsModel.DoKho;
@@ -92,7 +92,7 @@ namespace NganHangTracNghiem.DLL
                 Questions qs = new Questions();
                 //gán dữ liệu cho câu hỏi
                 qs.Content = questionsModel.DeBai;
-                qs.ChapterId = 9; //gán cứng chapter
+                qs.ChapterId = qs.ChapterId; //gán cứng chapter
                 qs.Mark = questionsModel.Diem;
                 qs.Discrimination = questionsModel.DoPhanCach;
                 qs.ObjectiveDifficulty = questionsModel.DoKho;
@@ -147,7 +147,7 @@ namespace NganHangTracNghiem.DLL
                 Answers Answer_D = new Answers();
                 //gán dữ liệu cho câu hỏi
                 qs.Content = questionsModel.DeBai;
-                qs.ChapterId = 9; //gán cứng chapter
+                qs.ChapterId = questionsModel.ChapterId; //gán cứng chapter
                 qs.Mark = questionsModel.Diem;
                 qs.ParentId = questionsModel.ParentId;
                 qs.Discrimination = questionsModel.DoPhanCach;
@@ -227,7 +227,7 @@ namespace NganHangTracNghiem.DLL
                 string url_Question = host + "/api/Questions/";
                 string url_Answer = host + "/api/Answers/";
                 HttpClient client = new HttpClient(); //using call api save Question
-             
+
                 Questions qs = new Questions();
                 Answers Answer_A = new Answers();
                 Answers Answer_B = new Answers();
@@ -235,8 +235,8 @@ namespace NganHangTracNghiem.DLL
                 Answers Answer_D = new Answers();
 
                 //lấy dữ liệu cũ lên
-                var Result = client.GetAsync(url_Question+ questionsModel.IdQuestion).Result;
-                qs= Result.Content.ReadAsAsync<Questions>().Result;
+                var Result = client.GetAsync(url_Question + questionsModel.IdQuestion).Result;
+                qs = Result.Content.ReadAsAsync<Questions>().Result;
                 //A
                 var ResultA = client.GetAsync(url_Answer + questionsModel.IdAnswerA).Result;
                 Answer_A = ResultA.Content.ReadAsAsync<Answers>().Result;
@@ -257,7 +257,7 @@ namespace NganHangTracNghiem.DLL
                 qs.Discrimination = questionsModel.DoPhanCach;
                 qs.ObjectiveDifficulty = questionsModel.DoKho;
                 client = new HttpClient();
-                var result_q = client.PutAsJsonAsync(url_Question+questionsModel.IdQuestion, qs).Result;
+                var result_q = client.PutAsJsonAsync(url_Question + questionsModel.IdQuestion, qs).Result;
 
                 if (result_q.IsSuccessStatusCode)
                 {
@@ -292,7 +292,7 @@ namespace NganHangTracNghiem.DLL
                 {
                     return 0;
                 }
-                
+
             }
             catch
             {
