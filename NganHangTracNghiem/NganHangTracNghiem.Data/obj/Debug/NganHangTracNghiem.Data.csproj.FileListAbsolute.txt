@@ -7,3 +7,4 @@ D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Da
 D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\bin\Debug\NganHangTracNghiem.Data.pdb
 D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.dll
 D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.pdb
+D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Data\obj\Debug\NganHangTracNghiem.Data.csprojResolveAssemblyReference.cache
