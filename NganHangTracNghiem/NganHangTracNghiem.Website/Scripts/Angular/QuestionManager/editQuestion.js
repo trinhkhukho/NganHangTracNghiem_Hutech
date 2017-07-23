@@ -31,7 +31,7 @@
 
         $scope.trustAsHtml = $sce.trustAsHtml;
         $scope.ListQuestions = [];
-        
+
 
         //truyền dữ liệu vào dropdowlist
         $scope.Selected = {
@@ -88,26 +88,22 @@
             opened: false
         };
         $scope.QuestionSearch = {
-            "FacultiesSelected":0,
-            "SubjectsSelected":0,
-            "ChapterSelected":0
+            "FacultiesSelected": 0,
+            "SubjectsSelected": 0,
+            "ChapterSelected": 0
         };
 
 
 
 
         //nhấn nút search
-     
+
         $scope.Search = function () {
-            debugger
-            //Date _dateS = $filter('date')(new Date($scope.StartDate), 'MM/dd/yyyy');
-            //var _dateE = $filter('date')(new Date($scope.EndDay), 'MM/dd/yyyy');
             var dataSearch = {
                 "chapterId": $scope.QuestionSearch.ChapterSelected,
                 "subjectId": $scope.QuestionSearch.SubjectsSelected,
-
                 "facultiesId": $scope.QuestionSearch.FacultiesSelected,
-                "starDate":new Date(),
+                "starDate": new Date(),
                 "endDate": new Date()
             };
 
@@ -118,7 +114,7 @@
             blockUI.start();
             $http.post(hostapi + "api/SearchQuestion", dataSearch).then(function (response) {
                 blockUI.stop();
-                debugger 
+                debugger
                 var ketqua = response.data;
                 if (ketqua != null) {
                     debugger;

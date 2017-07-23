@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\obj\Debug\NganHangTracNghiem.Website.csprojResolveAssemblyReference.cache
+=======
+>>>>>>> 334f9b44b6411b1a82a8ce63b6dc9c8f4ac8a98e
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\bin\ApplicationInsights.config
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\bin\roslyn\csc.exe
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -98,6 +101,7 @@ F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\bin\M
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\bin\Microsoft.Owin.Security.Twitter.xml
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\bin\DocumentFormat.OpenXml.xml
+<<<<<<< HEAD
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\obj\Debug\NganHangTracNghiem.Website.dll
 F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\obj\Debug\NganHangTracNghiem.Website.pdb
 =======
@@ -203,3 +207,8 @@ D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.We
 D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\obj\Debug\NganHangTracNghiem.Website.dll
 D:\study\DoAn\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\obj\Debug\NganHangTracNghiem.Website.pdb
 >>>>>>> 5a2a3d811cf048805c40ec16c0e1f5304f4bdd66
+=======
+F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\obj\Debug\NganHangTracNghiem.Website.csprojResolveAssemblyReference.cache
+F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\obj\Debug\NganHangTracNghiem.Website.dll
+F:\NganHangTracNghiem_Hutech\NganHangTracNghiem\NganHangTracNghiem.Website\obj\Debug\NganHangTracNghiem.Website.pdb
+>>>>>>> 334f9b44b6411b1a82a8ce63b6dc9c8f4ac8a98e
