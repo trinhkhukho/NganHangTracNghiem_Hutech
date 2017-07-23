@@ -33,6 +33,11 @@
                     <i class="fa fa-table"></i><b>Phân Quyền</b>
                 </a>
             </li>
+            <li>
+                <a href="" ng-click="Logout()">
+                    <i class="fa fa-sign-out"></i><b>Đăng xuất</b>
+                </a>
+            </li>
         </ul>
         <ul class="nav" ng-if="Admin!=true" ng-model="Admin">
             <li>
@@ -60,6 +65,11 @@
             <li ng-if="PhanQuyen==true" ng-model="PhanQuyen">
                 <a href="#!ListUser">
                     <i class="fa fa-table"></i><b>Phân Quyền</b>
+                </a>
+            </li>
+            <li>
+                <a href="" ng-click="Logout()">
+                    <i class="fa fa-sign-out"></i><b>Đăng xuất</b>
                 </a>
             </li>
         </ul>

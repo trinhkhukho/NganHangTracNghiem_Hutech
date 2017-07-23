@@ -17,10 +17,26 @@
             debugger;
             for (var i = 0; i < $scope.decentralization.length; i++) {
                 if ($scope.decentralization[i].FacultiesId != null) {
-                    data_decen_faculties.push($scope.decentralization[i].FacultiesId);
+                    var status_f = 0;
+                    for (var j = 0; j < data_decen_faculties.length; j++) {
+                        if (data_decen_faculties[j] == $scope.decentralization[i].FacultiesId) {
+                            status_f = 1;
+                        }
+                    }
+                    if (status_f == 0) {
+                        data_decen_faculties.push($scope.decentralization[i].FacultiesId);
+                    }
                 }
                 if ($scope.decentralization[i].SubjectId != null) {
-                    data_decen_subject.push($scope.decentralization[i].SubjectId);
+                    var status_s = 0;
+                    for (var j = 0; j < data_decen_subject.length; j++) {
+                        if (data_decen_subject[j] == $scope.decentralization[i].SubjectId) {
+                            status_s = 1;
+                        }
+                    }
+                    if (status_s == 0) {
+                        data_decen_subject.push($scope.decentralization[i].SubjectId);
+                    }
                 }
                 if ($scope.decentralization[i].ChapterId != null) {
                     data_decen_chapter.push($scope.decentralization[i].ChapterId);

@@ -33,6 +33,11 @@
                     <i class="fa fa-table"></i><b>Phân Quyền</b>
                 </a>
             </li>
+            <li>
+                <a href="" ng-click="Logout()">
+                    <i class="fa fa-sign-out"></i><b>Đăng xuất</b>
+                </a>
+            </li>
         </ul>
         <ul class="nav" ng-if="Admin!=true" ng-model="Admin">
             <li>
@@ -62,6 +67,11 @@
                     <i class="fa fa-table"></i><b>Phân Quyền</b>
                 </a>
             </li>
+            <li>
+                <a href="" ng-click="Logout()">
+                    <i class="fa fa-sign-out"></i><b>Đăng xuất</b>
+                </a>
+            </li>
         </ul>
     </div>
 </div>
@@ -69,38 +79,12 @@
     <div class="main-panel" ng-controller="GetBasicController">
         <nav class="navbar navbar-transparent navbar-absolute">
             <div class="container-fluid">
+
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <span class="notification">5</span>
-                            <i class="fa fa-comment-o" aria-hidden="true">5</i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <br />
-    <div class="content">
-        <div class="container-fluid">
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header" data-background-color="blue">
-                            <h4 class="title">Thông tin đề thi</h4>
-                            <p class="category">Vui lòng nhập đầy đủ thông tin để tạo đề thi !</p>
-                        </div>
-                        <div class="card-content">
-                            <form ng-submit="submit()">
-                                <div class="row">
-                                    <!--<div class="col-md-6">
-
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label class="control-label" style="font-size: 15px;">Cấp độ</label>
-=======
                                 <span class="notification">5</span>
                                 <i class="fa fa-comment-o" aria-hidden="true">5</i>
 
@@ -133,7 +117,6 @@
                                                 <div class="form-group">
                                                     <label class="control-label" style="font-size: 15px;">Cấp độ</label>
                                                 </div>
->>>>>>> c808902d6c385f38b0d1c62ff15ae07d857bb96e
                                             </div>
                                             <div class="col-md-9">
                                                 <div class="form-group">
@@ -151,13 +134,7 @@
 
                                         </div>
 
-<<<<<<< HEAD
-                                    </div>-->
-
-                                    <div class="col-md-6">
-=======
                                         <div class="col-md-6">
->>>>>>> c808902d6c385f38b0d1c62ff15ae07d857bb96e
 
                                             <div class="col-md-3">
                                                 <div class="form-group">
@@ -176,40 +153,6 @@
                                         </div>
 
                                     </div>
-<<<<<<< HEAD
-                                    <div class="col-md-6">
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label class="control-label" style="font-size: 15px;">Môn học</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-9">
-                                            <div class="form-group">
-                                                <select required class="form-control" id="subjects" ng-model="$scope.Selected.SubjectsSelected" ng-change="SelectSubject()">
-                                                    <option value="" style="display: none;">Chọn môn học</option>
-                                                    <option ng-repeat="MonHoc in SubjectResult" value="{{MonHoc.Id}}">{{MonHoc.Name }}</option>
-                                                </select>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-
-                                    <div class="col-md-6">
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label class="control-label" style="font-size: 15px;">Chương/phần</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-9">
-                                            <div class="form-group">
-                                                <select required class="form-control" id="chapters" ng-model="$scope.Selected.ChapterSelected" ng-change="SelectChapter()">
-                                                    <option value="" style="display: none;">Chọn phần</option>
-                                                    <option ng-repeat="Phan in ChapterResult" value="{{Phan.Id}}">{{Phan.Name}}</option>
-                                                </select>
-=======
 
                                     <div class="row">
                                         <div class="col-md-6">
@@ -241,17 +184,10 @@
                                                         <option ng-repeat="Phan in ChapterResult" value="{{Phan.Id}}">{{Phan.Name}}</option>
                                                     </select>
                                                 </div>
->>>>>>> c808902d6c385f38b0d1c62ff15ae07d857bb96e
                                             </div>
                                         </div>
 
                                     </div>
-<<<<<<< HEAD
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-round pull-right">Tiếp tục</button>
-                                <div class="clearfix"></div>
-                            </form>
-=======
 
 
                                     <button type="submit" class="btn btn-primary pull-right">Tiếp tục >></button>
@@ -259,7 +195,6 @@
                                     <div class="clearfix"></div>
                                 </form>
                             </div>
->>>>>>> c808902d6c385f38b0d1c62ff15ae07d857bb96e
                         </div>
                     </div>
 
