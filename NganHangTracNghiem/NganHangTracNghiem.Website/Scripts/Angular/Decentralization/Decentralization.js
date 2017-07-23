@@ -200,6 +200,10 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                 $scope.ListDecentralization = [];
                 $scope.Subject = [];
                 $scope.Chapter = [];
+                $scope.AdminCheck = false;
+                $scope.DanhMucCheck = false;
+                $scope.ThongKeCheck = false;
+                $scope.PhanQuyenCheck = false;
                 $http.get(hostapi + 'api/GetDecentralizationList').then(function (response) {
                     debugger;
                     $scope.ListDecentralization = response.data;
@@ -209,15 +213,69 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                     ChapterID: 0,
                     RoleID: 0
                 };
+                $scope.Admin = function () {
+
+                    for (var j = 0; j < $scope.ListDecentralization.length; j++) {
+                        for (var s = 0; s < $scope.ListDecentralization[j].child.length; s++) {
+                            for (var c = 0; c < $scope.ListDecentralization[j].child[s].child.length; c++) {
+                                $scope.ListDecentralization[j].child[s].child[c].check = $scope.AdminCheck;
+                                $scope.Chapter.push($scope.ListDecentralization[j].child[s].child[c]);
+                            }
+                            $scope.ListDecentralization[j].child[s].check = $scope.AdminCheck;
+                            $scope.Subject.push($scope.ListDecentralization[j].child[s]);
+                        }
+                        $scope.ListDecentralization[j].check = $scope.AdminCheck;
+                    }
+                    $scope.DanhMucCheck = $scope.AdminCheck;
+                    $scope.PhanQuyenCheck = $scope.AdminCheck;
+                    $scope.ThongKeCheck = $scope.AdminCheck;
+                    if ($scope.AdminCheck == false) {
+                        $scope.Chapter = [];
+                        $scope.Subject = [];
+                    }
+                }
                 $scope.save = function () {
                     debugger;
                     var array = [];
+                    if ($scope.AdminCheck == true) {
+                        data = {
+                            UserID: userId_exist,
+                            ChapterID: 0,
+                            RoleID: 29
+                        };
+                        array.push(data);
+                    }
+                    if ($scope.DanhMucCheck == true) {
+                        data = {
+                            UserID: userId_exist,
+                            ChapterID: 0,
+                            RoleID: 26
+                        };
+                        array.push(data);
+                    }
+                    if ($scope.PhanQuyenCheck == true) {
+                        data = {
+                            UserID: userId_exist,
+                            ChapterID: 0,
+                            RoleID: 28
+                        };
+                        array.push(data);
+                    }
+                    if ($scope.ThongKeCheck == true) {
+                        data = {
+                            UserID: userId_exist,
+                            ChapterID: 0,
+                            RoleID: 27
+                        };
+                        array.push(data);
+                    }
                     for (var i = 0; i < $scope.Chapter.length; i++) {
                         data = {
-                            UserID: userId_register,
+                            UserID: userId_exist,
                             ChapterID: 0,
                             RoleID: 0
                         };
+
                         if ($scope.Chapter[i].check == true) {
                             debugger;
                             data.ChapterID = $scope.Chapter[i].Id;

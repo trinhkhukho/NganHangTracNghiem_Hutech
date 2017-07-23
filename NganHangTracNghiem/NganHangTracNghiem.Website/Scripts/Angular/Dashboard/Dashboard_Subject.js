@@ -16,6 +16,7 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
         debugger;
         $scope.pageSize = 10;
         $scope.currentPage = 1;
+        $scope.FacultiesQuestions = [];
         var id = JSON.parse(serviceShareData.getData("SubjectID"))[0];
         $http.get(hostapi + 'api/pro_Get_Chapters_Question/' + id).then(function (response) {
             debugger;

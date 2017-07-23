@@ -17,6 +17,7 @@ var reload = 0;
         debugger;
         $scope.pageSize = 10;
         $scope.currentPage = 1;
+        $scope.FacultiesQuestions = [];
         var datapoint = {
             y: 0,
             legendText: null,

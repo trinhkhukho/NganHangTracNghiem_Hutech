@@ -12,7 +12,9 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
     app.controller('CheckDecentralization', CheckDecentralizationCrt);
     CheckDecentralizationCrt.$inject = ['$scope', '$http', '$location', 'serviceShareData'];
     function CheckDecentralizationCrt($scope, $http, $location, serviceShareData) {
+        debugger;
         $scope.decentralization = serviceShareData.getData('UserDecen');
+        $scope.username =JSON.parse(serviceShareData.getData('UserLogin'));
         debugger;
         if ($scope.decentralization.length <= 0)
         {

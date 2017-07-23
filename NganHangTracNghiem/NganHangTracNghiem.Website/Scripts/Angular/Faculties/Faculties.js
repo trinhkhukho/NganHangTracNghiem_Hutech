@@ -90,7 +90,6 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
             $http.post(hostapi + 'api/GetDecentralizationFaculties', data_decen_faculties).then(function (response) {
                 debugger;
                 $scope.Faculties = response.data;
-
             });
         }
         $scope.Block = function (faculties) {
