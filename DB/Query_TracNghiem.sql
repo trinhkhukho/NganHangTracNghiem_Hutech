@@ -72,7 +72,7 @@ as
 begin
 	select c.Id,c.Content,c.Deleted,c.ManagementOrder,c.Name,c.ParentId,c.SubjectId,count(s.ChapterId)as NumberOfQuestion
 	from Chapters c left join Questions s on c.Id=s.ChapterId
-	where c.Id=@Id
+	where c.SubjectId=@Id
 	group by c.Id,c.Content,c.Deleted,c.ManagementOrder,c.Name,c.ParentId,c.SubjectId
 end
 go
