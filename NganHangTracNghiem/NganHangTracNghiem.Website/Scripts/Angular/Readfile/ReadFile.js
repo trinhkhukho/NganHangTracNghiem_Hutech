@@ -11,7 +11,9 @@
     function fupCrt($scope, $sce, $http, $location, blockUI, toastr, serviceShareData, serviceChapterId) {
     
         debugger;
-        $scope.ChapterId = serviceChapterId.getChapterId();
+        //$scope.ChapterId = serviceChapterId.getChapterId();
+        $scope.ChapterId = JSON.parse(serviceShareData.getData("ChapterId"));
+        $scope.ChapterId = $scope.ChapterId[0];
         var LsQuestions_Success;
         var LsQuestions_Error;
             $scope.trustAsHtml = $sce.trustAsHtml;

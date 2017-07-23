@@ -2,8 +2,8 @@
 (function (app) {
     'use strict';
     app.controller('QuestionController', questionCrt);
-    questionCrt.$inject = ['$scope', '$http', '$route', '$timeout', 'blockUI', 'toastr', 'serviceChapterId'];
-    function questionCrt($scope, $http, $route, $timeout, blockUI, toastr, serviceChapterId) {
+    questionCrt.$inject = ['$scope', '$http', '$route', '$timeout', 'blockUI', 'toastr', 'serviceShareData'];
+    function questionCrt($scope, $http, $route, $timeout, blockUI, toastr, serviceShareData) {
         //var DapAn;
         debugger;
         $scope.CauHoi = {
@@ -11,7 +11,9 @@
             DoKho: 0.5,
             DoPhanCach: 0.5
         };
-        $scope.ChapterId = serviceChapterId.getChapterId();
+        //$scope.ChapterId = serviceChapterId.getChapterId();
+        $scope.ChapterId = JSON.parse(serviceShareData.getData("ChapterId"));
+        $scope.ChapterId = $scope.ChapterId[0];
         $scope.submit = function () {
             debugger;
             blockUI.start();
