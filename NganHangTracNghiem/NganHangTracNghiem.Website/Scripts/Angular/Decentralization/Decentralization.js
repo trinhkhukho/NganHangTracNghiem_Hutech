@@ -56,8 +56,7 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                                 }
                             }
                         }
-                        if($scope.AdminCheck==true)
-                        {
+                        if ($scope.AdminCheck == true) {
                             for (var j = 0; j < $scope.ListDecentralization.length; j++) {
                                 for (var s = 0; s < $scope.ListDecentralization[j].child.length; s++) {
                                     for (var c = 0; c < $scope.ListDecentralization[j].child[s].child.length; c++) {
@@ -92,8 +91,7 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                 $scope.DanhMucCheck = $scope.AdminCheck;
                 $scope.PhanQuyenCheck = $scope.AdminCheck;
                 $scope.ThongKeCheck = $scope.AdminCheck;
-                if($scope.AdminCheck==false)
-                {
+                if ($scope.AdminCheck == false) {
                     $scope.Chapter = [];
                     $scope.Subject = [];
                 }
@@ -106,8 +104,7 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
             $scope.save = function () {
                 debugger;
                 var array = [];
-                if($scope.AdminCheck == true)
-                {
+                if ($scope.AdminCheck == true) {
                     data = {
                         UserID: userId_exist,
                         ChapterID: 0,
@@ -145,7 +142,7 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                         ChapterID: 0,
                         RoleID: 0
                     };
-                    
+
                     if ($scope.Chapter[i].check == true) {
                         debugger;
                         data.ChapterID = $scope.Chapter[i].Id;
@@ -193,6 +190,39 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                     }
                 }
             }
+            //$scope.SubCheck = function (subject) {
+            //    for (var i = 0; i < $scope.ListDecentralization.length; i++) {
+            //        var status = $scope.ListDecentralization[i].check;
+            //        for (var j = 0; j < $scope.ListDecentralization[i].child.length; j++) {
+            //            if ($scope.ListDecentralization[i].child[j].Id == subject.Id) {
+            //                var status=$scope.ListDecentralization[i].child[j].check;
+            //                for (var c = 0; c < $scope.ListDecentralization[i].child[j].child.length; c++) {
+            //                    if (status == false) {
+            //                        for (var d = 0; d < $scope.Chapter.length; d++) {
+            //                            if ($scope.Chapter[d].Id == $scope.ListDecentralization[i].child[j].child[c].Id) {
+            //                                $scope.Chapter.splice(d, 1);
+            //                            }
+            //                        }
+            //                    }
+            //                    else {
+            //                        $scope.Chapter.push($scope.ListDecentralization[i].child[j].child[c]);
+            //                    }
+            //                }
+            //                if (status == false) {
+            //                    for (var d = 0; d < $scope.Subject.length; d++) {
+            //                        if ($scope.Subject[d].Id == $scope.ListDecentralization[i].child[j].Id) {
+            //                            $scope.Subject.splice(d, 1);
+            //                        }
+            //                    }
+            //                }
+            //                else {
+            //                    $scope.Subject.push($scope.ListDecentralization[i].child[j]);
+            //                }
+            //            }
+
+            //        }
+            //    }
+            //}
         }
         else {
             if (userId_registers != null && userId_registers.length > 0) {
@@ -323,6 +353,7 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                         }
                     }
                 }
+
             }
             else {
 
