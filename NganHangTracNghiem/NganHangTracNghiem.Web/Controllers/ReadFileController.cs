@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using NganHangTracNghiem.DDL;
 using NganHangTracNghiem.Data;
 using System.Web.Http.Description;
-using NganHangTracNghiem.DLL;
 using System.IO.Compression;
+using NganHangTracNghiem.DLL;
+using NganHangTracNghiem.DDL;
 
 namespace NganHangTracNghiem.Web.Controllers
 {
