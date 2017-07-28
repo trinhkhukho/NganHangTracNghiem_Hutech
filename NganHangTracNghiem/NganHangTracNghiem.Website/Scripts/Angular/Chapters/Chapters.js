@@ -63,7 +63,7 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
         }
 
         $scope.pageSize = 10;
-       
+        $scope.Chapters = [];
         $scope.currentPage = 1;
         $scope.ChaptersIns = {
             'Id': 0,
@@ -90,8 +90,9 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
         }
         
         $http.get(hostapi + 'api/Subjects/' + id).then(function (response) {
+            debugger;
             $scope.Subjects = response.data;
-            $scope.NameSubjects = $scope.Subjects[0].Name;
+            $scope.NameSubjects = $scope.Subjects.Name;
         });
         $scope.insert = function () {
             if ($scope.ChaptersIns.Name == null || $scope.ChaptersIns.Name == '') {

@@ -31,11 +31,11 @@ namespace NganHangTracNghiem.DDL
         string m_img = @"http://localhost:53112/Img/";
         string m_audio= @"http://localhost:53112/Audio/";
         private string m_filePath = null;
-        string mark_df = "0,5";
-        string SubjectiveDifficulty_df = "0,5";
-        string Discrimination_df = "0,5";
+        string mark_df = "0.5";
+        string SubjectiveDifficulty_df = "0.5";
+        string Discrimination_df = "0.5";
         int userId = 10001;
-        int ChapterID = 392;
+        int ChapterID = 1163;
         public ListQuestion OpenWordprocessingDocumentReadonly(string filepath,string filepath_zip,string host, int _chapterID)
         {
             this.ChapterID = _chapterID;

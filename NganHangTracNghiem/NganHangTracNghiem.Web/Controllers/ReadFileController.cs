@@ -1,11 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+<<<<<<< HEAD
 using System.Web.Http;
+=======
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+>>>>>>> 38c41f65cdc9eb014b2cae33d8625ceecdae0f31
 using NganHangTracNghiem.Data;
 using System.Web.Http.Description;
 using System.IO.Compression;
+<<<<<<< HEAD
 using NganHangTracNghiem.DLL;
+=======
+using System.Web.Http;
+>>>>>>> 38c41f65cdc9eb014b2cae33d8625ceecdae0f31
 using NganHangTracNghiem.DDL;
 
 namespace NganHangTracNghiem.Web.Controllers

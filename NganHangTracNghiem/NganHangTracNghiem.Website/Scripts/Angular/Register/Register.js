@@ -95,7 +95,7 @@ host = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                                 alert("Tạo tài khoản thành công");
                                 serviceShareData.clearall("UserId_Register");
                                 serviceShareData.addData(response.data.Id, "UserId_Register");
-                                $location.url('Decentralization');
+                                $location.url('ListUser');
                             } else {
                                 alert("Lỗi !");
                             }

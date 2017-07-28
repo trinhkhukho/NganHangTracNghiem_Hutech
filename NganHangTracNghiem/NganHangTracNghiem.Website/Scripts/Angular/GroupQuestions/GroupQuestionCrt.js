@@ -2,8 +2,8 @@
 (function (app) {
     'use strict';
     app.controller('GroupQuestionController', questionCrt);
-    questionCrt.$inject = ['$scope', '$http', '$location', 'blockUI', 'toastr', 'serviceGetId'];
-    function questionCrt($scope, $http, $location, blockUI, toastr, serviceGetId) {
+    questionCrt.$inject = ['$scope', '$http', '$location', 'blockUI', 'toastr', 'serviceGetId', 'serviceShareData'];
+    function questionCrt($scope, $http, $location, blockUI, toastr, serviceGetId,serviceShareData) {
         $scope.ChapterId = JSON.parse(serviceShareData.getData("ChapterId"));
         $scope.ChapterId = $scope.ChapterId[0];
         $scope.CauHoi = {
@@ -18,7 +18,8 @@
                 'DeBai': deBai,
                 'Diem': $scope.CauHoi.Diem,
                 'DoPhanCach': $scope.CauHoi.DoPhanCach,
-                'DoKho': $scope.CauHoi.DoKho
+                'DoKho': $scope.CauHoi.DoKho,
+                'ChapterId': $scope.ChapterId
             };
             $http.post("api/Question/addGroupParent", data).then(function (response) {
                 blockUI.stop();
