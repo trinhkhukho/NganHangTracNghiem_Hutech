@@ -31,6 +31,7 @@ namespace NganHangTracNghiem.DLL
                 qs.Mark = questionsModel.Diem;
                 qs.Discrimination = questionsModel.DoPhanCach;
                 qs.ObjectiveDifficulty = questionsModel.DoKho;
+                qs.UserId = questionsModel.UserId;
                 client_Question = new HttpClient();
                 var result_q = client_Question.PostAsJsonAsync(url_InsertQuestion, qs).Result;
                 if (result_q.IsSuccessStatusCode)
@@ -96,6 +97,7 @@ namespace NganHangTracNghiem.DLL
                 qs.Mark = questionsModel.Diem;
                 qs.Discrimination = questionsModel.DoPhanCach;
                 qs.ObjectiveDifficulty = questionsModel.DoKho;
+                qs.UserId = questionsModel.UserId;
                 client_Question = new HttpClient();
                 var result_q = client_Question.PostAsJsonAsync(url_InsertQuestion, qs).Result;
                 if (result_q.IsSuccessStatusCode)
@@ -152,6 +154,7 @@ namespace NganHangTracNghiem.DLL
                 qs.ParentId = questionsModel.ParentId;
                 qs.Discrimination = questionsModel.DoPhanCach;
                 qs.ObjectiveDifficulty = questionsModel.DoKho;
+                qs.UserId = questionsModel.UserId;
                 client_Question = new HttpClient();
                 var result_q = client_Question.PostAsJsonAsync(url_InsertQuestion, qs).Result;
                 if (result_q.IsSuccessStatusCode)

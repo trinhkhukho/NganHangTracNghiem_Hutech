@@ -14,7 +14,6 @@
             var data_decen_faculties = [];
             var data_decen_subject = [];
             var data_decen_chapter = [];
-            debugger;
             for (var i = 0; i < $scope.decentralization.length; i++) {
                 if ($scope.decentralization[i].FacultiesId != null) {
                     var status_f = 0;
@@ -56,16 +55,13 @@
             ChapterSelected: ""
         };
         $http.post(hostapi + 'api/GetDecentralizationFaculties', data_decen_faculties).then(function (response) {
-            debugger;
             $scope.Faculties = response.data;
 
         });
         $http.post(hostapi + 'api/GetDecentralizationSubject', data_decen_subject).then(function (response) {
-            debugger;
             $scope.Subjects = response.data;
         });
         $http.post(hostapi + 'api/GetDecentralizationChapter', data_decen_chapter).then(function (response) {
-            debugger;
             $scope.chapters = response.data;
         });
         $scope.SelectFacultie = function () {
@@ -122,7 +118,6 @@
                 "starDate": new Date(),
                 "endDate": new Date()
             };
-            debugger;
             //dataSearch.starDate = new Date("2017-07-22");
             //dataSearch.endDate = new Date("2017-07-23");
             dataSearch.starDate = $scope.datatime1;
@@ -130,10 +125,8 @@
             blockUI.start();
             $http.post(hostapi + "api/SearchQuestion", dataSearch).then(function (response) {
                 blockUI.stop();
-                debugger
                 var ketqua = response.data;
                 if (ketqua != null) {
-                    debugger;
                     $scope.ListQuestions = ketqua;
                     $scope.pageSize = 10;
                     $scope.currentPage = 1;
@@ -159,9 +152,10 @@
 
         //bật pop chỉnh sửa câu hỏi
         $scope.editQuestion = function (Id) {
-            serviceGetId.clearall();
-            serviceGetId.addData(Id);
-            $uibModal.open({
+            debugger 
+            serviceShareData.clearall('QuestionId');
+            serviceShareData.addData(Id, "QuestionId");
+           $uibModal.open({
                 templateUrl: 'Scripts/Angular/QuestionManager/popQuestion.html',
                 size: 'lg',
                 backdrop: 'static',
@@ -185,7 +179,6 @@
             }
             if (r == true) {
                 $http.get(hostapi + 'api/AnswersQuestion/' + Id).then(function (response) {
-                    debugger
                     var lsAnswer = response.data;
                     IdAnswerA = lsAnswer[0].Id;
                     IdAnswerB = lsAnswer[1].Id;
@@ -221,9 +214,12 @@
 
 
     app.controller('popQuestionController', popCrt);
-    popCrt.$inject = ['$uibModalInstance', '$scope', 'blockUI', 'toastr', '$route', '$http', '$location', 'serviceGetId'];
-    function popCrt($uibModalInstance, $scope, blockUI, toastr, $route, $http, $location, serviceGetId) {
-        var Id = serviceGetId.getData();
+    popCrt.$inject = ['$uibModalInstance', '$scope', 'blockUI', 'toastr', '$route', '$http', '$location', 'serviceShareData'];
+    function popCrt($uibModalInstance, $scope, blockUI, toastr, $route, $http, $location, serviceShareData) {
+        //var Id = serviceGetId.getData();
+        debugger 
+        var Questions = JSON.parse(serviceShareData.getData("QuestionId"));
+        var Id = Questions[0];
         var $ctrl = this;
         var AnswerA = null;
         var AnswerB = null;

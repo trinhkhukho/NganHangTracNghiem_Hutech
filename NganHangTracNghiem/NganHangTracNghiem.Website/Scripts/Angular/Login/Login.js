@@ -28,6 +28,8 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
                         var a = response.data;
                         serviceShareData.clearall('UserLogin');
                         serviceShareData.addData(a.Name, 'UserLogin');
+                        serviceShareData.clearall('UserId');
+                        serviceShareData.addData(a.Id, 'UserId');
                     });
                     $http.get('api/Decentralization/' + response.data).then(function (response) {
                         debugger;

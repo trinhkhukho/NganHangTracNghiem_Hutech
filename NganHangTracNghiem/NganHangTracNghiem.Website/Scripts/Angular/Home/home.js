@@ -12,23 +12,20 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
     app.controller('CheckDecentralization', CheckDecentralizationCrt);
     CheckDecentralizationCrt.$inject = ['$scope', '$http', '$location', 'serviceShareData'];
     function CheckDecentralizationCrt($scope, $http, $location, serviceShareData) {
-        debugger;
         $scope.decentralization = serviceShareData.getData('UserDecen');
-       
-        debugger;
+      
         if ($scope.decentralization.length <= 0)
         {
             $location.url('login');
         }
-        else
-        {
+        else {
+            debugger;
             $scope.username =JSON.parse(serviceShareData.getData('UserLogin'))[0];
             $scope.decentralizations = JSON.parse($scope.decentralization)[0];
             $scope.Admin = false;
             $scope.DanhMuc = false;
             $scope.PhanQuyen = false;
             $scope.ThongKe = false;
-            debugger;
             for(var i=0; i<$scope.decentralizations.length; i++)
             {
                 if ($scope.decentralizations[i].Id == 29)
@@ -51,8 +48,8 @@ hostapi = clinic[0].getElementsByTagName("host")[0].firstChild.data;
             }
         }
         $scope.Logout = function () {
-            debugger;
             serviceShareData.clearall('UserDecen');
+            serviceShareData.clearall('UserId');
             $location.url('login');
         };
     };

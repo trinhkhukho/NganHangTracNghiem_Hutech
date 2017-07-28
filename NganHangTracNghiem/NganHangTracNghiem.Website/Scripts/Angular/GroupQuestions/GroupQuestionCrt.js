@@ -6,6 +6,8 @@
     function questionCrt($scope, $http, $location, blockUI, toastr, serviceGetId,serviceShareData) {
         $scope.ChapterId = JSON.parse(serviceShareData.getData("ChapterId"));
         $scope.ChapterId = $scope.ChapterId[0];
+        var ListUserId = JSON.parse(serviceShareData.getData("UserId"));
+        var userid = ListUserId[0];
         $scope.CauHoi = {
             Diem: 0.5,
             DoKho: 0.5,
@@ -19,7 +21,8 @@
                 'Diem': $scope.CauHoi.Diem,
                 'DoPhanCach': $scope.CauHoi.DoPhanCach,
                 'DoKho': $scope.CauHoi.DoKho,
-                'ChapterId': $scope.ChapterId
+                'ChapterId': $scope.ChapterId,
+                'UserId': userid
             };
             $http.post("api/Question/addGroupParent", data).then(function (response) {
                 blockUI.stop();

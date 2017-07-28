@@ -8,7 +8,8 @@
         $scope.trustAsHtml = $sce.trustAsHtml;
         debugger;
         var parentId = serviceGetId.getData();
-        
+        var ListUserId = JSON.parse(serviceShareData.getData("UserId"));
+        var userid = ListUserId[0];
         //serviceGetId.clearall();
         $http.get(hostapi + 'api/Questions/' + parentId).then(function (response) {
 
@@ -51,7 +52,6 @@
             if ($('#CauDda').is(':checked')) {
                 daD = true;
             }
-            debugger;
             var data = {
                 'DeBai': deBai,
                 'CauA': cauA,
@@ -66,7 +66,8 @@
                 'DapAnB': daB,
                 'DapAnC': daC,
                 'DapAnD': daD,
-                'ParentId': parentId
+                'ParentId': parentId,
+                'UserId': userid
             };
             $http.post("api/Question/addGroupChil", data).then(function (response) {
                 blockUI.stop();

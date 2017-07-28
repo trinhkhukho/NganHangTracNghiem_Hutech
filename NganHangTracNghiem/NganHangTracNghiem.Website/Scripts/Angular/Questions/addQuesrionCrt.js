@@ -5,6 +5,8 @@
     questionCrt.$inject = ['$scope', '$http', '$route', '$timeout', 'blockUI', 'toastr', 'serviceShareData'];
     function questionCrt($scope, $http, $route, $timeout, blockUI, toastr, serviceShareData) {
         //var DapAn;
+        var ListUserId = JSON.parse(serviceShareData.getData("UserId"));
+        var userid = ListUserId[0];
         debugger;
         $scope.CauHoi = {
             Diem: 0.5,
@@ -70,27 +72,28 @@
                 'DapAnB': daB,
                 'DapAnC': daC,
                 'DapAnD': daD,
-                'ChapterId': $scope.ChapterId
+                'ChapterId': $scope.ChapterId,
+                'UserId': userid
 
 
             };
-          
-            $http.post("api/Question/add", data).then(function(response) {
-            
+
+            $http.post("api/Question/add", data).then(function (response) {
+
                 blockUI.stop();
                 var ketqua = response.data;
                 if (ketqua == 1) {
                     debugger;
-             
+
                     toastr.success('', 'Thêm câu hỏi mới thành công');
                     $route.reload(true);
                 }
                 if (ketqua == 0) {
                     toastr.success('', 'Thêm câu hỏi thất bại');
                 }
-                
+
             });
-            
+
         }
 
     };

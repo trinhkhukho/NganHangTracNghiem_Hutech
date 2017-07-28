@@ -14,6 +14,7 @@ namespace NganHangTracNghiem.Data
         public decimal? DoPhanCach { get; set; }
         public decimal? DoKho { get; set; }
         public int ChapterId { get; set; }
+        public int UserId { get; set; }
 
 
     }

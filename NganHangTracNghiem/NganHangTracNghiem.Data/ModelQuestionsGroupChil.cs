@@ -27,6 +27,7 @@ namespace NganHangTracNghiem.Data
         public bool DapAnD { get; set; }
         public int ParentId { get; set; }
         public int ChapterId { get; set; }
+        public int UserId { get; set; }
 
 
     }
