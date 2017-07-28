@@ -4,11 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web.Http;
 using System.Web.UI.WebControls;
 using NganHangTracNghiem.DDL;
-using NganHangTracNghiem.DLL;
 using NganHangTracNghiem.Data;
+using System.Web.Http;
+using NganHangTracNghiem.DLL;
 
 namespace NganHangTracNghiem.Web.Controllers
 {
