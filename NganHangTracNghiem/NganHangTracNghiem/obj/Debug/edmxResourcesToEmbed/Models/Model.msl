@@ -325,9 +325,9 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="pro_search_Question3" FunctionName="ObjectiveTestModel.Store.pro_search_Question">
+    <FunctionImportMapping FunctionImportName="pro_search_Question4" FunctionName="ObjectiveTestModel.Store.pro_search_Question">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_search_Question3_Result">
+        <ComplexTypeMapping TypeName="ObjectiveTestModel.pro_search_Question4_Result">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="ChapterId" ColumnName="ChapterId" />
           <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />

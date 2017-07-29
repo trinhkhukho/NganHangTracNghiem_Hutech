@@ -36,9 +36,10 @@ namespace NganHangTracNghiem.DDL
         string Discrimination_df = "0.5";
         int userId = 10001;
         int ChapterID = 1163;
-        public ListQuestion OpenWordprocessingDocumentReadonly(string filepath,string filepath_zip,string host, int _chapterID)
+        public ListQuestion OpenWordprocessingDocumentReadonly(string filepath,string filepath_zip,string host, int _chapterID,int _userid)
         {
             this.ChapterID = _chapterID;
+            this.userId = _userid;
             m_img = host + "Img/";
             m_audio = host + "Audio/";
             List<Question_Detail> Question_Success= new List<Question_Detail>();

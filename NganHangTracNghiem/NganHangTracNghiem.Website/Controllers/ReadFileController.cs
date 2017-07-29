@@ -20,44 +20,72 @@ namespace NganHangTracNghiem.Website.Controllers
         [ResponseType(typeof(ListQuestion))]
         public IHttpActionResult UpLoad()
         {
-            string path = System.Web.Hosting.HostingEnvironment.MapPath("/File/");
-            System.Web.HttpFileCollection files = System.Web.HttpContext.Current.Request.Files;
-            System.Web.HttpPostedFile file = files[0];
-            string chapterids=System.Web.HttpContext.Current.Request.Form.ToString().Remove(0,10);
-            int chapterid = int.Parse(chapterids);
-            string filename = new FileInfo(file.FileName).Name;
-            if (file.ContentLength > 0)
+            try
             {
-                Guid id = new Guid();
-                string PathName = path + id + filename;
-                file.SaveAs(PathName);
-                ReadFile rd = new ReadFile();
-                string host;
-                ReadXML rd_host = new ReadXML();
-              
-                string FilePathXML = System.Web.Hosting.HostingEnvironment.MapPath("/Scripts/XML/") + "ClinicInfo.xml";
-                host = rd_host.ReadXML_Host(FilePathXML, "host");
-                string strExtexsion = Path.GetExtension(PathName).Trim();
-                if (strExtexsion.ToLower() == ".docx")
+                string path = System.Web.Hosting.HostingEnvironment.MapPath("/File/");
+                System.Web.HttpFileCollection files = System.Web.HttpContext.Current.Request.Files;
+                System.Web.HttpPostedFile file = files[0];
+                string str = System.Web.HttpContext.Current.Request.Form.ToString().Remove(0, 10);
+                int userids = 0;
+                int chapterid = 0;
+                string uid = "";
+                string ch = "";
+                int co = 0;
+                for (int i = 0; i < str.Length; i++)
                 {
-                    ListQuestion ls = rd.OpenWordprocessingDocumentReadonly(PathName, null, host, chapterid);
-                    File.Delete(PathName);
-                    return Ok(ls);
+                    if (str[i] == '&')
+                    {
+                        co = 1;
+                        continue;
+                    }
+                    if (co == 0)
+                    {
+                        ch += str[i];
+                    }
+                    else
+                    {
+                        uid += str[i];
+                    }
                 }
-                if(strExtexsion.ToLower() == ".zip")
+                chapterid = int.Parse(ch);
+                userids = int.Parse(uid.Remove(0, 7));
+                string filename = new FileInfo(file.FileName).Name;
+                if (file.ContentLength > 0)
                 {
-                    ExtractZip rd_zip = new ExtractZip();
-                    id = new Guid();
-                    ZipArchiveEntry entry = rd_zip.GetFileByName(path + id+filename, ".docx");
-                    entry.ExtractToFile(path +id+ entry.Name, true);
-                    ListQuestion ls = rd.OpenWordprocessingDocumentReadonly(path + id + entry.Name, PathName, host, chapterid);
-                    
-                    //File.Delete(PathName);
-                    return Ok(ls);
+                    Guid id = new Guid();
+                    string PathName = path + id + filename;
+                    file.SaveAs(PathName);
+                    ReadFile rd = new ReadFile();
+                    string host;
+                    ReadXML rd_host = new ReadXML();
+                    string FilePathXML = System.Web.Hosting.HostingEnvironment.MapPath("/Scripts/XML/") + "ClinicInfo.xml";
+                    host = rd_host.ReadXML_Host(FilePathXML, "host");
+                    string strExtexsion = Path.GetExtension(PathName).Trim();
+                    if (strExtexsion.ToLower() == ".docx")
+                    {
+                        ListQuestion ls = rd.OpenWordprocessingDocumentReadonly(PathName, null, host, chapterid, userids);
+                        File.Delete(PathName);
+                        return Ok(ls);
+                    }
+                    if (strExtexsion.ToLower() == ".zip")
+                    {
+                        ExtractZip rd_zip = new ExtractZip();
+                        id = new Guid();
+                        ZipArchiveEntry entry = rd_zip.GetFileByName(path + id + filename, ".docx");
+                        entry.ExtractToFile(path + id + entry.Name, true);
+                        ListQuestion ls = rd.OpenWordprocessingDocumentReadonly(path + id + entry.Name, PathName, host, chapterid, userids);
+
+                        //File.Delete(PathName);
+                        return Ok(ls);
+                    }
+
                 }
-                
+                return Ok(0);
             }
-            return InternalServerError();
+            catch
+            {
+                return Ok(0);
+            }
         }
     }
 }

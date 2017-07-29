@@ -1,17 +1,17 @@
 ﻿
 (function (app) {
     'use strict';
-        //app.filter('startFrom', function () {
-        //    return function (data, start) {
-        //        return data.slice(start);
-        //    }
-        //});
     app.controller('fupController', fupCrt);
     fupCrt.$inject = ['$scope', '$sce', '$http', '$location', 'blockUI', 'toastr', 'serviceShareData', 'serviceChapterId'];
     function fupCrt($scope, $sce, $http, $location, blockUI, toastr, serviceShareData, serviceChapterId) {
     
         debugger;
         //$scope.ChapterId = serviceChapterId.getChapterId();
+        $scope.UserID = serviceShareData.getData("UserId");
+        if ($scope.UserID != null)
+        {
+            $scope.UserID = JSON.parse($scope.UserID)[0];
+        }
         $scope.ChapterId = JSON.parse(serviceShareData.getData("ChapterId"));
         $scope.ChapterId = $scope.ChapterId[0];
         var LsQuestions_Success;
@@ -37,8 +37,10 @@
                 var data = new FormData();
 
                 for (var i in $scope.files) {
+                    debugger;
                     data.append("uploadedFile", $scope.files[i]);
-                    data.append("chapterid",$scope.ChapterId);
+                    data.append("chapterid", $scope.ChapterId);
+                    data.append("userid", $scope.UserID);
                 }
 
                 // ADD LISTENERS.
@@ -51,23 +53,26 @@
             
             }
             // CONFIRMATION.
-            function transferComplete() {
-                alert("Up câu hỏi thành công");
+            function transferComplete() {        
                 debugger
-             
                 serviceShareData.clearall('datareadfile');
-                $scope.ListQuestions = JSON.parse(this.response);
-                LsQuestions_Success = $scope.ListQuestions.Question_Success;
-                LsQuestions_Error = $scope.ListQuestions.Question_Error;
-                var SelectedValue = $scope.ListQuestions;
-                serviceShareData.addData(SelectedValue,'datareadfile');
-                blockUI.stop();
-                $location.url('Result');
-                $scope.$apply();
-                //var hosts = window.location.origin;
-                //var hostname = hosts + "/Scripts/Angular/Readfile/Result.html?val=";
-                //window.location = hostname + SelectedValue;
-
+                if (this.response != 0)
+                {
+                    $scope.ListQuestions = JSON.parse(this.response);
+                    LsQuestions_Success = $scope.ListQuestions.Question_Success;
+                    LsQuestions_Error = $scope.ListQuestions.Question_Error;
+                    var SelectedValue = $scope.ListQuestions;
+                    serviceShareData.addData(SelectedValue, 'datareadfile');
+                    blockUI.stop();
+                    $location.url('Result');
+                    $scope.$apply();
+                }
+                else
+                {
+                    blockUI.stop();
+                    alert("Lỗi kiểm tra định dạng file của bạn,  file hợp lệ là zip hoặc file docx")
+                }
+                
             }
         }
  

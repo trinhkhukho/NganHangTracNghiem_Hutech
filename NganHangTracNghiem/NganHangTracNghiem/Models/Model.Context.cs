@@ -82,7 +82,7 @@ namespace NganHangTracNghiem.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pro_GetUser_byUserName_Result>("pro_GetUser_byUserName", usernameParameter);
         }
     
-        public virtual ObjectResult<pro_search_Question3_Result> pro_search_Question(Nullable<int> facultiesId, Nullable<int> subjectId, Nullable<int> chapterId, Nullable<System.DateTime> starDate, Nullable<System.DateTime> endDate)
+        public virtual ObjectResult<pro_search_Question_Result> pro_search_Question(Nullable<int> facultiesId, Nullable<int> subjectId, Nullable<int> chapterId, Nullable<System.DateTime> starDate, Nullable<System.DateTime> endDate)
         {
             var facultiesIdParameter = facultiesId.HasValue ?
                 new ObjectParameter("FacultiesId", facultiesId) :
@@ -104,7 +104,7 @@ namespace NganHangTracNghiem.Models
                 new ObjectParameter("EndDate", endDate) :
                 new ObjectParameter("EndDate", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pro_search_Question3_Result>("pro_search_Question", facultiesIdParameter, subjectIdParameter, chapterIdParameter, starDateParameter, endDateParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pro_search_Question_Result>("pro_search_Question", facultiesIdParameter, subjectIdParameter, chapterIdParameter, starDateParameter, endDateParameter);
         }
     
         public virtual ObjectResult<pro_Subject_FacultyId_Result> pro_Subject_FacultyId()
@@ -190,6 +190,35 @@ namespace NganHangTracNghiem.Models
                 new ObjectParameter("EndDate", typeof(System.DateTime));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pro_search_Question3_Result>("pro_search_Question3", facultiesIdParameter, subjectIdParameter, chapterIdParameter, starDateParameter, endDateParameter);
+        }
+    
+        public virtual ObjectResult<pro_search_Question4_Result> pro_search_Question4(Nullable<int> facultiesId, Nullable<int> subjectId, Nullable<int> chapterId, Nullable<System.DateTime> starDate, Nullable<System.DateTime> endDate, Nullable<int> userId)
+        {
+            var facultiesIdParameter = facultiesId.HasValue ?
+                new ObjectParameter("FacultiesId", facultiesId) :
+                new ObjectParameter("FacultiesId", typeof(int));
+    
+            var subjectIdParameter = subjectId.HasValue ?
+                new ObjectParameter("SubjectId", subjectId) :
+                new ObjectParameter("SubjectId", typeof(int));
+    
+            var chapterIdParameter = chapterId.HasValue ?
+                new ObjectParameter("ChapterId", chapterId) :
+                new ObjectParameter("ChapterId", typeof(int));
+    
+            var starDateParameter = starDate.HasValue ?
+                new ObjectParameter("StarDate", starDate) :
+                new ObjectParameter("StarDate", typeof(System.DateTime));
+    
+            var endDateParameter = endDate.HasValue ?
+                new ObjectParameter("EndDate", endDate) :
+                new ObjectParameter("EndDate", typeof(System.DateTime));
+    
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("userId", userId) :
+                new ObjectParameter("userId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<pro_search_Question4_Result>("pro_search_Question4", facultiesIdParameter, subjectIdParameter, chapterIdParameter, starDateParameter, endDateParameter, userIdParameter);
         }
     }
 }

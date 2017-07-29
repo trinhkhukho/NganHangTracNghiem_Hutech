@@ -447,6 +447,7 @@
     <Parameter Name="ChapterId" Type="int" Mode="In" />
     <Parameter Name="StarDate" Type="date" Mode="In" />
     <Parameter Name="EndDate" Type="date" Mode="In" />
+    <Parameter Name="userId" Type="int" Mode="In" />
   </Function>
   <Function Name="pro_Subject_FacultyId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="pro_Subject_FacultyId_Question" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />

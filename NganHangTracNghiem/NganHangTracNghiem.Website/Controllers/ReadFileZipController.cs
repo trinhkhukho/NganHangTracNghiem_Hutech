@@ -31,7 +31,7 @@ namespace NganHangTracNghiem.Website.Controllers
                 ZipArchiveEntry entry= rd_zip.GetFileByName(path + filename,".docx");
                 entry.ExtractToFile(path + entry.Name, true);
                 ReadFile rd = new ReadFile();
-                rd.OpenWordprocessingDocumentReadonly(path+entry.Name,path + filename,null,0);
+                rd.OpenWordprocessingDocumentReadonly(path+entry.Name,path + filename,null,0,10001);
             }
             return InternalServerError();
         }

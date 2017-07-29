@@ -109,14 +109,19 @@
 
 
         //nhấn nút search
-
+        $scope.UserID = serviceShareData.getData("UserId");
+        if ($scope.UserID != null)
+        {
+            $scope.UserID = JSON.parse($scope.UserID)[0];
+        }
         $scope.Search = function () {
             var dataSearch = {
                 "chapterId": $scope.QuestionSearch.ChapterSelected,
                 "subjectId": $scope.QuestionSearch.SubjectsSelected,
                 "facultiesId": $scope.QuestionSearch.FacultiesSelected,
                 "starDate": new Date(),
-                "endDate": new Date()
+                "endDate": new Date(),
+                "userId": $scope.UserID
             };
             //dataSearch.starDate = new Date("2017-07-22");
             //dataSearch.endDate = new Date("2017-07-23");
